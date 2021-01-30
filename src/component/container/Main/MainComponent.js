@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { AboutComponent } from '../../presentational/About/AboutComponent';
+import { ContactComponent } from '../../presentational/Contact/ContactComponent';
 import { LandingComponent } from '../../presentational/Landing/LandingComponent';
 import { ProjectContainer } from '../../presentational/Projects/ProjectsComponent';
 import { StyledMainContainer } from './MainComponentStyles';
@@ -10,8 +12,8 @@ const MainComponent = () => {
             <div>Nav</div>
             <LandingComponent />
             <ProjectContainer />
-            <div>About</div>
-            <div>Contact</div>
+            <AboutComponent />
+            <ContactComponent />
         </StyledMainContainer>
     )
 }
