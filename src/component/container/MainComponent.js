@@ -3,7 +3,12 @@ import React, { useState } from 'react';
 const MainComponent = () => {
     return (
         <div>
-            This is the main page
+            <div>Nav</div>
+            <div>Landing</div>
+            <div>Projects</div>
+            <div>About</div>
+            <div>Extras</div>
+            <div>Contact</div>
         </div>
     )
 }
