@@ -4,7 +4,9 @@ import { LightSection } from '../../../shared/sharedComponents/SectionComponent'
 export const AboutComponent = () => {
     return (
         <LightSection>
-            
+            <div>
+                About Section
+            </div>
         </LightSection>
     )
 }

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../../presentational/About/AboutComponent';
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
 import { LandingComponent } from '../../presentational/Landing/LandingComponent';
 import { ProjectContainer } from '../../presentational/Projects/ProjectsComponent';
-import { StyledMainContainer } from './MainComponentStyles';
+import { NavBar } from '../../presentational/NavBar/NavComponent';
 
 const MainComponent = () => {
     
     return (
         <StyledMainContainer>
-            <div>Nav</div>
+            <NavBar />
             <LandingComponent />
             <ProjectContainer />
             <AboutComponent />
@@ -18,4 +19,4 @@ const MainComponent = () => {
     )
 }
 
-export default MainComponent;
+export default MainComponent; 
