@@ -24,7 +24,7 @@ const MainComponent = () => {
             </div>
 
             <div id="aboutSection">
-                <About />
+                <AboutComponent />
             </div>
             
             <div id="contactSection">
