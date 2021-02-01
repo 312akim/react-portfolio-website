@@ -17,9 +17,11 @@ export const LandingComponent = () => {
             </NameContainer>
             <TextContainer>
                 Welcome to my portfolio.
-
+            </TextContainer>
+            <TextContainer>
                 I'm a front end web developer with a background in business.
-
+            </TextContainer>
+            <TextContainer>
                 I love thinking about all aspects of a company with a particular interest in user experience.
             </TextContainer>
         </StyledSectionComponent>
