@@ -2,6 +2,7 @@ import styles from 'styled-components';
 
 export const NameContainer = styles.div`
     text-align: center;
+    height: 20vh;
 `
 
 export const MainHeader = styles.h1`
@@ -26,10 +27,20 @@ export const SubHeader = styles.h2`
     }
 `
 
-export const TextContainer = styles.p`
+export const FlyingAnimationContainer = styles.div`
+    height: 30vh;
+`
+
+export const TextContainer = styles.div`
+    height: 50vh;
+`
+
+export const TextSection = styles.p`
     font-size: 24px;
     padding-left: 15%;
     padding-right: 10%;
+    margin-bottom: 3vh;
+    margin-top: 0;
 
     @media (min-width: 1200px) {
         font-size: 32px;

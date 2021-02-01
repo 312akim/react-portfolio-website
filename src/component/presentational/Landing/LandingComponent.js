@@ -1,23 +1,23 @@
 import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { NameContainer, MainHeader, SubHeader, TextContainer } from './LandingComponentStyles';
+import { NameContainer, MainHeader, SubHeader, TextContainer, TextSection, FlyingAnimationContainer } from './LandingComponentStyles';
 
 export const LandingComponent = () => {
 
     const LandingText = () => {
         return (
-            <>
-                <TextContainer>
+            <TextContainer>
+                <TextSection>
                     Welcome to my portfolio.
-                </TextContainer>
-                <TextContainer>
+                </TextSection>
+                <TextSection>
                     I'm a front end web developer with a background in business.
-                </TextContainer>
-                <TextContainer>
+                </TextSection>
+                <TextSection>
                     I love thinking about all aspects of a company with a particular interest in user experience.
-                </TextContainer>
-            </>
+                </TextSection>
+            </TextContainer>
         )
     }
 
@@ -31,6 +31,7 @@ export const LandingComponent = () => {
                     Web Developer
                 </SubHeader>
             </NameContainer>
+            <FlyingAnimationContainer />
             <LandingText />
         </StyledSectionComponent>
     );
