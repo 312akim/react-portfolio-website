@@ -1,12 +1,13 @@
 import React from 'react';
-import { LightSection } from '../../../shared/sharedComponents/SectionComponent';
+import COLORS from '../../../shared/design/colorTheme';
+import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 
 export const AboutComponent = () => {
     return (
-        <LightSection>
+        <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
             <div>
                 About Section
             </div>
-        </LightSection>
+        </StyledSectionComponent>
     )
 }

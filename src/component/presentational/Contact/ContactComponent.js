@@ -1,10 +1,11 @@
 import React from 'react';
-import { DarkSection } from '../../../shared/sharedComponents/SectionComponent';
+import COLORS from '../../../shared/design/colorTheme';
+import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 
 export const ContactComponent = () => {
     return (
-        <DarkSection>
+        <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
             
-        </DarkSection>
+        </StyledSectionComponent>
     )
 }

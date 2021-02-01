@@ -1,11 +1,11 @@
 import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
-import { DarkSection } from '../../../shared/sharedComponents/SectionComponent';
+import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 
 export const ProjectsContainer = () => {
     return (
-        <DarkSection backgroundColor={COLORS.primaryDark}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
             
-        </DarkSection>
+        </StyledSectionComponent>
     )
 }
