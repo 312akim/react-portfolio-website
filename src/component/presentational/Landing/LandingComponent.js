@@ -1,37 +1,59 @@
-import React from 'react';
+import React, {useState} from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { NameContainer, MainHeader, SubHeader, TextContainer, TextSection, FlyingAnimationContainer } from './LandingComponentStyles';
+import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledAnimationPointer, StyledDial } from './LandingComponentStyles';
+import halfDial from '../../../shared/images/half-dial.svg'
 
 export const LandingComponent = () => {
 
+    const [color, setColor] = useState('red');
+
+    const LandingHero = () => {
+        return (
+            <StyledNameContainer>
+                <StyledMainHeader>
+                    Alex Kim
+                </StyledMainHeader>
+                <StyledSubHeader>
+                    Web Developer
+                </StyledSubHeader>
+            </StyledNameContainer>
+        )
+    }
+
     const LandingText = () => {
         return (
-            <TextContainer>
-                <TextSection>
+            <StyledTextContainer>
+                <StyledTextSection>
                     Welcome to my portfolio.
-                </TextSection>
-                <TextSection>
+                </StyledTextSection>
+                <StyledTextSection>
                     I'm a front end web developer with a background in business.
-                </TextSection>
-                <TextSection>
-                    I love thinking about all aspects of a company with a particular interest in user experience.
-                </TextSection>
-            </TextContainer>
+                </StyledTextSection>
+                <StyledTextSection>
+                    I love thinking about all aspects of a company with a particular interest in animation.
+                </StyledTextSection>
+            </StyledTextContainer>
         )
+    }
+
+    const LandingAnimation = () => {
+        return (
+            <StyledAnimationContainer>
+                <StyledAnimationPointer onMouseEnter={() => animationFunction()} backgroundColor={color} />
+                <StyledDial src={halfDial} />
+            </StyledAnimationContainer>
+        )
+    }
+
+    const animationFunction = () => {
+        setColor('black');
     }
 
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
-            <NameContainer>
-                <MainHeader>
-                    Alex Kim
-                </MainHeader>
-                <SubHeader>
-                    Web Developer
-                </SubHeader>
-            </NameContainer>
-            <FlyingAnimationContainer />
+            <LandingHero />
+            <LandingAnimation />
             <LandingText />
         </StyledSectionComponent>
     );
