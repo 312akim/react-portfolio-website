@@ -27,14 +27,25 @@ export const StyledSubHeader = styles.h2`
     }
 `
 
+export const entranceAnimation = keyframes`
+    0% {margin-left: 100vw;}
+    50% {margin-left: 100vw;}
+    100% {margin-left: 0px;}
+`
+
 export const StyledAnimationContainer = styles.div`
     height: 30vh;
+    animation-delay: 2s;
+    animation: ${entranceAnimation} 1.5s linear;
 `
 
 export const rotateAnimation = keyframes`
     0% {}
-    50% {transform: rotate(0.5turn)}
-    100% {transform: rotate(1turn)}
+    25% {transform: rotate(-0.04turn)}
+    50% {transform: rotate(0.03turn)}
+    75% {transform: rotate(-0.02turn)}
+    90% {transform: rotate(0.01turn)}
+    100% {}
 `
 
 export const StyledDial = styles.img`
@@ -42,11 +53,12 @@ export const StyledDial = styles.img`
     margin: auto;
     height: 20vh;
 
-    :hover {
-        animation-name: ${rotateAnimation};
-        animation-duration: 8s;
-        animation-iteration-count: infinite;
-    }
+
+    animation-name: ${rotateAnimation};
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+
 `
 
 

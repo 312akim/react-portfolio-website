@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledAnimationPointer, StyledDial } from './LandingComponentStyles';
@@ -45,6 +45,7 @@ export const LandingComponent = () => {
             </StyledAnimationContainer>
         )
     }
+    
 
     const animationFunction = () => {
         setColor('black');
