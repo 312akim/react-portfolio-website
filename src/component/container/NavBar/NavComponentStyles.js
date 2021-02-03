@@ -3,7 +3,6 @@ import COLORS from '../../../shared/design/colorTheme';
 
 export const StyledNavContainer = styles.div`
     height: 6vh;
-    margin: 0 0 3vh 0;
     background: ${COLORS.primaryDark};
 `
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledDial, StyledSelector, StyledActiveAnimation } from './LandingComponentStyles';
+import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledDial, StyledSelector, StyledActiveAnimation, StyledDialButtonContainer, StyledDialButton } from './LandingComponentStyles';
 import compassNav from '../../../shared/images/compass-nav.svg'
-//import clockHand from '../../../shared/images/clock-hand1.svg'
+import arrow from '../../../shared/images/arrow.svg'
 
 export const LandingComponent = () => {
 
@@ -40,12 +40,31 @@ export const LandingComponent = () => {
         return (
             <>
                 <StyledAnimationContainer>
-                    <StyledSelector src={compassNav}/>
+                    <StyledSelector src={arrow}/>
                     <StyledActiveAnimation>
                         <StyledDial src={compassNav} />
                     </StyledActiveAnimation>
                 </StyledAnimationContainer>
             </>
+        )
+    }
+
+    const AnimationButtons = () => {
+        return (
+            <StyledDialButtonContainer>
+            <StyledDialButton>
+                Home
+            </StyledDialButton>
+            <StyledDialButton>
+                Projects
+            </StyledDialButton>
+            <StyledDialButton>
+                About
+            </StyledDialButton>
+            <StyledDialButton>
+                Contact
+            </StyledDialButton>
+        </StyledDialButtonContainer>
         )
     }
     
@@ -54,6 +73,7 @@ export const LandingComponent = () => {
         <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
             <LandingHero />
             <LandingAnimation />
+            <AnimationButtons />
             <LandingText />
         </StyledSectionComponent>
     );

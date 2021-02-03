@@ -29,14 +29,23 @@ export const StyledSubHeader = styles.h2`
 
 //  Comes in fast from right hand side.
 export const entranceAnimation = keyframes`
-    0% {margin-left: 120vw;}
-    50% {margin-left: 120vw;}
-    100% {margin-left: 0;}
+    0% {
+        opacity: 0;
+        margin-left: 10vw;
+    }
+    50% {
+        opacity: 0;
+        margin-left: 10vw;
+    }
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }
 `
 
 export const StyledAnimationContainer = styles.div`
     display: block;
-    height: 30vh;
+    height: 33vh;
 `
 
 export const StyledActiveAnimation = styles.div`
@@ -46,7 +55,19 @@ export const StyledActiveAnimation = styles.div`
 
 export const StyledSelector = styles.img`
     display: inline-block;
-    height: 30vh;
+    margin-left: 7vw;
+    height: 6vh;
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+    transform: rotate(0.125turn);
+
+    @media (min-width: 576px) {
+        margin-left: 16vw;   
+    }
+
+    @media (min-width: 1200px) {
+        margin-left: 22vw;
+    }
 `
 
 // Simulates momentum of dial from entrace.
@@ -62,6 +83,12 @@ export const rotateAnimation = keyframes`
 export const StyledDial = styles.img`
     display: inline-block;
     height: 30vh;
+    padding-left: 4vw;
+
+
+    @media (min-width: 1200px) {
+        padding-left: 2vw;
+    }
 
     animation-name: ${rotateAnimation};
     animation-duration: 3s;
@@ -70,8 +97,22 @@ export const StyledDial = styles.img`
 
 `
 
+export const StyledDialButtonContainer = styles.div`
+    display: block;
+    height: 6vh;
+`
+
+export const StyledDialButton = styles.button`
+    display: inline-block;
+    margin-left: 7vw;
+    color: white;
+    width: 15vw;
+    background: black;
+    height: 80%;
+`
+
 export const StyledTextContainer = styles.div`
-    height: 50vh;
+    height: 40vh;
 `
 
 export const StyledTextSection = styles.p`
