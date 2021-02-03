@@ -27,46 +27,47 @@ export const StyledSubHeader = styles.h2`
     }
 `
 
+//  Comes in fast from right hand side.
 export const entranceAnimation = keyframes`
-    0% {margin-left: 100vw;}
-    50% {margin-left: 100vw;}
-    100% {margin-left: 0px;}
+    0% {margin-left: 120vw;}
+    50% {margin-left: 120vw;}
+    100% {margin-left: 0;}
 `
 
 export const StyledAnimationContainer = styles.div`
+    display: block;
     height: 30vh;
-    animation-delay: 2s;
-    animation: ${entranceAnimation} 1.5s linear;
 `
 
+export const StyledActiveAnimation = styles.div`
+    display: inline-block;
+    animation: ${entranceAnimation} 2s ease-in;
+`
+
+export const StyledSelector = styles.img`
+    display: inline-block;
+    height: 30vh;
+`
+
+// Simulates momentum of dial from entrace.
 export const rotateAnimation = keyframes`
     0% {}
-    25% {transform: rotate(-0.04turn)}
-    50% {transform: rotate(0.03turn)}
-    75% {transform: rotate(-0.02turn)}
-    90% {transform: rotate(0.01turn)}
+    25% {transform: rotate(-0.1turn)}
+    50% {transform: rotate(0.08turn)}
+    75% {transform: rotate(-0.06turn)}
+    90% {transform: rotate(0.03turn)}
     100% {}
 `
 
 export const StyledDial = styles.img`
-    display: block;
-    margin: auto;
-    height: 20vh;
-
+    display: inline-block;
+    height: 30vh;
 
     animation-name: ${rotateAnimation};
     animation-duration: 3s;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
 
-`
-
-
-export const StyledAnimationPointer = styles.div`
-    height: 15px;
-    width: 15px;
-    margin-left: 50%;
-    background: ${props => props.backgroundColor};
 `
 
 export const StyledTextContainer = styles.div`

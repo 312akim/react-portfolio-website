@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledAnimationPointer, StyledDial } from './LandingComponentStyles';
-import halfDial from '../../../shared/images/half-dial.svg'
+import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledDial, StyledSelector, StyledActiveAnimation } from './LandingComponentStyles';
+import compassNav from '../../../shared/images/compass-nav.svg'
+//import clockHand from '../../../shared/images/clock-hand1.svg'
 
 export const LandingComponent = () => {
-
-    const [color, setColor] = useState('red');
 
     const LandingHero = () => {
         return (
@@ -39,17 +38,17 @@ export const LandingComponent = () => {
 
     const LandingAnimation = () => {
         return (
-            <StyledAnimationContainer>
-                <StyledAnimationPointer onMouseEnter={() => animationFunction()} backgroundColor={color} />
-                <StyledDial src={halfDial} />
-            </StyledAnimationContainer>
+            <>
+                <StyledAnimationContainer>
+                    <StyledSelector src={compassNav}/>
+                    <StyledActiveAnimation>
+                        <StyledDial src={compassNav} />
+                    </StyledActiveAnimation>
+                </StyledAnimationContainer>
+            </>
         )
     }
     
-
-    const animationFunction = () => {
-        setColor('black');
-    }
 
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
