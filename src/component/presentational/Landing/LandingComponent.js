@@ -7,6 +7,7 @@ import arrow from '../../../shared/images/arrow.svg'
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 
 export const LandingComponent = () => {
+    const [active, setActive] = useState(false);
 
     const LandingHero = () => {
         return (
@@ -43,7 +44,7 @@ export const LandingComponent = () => {
                 <StyledAnimationContainer>
                     <StyledSelector src={arrow}/>
                     <StyledActiveAnimation>
-                        <StyledDial src={compassNav} />
+                        <StyledDial src={compassNav} active={active}/>
                     </StyledActiveAnimation>
                 </StyledAnimationContainer>
             </>
@@ -53,8 +54,8 @@ export const LandingComponent = () => {
     const AnimationButtons = () => {
         return (
             <StyledDialButtonContainer>
-                <StyledDialButton>
-                    <ReactScrollLink title="Home" id="homeSection"/>
+                <StyledDialButton onClick={() => setActive(true)}>
+                    <ReactScrollLink title="Home" id="homeSection" delay={2500}/>
                 </StyledDialButton>
                 <StyledDialButton>
                     <ReactScrollLink title="Projects" id="projectsSection"/>
@@ -69,7 +70,6 @@ export const LandingComponent = () => {
         )
     }
     
-
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
             <LandingHero />

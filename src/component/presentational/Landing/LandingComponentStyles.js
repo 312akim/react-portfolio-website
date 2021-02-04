@@ -27,19 +27,34 @@ export const StyledSubHeader = styles.h2`
     }
 `
 
-//  Fades in from right hand side.
+//  Fades in from right hand side & Simulates momentum.
 export const entranceAnimation = keyframes`
     0% {
         opacity: 0;
         margin-left: 10vw;
     }
-    50% {
+    25% {
+        transform: rotate(-0.1turn)
+    }
+    33% {
         opacity: 0;
         margin-left: 10vw;
     }
-    100% {
+    50% {
+        transform: rotate(0.08turn)
+    }
+    66% {
         opacity: 1;
         margin-left: 0;
+        transform: rotate(-0.06turn)
+    }
+    75% {
+        transform: rotate(0.03turn)
+    }
+    90% {
+        transform: rotate(-0.01turn)
+    }
+    100% {
     }
 `
 
@@ -54,7 +69,7 @@ export const StyledAnimationContainer = styles.div`
 
 export const StyledActiveAnimation = styles.div`
     display: inline-block;
-    animation: ${entranceAnimation} 2s ease-in;
+    animation: ${entranceAnimation} 3s ease-in;
 `
 
 export const StyledSelector = styles.img`
@@ -74,31 +89,26 @@ export const StyledSelector = styles.img`
     }
 `
 
-// Simulates momentum of dial from entrace.
 export const rotateAnimation = keyframes`
     0% {}
-    25% {transform: rotate(-0.1turn)}
-    50% {transform: rotate(0.08turn)}
-    75% {transform: rotate(-0.06turn)}
-    90% {transform: rotate(0.03turn)}
-    100% {}
+    25% {transform: rotate(-0.50turn)}
+    50% {transform: rotate(0.28turn)}
+    75% {transform: rotate(-0.46turn)}
+    90% {transform: rotate(0.13turn)}
+    100% {transform: rotate(0.95turn)}
 `
 
 export const StyledDial = styles.img`
     display: inline-block;
     height: 30vh;
     padding-left: 4vw;
-
+    animation: ${props => (props.active? rotateAnimation : "")}
+    animation-duration: 4s;
+    
 
     @media (min-width: 1200px) {
         padding-left: 2vw;
     }
-
-    animation-name: ${rotateAnimation};
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-out;
-
 `
 
 export const StyledDialButtonContainer = styles.div`
