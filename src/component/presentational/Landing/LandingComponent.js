@@ -4,6 +4,7 @@ import { StyledSectionComponent } from '../../../shared/sharedComponents/Section
 import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledDial, StyledSelector, StyledActiveAnimation, StyledDialButtonContainer, StyledDialButton } from './LandingComponentStyles';
 import compassNav from '../../../shared/images/compass-nav.svg'
 import arrow from '../../../shared/images/arrow.svg'
+import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 
 export const LandingComponent = () => {
 
@@ -52,19 +53,19 @@ export const LandingComponent = () => {
     const AnimationButtons = () => {
         return (
             <StyledDialButtonContainer>
-            <StyledDialButton>
-                Home
-            </StyledDialButton>
-            <StyledDialButton>
-                Projects
-            </StyledDialButton>
-            <StyledDialButton>
-                About
-            </StyledDialButton>
-            <StyledDialButton>
-                Contact
-            </StyledDialButton>
-        </StyledDialButtonContainer>
+                <StyledDialButton>
+                    <ReactScrollLink title="Home" id="homeSection"/>
+                </StyledDialButton>
+                <StyledDialButton>
+                    <ReactScrollLink title="Projects" id="projectsSection"/>
+                </StyledDialButton>
+                <StyledDialButton>
+                    <ReactScrollLink title="About" id="aboutSection"/>
+                </StyledDialButton>
+                <StyledDialButton>
+                    <ReactScrollLink title="Contact" id="contactSection"/>
+                </StyledDialButton>
+            </StyledDialButtonContainer>
         )
     }
     

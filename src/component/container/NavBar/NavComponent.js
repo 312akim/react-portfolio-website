@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler } from './NavComponentStyles';
+import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 
 export const NavBar = () => {
     const [isOpen, setOpen] = useState(false);
-
-    const ReactScrollLink = ({id, title}) => {
-        return (
-            <li>
-                <a>
-                    <Link activeClass="active" to={id} spy={true} smooth={true} duration={400}>
-                        {title}
-                    </Link>
-                </a>
-            </li>
-        )
-    }
 
     const CollapsibleNav = ({isOpen}) => {
         if (isOpen) {

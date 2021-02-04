@@ -2,7 +2,7 @@ import styles, { keyframes } from 'styled-components';
 
 export const StyledNameContainer = styles.div`
     text-align: center;
-    height: 20vh;
+    height: 18vh;
 `
 
 export const StyledMainHeader = styles.h1`
@@ -27,7 +27,7 @@ export const StyledSubHeader = styles.h2`
     }
 `
 
-//  Comes in fast from right hand side.
+//  Fades in from right hand side.
 export const entranceAnimation = keyframes`
     0% {
         opacity: 0;
@@ -45,7 +45,11 @@ export const entranceAnimation = keyframes`
 
 export const StyledAnimationContainer = styles.div`
     display: block;
-    height: 33vh;
+    height: 32vh;
+
+    @media (min-width: 576px) {
+        height: 33vh;
+    }
 `
 
 export const StyledActiveAnimation = styles.div`
@@ -112,7 +116,7 @@ export const StyledDialButton = styles.button`
 `
 
 export const StyledTextContainer = styles.div`
-    height: 40vh;
+    height: 43vh;
 `
 
 export const StyledTextSection = styles.p`
