@@ -99,7 +99,7 @@ export const StyledDial = styles.img`
     height: 30vh;
     padding-left: 4vw;
     animation: ${props => (props.active? homeDialAnimation : "")}
-    animation-duration: 4s;
+    animation-duration: 2s;
     
 
     @media (min-width: 1200px) {
