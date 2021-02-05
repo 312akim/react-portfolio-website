@@ -1,7 +1,6 @@
 import styles, { keyframes } from 'styled-components';
 
 export const StyledNameContainer = styles.div`
-    text-align: center;
     height: 18vh;
 `
 
@@ -123,6 +122,7 @@ export const StyledDialButton = styles.button`
 
 export const StyledTextContainer = styles.div`
     height: 43vh;
+    text-align: left
 `
 
 export const StyledTextSection = styles.p`
