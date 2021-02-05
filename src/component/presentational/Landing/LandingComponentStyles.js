@@ -60,9 +60,11 @@ export const entranceAnimation = keyframes`
 export const StyledAnimationContainer = styles.div`
     display: block;
     height: 32vh;
+    width: 94%;
 
     @media (min-width: 576px) {
         height: 33vh;
+        width: 80%;
     }
 `
 
@@ -73,7 +75,7 @@ export const StyledActiveAnimation = styles.div`
 
 export const StyledSelector = styles.img`
     display: inline-block;
-    margin-left: 7vw;
+    margin-right: 1vw;
     height: 6vh;
     padding-top: 12vh;
     padding-bottom: 12vh;
@@ -96,7 +98,7 @@ export const homeDialAnimation = keyframes`
 export const StyledDial = styles.img`
     display: inline-block;
     height: 30vh;
-    padding-left: 4vw;
+    padding-left: 1vw;
     animation: ${props => (props.active? homeDialAnimation : "")}
     animation-duration: 2s;
     
@@ -113,9 +115,9 @@ export const StyledDialButtonContainer = styles.div`
 
 export const StyledDialButton = styles.button`
     display: inline-block;
-    margin-left: 7vw;
+    margin-left: 6vw;
     color: white;
-    width: 15vw;
+    width: 14vw;
     background: black;
     height: 80%;
 `
