@@ -89,20 +89,16 @@ export const StyledSelector = styles.img`
     }
 `
 
-export const rotateAnimation = keyframes`
+export const homeDialAnimation = keyframes`
     0% {}
-    25% {transform: rotate(-0.50turn)}
-    50% {transform: rotate(0.28turn)}
-    75% {transform: rotate(-0.46turn)}
-    90% {transform: rotate(0.13turn)}
-    100% {transform: rotate(0.95turn)}
+    100% {transform: rotate(1turn)}
 `
 
 export const StyledDial = styles.img`
     display: inline-block;
     height: 30vh;
     padding-left: 4vw;
-    animation: ${props => (props.active? rotateAnimation : "")}
+    animation: ${props => (props.active? homeDialAnimation : "")}
     animation-duration: 4s;
     
 

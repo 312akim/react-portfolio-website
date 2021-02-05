@@ -54,7 +54,12 @@ export const LandingComponent = () => {
     const AnimationButtons = () => {
         return (
             <StyledDialButtonContainer>
-                <StyledDialButton onClick={() => setActive(true)}>
+                <StyledDialButton onClick={() => {
+                    //Set off animation.
+                    setActive(!active);
+                    //Set back to false.
+                    setActive(!active);
+                }}>
                     <ReactScrollLink title="Home" id="homeSection" delay={2500}/>
                 </StyledDialButton>
                 <StyledDialButton>
