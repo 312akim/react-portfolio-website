@@ -14,6 +14,7 @@ export const StyledSectionHeader = styles.h1`
 `
 
 export const StyledProjectCard = styles.div`
+    position: relative;
     width: 70%;
     height: 37vh;
     margin: 0 auto 2vh auto;
@@ -21,7 +22,10 @@ export const StyledProjectCard = styles.div`
 `
 
 export const StyledProjectCardTitle = styles.h2`
-    margin: 0;
+    position: absolute;
+    width: 60vw;
+    top: 0;
+    margin: 0 0 0 5vw;
 `
 
 export const StyledProjectCardImage = styles.img`
