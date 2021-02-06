@@ -1,8 +1,8 @@
 import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledModalContainer, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
-
+import { StyledCardButton, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
+import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 
 export const ProjectsContainer = () => {
 
@@ -12,6 +12,30 @@ export const ProjectsContainer = () => {
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
+                <StyledProjectCard>
+                    <StyledProjectCardImage src={projectPlaceholder}/>
+                    <StyledProjectCardTitle>
+                        Apparel Store
+                    </StyledProjectCardTitle>
+                    <StyledCardButton>
+                        Read More
+                    </StyledCardButton>
+                </StyledProjectCard>
+                <StyledGithubLink>
+                    Github Link here
+                </StyledGithubLink>
+                <StyledProjectCard>
+                    <StyledProjectCardImage />
+                    <StyledProjectCardTitle>
+                        Animation Project
+                    </StyledProjectCardTitle>
+                    <StyledCardButton>
+                        Read More
+                    </StyledCardButton>
+                </StyledProjectCard>
+                <StyledGithubLink>
+                    Github Link here
+                </StyledGithubLink>
             </StyledSectionContainer>
         )
     }
@@ -19,7 +43,7 @@ export const ProjectsContainer = () => {
     const ProjectModal = () => {
         return (
             <StyledModalContainer>
-                
+
             </StyledModalContainer>
         )
     }
