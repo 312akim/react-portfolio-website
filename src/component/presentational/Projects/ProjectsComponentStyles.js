@@ -21,12 +21,6 @@ export const StyledProjectCard = styles.div`
     border: 1px solid black;
 `
 
-export const StyledProjectCardTitle = styles.h2`
-    position: block;
-    width: 60vw;
-    
-    margin: 0 0 2vh 5vw;
-`
 
 export const StyledProjectCardImage = styles.img`
     width: 100%;
@@ -52,6 +46,14 @@ export const StyledCardHover = styles.div`
     }
 `
 
+export const StyledProjectCardTitle = styles.h2`
+    position: block;
+    width: 60vw;
+    margin-left: calc(50% - 30vw);
+    color: white;
+    height: 15%;
+`
+
 export const StyledProjectInformation = styles.div`
     height: 20%;
     opacity: 1;
@@ -60,12 +62,12 @@ export const StyledProjectInformation = styles.div`
 
 export const StyledReadMore = styles.button`
     height: 10%;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 5%;
+    margin-bottom: 10%;
 `
 
 export const StyledGithubLink = styles.div`
-    height: 10%;
+    height: 15%;
     margin-bottom: 2vh;
     color: white;
 `

@@ -12,12 +12,12 @@ export const ProjectsContainer = () => {
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
-                <StyledProjectCardTitle>
-                    Apparel Store
-                </StyledProjectCardTitle>
                 <StyledProjectCard>
                     <StyledProjectCardImage src={projectPlaceholder}/>
                     <StyledCardHover>
+                        <StyledProjectCardTitle>
+                            Apparel Store
+                        </StyledProjectCardTitle>
                         <StyledProjectInformation>
                             Apparel store uses technologies such as etc etc.
                         </StyledProjectInformation>
@@ -29,12 +29,12 @@ export const ProjectsContainer = () => {
                         </StyledGithubLink>
                     </StyledCardHover>
                 </StyledProjectCard>
-                <StyledProjectCardTitle>
-                    Animation Project
-                </StyledProjectCardTitle>
                 <StyledProjectCard>
                     <StyledProjectCardImage src={projectPlaceholder}/>
                     <StyledCardHover>
+                        <StyledProjectCardTitle>
+                            Animation Project
+                        </StyledProjectCardTitle>
                         <StyledProjectInformation>
                             Animation project is a product of etc etc etc
                         </StyledProjectInformation>
