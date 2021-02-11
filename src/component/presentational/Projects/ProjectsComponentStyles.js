@@ -22,10 +22,10 @@ export const StyledProjectCard = styles.div`
 `
 
 export const StyledProjectCardTitle = styles.h2`
-    position: absolute;
+    position: block;
     width: 60vw;
-    top: 0;
-    margin: 0 0 0 5vw;
+    
+    margin: 0 0 2vh 5vw;
 `
 
 export const StyledProjectCardImage = styles.img`
@@ -38,13 +38,36 @@ export const StyledProjectCardImage = styles.img`
     }
 `
 
-export const StyledCardButton = styles.button`
+export const StyledCardHover = styles.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
 
+    :hover {
+        opacity: 0.8;
+        background: black;
+    }
+`
+
+export const StyledProjectInformation = styles.div`
+    height: 20%;
+    opacity: 1;
+    color: white;
+`
+
+export const StyledReadMore = styles.button`
+    height: 10%;
+    margin-top: 15%;
+    margin-bottom: 15%;
 `
 
 export const StyledGithubLink = styles.div`
-    height: 4vh;
+    height: 10%;
     margin-bottom: 2vh;
+    color: white;
 `
 
 export const StyledModalHero = styles.div`

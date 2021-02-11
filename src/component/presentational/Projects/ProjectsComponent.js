@@ -1,7 +1,7 @@
 import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardButton, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
+import { StyledCardHover, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 
 export const ProjectsContainer = () => {
@@ -12,30 +12,40 @@ export const ProjectsContainer = () => {
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
+                <StyledProjectCardTitle>
+                    Apparel Store
+                </StyledProjectCardTitle>
                 <StyledProjectCard>
                     <StyledProjectCardImage src={projectPlaceholder}/>
-                    <StyledProjectCardTitle>
-                        Apparel Store
-                    </StyledProjectCardTitle>
-                    <StyledCardButton>
-                        Read More
-                    </StyledCardButton>
+                    <StyledCardHover>
+                        <StyledProjectInformation>
+                            Apparel store uses technologies such as etc etc.
+                        </StyledProjectInformation>
+                        <StyledReadMore>
+                            Read More
+                        </StyledReadMore>
+                        <StyledGithubLink>
+                            Github Link here
+                        </StyledGithubLink>
+                    </StyledCardHover>
                 </StyledProjectCard>
-                <StyledGithubLink>
-                    Github Link here
-                </StyledGithubLink>
+                <StyledProjectCardTitle>
+                    Animation Project
+                </StyledProjectCardTitle>
                 <StyledProjectCard>
-                    <StyledProjectCardImage />
-                    <StyledProjectCardTitle>
-                        Animation Project
-                    </StyledProjectCardTitle>
-                    <StyledCardButton>
-                        Read More
-                    </StyledCardButton>
+                    <StyledProjectCardImage src={projectPlaceholder}/>
+                    <StyledCardHover>
+                        <StyledProjectInformation>
+                            Animation project is a product of etc etc etc
+                        </StyledProjectInformation>
+                        <StyledReadMore>
+                            Read More
+                        </StyledReadMore>
+                        <StyledGithubLink>
+                            Github Link here
+                        </StyledGithubLink>
+                    </StyledCardHover>
                 </StyledProjectCard>
-                <StyledGithubLink>
-                    Github Link here
-                </StyledGithubLink>
             </StyledSectionContainer>
         )
     }
