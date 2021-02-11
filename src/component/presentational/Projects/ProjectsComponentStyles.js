@@ -1,5 +1,6 @@
 import styles, { keyframes } from 'styled-components';
 
+// Animations
 export const hoverCardTopFadeAnim = keyframes`
     0% {
         opacity: 0;
@@ -24,6 +25,7 @@ export const hoverCardBotFadeAnim = keyframes`
     }
 `
 
+// Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
 `
@@ -86,7 +88,7 @@ export const StyledGithubLink = styles.div`
     color: white;
 `
 
-export const StyledCardHover = styles.div`
+export const StyledCardHoverContainer = styles.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -103,15 +105,15 @@ export const StyledCardHover = styles.div`
         }
 
         ${StyledProjectInformation} {
-            animation: ${hoverCardTopFadeAnim} 0.8s linear;
+            animation: ${hoverCardTopFadeAnim} 0.3s linear;
         }
 
         ${StyledReadMore} {
-            animation: ${hoverCardBotFadeAnim} 0.8s linear;
+            animation: ${hoverCardBotFadeAnim} 0.3s linear;
         }
 
         ${StyledGithubLink} {
-            animation: ${hoverCardBotFadeAnim} 0.8s linear;
+            animation: ${hoverCardBotFadeAnim} 0.3s linear;
         }
     }
 `

@@ -1,7 +1,7 @@
 import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHover, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 
 export const ProjectsContainer = () => {
@@ -14,7 +14,7 @@ export const ProjectsContainer = () => {
                 </StyledSectionHeader>
                 <StyledProjectCard>
                     <StyledProjectCardImage src={projectPlaceholder}/>
-                    <StyledCardHover>
+                    <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
                             Apparel Store
                         </StyledProjectCardTitle>
@@ -27,11 +27,11 @@ export const ProjectsContainer = () => {
                         <StyledGithubLink>
                             Github
                         </StyledGithubLink>
-                    </StyledCardHover>
+                    </StyledCardHoverContainer>
                 </StyledProjectCard>
                 <StyledProjectCard>
                     <StyledProjectCardImage src={projectPlaceholder}/>
-                    <StyledCardHover>
+                    <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
                             Animation Project
                         </StyledProjectCardTitle>
@@ -46,7 +46,7 @@ export const ProjectsContainer = () => {
                         <StyledGithubLink>
                             Github
                         </StyledGithubLink>
-                    </StyledCardHover>
+                    </StyledCardHoverContainer>
                 </StyledProjectCard>
             </StyledSectionContainer>
         )
