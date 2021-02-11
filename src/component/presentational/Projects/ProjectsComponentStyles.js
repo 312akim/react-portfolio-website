@@ -1,9 +1,21 @@
 import styles, { keyframes } from 'styled-components';
 
-export const hoverCardTitleAnim = keyframes`
+export const hoverCardTopFadeAnim = keyframes`
     0% {
         opacity: 0;
         transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+export const hoverCardBotFadeAnim = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
     100% {
@@ -52,25 +64,6 @@ export const StyledProjectCardTitle = styles.h2`
     background: blue;
 `
 
-export const StyledCardHover = styles.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    
-    :hover {
-        opacity: 0.8;
-        background: black;
-        
-        ${StyledProjectCardTitle} {
-            animation: ${hoverCardTitleAnim} 0.5s linear;
-        }
-    }
-`
-
-
 export const StyledProjectInformation = styles.div`
     height: 20%;
     width: 70%;
@@ -91,6 +84,36 @@ export const StyledGithubLink = styles.div`
     height: 15%;
     margin-bottom: 2vh;
     color: white;
+`
+
+export const StyledCardHover = styles.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    
+    :hover {
+        opacity: 0.8;
+        background: black;
+
+        ${StyledProjectCardTitle} {
+            animation: ${hoverCardTopFadeAnim} 0.3s linear;
+        }
+
+        ${StyledProjectInformation} {
+            animation: ${hoverCardTopFadeAnim} 0.8s linear;
+        }
+
+        ${StyledReadMore} {
+            animation: ${hoverCardBotFadeAnim} 0.8s linear;
+        }
+
+        ${StyledGithubLink} {
+            animation: ${hoverCardBotFadeAnim} 0.8s linear;
+        }
+    }
 `
 
 export const StyledModalHero = styles.div`

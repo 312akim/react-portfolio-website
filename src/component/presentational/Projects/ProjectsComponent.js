@@ -25,7 +25,7 @@ export const ProjectsContainer = () => {
                             Read More
                         </StyledReadMore>
                         <StyledGithubLink>
-                            Github Link here
+                            Github
                         </StyledGithubLink>
                     </StyledCardHover>
                 </StyledProjectCard>
@@ -44,7 +44,7 @@ export const ProjectsContainer = () => {
                             Read More
                         </StyledReadMore>
                         <StyledGithubLink>
-                            Github Link here
+                            Github
                         </StyledGithubLink>
                     </StyledCardHover>
                 </StyledProjectCard>
