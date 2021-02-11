@@ -37,6 +37,8 @@ export const ProjectsContainer = () => {
                         </StyledProjectCardTitle>
                         <StyledProjectInformation>
                             Animation project is a product of etc etc etc
+                            Animation project is a product of etc etc etc
+                            Animation project is a product of etc etc etc
                         </StyledProjectInformation>
                         <StyledReadMore>
                             Read More

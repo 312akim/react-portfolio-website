@@ -30,21 +30,19 @@ export const StyledSubHeader = styles.h2`
 export const entranceAnimation = keyframes`
     0% {
         opacity: 0;
-        margin-left: 10vw;
     }
     25% {
         transform: rotate(-0.1turn)
     }
     33% {
         opacity: 0;
-        margin-left: 10vw;
+        transform: translateX(300px)
     }
     50% {
         transform: rotate(0.08turn)
     }
     66% {
         opacity: 1;
-        margin-left: 0;
         transform: rotate(-0.06turn)
     }
     75% {
@@ -52,6 +50,7 @@ export const entranceAnimation = keyframes`
     }
     90% {
         transform: rotate(-0.01turn)
+        transform: translateX(0px)
     }
     100% {
     }
