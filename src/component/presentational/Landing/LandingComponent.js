@@ -1,13 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledAnimationContainer, StyledDial, StyledSelector, StyledActiveAnimation, StyledDialButtonContainer, StyledDialButton } from './LandingComponentStyles';
-import compassNav from '../../../shared/images/compass-nav.svg'
-import arrow from '../../../shared/images/arrow.svg'
+import { StyledAnimationContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledDialButtonContainer, StyledDialButton, StyledLandingAnimNav } from './LandingComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent';
+
 
 export const LandingComponent = () => {
     const [active, setActive] = useState(false);
+
+
+    const mouseEnterHandler = () => {
+        console.log('onMouseEnter')
+    }
+
+    const mouseLeaveHandler = () => {
+        console.log('onMouseLeave')
+    }
+
+    const mouseMoveHandler = () => {
+        console.log(
+            'onMouseMove'
+        )
+    }
 
     const LandingHero = () => {
         return (
@@ -40,6 +54,21 @@ export const LandingComponent = () => {
 
     const LandingAnimation = () => {
         return (
+            <StyledAnimationContainer>
+                <StyledLandingAnimNav
+                    onMouseEnter={mouseEnterHandler()} 
+                    onMouseLeave={mouseLeaveHandler()}
+                    onMouseMove={mouseMoveHandler()}
+                >
+
+                </StyledLandingAnimNav>
+            </StyledAnimationContainer>
+        )
+    }
+
+    /*
+    const LandingAnimation = () => {
+        return (
             <>
                 <StyledAnimationContainer>
                     <StyledSelector src={arrow}/>
@@ -50,7 +79,7 @@ export const LandingComponent = () => {
             </>
         )
     }
-
+    */
     const AnimationButtons = () => {
         return (
             <StyledDialButtonContainer>

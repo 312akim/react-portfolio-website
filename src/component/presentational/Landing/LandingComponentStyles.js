@@ -56,10 +56,14 @@ export const entranceAnimation = keyframes`
     }
 `
 
+
+// New animation attempt
 export const StyledAnimationContainer = styles.div`
     display: block;
     height: 32vh;
     width: 94%;
+    background: grey;
+    margin: 5% auto 0 auto;
 
     @media (min-width: 576px) {
         height: 33vh;
@@ -67,10 +71,14 @@ export const StyledAnimationContainer = styles.div`
     }
 `
 
-export const StyledActiveAnimation = styles.div`
-    display: inline-block;
-    animation: ${entranceAnimation} 3s ease-in;
+export const StyledLandingAnimNav = styles.div`
+    height: 80%;
+    width: 80%;
+    background: red;
+    margin: auto;
 `
+
+//New animation attempt end
 
 export const StyledSelector = styles.img`
     display: inline-block;
@@ -86,24 +94,6 @@ export const StyledSelector = styles.img`
 
     @media (min-width: 1200px) {
         margin-left: 22vw;
-    }
-`
-
-export const homeDialAnimation = keyframes`
-    0% {}
-    100% {transform: rotate(1turn)}
-`
-
-export const StyledDial = styles.img`
-    display: inline-block;
-    height: 30vh;
-    padding-left: 1vw;
-    animation: ${props => (props.active? homeDialAnimation : "")}
-    animation-duration: 2s;
-    
-
-    @media (min-width: 1200px) {
-        padding-left: 2vw;
     }
 `
 
