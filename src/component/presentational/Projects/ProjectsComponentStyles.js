@@ -1,4 +1,5 @@
 import styles, { keyframes } from 'styled-components';
+import COLORS from '../../../shared/design/colorTheme';
 
 // Animations
 export const hoverCardTopFadeAnim = keyframes`
@@ -28,6 +29,18 @@ export const hoverCardBotFadeAnim = keyframes`
 // Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
+`
+
+export const StyledSectionSwitcher = styles.div`
+    position: absolute;
+    height: 100vh;
+    width: 15%;
+    background: ${COLORS.primaryDark};
+    right: 0;
+
+    :hover {
+        background: black;
+    }
 `
 
 export const StyledModalContainer = styles.div`

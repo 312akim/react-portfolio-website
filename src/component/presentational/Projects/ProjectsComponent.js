@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionSwitcher } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 
 export const ProjectsContainer = () => {
 
+    const [section, setSection]  = useState(false);
+
     const SectionContainer = () => {
         return (
             <StyledSectionContainer>
+                <StyledSectionSwitcher>
+
+                </StyledSectionSwitcher>
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
