@@ -31,6 +31,14 @@ export const StyledSectionContainer = styles.div`
     text-align: center;
 `
 
+export const StyledSectionIconContainer = styles.div`
+
+    display: inline-block;
+    color: black;
+    height: 100vh;
+    margin-top: 47vh;
+`
+
 export const StyledSectionSwitcher = styles.div`
     position: absolute;
     height: 100vh;
@@ -40,6 +48,10 @@ export const StyledSectionSwitcher = styles.div`
 
     :hover {
         background: black;
+    }
+
+    :hover div {
+        color: white;
     }
 `
 
