@@ -9,12 +9,104 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 export const ProjectsContainer = () => {
 
     //Used to change visual of Section Switcher depending on state
-    const [section, setSection]  = useState(false);
+    const [section, setSection]  = useState(true);
+
+    const sectionSwitchHandler = (e) => {
+        setSection(!section);
+        console.log("Section changed to: " + section)
+    }
+
+    // Which projects page to display
+    const ProjectSection = () => {
+        if (section) {
+            return (
+                <>
+                    <StyledProjectCard>
+                        <StyledProjectCardImage src={projectPlaceholder}/>
+                        <StyledCardHoverContainer>
+                            <StyledProjectCardTitle>
+                                Apparel Store
+                            </StyledProjectCardTitle>
+                            <StyledProjectInformation>
+                                Apparel store uses technologies such as etc etc.
+                            </StyledProjectInformation>
+                            <StyledReadMore>
+                                Read More
+                            </StyledReadMore>
+                            <StyledGithubLink>
+                                Github
+                            </StyledGithubLink>
+                        </StyledCardHoverContainer>
+                    </StyledProjectCard>
+                    <StyledProjectCard>
+                        <StyledProjectCardImage src={projectPlaceholder}/>
+                        <StyledCardHoverContainer>
+                            <StyledProjectCardTitle>
+                                Animation Project
+                            </StyledProjectCardTitle>
+                            <StyledProjectInformation>
+                                Animation project is a product of etc etc etc
+                                Animation project is a product of etc etc etc
+                                Animation project is a product of etc etc etc
+                            </StyledProjectInformation>
+                            <StyledReadMore>
+                                Read More
+                            </StyledReadMore>
+                            <StyledGithubLink>
+                                Github
+                            </StyledGithubLink>
+                        </StyledCardHoverContainer>
+                    </StyledProjectCard>
+                </>
+            )
+        } else {
+            if (!section) {
+                return (
+                    <>
+                        <StyledProjectCard>
+                            <StyledProjectCardImage src={projectPlaceholder}/>
+                            <StyledCardHoverContainer>
+                                <StyledProjectCardTitle>
+                                    Placeholder Title
+                                </StyledProjectCardTitle>
+                                <StyledProjectInformation>
+                                    Apparel store uses technologies such as etc etc.
+                                </StyledProjectInformation>
+                                <StyledReadMore>
+                                    Read More
+                                </StyledReadMore>
+                                <StyledGithubLink>
+                                    Github
+                                </StyledGithubLink>
+                            </StyledCardHoverContainer>
+                        </StyledProjectCard>
+                        <StyledProjectCard>
+                            <StyledProjectCardImage src={projectPlaceholder}/>
+                            <StyledCardHoverContainer>
+                                <StyledProjectCardTitle>
+                                    Placeholder Title
+                                </StyledProjectCardTitle>
+                                <StyledProjectInformation>
+                                    Apparel store uses technologies such as etc etc.
+                                </StyledProjectInformation>
+                                <StyledReadMore>
+                                    Read More
+                                </StyledReadMore>
+                                <StyledGithubLink>
+                                    Github
+                                </StyledGithubLink>
+                            </StyledCardHoverContainer>
+                        </StyledProjectCard>
+                    </>
+                )
+            }
+        }
+    }
 
     const SectionContainer = () => {
         return (
             <StyledSectionContainer>
-                <StyledSectionSwitcher>
+                <StyledSectionSwitcher onClick={() => sectionSwitchHandler()}>
                     <StyledSectionIconContainer>
                         <FontAwesomeIcon icon={faAngleRight} size="4x" />
                     </StyledSectionIconContainer>
@@ -22,42 +114,7 @@ export const ProjectsContainer = () => {
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
-                <StyledProjectCard>
-                    <StyledProjectCardImage src={projectPlaceholder}/>
-                    <StyledCardHoverContainer>
-                        <StyledProjectCardTitle>
-                            Apparel Store
-                        </StyledProjectCardTitle>
-                        <StyledProjectInformation>
-                            Apparel store uses technologies such as etc etc.
-                        </StyledProjectInformation>
-                        <StyledReadMore>
-                            Read More
-                        </StyledReadMore>
-                        <StyledGithubLink>
-                            Github
-                        </StyledGithubLink>
-                    </StyledCardHoverContainer>
-                </StyledProjectCard>
-                <StyledProjectCard>
-                    <StyledProjectCardImage src={projectPlaceholder}/>
-                    <StyledCardHoverContainer>
-                        <StyledProjectCardTitle>
-                            Animation Project
-                        </StyledProjectCardTitle>
-                        <StyledProjectInformation>
-                            Animation project is a product of etc etc etc
-                            Animation project is a product of etc etc etc
-                            Animation project is a product of etc etc etc
-                        </StyledProjectInformation>
-                        <StyledReadMore>
-                            Read More
-                        </StyledReadMore>
-                        <StyledGithubLink>
-                            Github
-                        </StyledGithubLink>
-                    </StyledCardHoverContainer>
-                </StyledProjectCard>
+                <ProjectSection />
             </StyledSectionContainer>
         )
     }
@@ -70,6 +127,7 @@ export const ProjectsContainer = () => {
         )
     }
 
+    // Main
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
             <SectionContainer />

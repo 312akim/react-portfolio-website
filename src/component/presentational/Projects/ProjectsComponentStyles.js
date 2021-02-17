@@ -26,6 +26,20 @@ export const hoverCardBotFadeAnim = keyframes`
     }
 `
 
+export const hoverSwitcherAnim = keyframes`
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+
+    100%: {
+        transform: translateX(0px);
+    }
+`
+
 // Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
@@ -49,8 +63,9 @@ export const StyledSectionSwitcher = styles.div`
     :hover {
         background: black;
     }
-
+    
     :hover div {
+        animation: ${hoverSwitcherAnim} 1.5s linear infinite;
         color: white;
     }
 `
