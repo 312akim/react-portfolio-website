@@ -42,7 +42,7 @@ export const hoverSwitcherAnim = keyframes`
 
 export const entranceProjectCard = keyframes`
     0% {
-        transform: translateX(-80vw);
+        transform: translateX(-75vw);
     }
 
     100%: {
@@ -52,7 +52,7 @@ export const entranceProjectCard = keyframes`
 
 export const entranceAltProjectCard = keyframes`
     0% {
-        transform: translateX(80vw);
+        transform: translateX(75vw);
     }
 
     100%: {
