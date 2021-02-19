@@ -4,7 +4,7 @@ import { StyledSectionComponent } from '../../../shared/sharedComponents/Section
 import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionIconContainer, StyledSectionSwitcher } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 export const ProjectsContainer = () => {
 
@@ -103,14 +103,30 @@ export const ProjectsContainer = () => {
         }
     }
 
-    const SectionContainer = () => {
-        return (
-            <StyledSectionContainer>
+    const SectionSwitcher = () => {
+        if (section) {
+            return (
                 <StyledSectionSwitcher onClick={() => sectionSwitchHandler()}>
                     <StyledSectionIconContainer>
                         <FontAwesomeIcon icon={faAngleRight} size="4x" />
                     </StyledSectionIconContainer>
                 </StyledSectionSwitcher>
+            )
+        } else {
+            return (
+                <StyledSectionSwitcher onClick={() => sectionSwitchHandler()}>
+                    <StyledSectionIconContainer>
+                        <FontAwesomeIcon icon={faAngleLeft} size="4x" />
+                    </StyledSectionIconContainer>
+                </StyledSectionSwitcher>
+            )
+        }
+    }
+
+    const SectionContainer = () => {
+        return (
+            <StyledSectionContainer>
+                <SectionSwitcher />
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
