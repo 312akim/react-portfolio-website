@@ -106,7 +106,7 @@ export const ProjectsContainer = () => {
     const SectionSwitcher = () => {
         if (section) {
             return (
-                <StyledSectionSwitcher onClick={() => sectionSwitchHandler()}>
+                <StyledSectionSwitcher position={'0%'} onClick={() => sectionSwitchHandler()}>
                     <StyledSectionIconContainer>
                         <FontAwesomeIcon icon={faAngleRight} size="4x" />
                     </StyledSectionIconContainer>
@@ -114,7 +114,7 @@ export const ProjectsContainer = () => {
             )
         } else {
             return (
-                <StyledSectionSwitcher onClick={() => sectionSwitchHandler()}>
+                <StyledSectionSwitcher position={'85%'} onClick={() => sectionSwitchHandler()}>
                     <StyledSectionIconContainer>
                         <FontAwesomeIcon icon={faAngleLeft} size="4x" />
                     </StyledSectionIconContainer>

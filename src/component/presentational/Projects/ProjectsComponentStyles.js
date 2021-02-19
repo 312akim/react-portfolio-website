@@ -60,6 +60,16 @@ export const entranceAltProjectCard = keyframes`
     }
 `
 
+export const fadeInProjectSwitcher = keyframes`
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+`
+
 // Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
@@ -87,7 +97,9 @@ export const StyledSectionSwitcher = styles.div`
     height: 100vh;
     width: 15%;
     background: ${COLORS.primaryDark};
-    right: 0;
+    right: ${props => props.position};
+    z-index: 1;
+    animation: ${fadeInProjectSwitcher} 1s linear;
 
     :hover {
         background: black;
