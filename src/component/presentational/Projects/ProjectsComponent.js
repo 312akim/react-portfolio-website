@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionIconContainer, StyledSectionSwitcher } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +20,7 @@ export const ProjectsContainer = () => {
     const ProjectSection = () => {
         if (section) {
             return (
-                <>
+                <StyledProjectCardsContainer>
                     <StyledProjectCard>
                         <StyledProjectCardImage src={projectPlaceholder}/>
                         <StyledCardHoverContainer>
@@ -57,12 +57,12 @@ export const ProjectsContainer = () => {
                             </StyledGithubLink>
                         </StyledCardHoverContainer>
                     </StyledProjectCard>
-                </>
+                </StyledProjectCardsContainer>
             )
         } else {
             if (!section) {
                 return (
-                    <>
+                    <StyledAltProjectCardsContainer>
                         <StyledProjectCard>
                             <StyledProjectCardImage src={projectPlaceholder}/>
                             <StyledCardHoverContainer>
@@ -97,7 +97,7 @@ export const ProjectsContainer = () => {
                                 </StyledGithubLink>
                             </StyledCardHoverContainer>
                         </StyledProjectCard>
-                    </>
+                    </StyledAltProjectCardsContainer>
                 )
             }
         }

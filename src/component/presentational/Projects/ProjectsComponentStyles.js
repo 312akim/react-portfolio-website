@@ -40,17 +40,46 @@ export const hoverSwitcherAnim = keyframes`
     }
 `
 
+export const entranceProjectCard = keyframes`
+    0% {
+        transform: translateX(-80vw);
+    }
+
+    100%: {
+        transform: translateX(0px);
+    }
+`
+
+export const entranceAltProjectCard = keyframes`
+    0% {
+        transform: translateX(80vw);
+    }
+
+    100%: {
+        transform: translateX(0px);
+    }
+`
+
 // Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
 `
 
 export const StyledSectionIconContainer = styles.div`
-
     display: inline-block;
     color: black;
     height: 100vh;
     margin-top: 47vh;
+`
+
+export const StyledProjectCardsContainer = styles.div`
+    background: ${COLORS.primaryDark};
+    animation: ${entranceProjectCard} 0.7s linear;
+`
+
+export const StyledAltProjectCardsContainer = styles.div`
+    background: ${COLORS.primaryDark};
+    animation: ${entranceAltProjectCard} 0.7s linear;
 `
 
 export const StyledSectionSwitcher = styles.div`
