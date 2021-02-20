@@ -118,13 +118,14 @@ export const StyledModalContainer = styles.div`
 export const StyledSectionHeader = styles.h1`
     height: 10vh;
     margin: 0;
+    padding-top: 4vh;
 `
 
 export const StyledProjectCard = styles.div`
     position: relative;
     width: 70%;
     height: 37vh;
-    margin: 0 auto 2vh auto;
+    margin: 0 auto 5vh auto;
     border: 1px solid black;
 `
 
