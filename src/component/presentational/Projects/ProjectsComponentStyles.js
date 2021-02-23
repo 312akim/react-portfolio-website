@@ -70,9 +70,20 @@ export const fadeInProjectSwitcher = keyframes`
     }
 `
 
+export const fadeInProjectModal = keyframes`
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+`
+
 // Components
 export const StyledSectionContainer = styles.div`
     text-align: center;
+    position: relative;
 `
 
 export const StyledSectionIconContainer = styles.div`
@@ -109,10 +120,6 @@ export const StyledSectionSwitcher = styles.div`
         animation: ${hoverSwitcherAnim} 1.5s linear infinite;
         color: white;
     }
-`
-
-export const StyledModalContainer = styles.div`
-
 `
 
 export const StyledSectionHeader = styles.h1`
@@ -200,9 +207,24 @@ export const StyledCardHoverContainer = styles.div`
         }
     }
 `
+//Project Modals
+export const StyledModalContainer = styles.div`
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -15vw;
+    width: 100vw;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+
+    animation: ${fadeInProjectModal} 1s linear;
+`
 
 export const StyledModalHero = styles.div`
-
+    color: red;
+    height: 80vh;
+    background: orange;
+    margin: 7.5% 15% 7.5% 15%;
 `
 
 export const StyledModalHeroTitle = styles.div`
@@ -217,6 +239,6 @@ export const StyledModalSubHeader = styles.div`
 
 `
 
-export const StyledMoalSubText = styles.div`
+export const StyledModalSubText = styles.div`
 
 `

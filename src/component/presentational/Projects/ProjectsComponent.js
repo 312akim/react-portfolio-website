@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionHeader, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero } from './ProjectsComponentStyles';
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -11,9 +11,16 @@ export const ProjectsContainer = () => {
     //Used to change visual of Section Switcher depending on state
     const [section, setSection]  = useState(true);
 
+    //State to represent which project modal to show.
+    const [showModal, setShowModal] = useState(0);
+
     const sectionSwitchHandler = (e) => {
         setSection(!section);
         console.log("Section changed to: " + section)
+    }
+
+    const projectModalSwitcher = (state) => {
+        setShowModal(state);
     }
 
     // Which projects page to display
@@ -30,7 +37,7 @@ export const ProjectsContainer = () => {
                             <StyledProjectInformation>
                                 Responsive SPA e-commerce apparel web store meant to act as a template for smaller shops. Planned future integration with shopify lite to enable live sales.
                             </StyledProjectInformation>
-                            <StyledReadMore>
+                            <StyledReadMore onClick={() => projectModalSwitcher(1)}>
                                 Read More
                             </StyledReadMore>
                             <StyledGithubLink 
@@ -50,7 +57,7 @@ export const ProjectsContainer = () => {
                             <StyledProjectInformation>
                                 A playground website displaying various animations and user experience concepts.
                             </StyledProjectInformation>
-                            <StyledReadMore>
+                            <StyledReadMore onClick={() => projectModalSwitcher(2)}>
                                 Read More
                             </StyledReadMore>
                             <StyledGithubLink 
@@ -76,7 +83,7 @@ export const ProjectsContainer = () => {
                                 <StyledProjectInformation>
                                     Overview of this website, my personal portfolio website.
                                 </StyledProjectInformation>
-                                <StyledReadMore>
+                                <StyledReadMore onClick={() => projectModalSwitcher(3)}>
                                     Read More
                                 </StyledReadMore>
                                 <StyledGithubLink 
@@ -96,7 +103,7 @@ export const ProjectsContainer = () => {
                                 <StyledProjectInformation>
                                     Apparel store uses technologies such as etc etc.
                                 </StyledProjectInformation>
-                                <StyledReadMore>
+                                <StyledReadMore onClick={() => projectModalSwitcher(4)}>
                                     Read More
                                 </StyledReadMore>
                                 <StyledGithubLink 
@@ -113,6 +120,7 @@ export const ProjectsContainer = () => {
         }
     }
 
+    // Project Section Display Switcher
     const SectionSwitcher = () => {
         if (section) {
             return (
@@ -133,23 +141,68 @@ export const ProjectsContainer = () => {
         }
     }
 
-    const SectionContainer = () => {
-        return (
-            <StyledSectionContainer>
-                <SectionSwitcher />
-                <StyledSectionHeader>
-                    Projects
-                </StyledSectionHeader>
-                <ProjectSection />
-            </StyledSectionContainer>
-        )
+    // Modal Display
+    const ModalDisplay = () => {
+        switch(showModal) {
+            case 0:
+                return (
+                    <div></div>
+                )
+            
+            case 1:
+                return (
+                    <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 1111
+                        </StyledModalHero>
+                    </StyledModalContainer>
+                )
+
+            case 2:
+                return (
+                    <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 2222
+                        </StyledModalHero>
+                    </StyledModalContainer>
+                )
+
+            case 3:
+                return (
+                    <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 3333
+                        </StyledModalHero>
+                    </StyledModalContainer>
+                )
+
+            case 4:
+                return (
+                    <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 4444
+                        </StyledModalHero>
+                    </StyledModalContainer>
+                )
     }
 
-    const ProjectModal = () => {
-        return (
-            <StyledModalContainer>
+    }
+    
 
-            </StyledModalContainer>
+
+    // Body
+    const SectionContainer = () => {
+        return (
+            <>
+                <SectionSwitcher />
+                <StyledSectionContainer>
+                    {ModalDisplay()}
+                    <StyledSectionHeader>
+                        Projects
+                    </StyledSectionHeader>
+                    <ProjectSection />
+                </StyledSectionContainer>
+            </>
         )
     }
 
