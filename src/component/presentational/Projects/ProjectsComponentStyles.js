@@ -140,7 +140,7 @@ export const StyledProjectCardImage = styles.img`
     }
 `
 export const StyledProjectCardTitle = styles.h2`
-    position: block;
+    display: block;
     width: 40vw;
     margin-left: calc(50% - 20vw);
     color: white;
@@ -158,13 +158,14 @@ export const StyledProjectInformation = styles.div`
 
 export const StyledReadMore = styles.button`
     height: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 5%;
     color: white;
     background: blue;
 `
 
-export const StyledGithubLink = styles.div`
+export const StyledGithubLink = styles.a`
+    display: block;
     height: 15%;
     margin-bottom: 2vh;
     color: white;

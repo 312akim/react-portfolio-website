@@ -28,12 +28,15 @@ export const ProjectsContainer = () => {
                                 Apparel Store
                             </StyledProjectCardTitle>
                             <StyledProjectInformation>
-                                Apparel store uses technologies such as etc etc.
+                                Responsive SPA e-commerce apparel web store meant to act as a template for smaller shops. Planned future integration with shopify lite to enable live sales.
                             </StyledProjectInformation>
                             <StyledReadMore>
                                 Read More
                             </StyledReadMore>
-                            <StyledGithubLink>
+                            <StyledGithubLink 
+                                href="https://github.com/312akim/apparel-store-mern"
+                                target="_blank"
+                            >
                                 Github
                             </StyledGithubLink>
                         </StyledCardHoverContainer>
@@ -42,17 +45,18 @@ export const ProjectsContainer = () => {
                         <StyledProjectCardImage src={projectPlaceholder}/>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
-                                Animation Project
+                                Animation/UX Concepts
                             </StyledProjectCardTitle>
                             <StyledProjectInformation>
-                                Animation project is a product of etc etc etc
-                                Animation project is a product of etc etc etc
-                                Animation project is a product of etc etc etc
+                                A playground website displaying various animations and user experience concepts.
                             </StyledProjectInformation>
                             <StyledReadMore>
                                 Read More
                             </StyledReadMore>
-                            <StyledGithubLink>
+                            <StyledGithubLink 
+                                href="https://github.com/312akim/apparel-store-mern"
+                                target="_blank"
+                            >
                                 Github
                             </StyledGithubLink>
                         </StyledCardHoverContainer>
@@ -67,15 +71,18 @@ export const ProjectsContainer = () => {
                             <StyledProjectCardImage src={projectPlaceholder}/>
                             <StyledCardHoverContainer>
                                 <StyledProjectCardTitle>
-                                    Placeholder Title
+                                    Portfolio Website
                                 </StyledProjectCardTitle>
                                 <StyledProjectInformation>
-                                    Apparel store uses technologies such as etc etc.
+                                    Overview of this website, my personal portfolio website.
                                 </StyledProjectInformation>
                                 <StyledReadMore>
                                     Read More
                                 </StyledReadMore>
-                                <StyledGithubLink>
+                                <StyledGithubLink 
+                                    href="https://github.com/312akim/apparel-store-mern"
+                                    target="_blank"
+                            >
                                     Github
                                 </StyledGithubLink>
                             </StyledCardHoverContainer>
@@ -92,7 +99,10 @@ export const ProjectsContainer = () => {
                                 <StyledReadMore>
                                     Read More
                                 </StyledReadMore>
-                                <StyledGithubLink>
+                                <StyledGithubLink 
+                                    href="https://github.com/312akim/apparel-store-mern"
+                                    target="_blank"
+                                >
                                     Github
                                 </StyledGithubLink>
                             </StyledCardHoverContainer>
