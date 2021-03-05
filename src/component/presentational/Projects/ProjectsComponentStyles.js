@@ -76,7 +76,7 @@ export const fadeInProjectModal = keyframes`
     }
 
     100% {
-        opacity: 0.7;
+        opacity: 1;
     }
 `
 
@@ -120,12 +120,6 @@ export const StyledSectionSwitcher = styles.div`
         animation: ${hoverSwitcherAnim} 1.5s linear infinite;
         color: white;
     }
-`
-
-export const StyledSectionHeader = styles.h1`
-    height: 10vh;
-    margin: 0;
-    padding-top: 4vh;
 `
 
 export const StyledProjectCard = styles.div`

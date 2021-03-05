@@ -8,3 +8,9 @@ export const StyledSectionComponent = styles.div`
         padding: 0 15%;
     }
 `
+
+export const StyledSectionHeader = styles.h1`
+    height: 10vh;
+    margin: 0;
+    padding-top: 4vh;
+`

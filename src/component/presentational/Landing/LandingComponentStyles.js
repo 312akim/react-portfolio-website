@@ -104,9 +104,9 @@ export const StyledDialButtonContainer = styles.div`
 
 export const StyledDialButton = styles.button`
     display: inline-block;
-    margin-left: 6vw;
+    margin-left: 3vw;
     color: white;
-    width: 14vw;
+    width: 10vw;
     background: black;
     height: 80%;
 `

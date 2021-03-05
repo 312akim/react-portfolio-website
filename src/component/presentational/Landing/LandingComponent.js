@@ -98,6 +98,9 @@ export const LandingComponent = () => {
                     <ReactScrollLink title="About" id="aboutSection"/>
                 </StyledDialButton>
                 <StyledDialButton>
+                    <ReactScrollLink title="Activity" id="activitySection"/>
+                </StyledDialButton>
+                <StyledDialButton>
                     <ReactScrollLink title="Contact" id="contactSection"/>
                 </StyledDialButton>
             </StyledDialButtonContainer>

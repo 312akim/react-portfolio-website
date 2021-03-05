@@ -2,11 +2,11 @@ import React from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 
-export const ContactComponent = () => {
+export const ActivityComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
             <StyledSectionHeader>
-                Contact Me
+                Recent Activity
             </StyledSectionHeader>
         </StyledSectionComponent>
     )
