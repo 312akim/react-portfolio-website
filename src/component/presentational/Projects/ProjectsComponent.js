@@ -35,7 +35,7 @@ export const ProjectsContainer = () => {
                                 Apparel Store
                             </StyledProjectCardTitle>
                             <StyledProjectInformation>
-                                Responsive SPA e-commerce apparel web store meant to act as a template for smaller shops. Planned future integration with shopify lite to enable live sales.
+                                Responsive SPA e-commerce apparel web store meant to act as a template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
                             </StyledProjectInformation>
                             <StyledReadMore onClick={() => projectModalSwitcher(1)}>
                                 Read More
@@ -55,13 +55,13 @@ export const ProjectsContainer = () => {
                                 Animation/UX Concepts
                             </StyledProjectCardTitle>
                             <StyledProjectInformation>
-                                A playground website displaying various animations and user experience concepts.
+                                A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
                             </StyledProjectInformation>
                             <StyledReadMore onClick={() => projectModalSwitcher(2)}>
                                 Read More
                             </StyledReadMore>
                             <StyledGithubLink 
-                                href="https://github.com/312akim/apparel-store-mern"
+                                href="https://github.com/312akim/"
                                 target="_blank"
                             >
                                 Github
@@ -87,7 +87,7 @@ export const ProjectsContainer = () => {
                                     Read More
                                 </StyledReadMore>
                                 <StyledGithubLink 
-                                    href="https://github.com/312akim/apparel-store-mern"
+                                    href="https://github.com/312akim/react-portfolio-website"
                                     target="_blank"
                             >
                                     Github
@@ -98,16 +98,16 @@ export const ProjectsContainer = () => {
                             <StyledProjectCardImage src={projectPlaceholder}/>
                             <StyledCardHoverContainer>
                                 <StyledProjectCardTitle>
-                                    Placeholder Title
+                                    FitBrews React Website
                                 </StyledProjectCardTitle>
                                 <StyledProjectInformation>
-                                    Apparel store uses technologies such as etc etc.
+                                    A healthy drink recipe created under Nucamp's Bootcamp. I partnered with a classmate to code and design through weekly meetings. Array methods were heavily utilized.
                                 </StyledProjectInformation>
                                 <StyledReadMore onClick={() => projectModalSwitcher(4)}>
                                     Read More
                                 </StyledReadMore>
                                 <StyledGithubLink 
-                                    href="https://github.com/312akim/apparel-store-mern"
+                                    href="https://github.com/stevenCsaunders/fit-brews-react"
                                     target="_blank"
                                 >
                                     Github
