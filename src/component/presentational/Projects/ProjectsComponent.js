@@ -89,7 +89,7 @@ export const ProjectsContainer = () => {
                                 <StyledGithubLink 
                                     href="https://github.com/312akim/react-portfolio-website"
                                     target="_blank"
-                            >
+                                >
                                     Github
                                 </StyledGithubLink>
                             </StyledCardHoverContainer>
