@@ -11,7 +11,7 @@ export const StyledSectionComponent = styles.div`
 `
 
 export const StyledSectionHeader = styles.h1`
-    height: 10vh;
+    height: 8vh;
     margin: 0;
     padding-top: 4vh;
 `
@@ -19,12 +19,12 @@ export const StyledSectionHeader = styles.h1`
 export const StyledSectionSubheader = styles.h2`
     height: 4vh;
     margin: 0;
-    padding-top: 2vh;
 `
 
 export const StyledSectionText = styles.p`
     font-size: 1.2rem;
     width: 70%;
+    margin-top: 1vh;
     margin-left: 15%;
     text-align: left;
 `
