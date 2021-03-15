@@ -5,18 +5,36 @@ import styles, {keyframes} from 'styled-components';
     // Animations
 //Yellow front face rotateY(90deg);
 //Red front face    rotateY(0deg);      rotateX(0deg);
-//Blue front face   rotateY(-45deg);    rotateX(90deg);        bottom: 20vw;        left: 5vw;
-const cubeAnimation = keyframes`
+//Blue front face   rotateY(0deg);    rotateX(90deg);        bottom: 20vw;        left: 5vw;
+const cubeAnimation = (transform) => keyframes`
     0% {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+
+    20% {
+        transform: ${transform};
         bottom: 0;
         left: 0;
     }
+
+    80% {
+        transform: ${transform};
+        bottom: 0;
+        left: 0;
+    }
+
     100% {
-        transform: rotateY(0deg);
-        transform: rotateX(0deg);
-        bottom: 20vw;
-        left: 5vw;
-        transform: translateZ(500px);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transform: rotateX(45deg) rotateY(45deg);
     }
 `
 
@@ -49,11 +67,8 @@ export const StyledCube = styles.div`
     position: relative;
     transform-style: preserve-3d;
     transform: translateZ(-100px);
-    transform: rotateX(45deg) rotateY(45deg);
-    
-    :hover {
-        animation: ${cubeAnimation} 5s;
-    }
+    transform: ${props => props.transform};
+    animation: ${props => cubeAnimation(props.transform)} 18s linear;
 `
 
 export const StyledCubeFace = styles.div`

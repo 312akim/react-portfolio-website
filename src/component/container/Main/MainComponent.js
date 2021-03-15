@@ -10,7 +10,7 @@ import { NavBar } from '../NavBar/NavComponent';
 const MainComponent = () => {
     
 
-    // React-scroll only seems to work on id's set on divs.
+    // React-scroll only seems to work on id props set on divs.
     return (
         <StyledMainContainer>
 
