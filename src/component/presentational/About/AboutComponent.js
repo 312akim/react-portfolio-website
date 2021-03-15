@@ -60,7 +60,7 @@ export const AboutComponent = () => {
     }
 
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height='150vh'>
             <StyledSectionHeader>
                 About Me
             </StyledSectionHeader>

@@ -3,12 +3,20 @@ import styles, {keyframes} from 'styled-components';
 
 
     // Animations
+//Yellow front face rotateY(90deg);
+//Red front face    rotateY(0deg);      rotateX(0deg);
+//Blue front face   rotateY(-45deg);    rotateX(90deg);        bottom: 20vw;        left: 5vw;
 const cubeAnimation = keyframes`
     0% {
-
+        bottom: 0;
+        left: 0;
     }
     100% {
-
+        transform: rotateY(0deg);
+        transform: rotateX(0deg);
+        bottom: 20vw;
+        left: 5vw;
+        transform: translateZ(500px);
     }
 `
 
@@ -42,13 +50,16 @@ export const StyledCube = styles.div`
     transform-style: preserve-3d;
     transform: translateZ(-100px);
     transform: rotateX(45deg) rotateY(45deg);
+    
+    :hover {
+        animation: ${cubeAnimation} 5s;
+    }
 `
 
 export const StyledCubeFace = styles.div`
     position: absolute;
     width: 30vw;
     height: 30vw;
-    opacity: 0.5;
     transform: ${props => props.transform} translateZ(15vw);
     background: ${props => props.backgroundColor};
 `
