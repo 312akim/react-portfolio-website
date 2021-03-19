@@ -1,22 +1,69 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader, StyledSectionText  } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledAboutHero, StyledAboutCubeTextContainer, StyledCubeContainer, StyledCube, StyledCubeFace } from './AboutComponentStyles';
+import { StyledAboutHero, StyledAboutCubeTextContainer, StyledCubeContainer, StyledCube, StyledCubeFace,
+StyledBaseTimer, StyledBaseTimerSvg, StyledBaseTimerCircle, StyledBaseTimerPathElapsed, StyledBaseTimerClock } from './AboutComponentStyles';
+
+let animationTimer = 18000;
+let animationTimerSeconds = animationTimer/1000;
 
 export const AboutComponent = () => {
     const [cubeFace, setCubeFace] = useState(0);
+    const [cubeTimer, setCubeTimer] = useState(0);
     
+    useEffect(() => {
+        const timer = cubeTimer > 0 && setInterval(() => setCubeTimer(cubeTimer-1), 1000)
+    return () => clearInterval(timer);
+    }, [cubeTimer]);
+
+    //Currently if you cancel face animation, will hit 18 seconds later if looking at other face.
     const cubeFaceSetter = (n) => {
         setCubeFace(n);
+        setCubeTimer(animationTimerSeconds);
+        console.log("Timer should be set to 18: " + cubeTimer);
         
-        //Should be set to same time as StyledCube animation timer in component styles
-        setTimeout(() => setCubeFace(0), 18000);
+        
+        setTimeout(() => setCubeFace(0), animationTimer);
     }
 
-    const CubeFaceTimer = () => {
+    const CubeFaceTimerComponent = () => {
         return (
-            <div>Timer 18 sec</div>
+            <StyledBaseTimer>
+                <StyledBaseTimerSvg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <StyledBaseTimerCircle>
+                    <StyledBaseTimerPathElapsed cx="50" cy="50" r="45" />
+                    </StyledBaseTimerCircle>
+                </StyledBaseTimerSvg>
+                <StyledBaseTimerClock>
+                    {formatTimeLeft(cubeTimer)}
+                </StyledBaseTimerClock>
+            </StyledBaseTimer>
         )
+    }
+
+    const formatTimeLeft = (time) => {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        // If the value of seconds is less than 10, then display seconds with a leading zero
+        if (seconds < 10) {
+          seconds = `0${seconds}`;
+        }
+        // The output in MM:SS format
+        return `${minutes}:${seconds}`;
+    }
+
+    const timerCounter = () => {
+        console.log('start');
+        setCubeTimer(animationTimerSeconds);
+        while (cubeTimer > 0) {
+            setTimeout(
+                () => {
+                setCubeTimer(cubeTimer - 1);
+                console.log("Cube Timer: " + cubeTimer);
+            }, 1000)
+        }
+        return 'finished';
     }
 
     const CubePositionComponent = () => {
@@ -28,7 +75,7 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateX(45deg) rotateY(45deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimer />
+                        <CubeFaceTimerComponent />
                     </>
                 )
             case 1:
@@ -38,7 +85,7 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(0deg) rotateX(0deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimer />
+                        <CubeFaceTimerComponent />
                     </>
                 )
             case 2:
@@ -48,7 +95,7 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(90deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimer />
+                        <CubeFaceTimerComponent />
                     </>
                 )
             case 3:
@@ -58,7 +105,7 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(0deg) rotateX(90deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimer />
+                        <CubeFaceTimerComponent />
                     </>
                 )
         }

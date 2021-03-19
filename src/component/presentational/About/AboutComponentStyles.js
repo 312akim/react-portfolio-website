@@ -78,3 +78,35 @@ export const StyledCubeFace = styles.div`
     transform: ${props => props.transform} translateZ(15vw);
     background: ${props => props.backgroundColor};
 `
+
+//Timer
+export const StyledBaseTimer = styles.div`
+    position: relative;
+    height: 300px;
+    width: 300px;
+`
+
+export const StyledBaseTimerSvg = styles.svg`
+
+`
+
+export const StyledBaseTimerCircle = styles.g`
+    fill: none;
+    stroke: none;
+`
+
+export const StyledBaseTimerPathElapsed = styles.circle`
+    stroke-width: 7px;
+    stroke: grey;
+`
+
+export const StyledBaseTimerClock = styles.div`
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+`
