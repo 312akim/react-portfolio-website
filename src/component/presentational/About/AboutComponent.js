@@ -12,19 +12,23 @@ export const AboutComponent = () => {
     const [cubeFace, setCubeFace] = useState(0);
     const [cubeTimer, setCubeTimer] = useState(0);
     
+    // Counts down timer when set to > 0
     useEffect(() => {
         const timer = cubeTimer > 0 && setInterval(() => setCubeTimer(cubeTimer-1), 1000)
     return () => clearInterval(timer);
     }, [cubeTimer]);
 
-    //Currently if you cancel face animation, will hit 18 seconds later if looking at other face.
+    // After specified time, set cubeFace back to 0 after cubeFace state has been changed
+    useEffect(() => {
+        const resetFace = cubeFace != 0 && setTimeout(() => setCubeFace(0), animationTimer)
+            return (
+                () => clearTimeout(resetFace)
+            );
+    }, [cubeFace]);
+    
     const cubeFaceSetter = (n) => {
         setCubeFace(n);
         setCubeTimer(animationTimerSeconds);
-        console.log("Timer should be set to 18: " + cubeTimer);
-        
-        
-        setTimeout(() => setCubeFace(0), animationTimer);
     }
 
     const CubeFaceTimerComponent = () => {
@@ -53,19 +57,6 @@ export const AboutComponent = () => {
         return `${minutes}:${seconds}`;
     }
 
-    const timerCounter = () => {
-        console.log('start');
-        setCubeTimer(animationTimerSeconds);
-        while (cubeTimer > 0) {
-            setTimeout(
-                () => {
-                setCubeTimer(cubeTimer - 1);
-                console.log("Cube Timer: " + cubeTimer);
-            }, 1000)
-        }
-        return 'finished';
-    }
-
     const CubePositionComponent = () => {
         switch (cubeFace) {
             case 0:
@@ -75,7 +66,6 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateX(45deg) rotateY(45deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimerComponent />
                     </>
                 )
             case 1:
@@ -85,7 +75,6 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(0deg) rotateX(0deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimerComponent />
                     </>
                 )
             case 2:
@@ -95,7 +84,6 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(90deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimerComponent />
                     </>
                 )
             case 3:
@@ -105,7 +93,6 @@ export const AboutComponent = () => {
                         <StyledCube transform='rotateY(0deg) rotateX(90deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
-                        <CubeFaceTimerComponent />
                     </>
                 )
         }
@@ -196,6 +183,7 @@ export const AboutComponent = () => {
             <StyledAboutHero src=''/>
 
             <CubeComponent />
+            <CubeFaceTimerComponent />
         </StyledSectionComponent>
     )
 }

@@ -16,13 +16,13 @@ const cubeAnimation = (transform) => keyframes`
         transform: rotateX(45deg) rotateY(45deg);
     }
 
-    20% {
+    10% {
         transform: ${transform};
         bottom: 0;
         left: 0;
     }
 
-    80% {
+    90% {
         transform: ${transform};
         bottom: 0;
         left: 0;
