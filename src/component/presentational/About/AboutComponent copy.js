@@ -1,14 +1,60 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader, StyledSectionText  } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledAboutHero, StyledAboutCubeTextContainer, StyledCubeContainer, StyledCube, StyledCubeFace} from './AboutComponentStyles';
+import { StyledAboutHero, StyledAboutCubeTextContainer, StyledCubeContainer, StyledCube, StyledCubeFace,
+StyledBaseTimer, StyledBaseTimerSvg, StyledBaseTimerCircle, StyledBaseTimerPathElapsed, StyledBaseTimerClock } from './AboutComponentStyles';
+
+let animationTimer = 18000;
+let animationTimerSeconds = animationTimer/1000;
 
 export const AboutComponent = () => {
-    const [prevFace, setPrevFace] = useState(0);
     const [cubeFace, setCubeFace] = useState(0);
+    const [cubeTimer, setCubeTimer] = useState(0);
+    
+    // Counts down timer when set to > 0
+    useEffect(() => {
+        const timer = cubeTimer > 0 && setInterval(() => setCubeTimer(cubeTimer-1), 1000)
+    return () => clearInterval(timer);
+    }, [cubeTimer]);
 
+    // After specified time, set cubeFace back to 0 after cubeFace state has been changed
+    useEffect(() => {
+        const resetFace = cubeFace != 0 && setTimeout(() => setCubeFace(0), animationTimer)
+            return (
+                () => clearTimeout(resetFace)
+            );
+    }, [cubeFace]);
+    
     const cubeFaceSetter = (n) => {
         setCubeFace(n);
+        setCubeTimer(animationTimerSeconds);
+    }
+
+    const CubeFaceTimerComponent = () => {
+        return (
+            <StyledBaseTimer>
+                <StyledBaseTimerSvg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <StyledBaseTimerCircle>
+                    <StyledBaseTimerPathElapsed cx="50" cy="50" r="45" />
+                    </StyledBaseTimerCircle>
+                </StyledBaseTimerSvg>
+                <StyledBaseTimerClock>
+                    {formatTimeLeft(cubeTimer)}
+                </StyledBaseTimerClock>
+            </StyledBaseTimer>
+        )
+    }
+
+    const formatTimeLeft = (time) => {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        // If the value of seconds is less than 10, then display seconds with a leading zero
+        if (seconds < 10) {
+          seconds = `0${seconds}`;
+        }
+        // The output in MM:SS format
+        return `${minutes}:${seconds}`;
     }
 
     const CubePositionComponent = () => {
@@ -17,7 +63,7 @@ export const AboutComponent = () => {
                 return (
                     //Default
                     <>
-                        <StyledCube transform='rotateX(0deg) rotateY(0deg)'>
+                        <StyledCube transform='rotateX(45deg) rotateY(45deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
                     </>
@@ -35,7 +81,7 @@ export const AboutComponent = () => {
                 return (
                     //Yellow
                     <>
-                        <StyledCube transform='rotateY(-90deg)'>
+                        <StyledCube transform='rotateY(90deg)'>
                             <InnerCubeComponent />
                         </StyledCube>
                     </>
@@ -58,7 +104,7 @@ export const AboutComponent = () => {
                 <StyledCubeFace 
                     transform='rotateY(0deg)' 
                     backgroundColor='red' 
-                    
+                    onMouseEnter={() => cubeFaceSetter(1)}
                     onMouseLeave={() => console.log('exited red')}
                 >
                     <StyledSectionSubheader>
@@ -72,9 +118,9 @@ export const AboutComponent = () => {
                     </StyledSectionText>
                 </StyledCubeFace>
                 <StyledCubeFace 
-                    transform='rotateY(90deg)' 
+                    transform='rotateY(-90deg)' 
                     backgroundColor='yellow'
-                    
+                    onMouseEnter={() => cubeFaceSetter(2)}
                     onMouseLeave={() => console.log('exited yellow')}
                 >
                     <StyledAboutCubeTextContainer height={'41vh'}>
@@ -100,9 +146,9 @@ export const AboutComponent = () => {
                     </StyledAboutCubeTextContainer>
                 </StyledCubeFace>
                 <StyledCubeFace 
-                    transform='rotateY(-180deg)' 
+                    transform='rotateX(-90deg)' 
                     backgroundColor='blue'
-                    
+                    onMouseEnter={() => cubeFaceSetter(3)}
                     onMouseLeave={() => console.log('exited blue')}
                 >
                     <StyledAboutCubeTextContainer height={'17vh'}>
@@ -135,18 +181,9 @@ export const AboutComponent = () => {
                 About Me
             </StyledSectionHeader>
             <StyledAboutHero src=''/>
-            <div>
-                <div onMouseEnter={() => cubeFaceSetter(1)}>
-1
-                </div>
-                <div onMouseEnter={() => cubeFaceSetter(2)}>
-2
-                </div>
-                <div onMouseEnter={() => cubeFaceSetter(3)}>
-3
-                </div>
-            </div>
+
             <CubeComponent />
+            <CubeFaceTimerComponent />
         </StyledSectionComponent>
     )
 }

@@ -6,7 +6,7 @@ import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
-export const ProjectsContainer = () => {
+export const ProjectsComponent = () => {
 
     //Used to change visual of Section Switcher depending on state
     const [section, setSection]  = useState(true);
@@ -148,7 +148,6 @@ export const ProjectsContainer = () => {
                 return (
                     <div></div>
                 )
-            
             case 1:
                 return (
                     <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
@@ -157,7 +156,6 @@ export const ProjectsContainer = () => {
                         </StyledModalHero>
                     </StyledModalContainer>
                 )
-
             case 2:
                 return (
                     <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
@@ -166,7 +164,6 @@ export const ProjectsContainer = () => {
                         </StyledModalHero>
                     </StyledModalContainer>
                 )
-
             case 3:
                 return (
                     <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
@@ -175,7 +172,6 @@ export const ProjectsContainer = () => {
                         </StyledModalHero>
                     </StyledModalContainer>
                 )
-
             case 4:
                 return (
                     <StyledModalContainer onClick={() => projectModalSwitcher(0)}>

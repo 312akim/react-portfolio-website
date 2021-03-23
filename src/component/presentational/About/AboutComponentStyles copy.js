@@ -3,12 +3,11 @@ import styles, {keyframes} from 'styled-components';
 
 
     // Animations
-//Yellow front face rotateY(-90deg);
+//Yellow front face rotateY(90deg);
 //Red front face    rotateY(0deg);      rotateX(0deg);
 //Blue front face   rotateY(0deg);    rotateX(90deg);        bottom: 20vw;        left: 5vw;
-const cubeAnimation = (prevTransform, transform) => keyframes`
+const cubeAnimation = (transform) => keyframes`
     0% {
-        transform: ${prevTransform}
         width: 100%;
         height: 100%;
         position: relative;
@@ -17,13 +16,18 @@ const cubeAnimation = (prevTransform, transform) => keyframes`
         transform: rotateX(45deg) rotateY(45deg);
     }
 
-    100% {
+    10% {
         transform: ${transform};
         bottom: 0;
         left: 0;
     }
-`
-/*
+
+    90% {
+        transform: ${transform};
+        bottom: 0;
+        left: 0;
+    }
+
     100% {
         width: 100%;
         height: 100%;
@@ -32,7 +36,7 @@ const cubeAnimation = (prevTransform, transform) => keyframes`
         transform: translateZ(-100px);
         transform: rotateX(45deg) rotateY(45deg);
     }
-`*/
+`
 
 
     // Components
@@ -64,7 +68,7 @@ export const StyledCube = styles.div`
     transform-style: preserve-3d;
     transform: translateZ(-100px);
     transform: ${props => props.transform};
-    animation: ${props => cubeAnimation(props.transform)} 2s linear;
+    animation: ${props => cubeAnimation(props.transform)} 18s linear;
 `
 
 export const StyledCubeFace = styles.div`
@@ -73,4 +77,36 @@ export const StyledCubeFace = styles.div`
     height: 30vw;
     transform: ${props => props.transform} translateZ(15vw);
     background: ${props => props.backgroundColor};
+`
+
+//Timer
+export const StyledBaseTimer = styles.div`
+    position: relative;
+    height: 300px;
+    width: 300px;
+`
+
+export const StyledBaseTimerSvg = styles.svg`
+
+`
+
+export const StyledBaseTimerCircle = styles.g`
+    fill: none;
+    stroke: none;
+`
+
+export const StyledBaseTimerPathElapsed = styles.circle`
+    stroke-width: 7px;
+    stroke: grey;
+`
+
+export const StyledBaseTimerClock = styles.div`
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
 `
