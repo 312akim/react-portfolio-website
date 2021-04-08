@@ -1,5 +1,5 @@
-import styles from 'styled-components';
+import styled from 'styled-components';
 
-export const StyledMainContainer = styles.div`
+export const StyledMainContainer = styled.div`
     background: white;
 `

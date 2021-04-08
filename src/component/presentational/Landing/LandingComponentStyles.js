@@ -1,4 +1,4 @@
-import styles, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
     // Animations
 
@@ -35,7 +35,7 @@ export const entranceAnimation = keyframes`
     // Components
     
 // New animation attempt
-export const StyledAnimationContainer = styles.div`
+export const StyledAnimationContainer = styled.div`
     display: block;
     height: 32vh;
     width: 94%;
@@ -48,7 +48,7 @@ export const StyledAnimationContainer = styles.div`
     }
 `
 
-export const StyledLandingAnimNav = styles.div`
+export const StyledLandingAnimNav = styled.div`
     height: 80%;
     width: 80%;
     background: red;
@@ -56,11 +56,11 @@ export const StyledLandingAnimNav = styles.div`
 `
 //New animation attempt end
 
-export const StyledNameContainer = styles.div`
+export const StyledNameContainer = styled.div`
     height: 18vh;
 `
 
-export const StyledMainHeader = styles.h1`
+export const StyledMainHeader = styled.h1`
     font-size: 64px;
     font-weight: 300;
     padding-right: 15%;
@@ -71,7 +71,7 @@ export const StyledMainHeader = styles.h1`
     }
 `
 
-export const StyledSubHeader = styles.h2`
+export const StyledSubHeader = styled.h2`
     font-size: 36px;
     font-weight: 700;
     padding-left: 15%;
@@ -83,7 +83,7 @@ export const StyledSubHeader = styles.h2`
 `
 
 
-export const StyledSelector = styles.img`
+export const StyledSelector = styled.img`
     display: inline-block;
     margin-right: 1vw;
     height: 6vh;
@@ -100,12 +100,12 @@ export const StyledSelector = styles.img`
     }
 `
 
-export const StyledDialButtonContainer = styles.div`
+export const StyledDialButtonContainer = styled.div`
     display: block;
     height: 6vh;
 `
 
-export const StyledDialButton = styles.button`
+export const StyledDialButton = styled.button`
     display: inline-block;
     margin-left: 3vw;
     color: white;
@@ -114,12 +114,12 @@ export const StyledDialButton = styles.button`
     height: 80%;
 `
 
-export const StyledTextContainer = styles.div`
+export const StyledTextContainer = styled.div`
     height: 43vh;
     text-align: left
 `
 
-export const StyledTextSection = styles.p`
+export const StyledTextSection = styled.p`
     font-size: 24px;
     padding-left: 15%;
     padding-right: 10%;

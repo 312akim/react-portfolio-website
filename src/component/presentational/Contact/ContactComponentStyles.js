@@ -1,22 +1,22 @@
 import COLORS from '../../../shared/design/colorTheme';
-import styles, {keyframes} from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
-export const StyledContactHeaderText = styles.div`
+export const StyledContactHeaderText = styled.div`
 
 `
 
-export const StyledContactLabel = styles.label`
+export const StyledContactLabel = styled.label`
     
 `
 
-export const StyledContactInput = styles.input`
+export const StyledContactInput = styled.input`
 
 `
 
-export const StyledContactTextarea = styles.textarea`
+export const StyledContactTextarea = styled.textarea`
 
 `
 
-export const StyledContactInputContainer = styles.div`
+export const StyledContactInputContainer = styled.div`
 
 `
