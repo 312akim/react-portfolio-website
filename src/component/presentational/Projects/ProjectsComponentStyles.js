@@ -1,4 +1,4 @@
-import styles, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import COLORS from '../../../shared/design/colorTheme';
 
 // Animations
@@ -81,29 +81,29 @@ export const fadeInProjectModal = keyframes`
 `
 
 // Components
-export const StyledSectionContainer = styles.div`
+export const StyledSectionContainer = styled.div`
     text-align: center;
     position: relative;
 `
 
-export const StyledSectionIconContainer = styles.div`
+export const StyledSectionIconContainer = styled.div`
     display: inline-block;
     color: black;
     height: 100vh;
     margin-top: 47vh;
 `
 
-export const StyledProjectCardsContainer = styles.div`
+export const StyledProjectCardsContainer = styled.div`
     background: ${COLORS.primaryDark};
     animation: ${entranceProjectCard} 0.7s linear;
 `
 
-export const StyledAltProjectCardsContainer = styles.div`
+export const StyledAltProjectCardsContainer = styled.div`
     background: ${COLORS.primaryDark};
     animation: ${entranceAltProjectCard} 0.7s linear;
 `
 
-export const StyledSectionSwitcher = styles.div`
+export const StyledSectionSwitcher = styled.div`
     position: absolute;
     height: 100vh;
     width: 15%;
@@ -122,7 +122,7 @@ export const StyledSectionSwitcher = styles.div`
     }
 `
 
-export const StyledProjectCard = styles.div`
+export const StyledProjectCard = styled.div`
     position: relative;
     width: 70%;
     height: 37vh;
@@ -131,7 +131,7 @@ export const StyledProjectCard = styles.div`
 `
 
 
-export const StyledProjectCardImage = styles.img`
+export const StyledProjectCardImage = styled.img`
     width: 100%;
     height: auto;
 
@@ -140,7 +140,7 @@ export const StyledProjectCardImage = styles.img`
         width: auto;
     }
 `
-export const StyledProjectCardTitle = styles.h2`
+export const StyledProjectCardTitle = styled.h2`
     display: block;
     width: 40vw;
     margin-left: calc(50% - 20vw);
@@ -149,7 +149,7 @@ export const StyledProjectCardTitle = styles.h2`
     background: blue;
 `
 
-export const StyledProjectInformation = styles.div`
+export const StyledProjectInformation = styled.div`
     height: 20%;
     width: 70%;
     margin: auto;
@@ -157,7 +157,7 @@ export const StyledProjectInformation = styles.div`
     color: white;
 `
 
-export const StyledReadMore = styles.button`
+export const StyledReadMore = styled.button`
     height: 10%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -165,14 +165,14 @@ export const StyledReadMore = styles.button`
     background: blue;
 `
 
-export const StyledGithubLink = styles.a`
+export const StyledGithubLink = styled.a`
     display: block;
     height: 15%;
     margin-bottom: 2vh;
     color: white;
 `
 
-export const StyledCardHoverContainer = styles.div`
+export const StyledCardHoverContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -202,7 +202,7 @@ export const StyledCardHoverContainer = styles.div`
     }
 `
 //Project Modals
-export const StyledModalContainer = styles.div`
+export const StyledModalContainer = styled.div`
     height: 100vh;
     position: absolute;
     top: 0;
@@ -214,25 +214,25 @@ export const StyledModalContainer = styles.div`
     animation: ${fadeInProjectModal} 1s linear;
 `
 
-export const StyledModalHero = styles.div`
+export const StyledModalHero = styled.div`
     color: red;
     height: 80vh;
     background: orange;
     margin: 7.5% 15% 7.5% 15%;
 `
 
-export const StyledModalHeroTitle = styles.div`
+export const StyledModalHeroTitle = styled.div`
 
 `
 
-export const StyledModalText = styles.div`
+export const StyledModalText = styled.div`
 
 `
 
-export const StyledModalSubHeader = styles.div`
+export const StyledModalSubHeader = styled.div`
 
 `
 
-export const StyledModalSubText = styles.div`
+export const StyledModalSubText = styled.div`
 
 `

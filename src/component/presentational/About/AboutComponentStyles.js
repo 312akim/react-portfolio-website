@@ -1,76 +1,136 @@
 import COLORS from '../../../shared/design/colorTheme';
-import styles, {keyframes} from 'styled-components';
-
+import styled, {keyframes, css} from 'styled-components';
+import {animated } from 'react-spring'
 
     // Animations
-//Yellow front face rotateY(-90deg);
-//Red front face    rotateY(0deg);      rotateX(0deg);
-//Blue front face   rotateY(0deg);    rotateX(90deg);        bottom: 20vw;        left: 5vw;
-const cubeAnimation = (prevTransform, transform) => keyframes`
+const caretAnimation= (props) => keyframes`
     0% {
-        transform: ${prevTransform}
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transform: translateZ(-100px);
-        transform: rotateX(45deg) rotateY(45deg);
+        ${props === true ? "opacity: 0" : "opacity: 1"};
     }
 
     100% {
-        transform: ${transform};
-        bottom: 0;
-        left: 0;
+        opacity: 1;
     }
 `
-/*
-    100% {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        transform: translateZ(-100px);
-        transform: rotateX(45deg) rotateY(45deg);
-    }
-`*/
 
 
     // Components
-// 12vh/100
-export const StyledAboutHero = styles.img`
-    width: 80%;
-    height: auto;
+export const StyledMainHeaderContainer = styled.div`
+
 `
 
-// margin-bot 9vh total
-export const StyledAboutCubeTextContainer = styles.div`
-    height: ${props => props.height};
-    margin-bottom: 3vh;
+export const StyledMainHeader = styled.div`
+    display: inline-block;
+    width: 30%;
 `
 
-//Scene
-export const StyledCubeContainer = styles.div`
-    width: 100%;
-    height: 60vh;
-    perspective: 10000px;
-    margin-left: 20%;
-    margin-top: 30%;
-`
-//Cube
-export const StyledCube = styles.div`
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: translateZ(-100px);
-    transform: ${props => props.transform};
-    animation: ${props => cubeAnimation(props.transform)} 2s linear;
-`
-
-export const StyledCubeFace = styles.div`
+//Dropdown Container
+export const StyledNavigatorCaret = styled.div`
     position: absolute;
-    width: 30vw;
-    height: 30vw;
-    transform: ${props => props.transform} translateZ(15vw);
-    background: ${props => props.backgroundColor};
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent ${COLORS.primaryDark};
+    top: -20px; 
+    left: calc(50% - 10px);
+    z-index: 1;
 `
+
+//Company Dropdown
+export const headingStyles = css`
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: ${COLORS.primaryLight};
+`
+
+export const StyledDropdownHeader = styled.h3(headingStyles);
+
+export const StyledDropdownContent = styled.div`
+
+`
+
+export const StyledDropdownSection = styled.div`
+  position: relative;
+  z-index: 1;
+`;
+
+export const StyledDropdownContainer = styled.div`
+  width: 25rem;
+`;
+
+//Main Content
+export const StyledMainContentContainer = styled(animated.div)`
+  width: 60%;
+  height: 70vh;
+  background: gray;
+  padding-left: 20%;
+  padding-right: 20%;
+  animation: ${props => caretAnimation(props.animation)} 1s linear;
+`
+
+//Navbar Item
+export const StyledNavigatorItemTitle = styled.button`
+  background: transparent;
+  border: 0;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+  color: ${COLORS.primaryDark};
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+  transition: opacity 250ms;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  :hover,
+  :focus {
+    opacity: 0.7;
+  }
+`
+
+    //Ensures onMouseLeave triggers for NavbarItemEl
+export const StyledNavigatorContainer = styled.div`
+  margin-left: 1rem;
+  margin-right: 1rem;
+`
+
+export const StyledNavigatorItemContainer = styled.li`
+  position: relative;
+  margin-left: 0.5rem;
+
+`
+
+export const StyledDropdownSlot = styled.div`
+  position: absolute;
+  left: 50%;
+  perspective: 1000px;
+`
+
+//Navbar
+export const StyledNavigatorListContainer = styled.nav`
+  margin: 0 auto;
+`
+
+export const StyledNavigatorList = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+`
+
+//App Container
+export const StyledAppContainer = styled.div`
+  background: white;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border: 1px solid ${COLORS.primaryDark};
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+`;

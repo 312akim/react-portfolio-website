@@ -1,152 +1,230 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader, StyledSectionText  } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledAboutHero, StyledAboutCubeTextContainer, StyledCubeContainer, StyledCube, StyledCubeFace} from './AboutComponentStyles';
+import { StyledMainHeaderContainer, StyledMainHeader, 
+    StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
+    StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer } from './AboutComponentStyles';
+import { useTransition, animated, config } from 'react-spring'
 
 export const AboutComponent = () => {
-    const [prevFace, setPrevFace] = useState(0);
-    const [cubeFace, setCubeFace] = useState(0);
-
-    const cubeFaceSetter = (n) => {
-        setCubeFace(n);
+    const AboutMainComponent = () => {
+        return (
+            <StyledMainHeaderContainer>
+              <StyledAppContainer>
+                  <AnimatedNavbar />
+              </StyledAppContainer>
+            </StyledMainHeaderContainer>
+        )
     }
 
-    const CubePositionComponent = () => {
-        switch (cubeFace) {
-            case 0:
-                return (
-                    //Default
-                    <>
-                        <StyledCube transform='rotateX(0deg) rotateY(0deg)'>
-                            <InnerCubeComponent />
-                        </StyledCube>
-                    </>
-                )
-            case 1:
-                return (
-                    //Red
-                    <>
-                        <StyledCube transform='rotateY(0deg) rotateX(0deg)'>
-                            <InnerCubeComponent />
-                        </StyledCube>
-                    </>
-                )
-            case 2:
-                return (
-                    //Yellow
-                    <>
-                        <StyledCube transform='rotateY(-90deg)'>
-                            <InnerCubeComponent />
-                        </StyledCube>
-                    </>
-                )
-            case 3:
-                return (
-                    //Blue
-                    <>
-                        <StyledCube transform='rotateY(0deg) rotateX(90deg)'>
-                            <InnerCubeComponent />
-                        </StyledCube>
-                    </>
-                )
+    //On-Hover Content
+    const CompanyDropdown = () => {
+        return (
+            <StyledDropdownContainer>
+                <StyledDropdownSection>
+                    <div>
+                        <StyledDropdownHeader>
+                            Achieve
+                        </StyledDropdownHeader>
+                        <StyledDropdownContent>
+                        <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                        </StyledDropdownContent>
+                    </div>
+                </StyledDropdownSection>
+            </StyledDropdownContainer>
+        )
+    }
+
+    const DevelopersDropdown = () => {
+        return (
+            <StyledDropdownContainer>
+                  <StyledDropdownSection>
+                    <div>
+                        <StyledDropdownHeader>
+                            Love Coding
+                        </StyledDropdownHeader>
+                        <StyledDropdownContent>
+                        <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                        </StyledDropdownContent>
+                    </div>
+                </StyledDropdownSection>
+            </StyledDropdownContainer>
+        );
+    };
+
+    const ProductsDropdown = () => {
+        return (
+          <StyledDropdownContainer>
+                  <StyledDropdownSection>
+                    <div>
+                        <StyledDropdownHeader>
+                            Entrepreneur
+                        </StyledDropdownHeader>
+                        <StyledDropdownContent>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                            <li>
+                                Loream Ipsum
+                            </li>
+                        </StyledDropdownContent>
+                    </div>
+                </StyledDropdownSection>
+          </StyledDropdownContainer>
+        );
+    };
+    //On-Hover Content End
+
+    const NavbarItem = (props) => {
+        
+        const onMouseEnter = () => {
+            props.onMouseEnter(props.index);
+        };
+
+        const onMouseLeave = () => {
+            props.onMouseLeave();
         }
+
+        const onMouseDown = () => {
+            props.onMouseDown(props.index);
+            console.log("mouse down");
+        }
+
+        const onMouseUp = () => {
+            props.onMouseUp();
+            console.log("mouse up");
+        }
+
+        return (
+            <StyledNavigatorContainer>
+                <StyledNavigatorItemContainer onMouseUp={onMouseUp} onMouseDown={onMouseDown} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onMouseEnter}>
+                    <StyledNavigatorItemTitle>{props.title}</StyledNavigatorItemTitle>
+                    <StyledDropdownSlot>{props.children}</StyledDropdownSlot>
+                </StyledNavigatorItemContainer>
+            </StyledNavigatorContainer>
+        );
     }
 
-    const InnerCubeComponent = () => {
+    const Navbar = ({onMouseLeave, children}) => {
         return (
-            <div>
-                <StyledCubeFace 
-                    transform='rotateY(0deg)' 
-                    backgroundColor='red' 
-                    
-                    onMouseLeave={() => console.log('exited red')}
-                >
-                    <StyledSectionSubheader>
-                        Entrepreneur at heart
-                    </StyledSectionSubheader>
-                    <StyledSectionText>
-                        Growing up with parents who were small business owners, business has always been part of my life.
-                        I've had the unique opportunity to see how product, service and interaction work together to uplift a business
-                        beyond all expectations or bury it's future. Consequently i'm always thinking of opportunities and keeping an
-                        eye out for improvements.
-                    </StyledSectionText>
-                </StyledCubeFace>
-                <StyledCubeFace 
-                    transform='rotateY(90deg)' 
-                    backgroundColor='yellow'
-                    
-                    onMouseLeave={() => console.log('exited yellow')}
-                >
-                    <StyledAboutCubeTextContainer height={'41vh'}>
-                        <StyledSectionSubheader>
-                            Why I love coding
-                        </StyledSectionSubheader>
-                        <StyledSectionText>
-                            There are 2 reasons I truly love coding.
-                        </StyledSectionText>
-                        <StyledSectionText>
-                            1. It lets me to turn my ideas into practice
-                        </StyledSectionText>
-                        <StyledSectionText>
-                            Sample Text
-                        </StyledSectionText>
-                        <StyledSectionText>
-                            2. It's a creative outlet that doesn't require talent
-                        </StyledSectionText>
-                        <StyledSectionText>
-                            Never before have I experienced such a natural and easy way to express my own creativity. Where I normally struggle
-                            in arts or music, coding lets me express creativity in my own way.
-                        </StyledSectionText>
-                    </StyledAboutCubeTextContainer>
-                </StyledCubeFace>
-                <StyledCubeFace 
-                    transform='rotateY(-180deg)' 
-                    backgroundColor='blue'
-                    
-                    onMouseLeave={() => console.log('exited blue')}
-                >
-                    <StyledAboutCubeTextContainer height={'17vh'}>
-                        <StyledSectionSubheader>
-                            What I want to achieve
-                        </StyledSectionSubheader>
-                        <StyledSectionText>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                        </StyledSectionText>
-                    </StyledAboutCubeTextContainer>
-                </StyledCubeFace>
-            </div>
+            <StyledNavigatorListContainer onMouseLeave={onMouseLeave}>
+                <StyledNavigatorList>{children}</StyledNavigatorList>
+            </StyledNavigatorListContainer>
         )
     }
 
-    const CubeComponent = () => {
-        return (
-            <StyledCubeContainer>
-                <CubePositionComponent>
-                    <InnerCubeComponent />
-                </CubePositionComponent>
-            </StyledCubeContainer>
-        )
-    }
+    const navbarConfig = [
+        { title: "Entrepreneur at Heart", dropdown: ProductsDropdown },
+        { title: "Why I love Coding", dropdown: DevelopersDropdown },
+        { title: "What I hope to Achieve", dropdown: CompanyDropdown }
+    ];
 
-    return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height='150vh'>
+    const AnimatedNavbar = () => {
+        const [mainContent, setMainContent] = useState(
+            <div></div>
+        );
+        const [activeIndices, setActiveIndices] = useState([]);
+        const [animationSwitch, setAnimationSwitch] = useState(true);
+
+        const currentIndex = activeIndices[activeIndices.length -1];
+        
+        const navbarSelectFunction = (i) => {
+            setActiveIndices([...activeIndices, i]);
+            setMainContent(contentSetter(i));
+            setAnimationSwitch(!animationSwitch);
+        }
+
+        const onMouseEnter = i => {
+            navbarSelectFunction(i);
+        };
+
+        const onMouseDown = i => {
+            onMouseEnter(i);
+        }
+
+        const onMouseLeave = () => {
+            setAnimationSwitch(!animationSwitch);
+        }
+
+        const onMouseUp = () => {
+            setAnimationSwitch(!animationSwitch);
+        }
+        
+        const contentSetter = (index) => {
+            switch(index) {
+                case 0: return (
+                    <StyledMainContentContainer key={0} animation={animationSwitch}>
+                        <ProductsDropdown />
+                    </StyledMainContentContainer>
+                )
+                case 1: return (
+                    <StyledMainContentContainer key={1} animation={animationSwitch}>
+                        <DevelopersDropdown />
+                    </StyledMainContentContainer>
+                )
+                case 2: return (
+                    <StyledMainContentContainer key={2} animation={animationSwitch}>
+                        <CompanyDropdown />
+                    </StyledMainContentContainer>
+                )
+            }
+        }
+
+        return (
+          <div>
             <StyledSectionHeader>
-                About Me
+              About Me
             </StyledSectionHeader>
-            <StyledAboutHero src=''/>
-            <div>
-                <div onMouseEnter={() => cubeFaceSetter(1)}>
-1
-                </div>
-                <div onMouseEnter={() => cubeFaceSetter(2)}>
-2
-                </div>
-                <div onMouseEnter={() => cubeFaceSetter(3)}>
-3
-                </div>
-            </div>
-            <CubeComponent />
+            <Navbar>
+              {navbarConfig.map((n, index) => {
+                return (
+                  <NavbarItem
+                    title={n.title}
+                    key={index}
+                    index={index}
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    onMouseDown={onMouseDown}
+                    onMouseUp={onMouseUp}
+                  >
+                    {   //Logical Operator Short Circuiting, returns Component after 1st pass
+                        currentIndex === index && (
+                        <StyledNavigatorCaret />
+                        )
+                    }
+                  </NavbarItem>
+                );
+              })}
+            </Navbar>
+            {mainContent}
+          </div>
+        );
+    }
+
+    // Main
+    return (
+        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height='100vh'>
+            <AboutMainComponent />
         </StyledSectionComponent>
     )
 }
