@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
-import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader, StyledSectionText  } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledMainHeaderContainer, StyledMainHeader, 
+import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledMainHeaderContainer, 
     StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
     StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer } from './AboutComponentStyles';
