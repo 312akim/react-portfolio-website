@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
-import { AboutComponent } from '../../presentational/About/AboutComponent';
+import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
 import { LandingComponent } from '../../presentational/Landing/LandingComponent';
-import { ProjectsComponent } from '../../presentational/Projects/ProjectsComponent';
+import { ProjectsComponent } from '..//Projects/ProjectsComponent';
 import { ActivityComponent } from '../../presentational/Activity/ActivityComponent';
 import { NavBar } from '../NavBar/NavComponent';
 

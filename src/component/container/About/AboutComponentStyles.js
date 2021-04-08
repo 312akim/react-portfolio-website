@@ -1,6 +1,6 @@
 import COLORS from '../../../shared/design/colorTheme';
 import styled, {keyframes, css} from 'styled-components';
-import {animated } from 'react-spring'
+import { animated } from 'react-spring'
 
     // Animations
 const caretAnimation= (props) => keyframes`
