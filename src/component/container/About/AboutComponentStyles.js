@@ -57,11 +57,11 @@ export const StyledDropdownContent = styled.div`
 export const StyledDropdownSection = styled.div`
   position: relative;
   z-index: 1;
-`;
+`
 
 export const StyledDropdownContainer = styled.div`
-  width: 25rem;
-`;
+  width: 100%;
+`
 
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
@@ -73,7 +73,7 @@ export const StyledMainContentContainer = styled(animated.div)`
   animation: ${props => caretAnimation(props.animation)} 1s linear;
 `
 
-//Navbar Item
+//Navigator Item
 export const StyledNavigatorItemTitle = styled.button`
   background: transparent;
   border: 0;
@@ -82,8 +82,6 @@ export const StyledNavigatorItemTitle = styled.button`
   padding: 1.5rem 1.5rem 1.2rem 1.5rem;
   color: ${COLORS.primaryDark};
   font-family: inherit;
-  display: flex;
-  justify-content: center;
   transition: opacity 250ms;
   cursor: pointer;
   position: relative;
@@ -94,7 +92,7 @@ export const StyledNavigatorItemTitle = styled.button`
   }
 `
 
-    //Ensures onMouseLeave triggers for NavbarItemEl
+    //Ensures onMouseLeave triggers for NavigatorItemContainer
 export const StyledNavigatorContainer = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
@@ -102,8 +100,6 @@ export const StyledNavigatorContainer = styled.div`
 
 export const StyledNavigatorItemContainer = styled.li`
   position: relative;
-  margin-left: 0.5rem;
-
 `
 
 export const StyledDropdownSlot = styled.div`
@@ -112,7 +108,7 @@ export const StyledDropdownSlot = styled.div`
   perspective: 1000px;
 `
 
-//Navbar
+//Navigator
 export const StyledNavigatorListContainer = styled.nav`
   margin: 0 auto;
 `
@@ -130,7 +126,5 @@ export const StyledAppContainer = styled.div`
   margin-top: 10vh;
   margin-bottom: 10vh;
   border: 1px solid ${COLORS.primaryDark};
-  display: flex;
-  flex-direction: column;
   min-height: 80vh;
-`;
+`

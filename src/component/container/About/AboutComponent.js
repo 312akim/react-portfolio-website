@@ -12,7 +12,7 @@ export const AboutComponent = () => {
         return (
             <StyledMainHeaderContainer>
               <StyledAppContainer>
-                  <AnimatedNavbar />
+                  <AnimatedNavigator />
               </StyledAppContainer>
             </StyledMainHeaderContainer>
         )
@@ -95,7 +95,7 @@ export const AboutComponent = () => {
     };
     //On-Hover Content End
 
-    const NavbarItem = (props) => {
+    const NavigatorItem = (props) => {
         
         const onMouseEnter = () => {
             props.onMouseEnter(props.index);
@@ -125,7 +125,7 @@ export const AboutComponent = () => {
         );
     }
 
-    const Navbar = ({onMouseLeave, children}) => {
+    const Navigator = ({onMouseLeave, children}) => {
         return (
             <StyledNavigatorListContainer onMouseLeave={onMouseLeave}>
                 <StyledNavigatorList>{children}</StyledNavigatorList>
@@ -133,13 +133,13 @@ export const AboutComponent = () => {
         )
     }
 
-    const navbarConfig = [
+    const navigatorConfig = [
         { title: "Entrepreneur at Heart", dropdown: ProductsDropdown },
         { title: "Why I love Coding", dropdown: DevelopersDropdown },
         { title: "What I hope to Achieve", dropdown: CompanyDropdown }
     ];
 
-    const AnimatedNavbar = () => {
+    const AnimatedNavigator = () => {
         const [mainContent, setMainContent] = useState(
             <div></div>
         );
@@ -148,14 +148,14 @@ export const AboutComponent = () => {
 
         const currentIndex = activeIndices[activeIndices.length -1];
         
-        const navbarSelectFunction = (i) => {
+        const navigatorSelectFunction = (i) => {
             setActiveIndices([...activeIndices, i]);
             setMainContent(contentSetter(i));
             setAnimationSwitch(!animationSwitch);
         }
 
         const onMouseEnter = i => {
-            navbarSelectFunction(i);
+            navigatorSelectFunction(i);
         };
 
         const onMouseDown = i => {
@@ -195,10 +195,10 @@ export const AboutComponent = () => {
             <StyledSectionHeader>
               About Me
             </StyledSectionHeader>
-            <Navbar>
-              {navbarConfig.map((n, index) => {
+            <Navigator>
+              {navigatorConfig.map((n, index) => {
                 return (
-                  <NavbarItem
+                  <NavigatorItem
                     title={n.title}
                     key={index}
                     index={index}
@@ -212,10 +212,10 @@ export const AboutComponent = () => {
                         <StyledNavigatorCaret />
                         )
                     }
-                  </NavbarItem>
+                  </NavigatorItem>
                 );
               })}
-            </Navbar>
+            </Navigator>
             {mainContent}
           </div>
         );

@@ -8,9 +8,8 @@ import { ActivityComponent } from '../../presentational/Activity/ActivityCompone
 import { NavBar } from '../NavBar/NavComponent';
 
 const MainComponent = () => {
-    
 
-    // React-scroll only seems to work on id props set on divs.
+    // React-scroll only seems to work on id props set on plain html divs.
     return (
         <StyledMainContainer>
 
