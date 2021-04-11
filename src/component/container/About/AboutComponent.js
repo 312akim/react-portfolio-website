@@ -156,12 +156,6 @@ export const AboutComponent = () => {
         )
     }
 
-    const navigatorConfig = [
-        { title: "Entrepreneur at Heart", dropdown: ProductsDropdown, image: businessImage },
-        { title: "Why I love Coding", dropdown: DevelopersDropdown },
-        { title: "What I hope to Achieve", dropdown: CompanyDropdown }
-    ];
-
     const AnimatedNavigator = () => {
         const [mainContent, setMainContent] = useState(
             <div></div>
@@ -171,6 +165,12 @@ export const AboutComponent = () => {
 
         const currentIndex = activeIndices[activeIndices.length -1];
         
+        const navigatorConfig = [
+            { title: "Entrepreneur at Heart", dropdown: ProductsDropdown, image: businessImage },
+            { title: "Why I love Coding", dropdown: DevelopersDropdown },
+            { title: "What I hope to Achieve", dropdown: CompanyDropdown }
+        ];
+
         const navigatorSelectFunction = (i) => {
             setActiveIndices([...activeIndices, i]);
             setMainContent(contentSetter(i));
@@ -217,7 +217,7 @@ export const AboutComponent = () => {
         }
 
         return (
-          <div>
+          <>
             <StyledSectionHeader>
               About Me
             </StyledSectionHeader>
@@ -243,7 +243,7 @@ export const AboutComponent = () => {
               })}
             </Navigator>
             {mainContent}
-          </div>
+          </>
         );
     }
 
