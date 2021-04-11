@@ -24,7 +24,6 @@ export const StyledMainHeader = styled.div`
     width: 30%;
 `
 
-//Dropdown Container
 export const StyledNavigatorCaret = styled.div`
     position: absolute;
     display: block;
@@ -38,14 +37,14 @@ export const StyledNavigatorCaret = styled.div`
     z-index: 1;
 `
 
-//Company Dropdown
 export const headingStyles = css`
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 0;
+    font-size: 2rem;
+    margin-top: 0rem;
+    padding-top: 1rem;
     margin-bottom: 1rem;
-    color: ${COLORS.primaryLight};
+    color: ${COLORS.primaryDark};
 `
 
 export const StyledDropdownHeader = styled.h3(headingStyles);
@@ -61,6 +60,7 @@ export const StyledDropdownSection = styled.div`
 
 export const StyledDropdownContainer = styled.div`
   width: 100%;
+  margin-top: 15%;
 `
 
 //Main Content
@@ -74,22 +74,29 @@ export const StyledMainContentContainer = styled(animated.div)`
 `
 
 //Navigator Item
-export const StyledNavigatorItemTitle = styled.button`
+export const StyledDropdownImage = styled.img`
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20vw;
+    height: 17vh;
+    overflow: hidden;
+`
+
+export const StyledNavigatorItemTitle = styled.div`
   background: transparent;
+  width: 20vw;
+  margin-bottom: 50%;
   border: 0;
   font-weight: bold;
   font-size: 18px;
-  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
-  color: ${COLORS.primaryDark};
+  padding-top: 2rem;
+  text-align: center;
+  color: ${COLORS.primaryLight};
   font-family: inherit;
-  transition: opacity 250ms;
   cursor: pointer;
   position: relative;
   z-index: 2;
-  :hover,
-  :focus {
-    opacity: 0.7;
-  }
 `
 
     //Ensures onMouseLeave triggers for NavigatorItemContainer
@@ -100,6 +107,14 @@ export const StyledNavigatorContainer = styled.div`
 
 export const StyledNavigatorItemContainer = styled.li`
   position: relative;
+  width: 20vw;
+  img {
+    filter: brightness(40%);
+  }
+  :hover img {
+    filter: brightness(100%);
+  }
+
 `
 
 export const StyledDropdownSlot = styled.div`
@@ -115,9 +130,10 @@ export const StyledNavigatorListContainer = styled.nav`
 
 export const StyledNavigatorList = styled.ul`
   display: flex;
+  padding: 0;
   justify-content: center;
   list-style: none;
-  margin: 0;
+  margin: 0 10% 0 10%;
 `
 
 //App Container
@@ -125,6 +141,5 @@ export const StyledAppContainer = styled.div`
   background: white;
   margin-top: 10vh;
   margin-bottom: 10vh;
-  border: 1px solid ${COLORS.primaryDark};
   min-height: 80vh;
 `

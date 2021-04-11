@@ -4,8 +4,11 @@ import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sha
 import { StyledMainHeaderContainer, 
     StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
     StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
-StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer } from './AboutComponentStyles';
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage } from './AboutComponentStyles';
 import { useTransition, animated, config } from 'react-spring'
+import businessImage from '../../../shared/images/business.jpg';
+import creativeImage from '../../../shared/images/creativity.jfif';
+import peopleImage from '../../../shared/images/people.jfif';
 
 export const AboutComponent = () => {
     const AboutMainComponent = () => {
@@ -93,6 +96,23 @@ export const AboutComponent = () => {
           </StyledDropdownContainer>
         );
     };
+
+    const HoverImage = (props) => {
+        switch (props.image) {
+            case 0: return (
+                <StyledDropdownImage src={businessImage} />
+            )
+
+            case 1: return (
+                <StyledDropdownImage src={creativeImage} />
+            )
+
+            case 2: return (
+                <StyledDropdownImage src={peopleImage} />
+            )
+        }
+    }
+
     //On-Hover Content End
 
     const NavigatorItem = (props) => {
@@ -118,7 +138,10 @@ export const AboutComponent = () => {
         return (
             <StyledNavigatorContainer>
                 <StyledNavigatorItemContainer onMouseUp={onMouseUp} onMouseDown={onMouseDown} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onMouseEnter}>
-                    <StyledNavigatorItemTitle>{props.title}</StyledNavigatorItemTitle>
+                    <HoverImage image={props.index}/>
+                    <StyledNavigatorItemTitle>
+                        {props.title}
+                    </StyledNavigatorItemTitle>
                     <StyledDropdownSlot>{props.children}</StyledDropdownSlot>
                 </StyledNavigatorItemContainer>
             </StyledNavigatorContainer>
@@ -134,7 +157,7 @@ export const AboutComponent = () => {
     }
 
     const navigatorConfig = [
-        { title: "Entrepreneur at Heart", dropdown: ProductsDropdown },
+        { title: "Entrepreneur at Heart", dropdown: ProductsDropdown, image: businessImage },
         { title: "Why I love Coding", dropdown: DevelopersDropdown },
         { title: "What I hope to Achieve", dropdown: CompanyDropdown }
     ];
@@ -186,6 +209,9 @@ export const AboutComponent = () => {
                     <StyledMainContentContainer key={2} animation={animationSwitch}>
                         <CompanyDropdown />
                     </StyledMainContentContainer>
+                )
+                default: return (
+                    <div></div>
                 )
             }
         }

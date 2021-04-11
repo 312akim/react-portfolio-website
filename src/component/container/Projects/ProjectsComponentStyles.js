@@ -89,7 +89,7 @@ export const StyledSectionContainer = styled.div`
 export const StyledSectionIconContainer = styled.div`
     display: inline-block;
     color: black;
-    height: 100vh;
+    height: 53vh;
     margin-top: 47vh;
 `
 
