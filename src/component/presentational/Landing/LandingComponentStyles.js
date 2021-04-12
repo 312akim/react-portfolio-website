@@ -82,24 +82,6 @@ export const StyledSubHeader = styled.h2`
     }
 `
 
-
-export const StyledSelector = styled.img`
-    display: inline-block;
-    margin-right: 1vw;
-    height: 6vh;
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-    transform: rotate(0.125turn);
-
-    @media (min-width: 576px) {
-        margin-left: 16vw;   
-    }
-
-    @media (min-width: 1200px) {
-        margin-left: 22vw;
-    }
-`
-
 export const StyledDialButtonContainer = styled.div`
     display: block;
     height: 6vh;
@@ -107,9 +89,9 @@ export const StyledDialButtonContainer = styled.div`
 
 export const StyledDialButton = styled.button`
     display: inline-block;
-    margin-left: 3vw;
+    margin: 2%;
     color: white;
-    width: 10vw;
+    width: 15%;
     background: black;
     height: 80%;
 `

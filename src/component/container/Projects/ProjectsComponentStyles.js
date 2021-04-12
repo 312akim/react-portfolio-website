@@ -142,10 +142,10 @@ export const StyledProjectCardImage = styled.img`
 `
 export const StyledProjectCardTitle = styled.h2`
     display: block;
-    width: 40vw;
-    margin-left: calc(50% - 20vw);
+    width: 50%;
+    margin-left: calc(50% - 25%);
     color: white;
-    height: 15%;
+    height: 12%;
     background: blue;
 `
 
@@ -206,8 +206,8 @@ export const StyledModalContainer = styled.div`
     height: 100vh;
     position: absolute;
     top: 0;
-    left: -15vw;
-    width: 100vw;
+    left: -20%;
+    width: 140%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.7);
 

@@ -66,20 +66,6 @@ export const LandingComponent = () => {
         )
     }
 
-    /*
-    const LandingAnimation = () => {
-        return (
-            <>
-                <StyledAnimationContainer>
-                    <StyledSelector src={arrow}/>
-                    <StyledActiveAnimation>
-                        <StyledDial src={compassNav} active={active}/>
-                    </StyledActiveAnimation>
-                </StyledAnimationContainer>
-            </>
-        )
-    }
-    */
     const AnimationButtons = () => {
         return (
             <StyledDialButtonContainer>
