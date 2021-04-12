@@ -6,6 +6,7 @@ import { LandingComponent } from '../../presentational/Landing/LandingComponent'
 import { ProjectsComponent } from '..//Projects/ProjectsComponent';
 import { ActivityComponent } from '../../presentational/Activity/ActivityComponent';
 import { NavBar } from '../NavBar/NavComponent';
+import Fade from 'react-reveal/Fade';
 
 const MainComponent = () => {
 
@@ -16,23 +17,33 @@ const MainComponent = () => {
             <NavBar />
 
             <div id="homeSection">
-                <LandingComponent />
+                <Fade left>
+                    <LandingComponent />
+                </Fade>
             </div>
 
             <div id="projectsSection">
-                <ProjectsComponent />
+                <Fade right>
+                    <ProjectsComponent />
+                </Fade>
             </div>
 
             <div id="aboutSection">
-                <AboutComponent />
+                <Fade left>
+                    <AboutComponent />
+                </Fade>
             </div>
 
             <div id="activitySection">
-                <ActivityComponent />
+                <Fade right>
+                    <ActivityComponent />
+                </Fade>
             </div>
             
             <div id="contactSection">
-                <ContactComponent />
+                <Fade left>
+                    <ContactComponent />
+                </Fade>
             </div>
 
         </StyledMainContainer>

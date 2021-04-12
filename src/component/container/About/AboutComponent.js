@@ -9,6 +9,7 @@ import { useTransition, animated, config } from 'react-spring'
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
+import Fade from 'react-reveal/Fade';
 
 export const AboutComponent = () => {
     const AboutMainComponent = () => {
@@ -121,23 +122,9 @@ export const AboutComponent = () => {
             props.onMouseEnter(props.index);
         };
 
-        const onMouseLeave = () => {
-            props.onMouseLeave();
-        }
-
-        const onMouseDown = () => {
-            props.onMouseDown(props.index);
-            console.log("mouse down");
-        }
-
-        const onMouseUp = () => {
-            props.onMouseUp();
-            console.log("mouse up");
-        }
-
         return (
             <StyledNavigatorContainer>
-                <StyledNavigatorItemContainer onMouseUp={onMouseUp} onMouseDown={onMouseDown} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onMouseEnter}>
+                <StyledNavigatorItemContainer onMouseEnter={onMouseEnter} onFocus={onMouseEnter}>
                     <HoverImage image={props.index}/>
                     <StyledNavigatorItemTitle>
                         {props.title}
@@ -148,9 +135,9 @@ export const AboutComponent = () => {
         );
     }
 
-    const Navigator = ({onMouseLeave, children}) => {
+    const Navigator = ({children}) => {
         return (
-            <StyledNavigatorListContainer onMouseLeave={onMouseLeave}>
+            <StyledNavigatorListContainer>
                 <StyledNavigatorList>{children}</StyledNavigatorList>
             </StyledNavigatorListContainer>
         )
@@ -161,7 +148,7 @@ export const AboutComponent = () => {
             <div></div>
         );
         const [activeIndices, setActiveIndices] = useState([]);
-        const [animationSwitch, setAnimationSwitch] = useState(true);
+        const [animationSwitch, setAnimationSwitch] = useState(false);
 
         const currentIndex = activeIndices[activeIndices.length -1];
         
@@ -174,40 +161,34 @@ export const AboutComponent = () => {
         const navigatorSelectFunction = (i) => {
             setActiveIndices([...activeIndices, i]);
             setMainContent(contentSetter(i));
-            setAnimationSwitch(!animationSwitch);
         }
 
         const onMouseEnter = i => {
             navigatorSelectFunction(i);
+            setAnimationSwitch(true);
         };
 
-        const onMouseDown = i => {
-            onMouseEnter(i);
-        }
-
-        const onMouseLeave = () => {
-            setAnimationSwitch(!animationSwitch);
-        }
-
-        const onMouseUp = () => {
-            setAnimationSwitch(!animationSwitch);
-        }
-        
         const contentSetter = (index) => {
             switch(index) {
                 case 0: return (
-                    <StyledMainContentContainer key={0} animation={animationSwitch}>
-                        <ProductsDropdown />
+                    <StyledMainContentContainer key={0}>
+                        <Fade up>
+                            <ProductsDropdown />
+                        </Fade>
                     </StyledMainContentContainer>
                 )
                 case 1: return (
-                    <StyledMainContentContainer key={1} animation={animationSwitch}>
-                        <DevelopersDropdown />
+                    <StyledMainContentContainer key={1}>
+                        <Fade up>
+                            <DevelopersDropdown />
+                        </Fade>
                     </StyledMainContentContainer>
                 )
                 case 2: return (
-                    <StyledMainContentContainer key={2} animation={animationSwitch}>
-                        <CompanyDropdown />
+                    <StyledMainContentContainer key={2}>
+                        <Fade up>
+                            <CompanyDropdown />
+                        </Fade>
                     </StyledMainContentContainer>
                 )
                 default: return (
@@ -229,9 +210,6 @@ export const AboutComponent = () => {
                     key={index}
                     index={index}
                     onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    onMouseDown={onMouseDown}
-                    onMouseUp={onMouseUp}
                   >
                     {   //Logical Operator Short Circuiting, returns Component after 1st pass
                         currentIndex === index && (

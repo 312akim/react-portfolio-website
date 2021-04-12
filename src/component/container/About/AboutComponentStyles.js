@@ -3,15 +3,7 @@ import styled, {keyframes, css} from 'styled-components';
 import { animated } from 'react-spring'
 
     // Animations
-const fadeInAnimation= (props) => keyframes`
-    0% {
-        ${props === true ? "opacity: 0" : "opacity: 1"};
-    }
 
-    100% {
-        opacity: 1;
-    }
-`
 
 
     // Components
@@ -67,10 +59,8 @@ export const StyledDropdownContainer = styled.div`
 export const StyledMainContentContainer = styled(animated.div)`
   width: 96%;
   height: 60vh;
-  background: gray;
   margin-left: 2%;
   margin-right: 2%;
-  animation: ${props => fadeInAnimation(props.animation)} 1s linear;
 `
 
 //Navigator Item
