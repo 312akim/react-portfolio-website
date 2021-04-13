@@ -1,5 +1,5 @@
 import COLORS from '../../../shared/design/colorTheme';
-import styled, {keyframes, css} from 'styled-components';
+import styled, {css} from 'styled-components';
 import { animated } from 'react-spring'
 
     // Components

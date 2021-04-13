@@ -183,8 +183,6 @@ export const ProjectsComponent = () => {
                 )
         }
     }
-    
-
 
     // Body
     const SectionContainer = () => {

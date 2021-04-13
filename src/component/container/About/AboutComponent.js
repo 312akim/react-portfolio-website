@@ -23,7 +23,7 @@ export const AboutComponent = () => {
     }
 
     //On-Hover Content
-    const CompanyDropdown = () => {
+    const EntrepreneurDropdown = () => {
         return (
             <StyledDropdownContainer>
                 <StyledDropdownSection>
@@ -32,15 +32,17 @@ export const AboutComponent = () => {
                             Achieve
                         </StyledDropdownHeader>
                         <StyledDropdownContent>
-                        <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
+                            <Fade up cascade big>
+                                    <div>
+                                        Sentence 1
+                                    </div>
+                                    <div>
+                                        Sentence 2
+                                    </div>
+                                    <div>
+                                        Sentence 3
+                                    </div>
+                            </Fade>
                         </StyledDropdownContent>
                     </div>
                 </StyledDropdownSection>
@@ -48,7 +50,7 @@ export const AboutComponent = () => {
         )
     }
 
-    const DevelopersDropdown = () => {
+    const CodingDropdown = () => {
         return (
             <StyledDropdownContainer>
                   <StyledDropdownSection>
@@ -57,15 +59,17 @@ export const AboutComponent = () => {
                             Love Coding
                         </StyledDropdownHeader>
                         <StyledDropdownContent>
-                        <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
+                            <Fade up cascade big>
+                                <div>
+                                    Sentence 1
+                                </div>
+                                <div>
+                                    Sentence 2
+                                </div>
+                                <div>
+                                    Sentence 3
+                                </div>
+                            </Fade>
                         </StyledDropdownContent>
                     </div>
                 </StyledDropdownSection>
@@ -73,7 +77,7 @@ export const AboutComponent = () => {
         );
     };
 
-    const ProductsDropdown = () => {
+    const AchieveDropdown = () => {
         return (
           <StyledDropdownContainer>
                   <StyledDropdownSection>
@@ -82,15 +86,17 @@ export const AboutComponent = () => {
                             Entrepreneur
                         </StyledDropdownHeader>
                         <StyledDropdownContent>
-                            <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
-                            <li>
-                                Loream Ipsum
-                            </li>
+                            <Fade up cascade big>
+                                    <div>
+                                        Sentence 1
+                                    </div>
+                                    <div>
+                                        Sentence 2
+                                    </div>
+                                    <div>
+                                        Sentence 3
+                                    </div>
+                            </Fade>
                         </StyledDropdownContent>
                     </div>
                 </StyledDropdownSection>
@@ -144,17 +150,16 @@ export const AboutComponent = () => {
     }
 
     const AnimatedNavigator = () => {
-        const [mainContent, setMainContent] = useState(
-            <div></div>
-        );
+        const [mainContent, setMainContent] = useState(<div></div>);
+
         const [activeIndices, setActiveIndices] = useState([]);
 
         const currentIndex = activeIndices[activeIndices.length -1];
         
         const navigatorConfig = [
-            { title: "Entrepreneur at Heart", dropdown: ProductsDropdown },
-            { title: "Why I love Coding", dropdown: DevelopersDropdown },
-            { title: "What I hope to Achieve", dropdown: CompanyDropdown }
+            { title: "Entrepreneur at Heart", dropdown: AchieveDropdown },
+            { title: "Why I love Coding", dropdown: CodingDropdown },
+            { title: "What I hope to Achieve", dropdown: EntrepreneurDropdown }
         ];
 
         const navigatorSelectFunction = (i) => {
@@ -170,22 +175,22 @@ export const AboutComponent = () => {
             switch(index) {
                 case 0: return (
                     <StyledMainContentContainer key={0}>
-                        <Fade up>
-                            <ProductsDropdown />
+                        <Fade down>
+                            <AchieveDropdown />
                         </Fade>
                     </StyledMainContentContainer>
                 )
                 case 1: return (
                     <StyledMainContentContainer key={1}>
-                        <Fade up>
-                            <DevelopersDropdown />
+                        <Fade down>
+                            <CodingDropdown />
                         </Fade>
                     </StyledMainContentContainer>
                 )
                 case 2: return (
                     <StyledMainContentContainer key={2}>
-                        <Fade up>
-                            <CompanyDropdown />
+                        <Fade down>
+                            <EntrepreneurDropdown />
                         </Fade>
                     </StyledMainContentContainer>
                 )
@@ -196,30 +201,30 @@ export const AboutComponent = () => {
         }
 
         return (
-          <>
-            <StyledSectionHeader>
-              About Me
-            </StyledSectionHeader>
-            <Navigator>
-              {navigatorConfig.map((n, index) => {
-                return (
-                  <NavigatorItem
-                    title={n.title}
-                    key={index}
-                    index={index}
-                    onMouseEnter={onMouseEnter}
-                  >
-                    {   //Logical Operator Short Circuiting, returns Component after 1st pass
-                        currentIndex === index && (
-                        <StyledNavigatorCaret />
-                        )
-                    }
-                  </NavigatorItem>
-                );
-              })}
-            </Navigator>
-            {mainContent}
-          </>
+            <>
+                <StyledSectionHeader>
+                About Me
+                </StyledSectionHeader>
+                <Navigator>
+                    {navigatorConfig.map((n, index) => {
+                        return (
+                            <NavigatorItem
+                                title={n.title}
+                                key={index}
+                                index={index}
+                                onMouseEnter={onMouseEnter}
+                            >
+                                {   //Logical Operator Short Circuiting, returns Component after 1st pass
+                                    currentIndex === index && (
+                                    <StyledNavigatorCaret />
+                                    )
+                                }
+                            </NavigatorItem>
+                        );
+                    })}
+                </Navigator>
+                {mainContent}
+            </>
         );
     }
 
