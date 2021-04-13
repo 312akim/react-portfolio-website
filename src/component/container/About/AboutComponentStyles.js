@@ -2,10 +2,6 @@ import COLORS from '../../../shared/design/colorTheme';
 import styled, {keyframes, css} from 'styled-components';
 import { animated } from 'react-spring'
 
-    // Animations
-
-
-
     // Components
 export const StyledMainHeaderContainer = styled.div`
 

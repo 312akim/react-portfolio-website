@@ -148,12 +148,11 @@ export const AboutComponent = () => {
             <div></div>
         );
         const [activeIndices, setActiveIndices] = useState([]);
-        const [animationSwitch, setAnimationSwitch] = useState(false);
 
         const currentIndex = activeIndices[activeIndices.length -1];
         
         const navigatorConfig = [
-            { title: "Entrepreneur at Heart", dropdown: ProductsDropdown, image: businessImage },
+            { title: "Entrepreneur at Heart", dropdown: ProductsDropdown },
             { title: "Why I love Coding", dropdown: DevelopersDropdown },
             { title: "What I hope to Achieve", dropdown: CompanyDropdown }
         ];
@@ -165,7 +164,6 @@ export const AboutComponent = () => {
 
         const onMouseEnter = i => {
             navigatorSelectFunction(i);
-            setAnimationSwitch(true);
         };
 
         const contentSetter = (index) => {
