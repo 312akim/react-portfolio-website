@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledNavPlaceholder } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 
 export const NavBar = () => {

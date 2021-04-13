@@ -1,37 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-    // Animations
-
-//  Fades in from right hand side & Simulates momentum.
-export const entranceAnimation = keyframes`
-    0% {
-        opacity: 0;
-    }
-    25% {
-        transform: rotate(-0.1turn)
-    }
-    33% {
-        opacity: 0;
-        transform: translateX(300px)
-    }
-    50% {
-        transform: rotate(0.08turn)
-    }
-    66% {
-        opacity: 1;
-        transform: rotate(-0.06turn)
-    }
-    75% {
-        transform: rotate(0.03turn)
-    }
-    90% {
-        transform: rotate(-0.01turn)
-        transform: translateX(0px)
-    }
-    100% {
-    }
-`
-
     // Components
     
 // New animation attempt
@@ -57,6 +25,7 @@ export const StyledLandingAnimNav = styled.div`
 //New animation attempt end
 
 export const StyledNameContainer = styled.div`
+    margin-top: 6vh;
     height: 18vh;
 `
 

@@ -94,7 +94,7 @@ export const LandingComponent = () => {
     }
     
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height={'106vh'}>
             <LandingHero />
             <LandingAnimation />
             <AnimationButtons />
