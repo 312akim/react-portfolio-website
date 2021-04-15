@@ -1,9 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledNavPlaceholder } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 
 export const NavBar = () => {
+
     const [isOpen, setOpen] = useState(false);
+
+    const [scrolling, setScrolling] = useState(true);
+
+    const scrollTop = 0;
+    // Navbar background sets to transparent when not at top of page.
+    useEffect(() => {
+        const onScroll = () => {
+            let currentPosition = window.pageYOffset;
+
+            if (currentPosition > scrollTop) {
+                setScrolling(false);
+            } else {
+                setScrolling(true);
+            }
+        }
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [scrollTop]);
 
     const CollapsibleNav = ({isOpen}) => {
         if (isOpen) {
@@ -38,7 +57,7 @@ export const NavBar = () => {
     }
 
     return (
-        <StyledNavContainer>
+        <StyledNavContainer scroll={scrolling}>
             <StyledNavBar>
                 <StyledNavLogo>Logo Here</StyledNavLogo>
                 <NavBarToggler />

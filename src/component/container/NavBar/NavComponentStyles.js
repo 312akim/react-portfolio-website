@@ -3,7 +3,7 @@ import COLORS from '../../../shared/design/colorTheme';
 
 export const StyledNavContainer = styled.div`
     height: 6vh;
-    background: ${COLORS.primaryDark};
+    background: ${props => props.scroll ? COLORS.primaryDark : 'transparent'};
     position: fixed;
     top: 0;
     left: 0;
