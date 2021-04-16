@@ -142,8 +142,8 @@ export const StyledProjectCardImage = styled.img`
 `
 export const StyledProjectCardTitle = styled.h2`
     display: block;
-    width: 50%;
-    margin-left: calc(50% - 25%);
+    width: 75%;
+    margin-left: 12.5%;
     color: white;
     height: 12%;
     background: blue;
@@ -159,16 +159,16 @@ export const StyledProjectInformation = styled.div`
 
 export const StyledReadMore = styled.button`
     height: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 12%;
+    margin-bottom: 3%;
     color: white;
     background: blue;
 `
 
 export const StyledGithubLink = styled.a`
     display: block;
-    height: 15%;
-    margin-bottom: 2vh;
+    height: 13%;
+    margin-bottom: 1vh;
     color: white;
 `
 
