@@ -23,7 +23,7 @@ export const NavBar = () => {
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, [scrollTop]);
+    }, []);
 
     return (
         <StyledNavContainer scroll={scrolling}>
@@ -38,18 +38,6 @@ export const NavBar = () => {
 const CollapsibleNavComponent = () => {
     const [isOpen, setOpen] = useState(false);
 
-    const CollapsibleNav = ({isOpen}) => {
-        if (isOpen) {
-            return (
-                <NavigationLinks />
-            )
-        } else {
-            return (
-                <div></div>
-            )
-        }
-    }
-
     const NavBarToggler = () => {
         return (
             <StyledToggler onClick={() => setOpen(true)}>
@@ -58,28 +46,38 @@ const CollapsibleNavComponent = () => {
         )
     }
 
-    const NavigationLinks = () => {
-        return (
-            <StyledNavigationListWrapper onClick={() => setOpen(false)}>
-                <Fade right>
-                    <StyledNavigationList>
-                        <ReactScrollLink title="Home" id="homeSection"/>
-                        <ReactScrollLink title="Projects" id="projectsSection"/>
-                        <ReactScrollLink title="About" id="aboutSection"/>
-                        <ReactScrollLink title="Activity" id="activitySection"/>
-                        <ReactScrollLink title="Contact" id="contactSection"/>
-                    </StyledNavigationList>
-                </Fade>
-            </StyledNavigationListWrapper>
-        )
-    }
-
     return (
         <>
             <NavBarToggler />
-            <CollapsibleNav isOpen={isOpen}>
-                <NavigationLinks/>
-            </CollapsibleNav>
+            <CollapsibleNav isOpen={isOpen} setOpen={setOpen}/>
         </>
+    )
+}
+
+const CollapsibleNav = ({isOpen, setOpen}) => {
+    if (isOpen) {
+        return (
+            <NavigationLinks setOpen={setOpen} />
+        )
+    } else {
+        return (
+            <div></div>
+        )
+    }
+}
+
+const NavigationLinks = ({setOpen}) => {
+    return (
+        <StyledNavigationListWrapper onClick={() => setOpen(false)}>
+            <Fade right>
+                <StyledNavigationList>
+                    <ReactScrollLink title="Home" id="homeSection"/>
+                    <ReactScrollLink title="Projects" id="projectsSection"/>
+                    <ReactScrollLink title="About" id="aboutSection"/>
+                    <ReactScrollLink title="Activity" id="activitySection"/>
+                    <ReactScrollLink title="Contact" id="contactSection"/>
+                </StyledNavigationList>
+            </Fade>
+        </StyledNavigationListWrapper>
     )
 }
