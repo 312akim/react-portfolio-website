@@ -71,13 +71,14 @@ export const StyledDropdownImage = styled.img`
 
 export const StyledNavigatorItemTitle = styled.div`
   background: transparent;
+  height: 14vh;
   width: 100%;
-  margin-bottom: 50%;
+  margin-bottom: 0;
   margin-right: 0;
   border: 0;
   font-weight: bold;
   font-size: 18px;
-  padding-top: 2rem;
+  padding-top: 3vh;
   text-align: center;
   color: ${COLORS.primaryLight};
   font-family: inherit;
