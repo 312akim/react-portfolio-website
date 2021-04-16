@@ -19,14 +19,25 @@ export const StyledNavLogo = styled.div`
     display: inline-block;
 `
 
+export const StyledNavigationListWrapper = styled.div`
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+`
+
 export const StyledNavigationList = styled.ul`
     display: inline-block;
     float: right;
-    margin-right: 5%;
+    background: green;
+    width: 30%;
+    height: 100vh;
 `
 
 export const StyledToggler = styled.div`
     display: inline-block;
+    margin-top: 1vh;
     float: right;
     margin-right: 5%;
 `

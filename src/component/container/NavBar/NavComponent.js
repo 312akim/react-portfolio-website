@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledNavPlaceholder } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledNavPlaceholder, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import Fade from 'react-reveal/Fade';
 
 export const NavBar = () => {
 
@@ -38,21 +41,25 @@ export const NavBar = () => {
 
     const NavBarToggler = () => {
         return (
-            <StyledToggler onClick={() => setOpen(!isOpen)}>
-                ToggleNav
+            <StyledToggler onClick={() => setOpen(true)}>
+                <FontAwesomeIcon icon={faBars} size="2x" />
             </StyledToggler>
         )
     }
 
     const NavigationLinks = () => {
         return (
-            <StyledNavigationList>
-                <ReactScrollLink title="Home" id="homeSection"/>
-                <ReactScrollLink title="Projects" id="projectsSection"/>
-                <ReactScrollLink title="About" id="aboutSection"/>
-                <ReactScrollLink title="Activity" id="activitySection"/>
-                <ReactScrollLink title="Contact" id="contactSection"/>
-            </StyledNavigationList>
+            <StyledNavigationListWrapper onClick={() => setOpen(false)}>
+                <Fade right>
+                    <StyledNavigationList>
+                        <ReactScrollLink title="Home" id="homeSection"/>
+                        <ReactScrollLink title="Projects" id="projectsSection"/>
+                        <ReactScrollLink title="About" id="aboutSection"/>
+                        <ReactScrollLink title="Activity" id="activitySection"/>
+                        <ReactScrollLink title="Contact" id="contactSection"/>
+                    </StyledNavigationList>
+                </Fade>
+            </StyledNavigationListWrapper>
         )
     }
 
