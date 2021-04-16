@@ -7,8 +7,6 @@ import Fade from 'react-reveal/Fade';
 
 export const NavBar = () => {
 
-    const [isOpen, setOpen] = useState(false);
-
     const [scrolling, setScrolling] = useState(true);
 
     const scrollTop = 0;
@@ -26,6 +24,19 @@ export const NavBar = () => {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, [scrollTop]);
+
+    return (
+        <StyledNavContainer scroll={scrolling}>
+            <StyledNavBar>
+                <StyledNavLogo>Logo Here</StyledNavLogo>
+                <CollapsibleNavComponent />
+            </StyledNavBar>
+        </StyledNavContainer>
+    );
+}
+
+const CollapsibleNavComponent = () => {
+    const [isOpen, setOpen] = useState(false);
 
     const CollapsibleNav = ({isOpen}) => {
         if (isOpen) {
@@ -64,14 +75,11 @@ export const NavBar = () => {
     }
 
     return (
-        <StyledNavContainer scroll={scrolling}>
-            <StyledNavBar>
-                <StyledNavLogo>Logo Here</StyledNavLogo>
-                <NavBarToggler />
-                <CollapsibleNav isOpen={isOpen}>
-                    <NavigationLinks/>
-                </CollapsibleNav>
-            </StyledNavBar>
-        </StyledNavContainer>
-    );
+        <>
+            <NavBarToggler />
+            <CollapsibleNav isOpen={isOpen}>
+                <NavigationLinks/>
+            </CollapsibleNav>
+        </>
+    )
 }
