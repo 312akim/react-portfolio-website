@@ -33,7 +33,7 @@ export const StyledNavigationList = styled.ul`
     display: inline-block;
     float: right;
     background: green;
-    width: 30%;
+    width: 100%;
     height: 100%;
 `
 
@@ -46,9 +46,9 @@ export const StyledToggler = styled.div`
 
 export const AnimatedContainer = styled(animated.div)`
     position: fixed;
-    top: 6vh;
-    height: 94vh;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 35%;
     z-index: 2;
 `
