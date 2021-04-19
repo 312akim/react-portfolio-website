@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import COLORS from '../../../shared/design/colorTheme';
 
 // Animations
-export const hoverCardTopFadeAnim = keyframes`
+const hoverCardTopFadeAnim = keyframes`
     0% {
         opacity: 0;
         transform: translateY(-20px);
@@ -14,7 +14,7 @@ export const hoverCardTopFadeAnim = keyframes`
     }
 `
 
-export const hoverCardBotFadeAnim = keyframes`
+const hoverCardBotFadeAnim = keyframes`
     0% {
         opacity: 0;
         transform: translateY(20px);

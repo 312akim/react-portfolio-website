@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledNavPlaceholder, StyledNavigationListWrapper } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
+
+import {useSpring, animated} from 'react-spring'
 
 export const NavBar = () => {
 
@@ -38,26 +40,26 @@ export const NavBar = () => {
 const CollapsibleNavComponent = () => {
     const [isOpen, setOpen] = useState(false);
 
-    const NavBarToggler = () => {
-        return (
-            <StyledToggler onClick={() => setOpen(true)}>
-                <FontAwesomeIcon icon={faBars} size="2x" />
-            </StyledToggler>
-        )
-    }
-
     return (
         <>
-            <NavBarToggler />
+            <NavBarToggler isOpen={isOpen} setOpen={setOpen} />
             <CollapsibleNav isOpen={isOpen} setOpen={setOpen}/>
         </>
+    )
+}
+
+const NavBarToggler = ({setOpen, isOpen}) => {
+    return (
+        <StyledToggler onClick={() => setOpen(!isOpen)}>
+            <FontAwesomeIcon icon={faBars} size="2x" />
+        </StyledToggler>
     )
 }
 
 const CollapsibleNav = ({isOpen, setOpen}) => {
     if (isOpen) {
         return (
-            <NavigationLinks setOpen={setOpen} />
+            <NavigationLinks setOpen={setOpen} isOpen={isOpen} />
         )
     } else {
         return (
@@ -66,10 +68,11 @@ const CollapsibleNav = ({isOpen, setOpen}) => {
     }
 }
 
-const NavigationLinks = ({setOpen}) => {
+const NavigationLinks = ({setOpen, isOpen}) => {
+    const props = useSpring({right: '0%', from: {right: '-100%'}})
+
     return (
-        <StyledNavigationListWrapper onClick={() => setOpen(false)}>
-            <Fade right>
+            <AnimatedContainer style={props} onClick={() => setOpen(false)}>
                 <StyledNavigationList>
                     <ReactScrollLink title="Home" id="homeSection"/>
                     <ReactScrollLink title="Projects" id="projectsSection"/>
@@ -77,7 +80,7 @@ const NavigationLinks = ({setOpen}) => {
                     <ReactScrollLink title="Activity" id="activitySection"/>
                     <ReactScrollLink title="Contact" id="contactSection"/>
                 </StyledNavigationList>
-            </Fade>
-        </StyledNavigationListWrapper>
+            </AnimatedContainer>
+
     )
 }

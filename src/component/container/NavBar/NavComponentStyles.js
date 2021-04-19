@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import COLORS from '../../../shared/design/colorTheme';
+import {animated} from 'react-spring'
 
 export const StyledNavContainer = styled.div`
     height: 6vh;
@@ -7,7 +8,7 @@ export const StyledNavContainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 2;
     width: 100%;
 `
 
@@ -21,10 +22,11 @@ export const StyledNavLogo = styled.div`
 
 export const StyledNavigationListWrapper = styled.div`
     position: fixed;
-    top: 0;
-    height: 100vh;
+    top: 6vh;
+    height: 94vh;
     width: 100%;
     background: rgba(0,0,0,0.5);
+    z-index: 2;
 `
 
 export const StyledNavigationList = styled.ul`
@@ -32,7 +34,7 @@ export const StyledNavigationList = styled.ul`
     float: right;
     background: green;
     width: 30%;
-    height: 100vh;
+    height: 100%;
 `
 
 export const StyledToggler = styled.div`
@@ -40,4 +42,13 @@ export const StyledToggler = styled.div`
     margin-top: 1vh;
     float: right;
     margin-right: 5%;
+`
+
+export const AnimatedContainer = styled(animated.div)`
+    position: fixed;
+    top: 6vh;
+    height: 94vh;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
 `
