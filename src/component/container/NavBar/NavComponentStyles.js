@@ -21,20 +21,20 @@ export const StyledNavLogo = styled.div`
 `
 
 export const StyledNavigationListWrapper = styled.div`
-    position: fixed;
-    top: 6vh;
-    height: 94vh;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 2;
+display: inline-block;
+float: right;
+background: green;
+width: 100%;
+height: 100%;
 `
 
 export const StyledNavigationList = styled.ul`
-    display: inline-block;
-    float: right;
-    background: green;
-    width: 100%;
-    height: 100%;
+
+`
+
+export const StyledRightArrowIconWrapper = styled.div`
+    position: absolute;
+    right: 5%;
 `
 
 export const StyledToggler = styled.div`

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledRightArrowIconWrapper, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import Slide from 'react-reveal/Slide';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-import {useSpring, animated} from 'react-spring'
+
+import {useSpring} from 'react-spring'
 
 export const NavBar = () => {
 
@@ -59,7 +59,7 @@ const NavBarToggler = ({setOpen, isOpen}) => {
 const CollapsibleNav = ({isOpen, setOpen}) => {
     if (isOpen) {
         return (
-            <NavigationLinks setOpen={setOpen} isOpen={isOpen} />
+            <NavigationLinks setOpen={setOpen}/>
         )
     } else {
         return (
@@ -68,11 +68,15 @@ const CollapsibleNav = ({isOpen, setOpen}) => {
     }
 }
 
-const NavigationLinks = ({setOpen, isOpen}) => {
+const NavigationLinks = ({setOpen}) => {
     const props = useSpring({right: '0%', from: {right: '-100%'}})
 
     return (
-            <AnimatedContainer style={props} onClick={() => setOpen(false)}>
+        <AnimatedContainer style={props} onClick={() => setOpen(false)}>
+            <StyledNavigationListWrapper>
+                <StyledRightArrowIconWrapper>
+                    <FontAwesomeIcon icon={faTimes} size="2x" />
+                </StyledRightArrowIconWrapper>
                 <StyledNavigationList>
                     <ReactScrollLink title="Home" id="homeSection"/>
                     <ReactScrollLink title="Projects" id="projectsSection"/>
@@ -80,7 +84,7 @@ const NavigationLinks = ({setOpen, isOpen}) => {
                     <ReactScrollLink title="Activity" id="activitySection"/>
                     <ReactScrollLink title="Contact" id="contactSection"/>
                 </StyledNavigationList>
-            </AnimatedContainer>
-
+            </StyledNavigationListWrapper>
+        </AnimatedContainer>
     )
 }
