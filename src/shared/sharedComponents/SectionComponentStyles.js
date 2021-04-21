@@ -14,6 +14,7 @@ export const StyledSectionHeader = styled.h1`
     height: 8vh;
     margin: 0;
     padding-top: 4vh;
+    text-transform: uppercase;
 `
 
 export const StyledSectionSubheader = styled.h2`

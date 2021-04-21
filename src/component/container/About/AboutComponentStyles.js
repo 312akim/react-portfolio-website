@@ -27,11 +27,12 @@ export const StyledNavigatorCaret = styled.div`
 export const headingStyles = css`
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 2rem;
-    margin-top: 0rem;
+    font-size: 1.8rem;
+    margin-top: 2rem;
     padding-top: 1rem;
     margin-bottom: 1rem;
     color: ${COLORS.primaryDark};
+    z-index: 1;
 `
 
 export const StyledDropdownHeader = styled.h3(headingStyles);
@@ -54,7 +55,7 @@ export const StyledDropdownContainer = styled.div`
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
   width: 96%;
-  height: 60vh;
+  height: 64vh;
   margin-left: 2%;
   margin-right: 2%;
 `
@@ -72,7 +73,8 @@ export const StyledDropdownImage = styled.img`
 export const StyledNavigatorItemTitle = styled.div`
   background: transparent;
   height: 14vh;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   margin-bottom: 0;
   margin-right: 0;
   border: 0;
@@ -84,7 +86,7 @@ export const StyledNavigatorItemTitle = styled.div`
   font-family: inherit;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 `
 
     //Ensures onMouseLeave triggers for NavigatorItemContainer
@@ -97,6 +99,7 @@ export const StyledNavigatorItemContainer = styled.li`
   position: relative;
   margin-left: 5%;
   margin-right: 5%;
+  z-index: 2;
 
   img {
     filter: brightness(40%);
@@ -105,13 +108,11 @@ export const StyledNavigatorItemContainer = styled.li`
   :hover img {
     filter: brightness(100%);
   }
-
 `
 
 export const StyledDropdownSlot = styled.div`
   position: absolute;
   left: 50%;
-  perspective: 1000px;
 `
 
 //Navigator
