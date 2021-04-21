@@ -26,7 +26,7 @@ const hoverCardBotFadeAnim = keyframes`
     }
 `
 
-export const hoverSwitcherAnim = keyframes`
+export const switchIconAnim = keyframes`
     0% {
         transform: translateX(0px);
     }
@@ -60,17 +60,7 @@ export const entranceAltProjectCard = keyframes`
     }
 `
 
-export const fadeInProjectSwitcher = keyframes`
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-`
-
-export const fadeInProjectModal = keyframes`
+export const fadeInAnimation = keyframes`
     0% {
         opacity: 0;
     }
@@ -88,9 +78,14 @@ export const StyledSectionContainer = styled.div`
 
 export const StyledSectionIconContainer = styled.div`
     display: inline-block;
-    color: black;
+    color: white;
     height: 53vh;
     margin-top: 47vh;
+    animation: ${switchIconAnim} 1.5s linear infinite;
+
+    @media (min-width: 768px) {
+        color: white;
+    }
 `
 
 export const StyledProjectCardsContainer = styled.div`
@@ -110,15 +105,21 @@ export const StyledSectionSwitcher = styled.div`
     background: ${COLORS.primaryDark};
     right: ${props => props.position};
     z-index: 1;
-    animation: ${fadeInProjectSwitcher} 1s linear;
-
-    :hover {
-        background: black;
-    }
+    animation: ${fadeInAnimation} 1s linear;
     
     :hover div {
-        animation: ${hoverSwitcherAnim} 1.5s linear infinite;
+        animation: ${switchIconAnim} 1.5s linear infinite;
         color: white;
+    }
+
+    @media (min-width: 768px) {
+        :hover {
+            background: black;
+        }
+        :hover div {
+            animation: ${switchIconAnim} 1.5s linear infinite;
+            color: white;
+        }
     }
 `
 
@@ -211,7 +212,7 @@ export const StyledModalContainer = styled.div`
     z-index: 1;
     background: rgba(0, 0, 0, 0.7);
 
-    animation: ${fadeInProjectModal} 1s linear;
+    animation: ${fadeInAnimation} 1s linear;
 `
 
 export const StyledModalHero = styled.div`
