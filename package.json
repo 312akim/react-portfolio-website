@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@octokit/core": "^3.4.0",
     "file-loader": "^6.2.0"
   }
 }

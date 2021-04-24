@@ -1,0 +1,349 @@
+{
+  "status": 200,
+  "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits?per_page=5",
+  "headers": {
+    "cache-control": "public, max-age=60, s-maxage=60",
+    "content-length": "1900",
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"bb8a1f61b047cb7a9bb152bba17a6ae1c54531e9c2a0ce83e1ed2182f001987d\"",
+    "last-modified": "Fri, 05 Mar 2021 00:31:44 GMT",
+    "link": "<https://api.github.com/repositories/319736788/commits?per_page=5&page=2>; rel=\"next\", <https://api.github.com/repositories/319736788/commits?per_page=5&page=31>; rel=\"last\"",
+    "x-github-media-type": "github.v3; format=json",
+    "x-ratelimit-limit": "60",
+    "x-ratelimit-remaining": "51",
+    "x-ratelimit-reset": "1619264238",
+    "x-ratelimit-used": "9"
+  },
+  "data": [
+    {
+      "sha": "129f56677074b1a12f3e57cc5150ed2a59bc0efa",
+      "node_id": "MDY6Q29tbWl0MzE5NzM2Nzg4OjEyOWY1NjY3NzA3NGIxYTEyZjNlNTdjYzUxNTBlZDJhNTliYzBlZmE=",
+      "commit": {
+        "author": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-05T00:31:44Z" },
+        "committer": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-05T00:31:44Z" },
+        "message": "Set nav cart icon to open cart",
+        "tree": {
+          "sha": "1d59b1a60b76117fae4ad77e348393f291b9c8b4",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/trees/1d59b1a60b76117fae4ad77e348393f291b9c8b4"
+        },
+        "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/commits/129f56677074b1a12f3e57cc5150ed2a59bc0efa",
+        "comment_count": 0,
+        "verification": { "verified": false, "reason": "unsigned", "signature": null, "payload": null }
+      },
+      "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/129f56677074b1a12f3e57cc5150ed2a59bc0efa",
+      "html_url": "https://github.com/312akim/apparel-store-mern/commit/129f56677074b1a12f3e57cc5150ed2a59bc0efa",
+      "comments_url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/129f56677074b1a12f3e57cc5150ed2a59bc0efa/comments",
+      "author": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+          "html_url": "https://github.com/312akim/apparel-store-mern/commit/39b5799875fe8e52ca6cd595c3a6181d2a524bf3"
+        }
+      ]
+    },
+    {
+      "sha": "39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+      "node_id": "MDY6Q29tbWl0MzE5NzM2Nzg4OjM5YjU3OTk4NzVmZThlNTJjYTZjZDU5NWMzYTYxODFkMmE1MjRiZjM=",
+      "commit": {
+        "author": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-04T16:59:31Z" },
+        "committer": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-04T16:59:31Z" },
+        "message": "Set snipcart_controller json response to snipcart json format in backend",
+        "tree": {
+          "sha": "b425098a109219e565b70b8ea63de00f1e28c78e",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/trees/b425098a109219e565b70b8ea63de00f1e28c78e"
+        },
+        "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/commits/39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+        "comment_count": 0,
+        "verification": { "verified": false, "reason": "unsigned", "signature": null, "payload": null }
+      },
+      "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+      "html_url": "https://github.com/312akim/apparel-store-mern/commit/39b5799875fe8e52ca6cd595c3a6181d2a524bf3",
+      "comments_url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/39b5799875fe8e52ca6cd595c3a6181d2a524bf3/comments",
+      "author": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+          "html_url": "https://github.com/312akim/apparel-store-mern/commit/a7a80fc23df0f7e4741ac4816c766210766f9bb3"
+        }
+      ]
+    },
+    {
+      "sha": "a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+      "node_id": "MDY6Q29tbWl0MzE5NzM2Nzg4OmE3YTgwZmMyM2RmMGY3ZTQ3NDFhYzQ4MTZjNzY2MjEwNzY2ZjliYjM=",
+      "commit": {
+        "author": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T07:08:59Z" },
+        "committer": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T07:08:59Z" },
+        "message": "Set snipcart button attributes to backend server address",
+        "tree": {
+          "sha": "3904c036cd39f30143b851c1a77ba826823c4116",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/trees/3904c036cd39f30143b851c1a77ba826823c4116"
+        },
+        "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/commits/a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+        "comment_count": 0,
+        "verification": { "verified": false, "reason": "unsigned", "signature": null, "payload": null }
+      },
+      "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+      "html_url": "https://github.com/312akim/apparel-store-mern/commit/a7a80fc23df0f7e4741ac4816c766210766f9bb3",
+      "comments_url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/a7a80fc23df0f7e4741ac4816c766210766f9bb3/comments",
+      "author": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "04cac241b048c712aa913ece78003e8de5414114",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/04cac241b048c712aa913ece78003e8de5414114",
+          "html_url": "https://github.com/312akim/apparel-store-mern/commit/04cac241b048c712aa913ece78003e8de5414114"
+        }
+      ]
+    },
+    {
+      "sha": "04cac241b048c712aa913ece78003e8de5414114",
+      "node_id": "MDY6Q29tbWl0MzE5NzM2Nzg4OjA0Y2FjMjQxYjA0OGM3MTJhYTkxM2VjZTc4MDAzZThkZTU0MTQxMTQ=",
+      "commit": {
+        "author": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T04:39:14Z" },
+        "committer": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T04:39:14Z" },
+        "message": "Comments for setupproxy.js",
+        "tree": {
+          "sha": "dfabde743460e436de61efd96c4264f58e14a65c",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/trees/dfabde743460e436de61efd96c4264f58e14a65c"
+        },
+        "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/commits/04cac241b048c712aa913ece78003e8de5414114",
+        "comment_count": 0,
+        "verification": { "verified": false, "reason": "unsigned", "signature": null, "payload": null }
+      },
+      "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/04cac241b048c712aa913ece78003e8de5414114",
+      "html_url": "https://github.com/312akim/apparel-store-mern/commit/04cac241b048c712aa913ece78003e8de5414114",
+      "comments_url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/04cac241b048c712aa913ece78003e8de5414114/comments",
+      "author": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "51a068f1edb6e5d847078abe75218b2167f70a78",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/51a068f1edb6e5d847078abe75218b2167f70a78",
+          "html_url": "https://github.com/312akim/apparel-store-mern/commit/51a068f1edb6e5d847078abe75218b2167f70a78"
+        }
+      ]
+    },
+    {
+      "sha": "51a068f1edb6e5d847078abe75218b2167f70a78",
+      "node_id": "MDY6Q29tbWl0MzE5NzM2Nzg4OjUxYTA2OGYxZWRiNmU1ZDg0NzA3OGFiZTc1MjE4YjIxNjdmNzBhNzg=",
+      "commit": {
+        "author": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T03:09:46Z" },
+        "committer": { "name": "Alex Kim", "email": "312akim@gmail.com", "date": "2021-03-03T03:09:46Z" },
+        "message": "Edited _redirects netlify proxy file",
+        "tree": {
+          "sha": "e6227f75d981425db4d6fd97e89ebf7076033e81",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/trees/e6227f75d981425db4d6fd97e89ebf7076033e81"
+        },
+        "url": "https://api.github.com/repos/312akim/apparel-store-mern/git/commits/51a068f1edb6e5d847078abe75218b2167f70a78",
+        "comment_count": 0,
+        "verification": { "verified": false, "reason": "unsigned", "signature": null, "payload": null }
+      },
+      "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/51a068f1edb6e5d847078abe75218b2167f70a78",
+      "html_url": "https://github.com/312akim/apparel-store-mern/commit/51a068f1edb6e5d847078abe75218b2167f70a78",
+      "comments_url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/51a068f1edb6e5d847078abe75218b2167f70a78/comments",
+      "author": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "312akim",
+        "id": 31906501,
+        "node_id": "MDQ6VXNlcjMxOTA2NTAx",
+        "avatar_url": "https://avatars.githubusercontent.com/u/31906501?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/312akim",
+        "html_url": "https://github.com/312akim",
+        "followers_url": "https://api.github.com/users/312akim/followers",
+        "following_url": "https://api.github.com/users/312akim/following{/other_user}",
+        "gists_url": "https://api.github.com/users/312akim/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/312akim/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/312akim/subscriptions",
+        "organizations_url": "https://api.github.com/users/312akim/orgs",
+        "repos_url": "https://api.github.com/users/312akim/repos",
+        "events_url": "https://api.github.com/users/312akim/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/312akim/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "e21fdefbd146f32300060fabf5d1d2b2cdf4c722",
+          "url": "https://api.github.com/repos/312akim/apparel-store-mern/commits/e21fdefbd146f32300060fabf5d1d2b2cdf4c722",
+          "html_url": "https://github.com/312akim/apparel-store-mern/commit/e21fdefbd146f32300060fabf5d1d2b2cdf4c722"
+        }
+      ]
+    }
+  ]
+}
