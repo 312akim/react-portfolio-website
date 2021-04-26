@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCloudContainer, StyledCloudWrapper, StyledCloudImg } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
+import Fade from 'react-reveal/Fade';
+import cloudSvg from '../../../shared/svgs/cloud.svg'
 
 export const ActivityComponent = () => {
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryDark} fontColor={COLORS.primaryLight}>
+            <Fade right>
+              <TimedCloud />
+            </Fade>
             <StyledSectionHeader>
                 Recent Activity
             </StyledSectionHeader>
@@ -93,5 +98,40 @@ const CommitComponent = (props) => {
           ))}
         </StyledCommitDataWrapper>
     </StyledCommitWrapper>
+  )
+}
+
+const TimedCloud = () => {
+  const [cloudState, setCloudState] = useState(<div></div>);
+
+  const scrollTop = window.innerHeight * 3;
+  useEffect(() => {
+      const onScroll = () => {
+          let currentPosition = window.pageYOffset;
+          console.log("Current position: " + currentPosition);
+
+          if (currentPosition > scrollTop) {
+              setCloudState(<CloudComponent />);
+          } else {
+              setCloudState(<div></div>);
+          }
+      }
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+      <div>
+          {cloudState}
+      </div>
+  )
+}
+
+const CloudComponent = () => {
+  return (
+    <StyledCloudWrapper>
+      <StyledCloudImg src={cloudSvg} alt="" />
+      <StyledCloudContainer>This section utilizes Github's Octokit API to pull my latest commits</StyledCloudContainer>
+    </StyledCloudWrapper>
   )
 }

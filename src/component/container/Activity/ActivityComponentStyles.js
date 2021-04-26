@@ -1,6 +1,27 @@
 import COLORS from '../../../shared/design/colorTheme';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import { animated } from 'react-spring'
+import cloudSvg from '../../../shared/svgs/cloud.svg'
+
+//Animations
+const CloudAnimation = keyframes`
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+`
 
 //Section Header 8vh
 
@@ -40,4 +61,23 @@ export const StyledCommitDataContainer = styled.div`
     border: 1px ${COLORS.primaryLight} dotted;
     width: 70%;
     margin-left: 15%;
+`
+
+export const StyledCloudContainer = styled.div`
+    position: absolute;
+    width: 21%;
+    left: 72%;
+    margin-top: 14%;
+    opacity: 1;
+`
+
+export const StyledCloudImg = styled.img`
+    position: absolute;
+    width: 30%;
+    left: 68%;
+`
+
+export const StyledCloudWrapper = styled.div`
+    opacity: 0;
+    animation: ${CloudAnimation} 6s linear;
 `

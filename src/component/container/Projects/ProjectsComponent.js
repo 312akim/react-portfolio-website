@@ -5,7 +5,6 @@ import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, Style
 import projectPlaceholder from '../../../shared/images/project-placeholder.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import Fade from 'react-reveal/Fade';
 
 export const ProjectsComponent = () => {
 

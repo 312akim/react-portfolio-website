@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
@@ -9,7 +9,6 @@ import { NavBar } from '../NavBar/NavComponent';
 import Fade from 'react-reveal/Fade';
 
 const MainComponent = () => {
-
     // React-scroll only seems to work on id props set on plain html divs.
     return (
         <StyledMainContainer>
@@ -50,4 +49,4 @@ const MainComponent = () => {
     )
 }
 
-export default MainComponent; 
+export default MainComponent;
