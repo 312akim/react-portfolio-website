@@ -52,28 +52,38 @@ const CommitListComponent = () => {
     fetchPortfolioCommits();
     }, [])
 
+    const commitConfig = [
+      { title: "Apparel Store Commits", api: apparelStoreCommits },
+      { title: "Portfolio Site Commits", api: portfolioCommits }
+    ];
+
     return (
-      <>
-        <ul>
-          <h2>Apparel Store Commits</h2>
-          {!apparelStoreCommits ? <div>failed to load commit data</div> :
-            apparelStoreCommits.data.map(commit => (
-              <li key={commit.id}>
-                  {new Date(commit.commit.author.date).toLocaleDateString()}: {commit.commit.message}
-                  <a href={commit.html_url}> Link</a>
-              </li>
-          ))}
-        </ul>
-        <ul>
-          <h2>Portfolio Site Commits</h2>
-          {!portfolioCommits ? <div>failed to load commit data</div> :
-            portfolioCommits.data.map(commit => (
-              <li key={commit.id}>
-                  {new Date(commit.commit.author.date).toLocaleDateString()}: {commit.commit.message}
-                  <a href={commit.html_url}> Link</a>
-              </li>
-          ))}
-        </ul>
-      </>
+      <div>
+        {commitConfig.map((n, index) => {
+          console.log("returned");
+          return (
+            <div key={index}>
+              {CommitComponent(n)}
+            </div>
+            )
+        })}
+      </div>
     );
+}
+
+const CommitComponent = (props) => {
+  return (
+    <>
+      <ul>
+        <h2>{props.title}</h2>
+        {!props.api ? <div>Failed to load github commit data</div> :
+          props.api.data.map(commit => (
+            <div key={commit.id}>
+                {new Date(commit.commit.author.date).toLocaleDateString()}: {commit.commit.message}
+                <a href={commit.html_url}> Link</a>
+            </div>
+        ))}
+      </ul>
+    </>
+  )
 }
