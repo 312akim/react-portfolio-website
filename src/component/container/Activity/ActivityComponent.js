@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
 
 export const ActivityComponent = () => {
@@ -73,17 +74,27 @@ const CommitListComponent = () => {
 
 const CommitComponent = (props) => {
   return (
-    <>
-      <ul>
-        <h2>{props.title}</h2>
-        {!props.api ? <div>Failed to load github commit data</div> :
-          props.api.data.map(commit => (
-            <div key={commit.id}>
-                {new Date(commit.commit.author.date).toLocaleDateString()}: {commit.commit.message}
-                <a href={commit.html_url}> Link</a>
-            </div>
-        ))}
-      </ul>
-    </>
+    <StyledCommitWrapper>
+        <StyledCommitTitle>{props.title}</StyledCommitTitle>
+        <StyledCommitDataWrapper>
+          {!props.api ? <div>Failed to load github commit data</div> :
+            props.api.data.map(commit => (
+              <StyledCommitDataContainer key={commit.id}>
+                <StyledCommitDate>
+                  Date: {new Date(commit.commit.author.date).toLocaleDateString()}
+                </StyledCommitDate>
+                <StyledCommitComment>
+                  {commit.commit.message}
+                </StyledCommitComment>
+                <StyledCommitGitLink> 
+                  See on:&nbsp;
+                  <StyledCommitGitAnchor href={commit.html_url}>
+                  Github
+                  </StyledCommitGitAnchor>
+                </StyledCommitGitLink>
+              </StyledCommitDataContainer>
+          ))}
+        </StyledCommitDataWrapper>
+    </StyledCommitWrapper>
   )
 }

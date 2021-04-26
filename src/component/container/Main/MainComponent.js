@@ -4,7 +4,7 @@ import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
 import { LandingComponent } from '../../presentational/Landing/LandingComponent';
 import { ProjectsComponent } from '..//Projects/ProjectsComponent';
-import { ActivityComponent } from '../../presentational/Activity/ActivityComponent';
+import { ActivityComponent } from '../../container/Activity/ActivityComponent';
 import { NavBar } from '../NavBar/NavComponent';
 import Fade from 'react-reveal/Fade';
 
