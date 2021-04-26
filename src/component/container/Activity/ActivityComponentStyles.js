@@ -44,12 +44,12 @@ export const StyledCommitDataWrapper = styled.div`
 export const StyledCommitDate = styled.div`
     display: inline-block;
     color: ${COLORS.primaryLight};
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
 `
 
 export const StyledCommitComment = styled.div`
     color: ${COLORS.primaryLight};
-    margin: 0.5rem 0;
+    margin: 0.3rem 10%;
 `
 
 export const StyledCommitGitAnchor = styled.a`

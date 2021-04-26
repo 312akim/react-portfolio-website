@@ -35,23 +35,23 @@ const CommitListComponent = () => {
     const owner = '312akim',
           repo1 = 'apparel-store-mern',
           repo2 = 'react-portfolio-website',
-          perPage = 5;
+          perPage = 4;
     
 
     const fetchApparelStoreData = async () => {
-        const fiveMostRecentApparelCommits = await octokit.request(
+        const fourMostRecentApparelCommits = await octokit.request(
             `GET /repos/{owner}/{repo1}/commits`, { owner, repo1, per_page: perPage }
         );
 
-        setApparelStoreCommits(fiveMostRecentApparelCommits);
+        setApparelStoreCommits(fourMostRecentApparelCommits);
     }
 
     const fetchPortfolioCommits = async () => {
-        const fiveMostRecentPortfolioCommits = await octokit.request(
+        const fourMostRecentPortfolioCommits = await octokit.request(
             `GET /repos/{owner}/{repo2}/commits`, { owner, repo2, per_page: perPage }
         );
 
-        setPortfolioCommits(fiveMostRecentPortfolioCommits);
+        setPortfolioCommits(fourMostRecentPortfolioCommits);
     }
 
     fetchApparelStoreData();
