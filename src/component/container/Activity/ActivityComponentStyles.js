@@ -12,7 +12,8 @@ export const StyledCommitWrapper = styled.div`
 `
 
 export const StyledCommitTitle = styled.h2`
-
+    margin-top: 0;
+    color: ${COLORS.primaryLight};
 `
 
 export const StyledCommitDataWrapper = styled.div`
@@ -20,21 +21,23 @@ export const StyledCommitDataWrapper = styled.div`
 `
 
 export const StyledCommitDate = styled.div`
-
+    display: inline-block;
+    color: ${COLORS.primaryLight};
+    margin-top: 0.5rem;
 `
 
 export const StyledCommitComment = styled.div`
-
-`
-
-export const StyledCommitGitLink = styled.div`
-
+    color: ${COLORS.primaryLight};
+    margin: 0.5rem 0;
 `
 
 export const StyledCommitGitAnchor = styled.a`
-
+    color: ${COLORS.primaryLight};
 `
 
 export const StyledCommitDataContainer = styled.div`
-
+    margin: 1vh;
+    border: 1px ${COLORS.primaryLight} dotted;
+    width: 70%;
+    margin-left: 15%;
 `

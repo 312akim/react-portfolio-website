@@ -6,7 +6,7 @@ import { Octokit } from "@octokit/core";
 
 export const ActivityComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryDark} fontColor={COLORS.primaryLight}>
             <StyledSectionHeader>
                 Recent Activity
             </StyledSectionHeader>
@@ -81,17 +81,14 @@ const CommitComponent = (props) => {
             props.api.data.map(commit => (
               <StyledCommitDataContainer key={commit.id}>
                 <StyledCommitDate>
-                  Date: {new Date(commit.commit.author.date).toLocaleDateString()}
+                  Date: {new Date(commit.commit.author.date).toLocaleDateString()}&nbsp;
                 </StyledCommitDate>
-                <StyledCommitComment>
-                  {commit.commit.message}
-                </StyledCommitComment>
-                <StyledCommitGitLink> 
-                  See on:&nbsp;
-                  <StyledCommitGitAnchor href={commit.html_url}>
+                <StyledCommitGitAnchor href={commit.html_url} target="_blank">
                   Github
                   </StyledCommitGitAnchor>
-                </StyledCommitGitLink>
+                <StyledCommitComment>
+                  Comment: {commit.commit.message}
+                </StyledCommitComment>
               </StyledCommitDataContainer>
           ))}
         </StyledCommitDataWrapper>

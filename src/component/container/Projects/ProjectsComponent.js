@@ -26,7 +26,7 @@ export const ProjectsComponent = () => {
 
     // Main
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryDark}>
+        <StyledSectionComponent backgroundColor={COLORS.primaryDark} fontColor={COLORS.primaryLight}>
             <SectionContainer section={section} projectModalSwitcher={projectModalSwitcher} sectionSwitchHandler={sectionSwitchHandler} showModal={showModal}/>
         </StyledSectionComponent>
     )
