@@ -29,12 +29,23 @@ const CloudAnimation = keyframes`
 export const StyledCommitWrapper = styled.div`
     width: 100%;
     height: 40vh;
-    margin-top: 1vh;
+    margin-top: 0;
+    
+    @media (min-width: 1200px) {
+        margin-top: 1vh;
+    }
 `
 
 export const StyledCommitTitle = styled.h2`
     margin-top: 0;
+    margin-bottom: 1vh;
     color: ${COLORS.primaryLight};
+    font-size: 1.4rem;
+
+    @media (min-width: 1200px) {
+        margin-bottom: 2vh;
+    }
+    
 `
 
 export const StyledCommitDataWrapper = styled.div`
@@ -45,11 +56,16 @@ export const StyledCommitDate = styled.div`
     display: inline-block;
     color: ${COLORS.primaryLight};
     margin-top: 0.3rem;
+    font-size: 1rem;
 `
 
 export const StyledCommitComment = styled.div`
     color: ${COLORS.primaryLight};
-    margin: 0.3rem 10%;
+    margin: 0.1rem 5%;
+
+    @media (min-width: 1200px) {
+        margin: 0.3rem 0%;
+    }
 `
 
 export const StyledCommitGitAnchor = styled.a`
@@ -57,18 +73,33 @@ export const StyledCommitGitAnchor = styled.a`
 `
 
 export const StyledCommitDataContainer = styled.div`
-    margin: 1vh;
-    border: 1px ${COLORS.primaryLight} dotted;
-    width: 70%;
-    margin-left: 15%;
+    border: 1px black solid;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    padding: 1% 0;
+
+    @media (min-width: 768px) {
+        margin-top: 3%;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 1vh;
+        width: 70%;
+        margin-left: 15%;
+    }
 `
 
 export const StyledCloudContainer = styled.div`
     position: absolute;
-    width: 21%;
-    left: 72%;
-    margin-top: 14%;
     opacity: 1;
+    width: 100%;
+
+    @media (min-width: 1200px) {
+        width: 21%;
+        left: 72%;
+        margin-top: 14%;
+    }
 `
 
 export const StyledCloudImg = styled.img`
@@ -80,4 +111,12 @@ export const StyledCloudImg = styled.img`
 export const StyledCloudWrapper = styled.div`
     opacity: 0;
     animation: ${CloudAnimation} 6s linear;
+`
+
+export const StyledCommitListContainer = styled.div`
+    margin-top: 5%;
+
+    @media (min-width: 768px) {
+        margin-top: 0%;
+    }
 `

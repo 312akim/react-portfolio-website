@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCloudContainer, StyledCloudWrapper, StyledCloudImg } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCloudContainer, StyledCloudWrapper, StyledCloudImg } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
 import Fade from 'react-reveal/Fade';
 import cloudSvg from '../../../shared/svgs/cloud.svg'
@@ -15,9 +15,9 @@ export const ActivityComponent = () => {
             <StyledSectionHeader>
                 Recent Activity
             </StyledSectionHeader>
-            <div>
+            <StyledCommitListContainer>
                 <CommitListComponent />
-            </div>
+            </StyledCommitListContainer>
         </StyledSectionComponent>
     )
 }
@@ -35,9 +35,10 @@ const CommitListComponent = () => {
     const owner = '312akim',
           repo1 = 'apparel-store-mern',
           repo2 = 'react-portfolio-website',
-          perPage = 4;
+          // Show 3 commits if smaller vertical sized screen
+          perPage = window.document.body.offsetHeight < 4100 ? 3 : 4;
     
-
+    console.log("Height: " + window.document.body.offsetHeight);
     const fetchApparelStoreData = async () => {
         const fourMostRecentApparelCommits = await octokit.request(
             `GET /repos/{owner}/{repo1}/commits`, { owner, repo1, per_page: perPage }
