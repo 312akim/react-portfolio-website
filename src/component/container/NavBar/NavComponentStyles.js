@@ -42,6 +42,7 @@ export const StyledToggler = styled.div`
     margin-top: 1vh;
     float: right;
     margin-right: 5%;
+    color: ${COLORS.secondaryLight};
 `
 
 export const AnimatedContainer = styled(animated.div)`

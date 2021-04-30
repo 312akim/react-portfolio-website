@@ -49,7 +49,7 @@ export const StyledCommitTitle = styled.h2`
 `
 
 export const StyledCommitDataWrapper = styled.div`
-
+    
 `
 
 export const StyledCommitDate = styled.div`
@@ -73,7 +73,7 @@ export const StyledCommitGitAnchor = styled.a`
 `
 
 export const StyledCommitDataContainer = styled.div`
-    border: 1px black solid;
+    border: 1px ${COLORS.secondaryLight} solid;
     width: 90%;
     margin-left: 5%;
     margin-top: 2%;

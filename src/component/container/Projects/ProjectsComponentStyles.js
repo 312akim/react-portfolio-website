@@ -147,7 +147,7 @@ export const StyledProjectCardTitle = styled.h2`
     margin-left: 12.5%;
     color: white;
     height: 12%;
-    background: blue;
+    background: ${COLORS.secondaryLight };
 `
 
 export const StyledProjectInformation = styled.div`
@@ -163,7 +163,7 @@ export const StyledReadMore = styled.button`
     margin-top: 12%;
     margin-bottom: 3%;
     color: white;
-    background: blue;
+    background: ${COLORS.secondaryLight };
 `
 
 export const StyledGithubLink = styled.a`
