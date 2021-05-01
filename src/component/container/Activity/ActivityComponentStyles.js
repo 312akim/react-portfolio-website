@@ -37,6 +37,8 @@ export const StyledCommitWrapper = styled.div`
 `
 
 export const StyledCommitTitle = styled.h2`
+    text-align: left;
+    margin-left: 5%;
     margin-top: 0;
     margin-bottom: 1vh;
     color: ${COLORS.primaryLight};
@@ -44,6 +46,8 @@ export const StyledCommitTitle = styled.h2`
 
     @media (min-width: 1200px) {
         margin-bottom: 2vh;
+        margin-left: 15%;
+        font-size: 1.6rem;
     }
     
 `

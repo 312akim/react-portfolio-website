@@ -9,9 +9,9 @@ import cloudSvg from '../../../shared/svgs/cloud.svg'
 export const ActivityComponent = () => {
     return (
         <StyledSectionComponent backgroundColor={COLORS.primaryDark} fontColor={COLORS.primaryLight}>
-            <Fade right>
+            {/* <Fade right>
               <TimedCloud />
-            </Fade>
+            </Fade> */}
             <StyledSectionHeader>
                 Recent Activity
             </StyledSectionHeader>
@@ -102,37 +102,37 @@ const CommitComponent = (props) => {
   )
 }
 
-const TimedCloud = () => {
-  const [cloudState, setCloudState] = useState(<div></div>);
+// const TimedCloud = () => {
+//   const [cloudState, setCloudState] = useState(<div></div>);
 
-  const scrollTop = window.innerHeight * 3;
-  useEffect(() => {
-      const onScroll = () => {
-          let currentPosition = window.pageYOffset;
-          console.log("Current position: " + currentPosition);
+//   const scrollTop = window.innerHeight * 3;
+//   useEffect(() => {
+//       const onScroll = () => {
+//           let currentPosition = window.pageYOffset;
+//           console.log("Current position: " + currentPosition);
 
-          if (currentPosition > scrollTop) {
-              setCloudState(<CloudComponent />);
-          } else {
-              setCloudState(<div></div>);
-          }
-      }
-      window.addEventListener("scroll", onScroll);
-      return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+//           if (currentPosition > scrollTop) {
+//               setCloudState(<CloudComponent />);
+//           } else {
+//               setCloudState(<div></div>);
+//           }
+//       }
+//       window.addEventListener("scroll", onScroll);
+//       return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
 
-  return (
-      <div>
-          {cloudState}
-      </div>
-  )
-}
+//   return (
+//       <div>
+//           {cloudState}
+//       </div>
+//   )
+// }
 
-const CloudComponent = () => {
-  return (
-    <StyledCloudWrapper>
-      <StyledCloudImg src={cloudSvg} alt="" />
-      <StyledCloudContainer>This section utilizes Github's Octokit API to pull my latest commits</StyledCloudContainer>
-    </StyledCloudWrapper>
-  )
-}
+// const CloudComponent = () => {
+//   return (
+//     <StyledCloudWrapper>
+//       <StyledCloudImg src={cloudSvg} alt="" />
+//       <StyledCloudContainer>This section utilizes Github's Octokit API to pull my latest commits</StyledCloudContainer>
+//     </StyledCloudWrapper>
+//   )
+// }

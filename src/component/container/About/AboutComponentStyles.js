@@ -19,7 +19,7 @@ export const StyledNavigatorCaret = styled.div`
     height: 0;
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent ${COLORS.primaryDark};
+    border-color: transparent transparent ${COLORS.secondaryLight};
     left: calc(50% - 10px);
     z-index: 1;
 `
