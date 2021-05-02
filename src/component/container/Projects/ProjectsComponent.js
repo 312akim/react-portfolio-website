@@ -43,7 +43,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                             Apparel Store
                         </StyledProjectCardTitle>
                         <StyledProjectInformation>
-                            Responsive SPA e-commerce apparel web store meant to act as a template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
+                            Responsive SPA e-commerce apparel web store template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
                         </StyledProjectInformation>
                         <StyledReadMore onClick={() => projectModalSwitcher(1)}>
                             Read More
@@ -60,7 +60,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                     <StyledProjectCardImage src={projectPlaceholder}/>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
-                            Animation/UX Concepts
+                            UX Site Concepts
                         </StyledProjectCardTitle>
                         <StyledProjectInformation>
                             A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.

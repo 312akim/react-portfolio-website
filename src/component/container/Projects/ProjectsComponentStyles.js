@@ -26,13 +26,13 @@ const hoverCardBotFadeAnim = keyframes`
     }
 `
 
-export const switchIconAnim = keyframes`
+export const switchIconAnim = (x) => keyframes`
     0% {
         transform: translateX(0px);
     }
 
     50% {
-        transform: translateX(15px);
+        transform: translateX(${x}px);
     }
 
     100%: {
@@ -81,10 +81,11 @@ export const StyledSectionIconContainer = styled.div`
     color: white;
     height: 53vh;
     margin-top: 47vh;
-    animation: ${switchIconAnim} 1.5s linear infinite;
+    animation: ${switchIconAnim(7)} 1.2s linear infinite;
 
     @media (min-width: 768px) {
         color: white;
+        animation: ${switchIconAnim(15)} 1.5s linear infinite;
     }
 `
 
@@ -152,18 +153,34 @@ export const StyledProjectCardTitle = styled.h2`
 
 export const StyledProjectInformation = styled.div`
     height: 20%;
-    width: 70%;
+    width: 90%;
     margin: auto;
     opacity: 1;
     color: white;
+
+    @media (min-width: 576px) {
+        width: 65%;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 10%;
+    }
 `
 
 export const StyledReadMore = styled.button`
     height: 10%;
-    margin-top: 12%;
+    margin-top: 25%;
     margin-bottom: 3%;
     color: white;
     background: ${COLORS.secondaryLight };
+
+    @media (min-width: 576px) {
+        margin-top: 18%;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 10%;
+    }
 `
 
 export const StyledGithubLink = styled.a`
