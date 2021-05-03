@@ -30,10 +30,17 @@ export const StyledNameContainer = styled.div`
 `
 
 export const StyledMainHeader = styled.h1`
-    font-size: 64px;
+    font-size: 54px;
     font-weight: 300;
     padding-right: 15%;
+    padding-top: 1vh;
     margin: 0;
+    font-family: 'Noto Serif KR', serif;
+
+    @media (min-width: 768px) {
+        padding-top: 3vh;
+        font-size: 64px;
+    }
 
     @media (min-width: 1200px) {
         font-size: 96px;
@@ -45,6 +52,7 @@ export const StyledSubHeader = styled.h2`
     font-weight: 700;
     padding-left: 15%;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 
     @media (min-width: 1200px) {
         font-size: 54px;
