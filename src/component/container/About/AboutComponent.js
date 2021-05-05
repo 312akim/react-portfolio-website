@@ -10,6 +10,7 @@ import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
 import Fade from 'react-reveal/Fade';
+import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 
 export const AboutComponent = () => {
     return (
@@ -40,15 +41,21 @@ const Navigator = ({children}) => {
 const HoverImage = (props) => {
     switch (props.image) {
         case 0: return (
-            <StyledDropdownImage src={businessImage} />
+            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+                <StyledDropdownImage src={businessImage} />
+            </StyledImageCropContainer>
         )
 
         case 1: return (
-            <StyledDropdownImage src={creativeImage} />
+            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+                <StyledDropdownImage src={creativeImage} />
+            </StyledImageCropContainer>
         )
 
         case 2: return (
-            <StyledDropdownImage src={peopleImage} />
+            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+                <StyledDropdownImage src={peopleImage} />
+            </StyledImageCropContainer>
         )
     }
 }

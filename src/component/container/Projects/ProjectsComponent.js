@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledProjectCardImageContainer } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero } from './ProjectsComponentStyles';
+import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import projectPlaceholder from '../../../shared/images/apparel-store-mockup.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -37,9 +38,9 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
         return (
             <StyledProjectCardsContainer>
                 <StyledProjectCard>
-                    <StyledProjectCardImageContainer>
-                            <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledProjectCardImageContainer>
+                    <StyledImageCropContainer height={'37vh'}>
+                        <StyledProjectCardImage src={projectPlaceholder}/>
+                    </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
                             Apparel Store
@@ -59,9 +60,9 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                     </StyledCardHoverContainer>
                 </StyledProjectCard>
                 <StyledProjectCard>
-                    <StyledProjectCardImageContainer>
+                    <StyledImageCropContainer height={'37vh'}>
                             <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledProjectCardImageContainer>
+                        </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
                             UX Site Concepts
@@ -87,9 +88,9 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             return (
                 <StyledAltProjectCardsContainer>
                     <StyledProjectCard>
-                        <StyledProjectCardImageContainer>
+                        <StyledImageCropContainer height={'37vh'}>
                             <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledProjectCardImageContainer>
+                        </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
                                 Portfolio Website
@@ -109,9 +110,9 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                         </StyledCardHoverContainer>
                     </StyledProjectCard>
                     <StyledProjectCard>
-                        <StyledProjectCardImageContainer>
+                        <StyledImageCropContainer height={'37vh'}>
                             <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledProjectCardImageContainer>
+                        </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
                                 FitBrews React Website

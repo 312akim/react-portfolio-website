@@ -66,8 +66,13 @@ export const StyledDropdownImage = styled.img`
     left: 0;
     top: 0;
     width: 100%;
-    height: 17vh;
+    height: auto;
+    min-height: 17vh;
     overflow: hidden;
+
+    @media (min-width: 1200px) {
+      margin-top: -2vh;
+    }
 `
 
 export const StyledNavigatorItemTitle = styled.div`
