@@ -37,24 +37,37 @@ export const StyledCommitWrapper = styled.div`
 `
 
 export const StyledCommitTitle = styled.h2`
+    position: absolute;
     text-align: left;
-    margin-left: 5%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-left: 2%;
+    padding: 0 1%;
+    margin-top: -1.5vh;
     color: ${COLORS.primaryLight};
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    background: black;
+    width: auto;
+    box-shadow: 3px 2px 2px ${COLORS.secondaryLight};
+
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+        box-shadow: 5px 4px 4px ${COLORS.secondaryLight};
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 1vh;
+        padding-bottom: 0.3vh;
+    }
 
     @media (min-width: 1200px) {
-        margin-top: 3vh;
-        margin-bottom: 2vh;
-        margin-left: 15%;
+        margin-top: -1vh;
+        margin-left: 12%;
         font-size: 1.6rem;
     }
     
 `
 
 export const StyledCommitDataWrapper = styled.div`
-    
+    overflow-y: auto;
 `
 
 export const StyledCommitDate = styled.div`
@@ -83,6 +96,7 @@ export const StyledCommitDataContainer = styled.div`
     margin-left: 5%;
     margin-top: 2%;
     padding: 1% 0;
+    box-shadow: 5px 3px 4px ${COLORS.secondaryDark};
 
     @media (min-width: 768px) {
         margin-top: 3%;
@@ -119,9 +133,5 @@ export const StyledCloudWrapper = styled.div`
 `
 
 export const StyledCommitListContainer = styled.div`
-    margin-top: 5%;
 
-    @media (min-width: 768px) {
-        margin-top: 0%;
-    }
 `

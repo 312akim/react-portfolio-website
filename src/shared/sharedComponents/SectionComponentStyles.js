@@ -16,11 +16,21 @@ export const StyledSectionHeader = styled.h1`
     margin: 0;
     padding-top: 4vh;
     text-transform: uppercase;
+    font-size: 1.8rem;
+
+    @media (min-width: 480px) {
+        font-size: 2rem;
+    }
 `
 
 export const StyledSectionSubheader = styled.h2`
     height: 4vh;
     margin: 0;
+    font-size: 1.3rem;
+
+    @media (min-width: 480px) {
+        font-size: 1.5rem;
+    }
 `
 
 export const StyledSectionText = styled.p`
