@@ -25,10 +25,10 @@ const CloudAnimation = keyframes`
 
 //Section Header 8vh
 
-//8vh + 82vh = 90/100vh
+//8vh + 80vh = 88/100vh
 export const StyledCommitWrapper = styled.div`
     width: 100%;
-    height: 40vh;
+    height: 39vh;
     margin-top: 0;
     
     @media (min-width: 1200px) {
@@ -39,12 +39,13 @@ export const StyledCommitWrapper = styled.div`
 export const StyledCommitTitle = styled.h2`
     text-align: left;
     margin-left: 5%;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-bottom: 1vh;
     color: ${COLORS.primaryLight};
     font-size: 1.4rem;
 
     @media (min-width: 1200px) {
+        margin-top: 3vh;
         margin-bottom: 2vh;
         margin-left: 15%;
         font-size: 1.6rem;
