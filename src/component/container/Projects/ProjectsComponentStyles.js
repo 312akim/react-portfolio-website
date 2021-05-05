@@ -130,16 +130,24 @@ export const StyledProjectCard = styled.div`
     height: 37vh;
     margin: 0 auto 5vh auto;
     border: 1px solid black;
+    background: white;
 `
 
+export const StyledProjectCardImageContainer = styled.div`
+    width: 100%;
+    height: 37vh;
+    overflow: hidden;
+`
 
 export const StyledProjectCardImage = styled.img`
-    width: 100%;
-    height: auto;
+    height: 27vh;
+    width: auto;
+    margin-top: 5vh;
 
-    @media (min-width: 576px) {
-        height: 100%;
-        width: auto;
+    @media (min-width: 1200px) {
+        height: 37vh;
+        margin-left: 0;
+        margin-top: 0;
     }
 `
 export const StyledProjectCardTitle = styled.h2`
