@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledRightArrowIconWrapper, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import Slide from 'react-reveal/Slide'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
 import {useSpring} from 'react-spring'
@@ -56,10 +57,10 @@ const NavBarToggler = ({setOpen, isOpen}) => {
     )
 }
 
-const CollapsibleNav = ({isOpen, setOpen}) => {
+const CollapsibleNav = ({isOpen}) => {
     if (isOpen) {
         return (
-            <NavigationLinks setOpen={setOpen}/>
+            <NavigationLinks isOpen={isOpen}/>
         )
     } else {
         return (
@@ -68,21 +69,20 @@ const CollapsibleNav = ({isOpen, setOpen}) => {
     }
 }
 
-const NavigationLinks = ({setOpen}) => {
+const NavigationLinks = ({isOpen}) => {
     const props = useSpring({right: '0%', from: {right: '-100%'}})
 
     return (
-        <AnimatedContainer style={props} onClick={() => setOpen(false)}>
+        <AnimatedContainer style={props}>
             <StyledNavigationListWrapper>
-                <StyledRightArrowIconWrapper>
-                    <FontAwesomeIcon icon={faTimes} size="2x" />
-                </StyledRightArrowIconWrapper>
                 <StyledNavigationList>
+                <Slide right when={isOpen}>
                     <ReactScrollLink title="Home" id="homeSection"/>
                     <ReactScrollLink title="Projects" id="projectsSection"/>
                     <ReactScrollLink title="About" id="aboutSection"/>
                     <ReactScrollLink title="Activity" id="activitySection"/>
                     <ReactScrollLink title="Contact" id="contactSection"/>
+                </Slide>
                 </StyledNavigationList>
             </StyledNavigationListWrapper>
         </AnimatedContainer>

@@ -129,7 +129,7 @@ export const StyledProjectCard = styled.div`
     height: 37vh;
     margin: 0 auto 5vh auto;
     background: white;
-    box-shadow: 14px 14px black;
+    box-shadow: 16px 16px black;
 `
 
 export const StyledProjectCardImage = styled.img`
@@ -234,6 +234,7 @@ export const StyledModalContainer = styled.div`
     width: 140%;
     background: rgba(0, 0, 0, 0.7);
     animation: ${fadeInAnimation} 1s linear;
+    z-index: 3;
 `
 
 export const StyledModalHero = styled.div`

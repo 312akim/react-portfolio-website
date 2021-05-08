@@ -21,35 +21,42 @@ export const StyledNavLogo = styled.div`
 `
 
 export const StyledNavigationListWrapper = styled.div`
-display: inline-block;
-float: right;
-background: green;
-width: 100%;
-height: 100%;
+    display: inline-block;
+    float: right;
+    background: transparent;
+    color: ${COLORS.secondaryLight};
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
 `
 
 export const StyledNavigationList = styled.ul`
-
-`
-
-export const StyledRightArrowIconWrapper = styled.div`
-    position: absolute;
-    right: 5%;
+    
 `
 
 export const StyledToggler = styled.div`
     display: inline-block;
     margin-top: 1vh;
     float: right;
-    margin-right: 5%;
+    margin-right: 2%;
     color: ${COLORS.secondaryLight};
 `
 
 export const AnimatedContainer = styled(animated.div)`
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 35%;
+    text-align: right;
+    top: 6vh;
+    padding-right: 2%;
+    height: auto;
+    width: auto;
     z-index: 2;
+    padding-top: 2vh;
+
+    @media (min-width: 768px) {
+        padding-top: 1vh;
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: 0;
+    }
 `
