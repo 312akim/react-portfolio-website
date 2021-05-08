@@ -60,9 +60,11 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                     </StyledCardHoverContainer>
                 </StyledProjectCard>
                 <StyledProjectCard>
+
+
                     <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledImageCropContainer>
+                        <StyledProjectCardImage src={projectPlaceholder}/>
+                    </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
                             UX Site Concepts

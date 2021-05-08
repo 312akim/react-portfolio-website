@@ -105,7 +105,6 @@ export const StyledSectionSwitcher = styled.div`
     width: 15%;
     background: ${COLORS.primaryDark};
     right: ${props => props.position};
-    z-index: 1;
     animation: ${fadeInAnimation} 1s linear;
     
     :hover div {
@@ -130,6 +129,7 @@ export const StyledProjectCard = styled.div`
     height: 37vh;
     margin: 0 auto 5vh auto;
     background: white;
+    box-shadow: 14px 14px black;
 `
 
 export const StyledProjectCardImage = styled.img`
@@ -147,6 +147,7 @@ export const StyledProjectCardImage = styled.img`
         margin-top: 0;
     }
 `
+
 export const StyledProjectCardTitle = styled.h2`
     display: block;
     width: 75%;
@@ -231,9 +232,7 @@ export const StyledModalContainer = styled.div`
     top: 0;
     left: -20%;
     width: 140%;
-    z-index: 1;
     background: rgba(0, 0, 0, 0.7);
-
     animation: ${fadeInAnimation} 1s linear;
 `
 
