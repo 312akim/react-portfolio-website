@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import COLORS from '../../../shared/design/colorTheme';
-import {animated} from 'react-spring'
+import { animated } from 'react-spring'
 
 export const StyledNavContainer = styled.div`
     height: 6vh;
