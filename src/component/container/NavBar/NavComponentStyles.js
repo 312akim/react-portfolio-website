@@ -31,32 +31,37 @@ export const StyledNavigationListWrapper = styled.div`
 `
 
 export const StyledNavigationList = styled.ul`
-    
+    margin-left: 0%;
 `
 
 export const StyledToggler = styled.div`
     display: inline-block;
     margin-top: 1vh;
     float: right;
-    margin-right: 2%;
+    margin-right: 5%;
     color: ${COLORS.secondaryLight};
 `
 
 export const AnimatedContainer = styled(animated.div)`
     position: fixed;
     text-align: right;
-    top: 6vh;
-    padding-right: 2%;
-    height: auto;
-    width: auto;
-    z-index: 2;
-    padding-top: 2vh;
+    top: 0;
+    padding-right: 5%;
+    height: 100vh;
+    width: 40%;
+    z-index: -1;
+    padding-top: 8vh;
+    background: black;
 
     @media (min-width: 768px) {
-        padding-top: 1vh;
+        width: 25%;
     }
 
     @media (min-width: 1200px) {
         padding-top: 0;
+        top: 8vh;
+        background: none;
+        height: auto;
+        width: 6%;
     }
 `

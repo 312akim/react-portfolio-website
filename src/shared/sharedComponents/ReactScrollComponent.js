@@ -7,11 +7,11 @@ export const ReactScrollLink = ({id, title, delay = 0}) => {
             <StyledReactScrollLinkContainer>
                 <a>
                     <Link activeClass="active" to={id} spy={true} smooth={true} duration={400} delay={delay}>
+                        <StyledAnimatedUnderline/>
                         {title}
                     </Link>
                 </a>
             </StyledReactScrollLinkContainer>
-            <StyledAnimatedUnderline/>
         </StyledReactScrollLinkWrapper>
     )
 };

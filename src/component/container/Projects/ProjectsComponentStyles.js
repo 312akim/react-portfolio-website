@@ -106,6 +106,7 @@ export const StyledSectionSwitcher = styled.div`
     background: ${COLORS.primaryDark};
     right: ${props => props.position};
     animation: ${fadeInAnimation} 1s linear;
+    z-index: 1;
     
     :hover div {
         animation: ${switchIconAnim} 1.5s linear infinite;
