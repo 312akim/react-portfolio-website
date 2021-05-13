@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import projectPlaceholder from '../../../shared/images/apparel-store-mockup.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -37,16 +37,17 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
     if (section) {
         return (
             <StyledProjectCardsContainer>
+                
                 <StyledProjectCard>
                     <StyledImageCropContainer height={'37vh'}>
                         <StyledProjectCardImage src={projectPlaceholder}/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
-                            Apparel Store
+                            Tokenize Amazon
                         </StyledProjectCardTitle>
                         <StyledProjectInformation>
-                            Responsive SPA e-commerce apparel web store template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
+                            Responsive Landing Page and Full website of Tokenize Amazon website.
                         </StyledProjectInformation>
                         <StyledReadMore onClick={() => projectModalSwitcher(1)}>
                             Read More
@@ -59,36 +60,37 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                         </StyledGithubLink>
                     </StyledCardHoverContainer>
                 </StyledProjectCard>
+
                 <StyledProjectCard>
-
-
                     <StyledImageCropContainer height={'37vh'}>
                         <StyledProjectCardImage src={projectPlaceholder}/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
-                            UX Site Concepts
+                            Apparel Store
                         </StyledProjectCardTitle>
                         <StyledProjectInformation>
-                            A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
+                            Responsive SPA e-commerce apparel web store template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
                         </StyledProjectInformation>
                         <StyledReadMore onClick={() => projectModalSwitcher(2)}>
                             Read More
                         </StyledReadMore>
                         <StyledGithubLink 
-                            href="https://github.com/312akim/"
+                            href="https://github.com/312akim/apparel-store-mern"
                             target="_blank"
                         >
                             Github
                         </StyledGithubLink>
                     </StyledCardHoverContainer>
                 </StyledProjectCard>
+
             </StyledProjectCardsContainer>
         )
     } else {
         if (!section) {
             return (
                 <StyledAltProjectCardsContainer>
+
                     <StyledProjectCard>
                         <StyledImageCropContainer height={'37vh'}>
                             <StyledProjectCardImage src={projectPlaceholder}/>
@@ -111,28 +113,30 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                             </StyledGithubLink>
                         </StyledCardHoverContainer>
                     </StyledProjectCard>
+
                     <StyledProjectCard>
-                        <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={projectPlaceholder}/>
-                        </StyledImageCropContainer>
-                        <StyledCardHoverContainer>
-                            <StyledProjectCardTitle>
-                                FitBrews React Website
-                            </StyledProjectCardTitle>
-                            <StyledProjectInformation>
-                                A healthy drink recipe created under Nucamp's Bootcamp. I partnered with a classmate to code and design through weekly meetings. Array methods were heavily utilized.
-                            </StyledProjectInformation>
-                            <StyledReadMore onClick={() => projectModalSwitcher(4)}>
-                                Read More
-                            </StyledReadMore>
-                            <StyledGithubLink 
-                                href="https://github.com/stevenCsaunders/fit-brews-react"
-                                target="_blank"
-                            >
-                                Github
-                            </StyledGithubLink>
-                        </StyledCardHoverContainer>
-                    </StyledProjectCard>
+                    <StyledImageCropContainer height={'37vh'}>
+                        <StyledProjectCardImage src={projectPlaceholder}/>
+                    </StyledImageCropContainer>
+                    <StyledCardHoverContainer>
+                        <StyledProjectCardTitle>
+                            UX Site Concepts
+                        </StyledProjectCardTitle>
+                        <StyledProjectInformation>
+                            A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
+                        </StyledProjectInformation>
+                        <StyledReadMore onClick={() => projectModalSwitcher(4)}>
+                            Read More
+                        </StyledReadMore>
+                        <StyledGithubLink 
+                            href="https://github.com/312akim/"
+                            target="_blank"
+                        >
+                            Github
+                        </StyledGithubLink>
+                    </StyledCardHoverContainer>
+                </StyledProjectCard>
+
                 </StyledAltProjectCardsContainer>
             )
         }
@@ -169,35 +173,65 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             )
         case 1:
             return (
-                <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalHero>
-                        Test 1111
-                    </StyledModalHero>
-                </StyledModalContainer>
+                <StyledModalWrapper>
+                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 1111
+                        </StyledModalHero>
+                        <StyledModalText>
+                            <div>
+                                Freelance Project consisting of a Landing Page &amp; Full website.
+                            </div>
+                            <hr/>
+                            <div>Landing Page Key Learnings:</div>
+                            <ul>
+                                <li>Working with UI/UX Designer</li>
+                                <li>Email Newsletter integration via MailChimp &amp; form submission</li>
+                                <li>Youtube video embed &amp; video scaling</li>
+                                <li>PDF File opening in new tab</li>
+                            </ul>
+                        </StyledModalText>
+                    </StyledModalContentContainer>
+                </StyledModalWrapper>
             )
         case 2:
             return (
-                <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalHero>
-                        Test 2222
-                    </StyledModalHero>
-                </StyledModalContainer>
+                <StyledModalWrapper>
+                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 2222
+                        </StyledModalHero>
+                        <StyledModalText>
+                            
+                        </StyledModalText>
+                    </StyledModalContentContainer>
+                </StyledModalWrapper>
             )
         case 3:
             return (
-                <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalHero>
-                        Test 3333
-                    </StyledModalHero>
-                </StyledModalContainer>
+                <StyledModalWrapper>
+                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 3333
+                        </StyledModalHero>
+                        <StyledModalText>
+                            
+                        </StyledModalText>
+                    </StyledModalContentContainer>
+                </StyledModalWrapper>
             )
         case 4:
             return (
-                <StyledModalContainer onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalHero>
-                        Test 4444
-                    </StyledModalHero>
-                </StyledModalContainer>
+                <StyledModalWrapper>
+                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                        <StyledModalHero>
+                            Test 4444
+                        </StyledModalHero>
+                        <StyledModalText>
+                            
+                        </StyledModalText>
+                    </StyledModalContentContainer>
+                </StyledModalWrapper>
             )
     }
 }

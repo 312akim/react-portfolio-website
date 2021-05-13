@@ -62,6 +62,7 @@ export const ContactComponent = () => {
                             placeholder='Subject'
                             value={toSend.subject}
                             onChange={handleChange}
+                            required
                         />
                     </StyledContactLabel>
                 </StyledContactInputContainer>
@@ -74,6 +75,7 @@ export const ContactComponent = () => {
                             placeholder='Name'
                             value={toSend.name}
                             onChange={handleChange}
+                            required
                         />
                     </StyledContactLabel>
                 </StyledContactInputContainer>
@@ -86,6 +88,7 @@ export const ContactComponent = () => {
                             placeholder='Your email'
                             value={toSend.email}
                             onChange={handleChange}
+                            required
                         />
                     </StyledContactLabel>
                 </StyledContactInputContainer>
@@ -98,6 +101,7 @@ export const ContactComponent = () => {
                             placeholder='Your message'
                             value={toSend.message}
                             onChange={handleChange}
+                            required
                         />
                     </StyledContactLabel>
                     <StyledContactInput type="submit" value="Send" />

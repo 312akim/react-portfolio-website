@@ -227,22 +227,26 @@ export const StyledCardHoverContainer = styled.div`
     }
 `
 //Project Modals
-export const StyledModalContainer = styled.div`
+export const StyledModalWrapper = styled.div`
     height: 100vh;
     position: absolute;
     top: 0;
-    left: -20%;
-    width: 140%;
+    left: -25%;
+    width: 150%;
     background: rgba(0, 0, 0, 0.7);
     animation: ${fadeInAnimation} 1s linear;
     z-index: 3;
 `
 
+export const StyledModalContentContainer = styled.div`
+    background: orange;
+    height: 80%;
+    margin: 5% 15% 5% 15%;
+`
+
 export const StyledModalHero = styled.div`
     color: red;
-    height: 80vh;
-    background: orange;
-    margin: 7.5% 15% 7.5% 15%;
+    height: 5%;
 `
 
 export const StyledModalHeroTitle = styled.div`
@@ -250,7 +254,7 @@ export const StyledModalHeroTitle = styled.div`
 `
 
 export const StyledModalText = styled.div`
-
+    height: 90%;
 `
 
 export const StyledModalSubHeader = styled.div`

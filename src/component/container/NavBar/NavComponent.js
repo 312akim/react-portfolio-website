@@ -4,8 +4,6 @@ import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollCom
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Slide from 'react-reveal/Slide'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-
-
 import {useSpring} from 'react-spring'
 
 export const NavBar = () => {
