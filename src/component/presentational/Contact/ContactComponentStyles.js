@@ -13,6 +13,10 @@ export const StyledContactInput = styled.input`
 
 `
 
+export const StyledContactButton = styled.button`
+
+`
+
 export const StyledContactTextarea = styled.textarea`
 
 `

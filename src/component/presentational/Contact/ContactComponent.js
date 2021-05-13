@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea } from './ContactComponentStyles';
+import { StyledContactButton, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
 
 export const ContactComponent = () => {
 
     const [toSend, setToSend] = useState({
-        name: '',
+        formFName: '',
+        formLName: '',
         to_name: 'Alex',
-        subject: '',
-        message: '',
-        email: '',
+        formSubject: '',
+        formMessage: '',
+        formEmail: ''
     });
 
     const onSubmit = (e) => {
         e.preventDefault();
         send(
-          `service_e968q22`,
-          `template_4k3a6so`,
+          'service_e968q22',
+          'template_4k3a6so',
           toSend,
-          `user_751xNiHC7Q8RBo3dQib5W`
+          'user_751xNiHC7Q8RBo3dQib5W'
         )
         .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
@@ -30,11 +31,12 @@ export const ContactComponent = () => {
         });
 
         setToSend({
-            name: '',
+            formFName: '',
+            formLName: '',
             to_name: 'Alex',
-            subject: '',
-            message: '',
-            email: ''
+            formSubject: '',
+            formMessage: '',
+            formEmail: ''
         })
     };
 
@@ -54,57 +56,77 @@ export const ContactComponent = () => {
 
             <form onSubmit={onSubmit}>
                 <StyledContactInputContainer>
-                    <StyledContactLabel>
+                    <StyledContactLabel for='formSubject'>
                         Subject:
-                        <StyledContactInput 
-                            type="text" 
-                            name="subject" 
-                            placeholder='Subject'
-                            value={toSend.subject}
-                            onChange={handleChange}
-                            required
-                        />
                     </StyledContactLabel>
+                    <StyledContactInput
+                        id='formSubject' 
+                        type='text' 
+                        name='formSubject' 
+                        placeholder='Subject'
+                        value={toSend.formSubject}
+                        onChange={handleChange}
+                        required
+                    />
                 </StyledContactInputContainer>
                 <StyledContactInputContainer>
-                    <StyledContactLabel>
-                        Name:
-                        <StyledContactInput 
-                            type='text'
-                            name='name'
-                            placeholder='Name'
-                            value={toSend.name}
-                            onChange={handleChange}
-                            required
-                        />
+                    <StyledContactLabel for="formFName">
+                        First Name:
                     </StyledContactLabel>
+                    <StyledContactInput 
+                        id='formFName'
+                        type='text'
+                        name='formFName'
+                        placeholder='First Name'
+                        value={toSend.formFName}
+                        onChange={handleChange}
+                        required
+                    />
                 </StyledContactInputContainer>
                 <StyledContactInputContainer>
-                    <StyledContactLabel>
+                    <StyledContactLabel for="formLName">
+                        Last Name:
+                    </StyledContactLabel>
+                    <StyledContactInput 
+                        id='formLName'
+                        type='text'
+                        name='formLName'
+                        placeholder='Last Name'
+                        value={toSend.formLName}
+                        onChange={handleChange}
+                        required
+                    />
+                </StyledContactInputContainer>
+                <StyledContactInputContainer>
+                    <StyledContactLabel for='formEmail'>
                         Email:
-                        <StyledContactInput
-                            type='text'
-                            name='email'
-                            placeholder='Your email'
-                            value={toSend.email}
-                            onChange={handleChange}
-                            required
-                        />
                     </StyledContactLabel>
+                    <StyledContactInput
+                        id='formEmail'
+                        type='text'
+                        name='formEmail'
+                        placeholder='Your email'
+                        value={toSend.formEmail}
+                        onChange={handleChange}
+                        required
+                    />
                 </StyledContactInputContainer>
                 <StyledContactInputContainer>
-                    <StyledContactLabel>
+                    <StyledContactLabel for='formMessage'>
                         Message:
-                        <StyledContactTextarea
-                            type='text'
-                            name='message'
-                            placeholder='Your message'
-                            value={toSend.message}
-                            onChange={handleChange}
-                            required
-                        />
                     </StyledContactLabel>
-                    <StyledContactInput type="submit" value="Send" />
+                    <StyledContactTextarea
+                        id='formMessage'
+                        type='text'
+                        name='formMessage'
+                        placeholder='Your message'
+                        value={toSend.formMessage}
+                        onChange={handleChange}
+                        required
+                    />
+                    <StyledContactButton type='submit'>
+                        Send
+                    </StyledContactButton>
                 </StyledContactInputContainer>
             </form>
         </StyledSectionComponent>
