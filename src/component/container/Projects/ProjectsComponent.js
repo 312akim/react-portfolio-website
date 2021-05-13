@@ -173,8 +173,8 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             )
         case 1:
             return (
-                <StyledModalWrapper>
-                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
+                    <StyledModalContentContainer>
                         <StyledModalHero>
                             Test 1111
                         </StyledModalHero>
@@ -196,8 +196,8 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             )
         case 2:
             return (
-                <StyledModalWrapper>
-                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
+                    <StyledModalContentContainer>
                         <StyledModalHero>
                             Test 2222
                         </StyledModalHero>
@@ -209,8 +209,8 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             )
         case 3:
             return (
-                <StyledModalWrapper>
-                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
+                    <StyledModalContentContainer>
                         <StyledModalHero>
                             Test 3333
                         </StyledModalHero>
@@ -222,8 +222,8 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             )
         case 4:
             return (
-                <StyledModalWrapper>
-                    <StyledModalContentContainer onClick={() => projectModalSwitcher(0)}>
+                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
+                    <StyledModalContentContainer>
                         <StyledModalHero>
                             Test 4444
                         </StyledModalHero>
