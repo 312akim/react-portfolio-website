@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactButton, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea } from './ContactComponentStyles';
+import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
 
 export const ContactComponent = () => {
@@ -54,7 +54,7 @@ export const ContactComponent = () => {
                 I hope to hear from you soon!
             </StyledContactHeaderText>
 
-            <form onSubmit={onSubmit}>
+            <StyledContactForm onSubmit={onSubmit}>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formSubject'>
                         Subject:
@@ -124,11 +124,11 @@ export const ContactComponent = () => {
                         onChange={handleChange}
                         required
                     />
-                    <StyledContactButton type='submit'>
+                    <StyledContactSubmitButton type='submit'>
                         Send
-                    </StyledContactButton>
+                    </StyledContactSubmitButton>
                 </StyledContactInputContainer>
-            </form>
+            </StyledContactForm>
         </StyledSectionComponent>
     )
 }
