@@ -36,10 +36,16 @@ export const StyledContactLabel = styled.label`
     margin: 0 auto 1vh auto;
 `
 
+export const StyledRequiredAsterick = styled.span`
+    color: red;
+`
+
 export const StyledContactInput = styled.input`
     display: block;
     width: 100%;
     height: 3vh;
+    box-sizing: border-box;
+    border: 3px solid ${COLORS.secondaryLight};
 `
 
 
@@ -48,6 +54,8 @@ export const StyledContactTextarea = styled.textarea`
     width: 100%;
     height: 6vh;
     margin: 0 auto 3% auto;
+    box-sizing: border-box;
+    border: 3px solid ${COLORS.secondaryLight};
 `
 
 export const StyledContactSubmitButton = styled.button`
@@ -56,6 +64,15 @@ export const StyledContactSubmitButton = styled.button`
     width: 100%;
     height: 3vh;
     margin: 2vh auto 0 auto;
+    background: ${COLORS.secondaryLight};
+    color: ${COLORS.primaryLight};
+    border: 3px solid ${COLORS.primaryLight};
+
+    :hover {
+        background: ${COLORS.primaryLight};
+        color: ${COLORS.secondaryLight};
+        border: 3px solid ${COLORS.secondaryLight};
+    }
 `
 
 export const StyledContactInputContainer = styled.div`

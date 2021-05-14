@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer } from './ContactComponentStyles';
+import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
 
 export const ContactComponent = () => {
@@ -58,6 +58,7 @@ export const ContactComponent = () => {
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formSubject'>
                         Subject:
+                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
                     <StyledContactInput
                         id='formSubject' 
@@ -72,6 +73,7 @@ export const ContactComponent = () => {
                 <StyledContactFNameContainer>
                     <StyledContactLabel for="formFName">
                         First Name:
+                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
                     <StyledContactInput 
                         id='formFName'
@@ -94,12 +96,12 @@ export const ContactComponent = () => {
                         placeholder='Last Name'
                         value={toSend.formLName}
                         onChange={handleChange}
-                        required
                     />
                 </StyledContactLNameContainer>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formEmail'>
                         Email:
+                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
                     <StyledContactInput
                         id='formEmail'
@@ -114,6 +116,7 @@ export const ContactComponent = () => {
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formMessage'>
                         Message:
+                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
                     <StyledContactTextarea
                         id='formMessage'

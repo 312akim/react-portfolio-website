@@ -40,6 +40,11 @@ export const StyledToggler = styled.div`
     float: right;
     margin-right: 5%;
     color: ${COLORS.secondaryLight};
+    transition: transform 0.2s;
+
+    :hover {
+        transform: rotate(5deg);
+    }
 `
 
 export const AnimatedContainer = styled(animated.div)`

@@ -74,13 +74,11 @@ const NavigationLinks = ({isOpen}) => {
         <AnimatedContainer style={props}>
             <StyledNavigationListWrapper>
                 <StyledNavigationList>
-                    <Slide right when={isOpen}>
-                        <ReactScrollLink title="Home" id="homeSection"/>
-                        <ReactScrollLink title="Projects" id="projectsSection"/>
-                        <ReactScrollLink title="About" id="aboutSection"/>
-                        <ReactScrollLink title="Activity" id="activitySection"/>
-                        <ReactScrollLink title="Contact" id="contactSection"/>
-                    </Slide>
+                    <ReactScrollLink title="Home" id="homeSection"/>
+                    <ReactScrollLink title="Projects" id="projectsSection"/>
+                    <ReactScrollLink title="About" id="aboutSection"/>
+                    <ReactScrollLink title="Activity" id="activitySection"/>
+                    <ReactScrollLink title="Contact" id="contactSection"/>
                 </StyledNavigationList>
             </StyledNavigationListWrapper>
         </AnimatedContainer>
