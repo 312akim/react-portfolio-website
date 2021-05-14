@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import COLORS from '../../../shared/design/colorTheme';
-import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea } from './ContactComponentStyles';
+import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
 
 export const ContactComponent = () => {
@@ -50,9 +50,9 @@ export const ContactComponent = () => {
             <StyledSectionHeader>
                 Contact Me
             </StyledSectionHeader>
-            <StyledContactHeaderText>
+            <StyledSectionSubheader>
                 I hope to hear from you soon!
-            </StyledContactHeaderText>
+            </StyledSectionSubheader>
 
             <StyledContactForm onSubmit={onSubmit}>
                 <StyledContactInputContainer>
@@ -69,7 +69,7 @@ export const ContactComponent = () => {
                         required
                     />
                 </StyledContactInputContainer>
-                <StyledContactInputContainer>
+                <StyledContactFNameContainer>
                     <StyledContactLabel for="formFName">
                         First Name:
                     </StyledContactLabel>
@@ -82,8 +82,8 @@ export const ContactComponent = () => {
                         onChange={handleChange}
                         required
                     />
-                </StyledContactInputContainer>
-                <StyledContactInputContainer>
+                </StyledContactFNameContainer>
+                <StyledContactLNameContainer>
                     <StyledContactLabel for="formLName">
                         Last Name:
                     </StyledContactLabel>
@@ -96,7 +96,7 @@ export const ContactComponent = () => {
                         onChange={handleChange}
                         required
                     />
-                </StyledContactInputContainer>
+                </StyledContactLNameContainer>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formEmail'>
                         Email:
