@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Slide from 'react-reveal/Slide'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import {useSpring} from 'react-spring'
+import { useSpring } from 'react-spring'
 
 export const NavBar = () => {
 
@@ -56,19 +55,19 @@ const NavBarToggler = ({setOpen, isOpen}) => {
 }
 
 const CollapsibleNav = ({isOpen}) => {
-    if (isOpen) {
+
         return (
             <NavigationLinks isOpen={isOpen}/>
         )
-    } else {
-        return (
-            <div></div>
-        )
-    }
+
 }
 
 const NavigationLinks = ({isOpen}) => {
-    const props = useSpring({right: '0%', from: {right: '-100%'}})
+    const props = useSpring({
+        right: isOpen 
+        ? '0%' 
+        : '-100%'
+    })
 
     return (
         <AnimatedContainer style={props}>
