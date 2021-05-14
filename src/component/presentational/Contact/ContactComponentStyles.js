@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledContactForm = styled.div`
     height: 70vh;   
-    width: 60%;
+    width: 80%;
     margin: 4vh auto;
     box-shadow: 0 0 42px ${({theme}) => theme.primaryDark};
     padding: 0 10%;
@@ -10,8 +10,8 @@ export const StyledContactForm = styled.div`
     color: ${({theme}) => theme.primaryLight};
 
     @media (min-width: 480px) {
-        width: 40%;
-        padding: 0 15%;
+        width: 60%;
+        padding: 0 10%;
     }
 
     @media (min-width: 1200px) {
@@ -20,7 +20,7 @@ export const StyledContactForm = styled.div`
     }
 
     @media (min-width: 1200px) {
-        width: 30%;
+        width: 45%;
         padding: 0 10%;
     }
 `
@@ -43,7 +43,6 @@ export const StyledContactInput = styled.input`
     display: block;
     width: 100%;
     height: 3vh;
-    box-sizing: border-box;
     border: 3px solid${({theme}) => theme.secondaryLight};
 `
 
