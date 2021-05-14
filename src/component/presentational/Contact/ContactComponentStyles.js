@@ -1,14 +1,13 @@
-import COLORS from '../../../shared/design/colorTheme';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledContactForm = styled.div`
     height: 70vh;   
     width: 60%;
     margin: 4vh auto;
-    box-shadow: 0 0 42px ${COLORS.primaryDark};
+    box-shadow: 0 0 42px ${({theme}) => theme.primaryDark};
     padding: 0 10%;
-    background: ${COLORS.secondaryDark};
-    color: ${COLORS.primaryLight};
+    background: ${({theme}) => theme.secondaryDark};
+    color: ${({theme}) => theme.primaryLight};
 
     @media (min-width: 480px) {
         width: 40%;
@@ -45,7 +44,7 @@ export const StyledContactInput = styled.input`
     width: 100%;
     height: 3vh;
     box-sizing: border-box;
-    border: 3px solid ${COLORS.secondaryLight};
+    border: 3px solid${({theme}) => theme.secondaryLight};
 `
 
 
@@ -55,7 +54,7 @@ export const StyledContactTextarea = styled.textarea`
     height: 6vh;
     margin: 0 auto 3% auto;
     box-sizing: border-box;
-    border: 3px solid ${COLORS.secondaryLight};
+    border: 3px solid${({theme}) => theme.secondaryLight};
 `
 
 export const StyledContactSubmitButton = styled.button`
@@ -64,14 +63,14 @@ export const StyledContactSubmitButton = styled.button`
     width: 100%;
     height: 3vh;
     margin: 2vh auto 0 auto;
-    background: ${COLORS.secondaryLight};
-    color: ${COLORS.primaryLight};
-    border: 3px solid ${COLORS.primaryLight};
+    background:${({theme}) => theme.secondaryLight};
+    color: ${({theme}) => theme.primaryLight};
+    border: 3px solid ${({theme}) => theme.primaryLight};
 
     :hover {
-        background: ${COLORS.primaryLight};
-        color: ${COLORS.secondaryLight};
-        border: 3px solid ${COLORS.secondaryLight};
+        background: ${({theme}) => theme.primaryLight};
+        color:${({theme}) => theme.secondaryLight};
+        border: 3px solid${({theme}) => theme.secondaryLight};
     }
 `
 

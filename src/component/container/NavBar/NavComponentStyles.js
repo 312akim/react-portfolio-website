@@ -1,10 +1,9 @@
 import styled, { keyframes } from 'styled-components';
-import COLORS from '../../../shared/design/colorTheme';
 import { animated } from 'react-spring'
 
 export const StyledNavContainer = styled.div`
     height: 6vh;
-    background: ${props => props.scroll ? COLORS.primaryDark : 'transparent'};
+    background: ${({theme, scroll}) => scroll ? theme.primaryDark : 'transparent'};
     position: fixed;
     top: 0;
     left: 0;
@@ -24,7 +23,7 @@ export const StyledNavigationListWrapper = styled.div`
     display: inline-block;
     float: right;
     background: transparent;
-    color: ${COLORS.secondaryLight};
+    color: ${({theme}) => theme.secondaryLight};
     font-size: 20px;
     width: 100%;
     height: 100%;
@@ -39,7 +38,7 @@ export const StyledToggler = styled.div`
     margin-top: 1vh;
     float: right;
     margin-right: 5%;
-    color: ${COLORS.secondaryLight};
+    color: ${({theme}) => theme.secondaryLight};
     transition: transform 0.2s;
 
     :hover {

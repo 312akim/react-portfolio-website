@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import COLORS from '../design/colorTheme';
 
 export const StyledReactScrollLinkContainer = styled.div`
     cursor: pointer;
@@ -25,7 +24,7 @@ export const StyledAnimatedUnderline = styled.div`
     height: 0.5vh;
     margin-top: 3vh;
     z-index: -1;
-    box-shadow: 2px 2px ${COLORS.primaryLight};
+    box-shadow: 2px 2px ${({theme}) => theme.primaryLight};
     transition: width 0.5s;
 
     @media (min-width: 1024px) {

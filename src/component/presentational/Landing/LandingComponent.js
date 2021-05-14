@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledAnimationContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledDialButtonContainer, StyledDialButton, StyledLandingAnimNav } from './LandingComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent';
@@ -94,7 +93,7 @@ export const LandingComponent = () => {
     }
     
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height={'106vh'}>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'106vh'}>
             <LandingHero />
             <LandingAnimation />
             <AnimationButtons />

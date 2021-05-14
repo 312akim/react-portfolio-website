@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
@@ -45,7 +44,7 @@ export const ContactComponent = () => {
     };
     
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight}>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight}>
 
             <StyledSectionHeader>
                 Contact Me

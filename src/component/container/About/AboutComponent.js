@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledMainHeaderContainer, 
     StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
@@ -14,7 +13,7 @@ import { StyledImageCropContainer } from '../../../shared/sharedComponents/Image
 
 export const AboutComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryLight} height='100vh'>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height='100vh'>
             <AboutMainComponent />
         </StyledSectionComponent>
     )

@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import COLORS from '../../../shared/design/colorTheme';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCloudContainer, StyledCloudWrapper, StyledCloudImg } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
-import Fade from 'react-reveal/Fade';
-import cloudSvg from '../../../shared/svgs/cloud.svg'
 
 export const ActivityComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={COLORS.primaryDark} fontColor={COLORS.primaryLight}>
-            {/* <Fade right>
-              <TimedCloud />
-            </Fade> */}
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryDark} fontColor={({theme}) => theme.primaryLight}>
             <StyledSectionHeader>
                 Recent Activity
             </StyledSectionHeader>

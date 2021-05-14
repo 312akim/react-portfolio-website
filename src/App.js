@@ -1,10 +1,14 @@
 //import logo from './logo.svg';
 import './App.css';
 import MainComponent from './component/container/Main/MainComponent';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './shared/design/theme';
 
 function App() {
   return (
-    <MainComponent />
+    <ThemeProvider theme={theme}>
+      <MainComponent />
+    </ThemeProvider>
   );
 }
 

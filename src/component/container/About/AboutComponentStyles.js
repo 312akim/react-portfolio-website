@@ -1,4 +1,3 @@
-import COLORS from '../../../shared/design/colorTheme';
 import styled, {css} from 'styled-components';
 import { animated } from 'react-spring'
 
@@ -19,7 +18,7 @@ export const StyledNavigatorCaret = styled.div`
     height: 0;
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent ${COLORS.secondaryLight};
+    border-color: transparent transparent ${({theme}) => theme.secondaryLight};
     left: calc(50% - 10px);
     z-index: 1;
 `
@@ -31,7 +30,7 @@ export const headingStyles = css`
     margin-top: 2rem;
     padding-top: 1rem;
     margin-bottom: 1rem;
-    color: ${COLORS.primaryDark};
+    color: ${({theme}) => theme.primaryDark};
     z-index: 1;
 `
 
@@ -87,7 +86,7 @@ export const StyledNavigatorItemTitle = styled.div`
   font-size: 18px;
   padding-top: 3vh;
   text-align: center;
-  color: ${COLORS.primaryLight};
+  color: ${({theme}) => theme.primaryLight};
   font-family: inherit;
   cursor: pointer;
   position: relative;

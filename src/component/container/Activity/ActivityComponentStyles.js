@@ -1,27 +1,7 @@
-import COLORS from '../../../shared/design/colorTheme';
 import styled, {keyframes} from 'styled-components';
 import { animated } from 'react-spring'
-import cloudSvg from '../../../shared/svgs/cloud.svg'
 
 //Animations
-const CloudAnimation = keyframes`
-    0% {
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        display: none;
-    }
-`
 
 //Section Header 8vh
 
@@ -42,15 +22,15 @@ export const StyledCommitTitle = styled.h2`
     margin-left: 2%;
     padding: 0 1%;
     margin-top: -1.5vh;
-    color: ${COLORS.primaryLight};
+    color: ${({theme}) => theme.primaryLight};
     font-size: 1.2rem;
     background: black;
     width: auto;
-    box-shadow: 3px 2px 2px ${COLORS.secondaryLight};
+    box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
 
     @media (min-width: 480px) {
         font-size: 1.4rem;
-        box-shadow: 5px 4px 4px ${COLORS.secondaryLight};
+        box-shadow: 5px 4px 4px ${({theme}) => theme.secondaryLight};
     }
 
     @media (min-width: 768px) {
@@ -72,13 +52,13 @@ export const StyledCommitDataWrapper = styled.div`
 
 export const StyledCommitDate = styled.div`
     display: inline-block;
-    color: ${COLORS.primaryLight};
+    color: ${({theme}) => theme.primaryLight};
     margin-top: 0.3rem;
     font-size: 1rem;
 `
 
 export const StyledCommitComment = styled.div`
-    color: ${COLORS.primaryLight};
+    color: ${({theme}) => theme.primaryLight};
     margin: 0.1rem 5%;
 
     @media (min-width: 1200px) {
@@ -87,17 +67,16 @@ export const StyledCommitComment = styled.div`
 `
 
 export const StyledCommitGitAnchor = styled.a`
-    color: ${COLORS.primaryLight};
+    color: ${({theme}) => theme.primaryLight};
 `
 
 export const StyledCommitDataContainer = styled.div`
-    border: 1px ${COLORS.secondaryLight} solid;
+    border: 1px ${({theme}) => theme.secondaryLight} solid;
     width: 90%;
     margin-left: 5%;
     margin-top: 2%;
     padding: 1% 0;
-    box-shadow: 5px 3px 4px ${COLORS.secondaryDark};
-
+    box-shadow: 5px 3px 4px ${({theme}) => theme.secondaryDark};
     @media (min-width: 768px) {
         margin-top: 3%;
     }
@@ -107,29 +86,6 @@ export const StyledCommitDataContainer = styled.div`
         width: 70%;
         margin-left: 15%;
     }
-`
-
-export const StyledCloudContainer = styled.div`
-    position: absolute;
-    opacity: 1;
-    width: 100%;
-
-    @media (min-width: 1200px) {
-        width: 21%;
-        left: 72%;
-        margin-top: 14%;
-    }
-`
-
-export const StyledCloudImg = styled.img`
-    position: absolute;
-    width: 30%;
-    left: 68%;
-`
-
-export const StyledCloudWrapper = styled.div`
-    opacity: 0;
-    animation: ${CloudAnimation} 6s linear;
 `
 
 export const StyledCommitListContainer = styled.div`

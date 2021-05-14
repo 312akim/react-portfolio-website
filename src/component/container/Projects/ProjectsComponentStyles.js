@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import COLORS from '../../../shared/design/colorTheme';
 
 // Animations
 const hoverCardTopFadeAnim = keyframes`
@@ -90,12 +89,12 @@ export const StyledSectionIconContainer = styled.div`
 `
 
 export const StyledProjectCardsContainer = styled.div`
-    background: ${COLORS.primaryDark};
+    background: ${({theme}) => theme.primaryDark};
     animation: ${entranceProjectCard} 0.7s linear;
 `
 
 export const StyledAltProjectCardsContainer = styled.div`
-    background: ${COLORS.primaryDark};
+    background: ${({theme}) => theme.primaryDark};
     animation: ${entranceAltProjectCard} 0.7s linear;
 `
 
@@ -103,7 +102,7 @@ export const StyledSectionSwitcher = styled.div`
     position: absolute;
     height: 100vh;
     width: 15%;
-    background: ${COLORS.primaryDark};
+    background: ${({theme}) => theme.primaryDark};
     right: ${props => props.position};
     animation: ${fadeInAnimation} 1s linear;
     z-index: 1;
@@ -155,7 +154,7 @@ export const StyledProjectCardTitle = styled.h2`
     margin-left: 12.5%;
     color: white;
     height: 12%;
-    background: ${COLORS.secondaryLight };
+    background: ${({theme}) => theme.secondaryLight};
 `
 
 export const StyledProjectInformation = styled.div`
@@ -179,7 +178,7 @@ export const StyledReadMore = styled.button`
     margin-top: 25%;
     margin-bottom: 3%;
     color: white;
-    background: ${COLORS.secondaryLight };
+    background: ${({theme}) => theme.secondaryLight};
 
     @media (min-width: 576px) {
         margin-top: 18%;
