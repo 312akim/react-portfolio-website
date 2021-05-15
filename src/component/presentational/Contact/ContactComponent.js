@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick } from './ContactComponentStyles';
+import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers } from './ContactComponentStyles';
 import { send } from 'emailjs-com';
 
 export const ContactComponent = () => {
@@ -69,34 +69,36 @@ export const ContactComponent = () => {
                         required
                     />
                 </StyledContactInputContainer>
-                <StyledContactFNameContainer>
-                    <StyledContactLabel for="formFName">
-                        First Name:
-                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                    </StyledContactLabel>
-                    <StyledContactInput 
-                        id='formFName'
-                        type='text'
-                        name='formFName'
-                        placeholder='First Name'
-                        value={toSend.formFName}
-                        onChange={handleChange}
-                        required
-                    />
-                </StyledContactFNameContainer>
-                <StyledContactLNameContainer>
-                    <StyledContactLabel for="formLName">
-                        Last Name:
-                    </StyledContactLabel>
-                    <StyledContactInput 
-                        id='formLName'
-                        type='text'
-                        name='formLName'
-                        placeholder='Last Name'
-                        value={toSend.formLName}
-                        onChange={handleChange}
-                    />
-                </StyledContactLNameContainer>
+                <StyledNameInputContainers>
+                    <StyledContactFNameContainer>
+                        <StyledContactLabel for="formFName">
+                            First Name:
+                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                        </StyledContactLabel>
+                        <StyledContactInput 
+                            id='formFName'
+                            type='text'
+                            name='formFName'
+                            placeholder='First Name'
+                            value={toSend.formFName}
+                            onChange={handleChange}
+                            required
+                        />
+                    </StyledContactFNameContainer>
+                    <StyledContactLNameContainer>
+                        <StyledContactLabel for="formLName">
+                            Last Name:
+                        </StyledContactLabel>
+                        <StyledContactInput 
+                            id='formLName'
+                            type='text'
+                            name='formLName'
+                            placeholder='Last Name'
+                            value={toSend.formLName}
+                            onChange={handleChange}
+                        />
+                    </StyledContactLNameContainer>
+                </StyledNameInputContainers>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formEmail'>
                         Email:

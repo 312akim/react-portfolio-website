@@ -114,27 +114,27 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                     </StyledProjectCard>
 
                     <StyledProjectCard>
-                    <StyledImageCropContainer height={'37vh'}>
-                        <StyledProjectCardImage src={projectPlaceholder}/>
-                    </StyledImageCropContainer>
-                    <StyledCardHoverContainer>
-                        <StyledProjectCardTitle>
-                            UX Site Concepts
-                        </StyledProjectCardTitle>
-                        <StyledProjectInformation>
-                            A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
-                        </StyledProjectInformation>
-                        <StyledReadMore onClick={() => projectModalSwitcher(4)}>
-                            Read More
-                        </StyledReadMore>
-                        <StyledGithubLink 
-                            href="https://github.com/312akim/"
-                            target="_blank"
-                        >
-                            Github
-                        </StyledGithubLink>
-                    </StyledCardHoverContainer>
-                </StyledProjectCard>
+                        <StyledImageCropContainer height={'37vh'}>
+                            <StyledProjectCardImage src={projectPlaceholder}/>
+                        </StyledImageCropContainer>
+                        <StyledCardHoverContainer>
+                            <StyledProjectCardTitle>
+                                UX Site Concepts
+                            </StyledProjectCardTitle>
+                            <StyledProjectInformation>
+                                A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
+                            </StyledProjectInformation>
+                            <StyledReadMore onClick={() => projectModalSwitcher(4)}>
+                                Read More
+                            </StyledReadMore>
+                            <StyledGithubLink 
+                                href="https://github.com/312akim/"
+                                target="_blank"
+                            >
+                                Github
+                            </StyledGithubLink>
+                        </StyledCardHoverContainer>
+                    </StyledProjectCard>
 
                 </StyledAltProjectCardsContainer>
             )

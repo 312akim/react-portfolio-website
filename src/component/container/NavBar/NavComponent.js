@@ -66,7 +66,7 @@ const NavigationLinks = ({isOpen}) => {
     const props = useSpring({
         right: isOpen 
         ? '0%' 
-        : '-100%'
+        : '-50%'
     })
 
     return (

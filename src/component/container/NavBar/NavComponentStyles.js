@@ -56,7 +56,6 @@ export const AnimatedContainer = styled(animated.div)`
     z-index: -1;
     padding-top: 8vh;
     background: black;
-    right: -100%;
 
     @media (min-width: 768px) {
         width: 25%;

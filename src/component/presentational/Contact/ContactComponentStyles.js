@@ -8,6 +8,9 @@ export const StyledContactForm = styled.div`
     padding: 0 10%;
     background: ${({theme}) => theme.secondaryDark};
     color: ${({theme}) => theme.primaryLight};
+    display: flex;
+    flex-direction: column;
+    
 
     @media (min-width: 480px) {
         width: 60%;
@@ -77,22 +80,23 @@ export const StyledContactInputContainer = styled.div`
     display: block;
     padding-top: 2vh;
     margin: 2vh auto 0 auto;
+    width: 100%;
+`
+
+export const StyledNameInputContainers = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2vh;
+    margin-top: 2vh;
 `
 
 export const StyledContactFNameContainer = styled.div`
     display: inline-block;
     width: 45%;
-    left: 0;
-    padding-right: 5%;
-    padding-top: 2vh;
-    margin: 2vh auto 0 auto;
 `
 
 export const StyledContactLNameContainer = styled.div`
     display: inline-block;
     width: 45%;
-    right: 0;
-    padding-left: 5%;
-    padding-top: 2vh;
-    margin: 2vh auto 0 auto;
 `
