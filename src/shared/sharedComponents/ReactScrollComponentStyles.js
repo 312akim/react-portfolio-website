@@ -40,8 +40,8 @@ export const StyledAnimatedUnderline = styled.div`
 
     @media (min-width: 1200px) {
         margin-top: 2vh;
-        width: 32%;
-        right: 30%;
+        width: 29%;
+        right: 31%;
     }
 `
 
