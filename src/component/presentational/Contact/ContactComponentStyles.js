@@ -62,9 +62,9 @@ export const StyledContactTextarea = styled.textarea`
 export const StyledContactSubmitButton = styled.button`
     display: block;
     margin: auto;
-    width: 100%;
-    height: 3vh;
-    margin: 2vh auto 0 auto;
+    width: 60%;
+    height: 4vh;
+    margin: 5vh auto 0 auto;
     background:${({theme}) => theme.secondaryLight};
     color: ${({theme}) => theme.primaryLight};
     border: 3px solid ${({theme}) => theme.primaryLight};

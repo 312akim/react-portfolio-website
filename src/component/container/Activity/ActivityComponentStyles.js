@@ -1,20 +1,19 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { animated } from 'react-spring'
 
 //Animations
 
-//Section Header 8vh
+//Styles
+export const StyledCommitListWrapper = styled.div`
+    height: 86vh;
+    padding-top: 6vh;
+`
 
-//8vh + 80vh = 88/100vh
 export const StyledCommitWrapper = styled.div`
     width: 100%;
-    height: 39vh;
-    margin-top: 0;
-    
-    @media (min-width: 1200px) {
-        margin-top: 1vh;
-    }
+    height: 43vh;
 `
+
 
 export const StyledCommitTitle = styled.h2`
     position: absolute;
@@ -48,6 +47,7 @@ export const StyledCommitTitle = styled.h2`
 
 export const StyledCommitDataWrapper = styled.div`
     overflow-y: auto;
+    height: 100%;
 `
 
 export const StyledCommitDate = styled.div`

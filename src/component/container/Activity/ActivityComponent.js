@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
 
 export const ActivityComponent = () => {
@@ -59,7 +59,7 @@ const CommitListComponent = () => {
     ];
 
     return (
-      <div>
+      <StyledCommitListWrapper>
         {commitConfig.map((n, index) => {
           console.log("returned");
           return (
@@ -68,13 +68,13 @@ const CommitListComponent = () => {
             </div>
             )
         })}
-      </div>
+      </StyledCommitListWrapper>
     );
 }
 
 const CommitComponent = (props) => {
   return (
-    <StyledCommitWrapper>
+    <StyledCommitWrapper paddingTop={''}>
         <StyledCommitTitle>{props.title}</StyledCommitTitle>
         <StyledCommitDataWrapper>
           {!props.api ? <div>Failed to load github commit data</div> :
