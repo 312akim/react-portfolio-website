@@ -25,12 +25,16 @@ export const StyledNavigationListWrapper = styled.div`
     background: transparent;
     color: ${({theme}) => theme.secondaryLight};
     font-size: 20px;
-    width: 100%;
+    width: ${props => props.width ? props.width : '100%'};
     height: 100%;
 `
 
 export const StyledNavigationList = styled.ul`
     margin-left: 0%;
+`
+
+export const StyledCollapsibleNavContainer = styled.div`
+    
 `
 
 export const StyledToggler = styled.div`

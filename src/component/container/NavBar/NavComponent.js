@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledAnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
+import { StyledCollapsibleNavContainer, StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledAnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faHome, faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { useSpring } from 'react-spring'
 
 export const NavBar = () => {
@@ -39,10 +39,10 @@ const CollapsibleNavComponent = () => {
     const [isOpen, setOpen] = useState(false);
 
     return (
-        <>
+        <StyledCollapsibleNavContainer>
             <NavBarToggler isOpen={isOpen} setOpen={setOpen} />
-            <CollapsibleNav isOpen={isOpen} setOpen={setOpen}/>
-        </>
+            <CollapsibleNavLinks isOpen={isOpen} setOpen={setOpen}/>
+        </StyledCollapsibleNavContainer>
     )
 }
 
@@ -54,15 +54,7 @@ const NavBarToggler = ({setOpen, isOpen}) => {
     )
 }
 
-const CollapsibleNav = ({isOpen}) => {
-
-        return (
-            <NavigationLinks isOpen={isOpen}/>
-        )
-
-}
-
-const NavigationLinks = ({isOpen}) => {
+const CollapsibleNavLinks = ({isOpen}) => {
     const navAnimation = useSpring({
         right: isOpen 
         ? '0%' 
@@ -72,14 +64,20 @@ const NavigationLinks = ({isOpen}) => {
     return (
         <StyledAnimatedContainer style={navAnimation}>
             <StyledNavigationListWrapper>
-                <StyledNavigationList>
-                    <ReactScrollLink title="Home" id="homeSection"/>
-                    <ReactScrollLink title="Projects" id="projectsSection"/>
-                    <ReactScrollLink title="About" id="aboutSection"/>
-                    <ReactScrollLink title="Activity" id="activitySection"/>
-                    <ReactScrollLink title="Contact" id="contactSection"/>
-                </StyledNavigationList>
+                <SideBarNavigationLinks />
             </StyledNavigationListWrapper>
         </StyledAnimatedContainer>
+    )
+}
+
+const SideBarNavigationLinks = () => {
+    return (
+        <StyledNavigationList>
+            <ReactScrollLink title="Home" id="homeSection" faIcon={faHome}/>
+            <ReactScrollLink title="Projects" id="projectsSection" faIcon={faLaptopCode}/>
+            <ReactScrollLink title="About" id="aboutSection" faIcon={faUserAstronaut}/>
+            <ReactScrollLink title="Activity" id="activitySection" faIcon={faCodeBranch}/>
+            <ReactScrollLink title="Contact" id="contactSection" faIcon={faEnvelope}/>
+        </StyledNavigationList>
     )
 }
