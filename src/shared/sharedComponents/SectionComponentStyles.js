@@ -9,6 +9,10 @@ export const StyledSectionComponent = styled.div`
     @media (min-width: 1200px) {
         padding: 0 15%;
     }
+
+    @media (min-width: 2560px) {
+        padding: 0 25%;
+    }
 `
 
 export const StyledSectionHeader = styled.h1`
