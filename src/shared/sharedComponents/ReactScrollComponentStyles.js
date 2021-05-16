@@ -27,10 +27,15 @@ export const StyledAnimatedUnderline = styled.div`
     box-shadow: 2px 2px ${({theme}) => theme.primaryLight};
     transition: width 0.5s;
 
+    @media (min-width: 768px) {
+        width: 40%;
+        right: 17%;
+    }
+
     @media (min-width: 1024px) {
         margin-top: 2vh;
-        width: 29%;
-        right: 13%;
+        width: 35%;
+        right: 15%;
     }
 
     @media (min-width: 1200px) {
