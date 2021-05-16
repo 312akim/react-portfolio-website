@@ -21,6 +21,11 @@ export const StyledNavigatorCaret = styled.div`
     border-color: transparent transparent ${({theme}) => theme.secondaryLight};
     left: calc(50% - 10px);
     z-index: 1;
+    margin-top: 3vh;
+
+    @media (min-width: 1200px) {
+      margin-top: 9vh;
+    }
 `
 
 export const headingStyles = css`
@@ -54,9 +59,14 @@ export const StyledDropdownContainer = styled.div`
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
   width: 96%;
-  height: 64vh;
+  height: 65vh;
+  margin-top: 8vh;
   margin-left: 2%;
   margin-right: 2%;
+
+  @media (min-width: 1200px) {
+    margin-top: 11vh;
+  }
 `
 
 //Navigator Item
@@ -97,6 +107,7 @@ export const StyledNavigatorItemTitle = styled.div`
 export const StyledNavigatorContainer = styled.div`
   margin-left: 0rem;
   width: 70%;
+  margin-top: 5vh;
 `
 
 export const StyledNavigatorItemContainer = styled.li`

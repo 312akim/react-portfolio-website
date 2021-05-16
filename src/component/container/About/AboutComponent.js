@@ -4,7 +4,6 @@ import { StyledMainHeaderContainer,
     StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
     StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage } from './AboutComponentStyles';
-import { useTransition, animated, config } from 'react-spring'
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
@@ -40,19 +39,19 @@ const Navigator = ({children}) => {
 const HoverImage = (props) => {
     switch (props.image) {
         case 0: return (
-            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
                 <StyledDropdownImage src={businessImage} />
             </StyledImageCropContainer>
         )
 
         case 1: return (
-            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
                 <StyledDropdownImage src={creativeImage} />
             </StyledImageCropContainer>
         )
 
         case 2: return (
-            <StyledImageCropContainer height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
                 <StyledDropdownImage src={peopleImage} />
             </StyledImageCropContainer>
         )
@@ -113,7 +112,7 @@ const AnimatedNavigator = () => {
     return (
         <>
             <StyledSectionHeader>
-            About Me
+                About Me
             </StyledSectionHeader>
             <Navigator>
                 {navigatorConfig.map((n, index) => {

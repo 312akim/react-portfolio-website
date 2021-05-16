@@ -5,4 +5,8 @@ export const StyledImageCropContainer = styled.div`
     height: ${props => props.height};
     position: ${props => props.position? props.position : 'relative'};
     overflow: hidden;
+
+    @media (min-width: 1200px) {
+        height: ${props => props.desktopHeight};
+    }
 `
