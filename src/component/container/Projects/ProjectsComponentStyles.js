@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { animated } from 'react-spring'
 
 // Animations
 const hoverCardTopFadeAnim = keyframes`
@@ -39,26 +40,6 @@ export const switchIconAnim = (x) => keyframes`
     }
 `
 
-export const entranceProjectCard = keyframes`
-    0% {
-        transform: translateX(-75vw);
-    }
-
-    100%: {
-        transform: translateX(0px);
-    }
-`
-
-export const entranceAltProjectCard = keyframes`
-    0% {
-        transform: translateX(75vw);
-    }
-
-    100%: {
-        transform: translateX(0px);
-    }
-`
-
 export const fadeInAnimation = keyframes`
     0% {
         opacity: 0;
@@ -88,14 +69,17 @@ export const StyledSectionIconContainer = styled.div`
     }
 `
 
-export const StyledProjectCardsContainer = styled.div`
-    background: ${({theme}) => theme.primaryDark};
-    animation: ${entranceProjectCard} 0.7s linear;
+export const StyledProjectAnimatedContainer = styled(animated.div)`
+    transform-style: preserve-3d;
 `
 
-export const StyledAltProjectCardsContainer = styled.div`
+export const StyledProjectCardsContainer = styled.div`
     background: ${({theme}) => theme.primaryDark};
-    animation: ${entranceAltProjectCard} 0.7s linear;
+`
+
+export const StyledAltProjectCardsContainer = styled(animated.div)`
+    background: ${({theme}) => theme.primaryDark};
+    transform: rotateY(180deg);
 `
 
 export const StyledSectionSwitcher = styled.div`
@@ -127,9 +111,12 @@ export const StyledProjectCard = styled.div`
     position: relative;
     width: 70%;
     height: 37vh;
-    margin: 0 auto 5vh auto;
+    margin: 5vh auto 4vh auto;
     background: white;
-    box-shadow: 16px 16px black;
+
+    @media (min-width: 1200px) {
+        box-shadow: 16px 16px black;
+    }
 `
 
 export const StyledProjectCardImage = styled.img`

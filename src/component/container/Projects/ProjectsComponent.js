@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import projectPlaceholder from '../../../shared/images/apparel-store-mockup.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import { useSpring } from 'react-spring'
 
 export const ProjectsComponent = () => {
 
@@ -16,7 +17,6 @@ export const ProjectsComponent = () => {
 
     const sectionSwitchHandler = (e) => {
         setSection(!section);
-        console.log("Section changed to: " + section)
     }
 
     const projectModalSwitcher = (state) => {
@@ -237,6 +237,12 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
 
 // Body
 const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwitchHandler}) => {
+    const projectDisplayAnimation = useSpring({
+        transform: section 
+        ? 'rotateY(0deg)' 
+        : 'rotateY(180deg)'
+    })
+
     return (
         <>
             <SectionSwitcher section={section} sectionSwitchHandler={sectionSwitchHandler}/>
@@ -245,7 +251,9 @@ const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwit
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>
-                <ProjectSection section={section} projectModalSwitcher={projectModalSwitcher} />
+                <StyledProjectAnimatedContainer style={projectDisplayAnimation}>
+                    <ProjectSection section={section} projectModalSwitcher={projectModalSwitcher} />
+                </StyledProjectAnimatedContainer>
             </StyledSectionContainer>
         </>
     )

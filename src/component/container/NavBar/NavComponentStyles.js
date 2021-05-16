@@ -46,7 +46,7 @@ export const StyledToggler = styled.div`
     }
 `
 
-export const AnimatedContainer = styled(animated.div)`
+export const StyledAnimatedContainer = styled(animated.div)`
     position: fixed;
     text-align: right;
     top: 0;

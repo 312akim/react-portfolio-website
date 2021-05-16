@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, AnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
+import { StyledNavContainer, StyledNavBar, StyledNavigationList, StyledNavLogo, StyledToggler, StyledAnimatedContainer, StyledNavigationListWrapper } from './NavComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -63,14 +63,14 @@ const CollapsibleNav = ({isOpen}) => {
 }
 
 const NavigationLinks = ({isOpen}) => {
-    const props = useSpring({
+    const navAnimation = useSpring({
         right: isOpen 
         ? '0%' 
         : '-50%'
     })
 
     return (
-        <AnimatedContainer style={props}>
+        <StyledAnimatedContainer style={navAnimation}>
             <StyledNavigationListWrapper>
                 <StyledNavigationList>
                     <ReactScrollLink title="Home" id="homeSection"/>
@@ -80,6 +80,6 @@ const NavigationLinks = ({isOpen}) => {
                     <ReactScrollLink title="Contact" id="contactSection"/>
                 </StyledNavigationList>
             </StyledNavigationListWrapper>
-        </AnimatedContainer>
+        </StyledAnimatedContainer>
     )
 }
