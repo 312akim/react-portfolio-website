@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledAnimationContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledDialButtonContainer, StyledDialButton, StyledLandingAnimNav } from './LandingComponentStyles';
+import { StyledAnimationContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledDialButtonContainer, StyledDialButton, StyledHomeAnimNav } from './HomeComponentStyles';
 import { ReactScrollLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 
 
-export const LandingComponent = () => {
+export const HomeComponent = () => {
     const [active, setActive] = useState(false);
 
 
@@ -22,7 +22,7 @@ export const LandingComponent = () => {
         )
     }
 
-    const LandingHero = () => {
+    const HomeHero = () => {
         return (
             <StyledNameContainer>
                 <StyledMainHeader>
@@ -35,7 +35,7 @@ export const LandingComponent = () => {
         )
     }
 
-    const LandingText = () => {
+    const HomeText = () => {
         return (
             <StyledTextContainer>
                 <StyledTextSection>
@@ -51,16 +51,16 @@ export const LandingComponent = () => {
         )
     }
 
-    const LandingAnimation = () => {
+    const HomeAnimation = () => {
         return (
             <StyledAnimationContainer>
-                <StyledLandingAnimNav
+                <StyledHomeAnimNav
                     onMouseEnter={mouseEnterHandler()} 
                     onMouseLeave={mouseLeaveHandler()}
                     onMouseMove={mouseMoveHandler()}
                 >
 
-                </StyledLandingAnimNav>
+                </StyledHomeAnimNav>
             </StyledAnimationContainer>
         )
     }
@@ -94,10 +94,10 @@ export const LandingComponent = () => {
     
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'106vh'}>
-            <LandingHero />
-            <LandingAnimation />
+            <HomeHero />
+            <HomeAnimation />
             <AnimationButtons />
-            <LandingText />
+            <HomeText />
         </StyledSectionComponent>
     );
 }

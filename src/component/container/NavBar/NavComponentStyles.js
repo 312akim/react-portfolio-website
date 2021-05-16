@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { animated } from 'react-spring'
 
 export const StyledNavContainer = styled.div`
@@ -66,6 +66,6 @@ export const StyledAnimatedContainer = styled(animated.div)`
         top: 8vh;
         background: none;
         height: auto;
-        width: 6%;
+        width: 15%;
     }
 `

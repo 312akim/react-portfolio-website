@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
-import { LandingComponent } from '../../presentational/Landing/LandingComponent';
+import { HomeComponent } from '../../presentational/Home/HomeComponent'
 import { ProjectsComponent } from '..//Projects/ProjectsComponent';
 import { ActivityComponent } from '../../container/Activity/ActivityComponent';
 import { NavBar } from '../NavBar/NavComponent';
@@ -17,7 +17,7 @@ const MainComponent = () => {
 
             <div id="homeSection">
                 <Fade left>
-                    <LandingComponent />
+                    <HomeComponent />
                 </Fade>
             </div>
 

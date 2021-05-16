@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
     // Components
     
@@ -16,7 +16,7 @@ export const StyledAnimationContainer = styled.div`
     }
 `
 
-export const StyledLandingAnimNav = styled.div`
+export const StyledHomeAnimNav = styled.div`
     height: 80%;
     width: 80%;
     background: red;
