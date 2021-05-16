@@ -56,11 +56,15 @@ export const StyledReactScrollLinkWrapper = styled.div`
         width: 45%;
 
         @media (min-width: 1024px) {
-            width: 35%;
+            width: 40%;
         }
 
         @media (min-width: 1200px) {
-            width: 40%;
+            width: 35%;
+        }
+
+        @media (min-width: 2560px) {
+            width: 20%;
         }
     }
 `
