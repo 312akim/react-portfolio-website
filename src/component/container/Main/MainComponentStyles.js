@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const StyledMainContainer = styled.div`
-    background: white;
+    background: ${({theme}) => theme.primaryLight};
 `

@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { animated } from 'react-spring'
 
 export const StyledNavContainer = styled.div`
-    height: 6vh;
+    height: 10vh;
     background: ${({theme, scroll}) => scroll ? theme.primaryDark : 'transparent'};
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 2;
@@ -12,7 +12,11 @@ export const StyledNavContainer = styled.div`
 `
 
 export const StyledNavBar = styled.div`
-
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
 `
 
 export const StyledNavLogo = styled.div`
@@ -20,9 +24,10 @@ export const StyledNavLogo = styled.div`
 `
 
 export const StyledNavigationListWrapper = styled.div`
-    display: inline-block;
-    float: right;
+    display: flex;
+    flex-direction: column;
     background: transparent;
+    justify-content: space-around;
     color: ${({theme}) => theme.secondaryLight};
     font-size: 20px;
     width: ${props => props.width ? props.width : '100%'};
@@ -34,14 +39,14 @@ export const StyledNavigationList = styled.ul`
 `
 
 export const StyledCollapsibleNavContainer = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 5%;
+    height: 10vh;
 `
 
 export const StyledToggler = styled.div`
-    display: inline-block;
-    margin-top: 1vh;
-    float: right;
-    margin-right: 5%;
     color: ${({theme}) => theme.secondaryLight};
     transition: transform 0.2s;
 
@@ -61,15 +66,18 @@ export const StyledAnimatedContainer = styled(animated.div)`
     padding-top: 8vh;
     background: black;
 
+    @media (min-width: 480px) {
+        width: 30%;
+    }
+
     @media (min-width: 768px) {
         width: 25%;
     }
 
     @media (min-width: 1200px) {
-        padding-top: 0;
         top: 8vh;
         background: none;
         height: auto;
-        width: 15%;
+        width: auto;
     }
 `

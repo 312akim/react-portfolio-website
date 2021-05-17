@@ -1,11 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 
 export const StyledReactScrollLinkContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
     font-weight: 500;
     margin-bottom: 6vh;
     transition: padding-right 1s;
-    margin-left: 0%;
 
     :hover {
         padding-right: 10px;
@@ -38,6 +40,10 @@ export const StyledAnimatedUnderline = styled.div`
     box-shadow: 2px 2px ${({theme}) => theme.primaryLight};
     transition: width 0.5s;
 
+    @media (min-width: 489px) {
+        right: 20%;
+    }
+
     @media (min-width: 768px) {
         right: 17%;
         margin-top: 7vh;
@@ -49,7 +55,7 @@ export const StyledAnimatedUnderline = styled.div`
     }
 
     @media (min-width: 1200px) {
-        right: 31%;
+        right: 45%;
         margin-top: 6vh;
     }
 
@@ -59,16 +65,27 @@ export const StyledAnimatedUnderline = styled.div`
     }
 `
 
+export const StyledIconTextWrapper = styled.div`
+`
+
 export const StyledReactScrollLinkWrapper = styled.div`
     &: hover ${StyledAnimatedUnderline} {
-        width: 45%;
+        width: 55%;
+
+        @media (min-width: 480px) {
+            width: 45%;
+        }
+
+        @media (min-width: 768px) {
+            width: 50%;
+        }
 
         @media (min-width: 1024px) {
             width: 40%;
         }
 
         @media (min-width: 1200px) {
-            width: 35%;
+            width: 40%;
         }
 
         @media (min-width: 2560px) {

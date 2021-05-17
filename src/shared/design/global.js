@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     
     body {
         align-items: center;
-        background: ${({ theme }) => theme.primaryDark};
+        background: ${({ theme }) => theme.primaryLight};
         color: ${({ theme }) => theme.primaryLight};;
         text-rendering: optimizeLegibility;
     }
