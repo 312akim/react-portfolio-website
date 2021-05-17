@@ -60,8 +60,8 @@ export const StyledAnimatedUnderline = styled.div`
     }
 
     @media (min-width: 2560px) {
-        right: 31%;
         margin-top: 5vh;
+        right: 60%;
     }
 `
 
@@ -89,7 +89,7 @@ export const StyledReactScrollLinkWrapper = styled.div`
         }
 
         @media (min-width: 2560px) {
-            width: 20%;
+            width: 30%;
         }
     }
 `
