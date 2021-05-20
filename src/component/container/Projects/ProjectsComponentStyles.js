@@ -113,6 +113,7 @@ export const StyledProjectCard = styled.div`
     height: 37vh;
     margin: 5vh auto 4vh auto;
     background: white;
+    border-radius: 4px;
 
     @media (min-width: 1200px) {
         box-shadow: 16px 16px black;

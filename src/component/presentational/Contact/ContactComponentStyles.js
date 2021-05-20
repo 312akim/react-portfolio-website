@@ -10,6 +10,7 @@ export const StyledContactForm = styled.div`
     color: ${({theme}) => theme.primaryLight};
     display: flex;
     flex-direction: column;
+    border-radius: 4px;
     
 
     @media (min-width: 480px) {
