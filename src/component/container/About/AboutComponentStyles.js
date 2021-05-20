@@ -88,6 +88,7 @@ export const StyledNavigatorItemTitle = styled.div`
   background: transparent;
   height: 14vh;
   width: 80%;
+  overflow-wrap: break-word;
   margin-left: 10%;
   margin-bottom: 0;
   margin-right: 0;
