@@ -41,7 +41,7 @@ const CollapsibleNavComponent = () => {
     return (
         <StyledCollapsibleNavContainer>
             <NavBarToggler isOpen={isOpen} setOpen={setOpen} />
-            <CollapsibleNavLinks isOpen={isOpen} setOpen={setOpen}/>
+            <CollapsibleNavLinks isOpen={isOpen}/>
         </StyledCollapsibleNavContainer>
     )
 }

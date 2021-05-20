@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import { StyledAnimatedUnderline, StyledReactScrollIconLinkWrapper, StyledReactScrollLinkContainer, StyledReactScrollLinkWrapper, StyledReactScrollIconLinkContainer, StyledIconTextWrapper } from './ReactScrollComponentStyles';
+import { StyledAnimatedUnderline, StyledReactScrollLinkContainer, StyledReactScrollLinkWrapper, StyledIconTextWrapper } from './ReactScrollComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const ReactScrollLink = ({id, title, faIcon, delay = 0}) => {

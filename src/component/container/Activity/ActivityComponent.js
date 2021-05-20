@@ -30,7 +30,7 @@ const CommitListComponent = () => {
           repo1 = 'apparel-store-mern',
           repo2 = 'react-portfolio-website',
           // Show 3 commits if smaller vertical sized screen
-          perPage = window.document.body.offsetHeight < 4400 ? 3 : 4;
+          perPage = window.document.body.offsetHeight < 4300 ? 3 : 4;
     
     console.log("Height: " + window.document.body.offsetHeight);
     const fetchApparelStoreData = async () => {

@@ -19,13 +19,14 @@ export const StyledCommitTitle = styled.h2`
     position: absolute;
     text-align: left;
     margin-left: 2%;
-    padding: 0 1%;
+    padding: 0 6px 3px 6px;
     margin-top: -1.5vh;
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.2rem;
     background: black;
     width: auto;
     box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
+    border-radius: 4px;
 
     @media (min-width: 480px) {
         font-size: 1.4rem;
@@ -77,6 +78,8 @@ export const StyledCommitDataContainer = styled.div`
     margin-top: 2%;
     padding: 1% 0;
     box-shadow: 5px 3px 4px ${({theme}) => theme.secondaryDark};
+    border-radius: 4px;
+
     @media (min-width: 768px) {
         margin-top: 3%;
     }
