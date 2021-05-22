@@ -16,6 +16,10 @@ export const StyledFormikWrapper = styled.div`
         width: 60%;
     }
 
+    @media (min-width: 768px) {
+        width: 55%;
+    }
+
     @media (min-width: 1200px) {
         width: 30%;
     }
@@ -25,7 +29,7 @@ export const StyledFormikWrapper = styled.div`
     }
 
     @media (min-width: 1920px) {
-        width: 35%;
+        width: 40%;
     }
 `
 
@@ -35,7 +39,7 @@ export const StyledContactLabel = styled.label`
     margin: 0 auto 1vh 10%;
 
     @media (min-width: 768px) {
-        margin: 0 auto 1vh 20%;
+        margin: 0 auto 1vh 5%;
     }
 
     @media (min-width: 1920px) {

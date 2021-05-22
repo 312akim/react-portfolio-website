@@ -5,7 +5,6 @@ import emailjs from 'emailjs-com';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export const ContactComponent = () => {
-    
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight}>
 

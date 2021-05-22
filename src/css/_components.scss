@@ -10,10 +10,16 @@ $secondaryDark: 'black';
     margin: 0 10%;
     height: 3vh;
     border: 3px solid $secondaryLight;
+    font-size: 1.2rem;
 
     @media screen and (min-width: 768px) {
-        width: 60%;
-        margin: 0 20%;
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 70%;
+        margin: 0 15%;
     }
 
     @media screen and (min-width: 1920px) {
@@ -23,5 +29,5 @@ $secondaryDark: 'black';
 }
 
 .contactTextAreaField {
-    height: 6vh;
+    height: 8vh;
 }
