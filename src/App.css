@@ -1,3 +1,27 @@
+.contactInputField {
+  display: block;
+  width: 80%;
+  margin: 0 10%;
+  height: 3vh;
+  border: 3px solid "rgb(82,138,183)";
+}
+@media screen and (min-width: 768px) {
+  .contactInputField {
+    width: 60%;
+    margin: 0 20%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .contactInputField {
+    width: 100%;
+    margin: 0 0;
+  }
+}
+
+.contactTextAreaField {
+  height: 6vh;
+}
+
 ul {
   margin: 0;
 }

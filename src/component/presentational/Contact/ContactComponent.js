@@ -1,47 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactSubmitButton, StyledContactForm, StyledContactHeaderText, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers } from './ContactComponentStyles';
-import { send } from 'emailjs-com';
+import { StyledContactSubmitButton, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers, StyledFormikWrapper } from './ContactComponentStyles';
+import emailjs from 'emailjs-com';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export const ContactComponent = () => {
-
-    const [toSend, setToSend] = useState({
-        formFName: '',
-        formLName: '',
-        to_name: 'Alex',
-        formSubject: '',
-        formMessage: '',
-        formEmail: ''
-    });
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        send(
-          'service_e968q22',
-          'template_4k3a6so',
-          toSend,
-          'user_751xNiHC7Q8RBo3dQib5W'
-        )
-        .then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-        })
-        .catch((err) => {
-            console.log('FAILED...', err);
-        });
-
-        setToSend({
-            formFName: '',
-            formLName: '',
-            to_name: 'Alex',
-            formSubject: '',
-            formMessage: '',
-            formEmail: ''
-        })
-    };
-
-    const handleChange = (e) => {
-        setToSend({ ...toSend, [e.target.name]: e.target.value });
-    };
     
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight}>
@@ -52,87 +15,112 @@ export const ContactComponent = () => {
             <StyledSectionSubheader>
                 I hope to hear from you soon!
             </StyledSectionSubheader>
+            <ContactForm />
 
-            <StyledContactForm onSubmit={onSubmit}>
+        </StyledSectionComponent>
+    )
+}
+
+const ContactForm = () => {
+
+    //EmailJs
+    const sendEmail = (object) => {
+        emailjs.send("service_e968q22", "template_4k3a6so", object, "user_751xNiHC7Q8RBo3dQib5W")
+        .then((result) => {
+            console.log(result.text)
+        }, (error) => {
+            console.log(error.text)
+        })
+    }
+
+    const onSubmit = (values, actions) => {
+        setTimeout(() => {
+            sendEmail(values)
+            actions.setSubmitting(false)
+          }, 1000)
+        
+        actions.resetForm();
+    };
+
+    return (
+        <StyledFormikWrapper>
+            <Formik
+            initialValues={{ formSubject: '', formEmail: '', formFName: '', formLName: '', formMessage: '' }}
+            onSubmit={onSubmit}
+
+            validate={values => {
+            const errors = {};
+            if (!values.formSubject) {
+                errors.formSubject = 'Required';
+            }
+
+            if (!values.formEmail) {
+                errors.formEmail = 'Required';
+            } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.formEmail)
+            ) {
+                errors.formEmail = 'Invalid email address';
+            }
+
+            if (!values.formFName) {
+                errors.formFName = 'Required';
+            }
+
+            if (!values.formMessage) {
+                errors.formMessage = 'Required';
+            }
+            
+            return errors;
+            }}
+        >
+            {({ isSubmitting }) => (
+            <Form className='formikForm'>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formSubject'>
                         Subject:
                         <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
-                    <StyledContactInput
-                        id='formSubject' 
-                        type='text' 
-                        name='formSubject' 
-                        placeholder='Subject'
-                        value={toSend.formSubject}
-                        onChange={handleChange}
-                        required
-                    />
+                    <Field id='formSubject' type='text' name='formSubject' placeholder='Subject' className='contactInputField'/>
+                    <ErrorMessage name='formSubject' component='div' />
                 </StyledContactInputContainer>
-                <StyledNameInputContainers>
-                    <StyledContactFNameContainer>
-                        <StyledContactLabel for="formFName">
-                            First Name:
-                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                        </StyledContactLabel>
-                        <StyledContactInput 
-                            id='formFName'
-                            type='text'
-                            name='formFName'
-                            placeholder='First Name'
-                            value={toSend.formFName}
-                            onChange={handleChange}
-                            required
-                        />
-                    </StyledContactFNameContainer>
-                    <StyledContactLNameContainer>
-                        <StyledContactLabel for="formLName">
-                            Last Name:
-                        </StyledContactLabel>
-                        <StyledContactInput 
-                            id='formLName'
-                            type='text'
-                            name='formLName'
-                            placeholder='Last Name'
-                            value={toSend.formLName}
-                            onChange={handleChange}
-                        />
-                    </StyledContactLNameContainer>
-                </StyledNameInputContainers>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formEmail'>
                         Email:
                         <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
-                    <StyledContactInput
-                        id='formEmail'
-                        type='text'
-                        name='formEmail'
-                        placeholder='Your email'
-                        value={toSend.formEmail}
-                        onChange={handleChange}
-                        required
-                    />
+                    <Field id='formEmail' type='email' name='formEmail' placeholder='Email' className='contactInputField'/>
+                    <ErrorMessage name='formEmail' component='div' />
+                </StyledContactInputContainer>
+                <StyledContactInputContainer>
+                    <StyledContactLabel for='formFName'>
+                        First Name:
+                        <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                    </StyledContactLabel>
+                        <Field id='formFName' type='text' name='formFName' placeholder='First Name' className='contactInputField'/>
+                        <ErrorMessage name='formFName' component='div' />
+                </StyledContactInputContainer>
+                <StyledContactInputContainer>
+                    <StyledContactLabel for='formLName'>
+                        Last Name:
+                    </StyledContactLabel>
+                        <Field id='formLName' type='text' name='formLName' placeholder='Last Name' className='contactInputField'/>
+                        <ErrorMessage name='formLName' component='div' />
                 </StyledContactInputContainer>
                 <StyledContactInputContainer>
                     <StyledContactLabel for='formMessage'>
                         Message:
                         <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                     </StyledContactLabel>
-                    <StyledContactTextarea
-                        id='formMessage'
-                        type='text'
-                        name='formMessage'
-                        placeholder='Your message'
-                        value={toSend.formMessage}
-                        onChange={handleChange}
-                        required
-                    />
-                    <StyledContactSubmitButton type='submit'>
-                        Send
-                    </StyledContactSubmitButton>
+                        <Field id='formMessage' component='textarea' name='formMessage' placeholder='Message' className='contactInputField contactTextAreaField'/>
+                        <ErrorMessage name='formMessage' component='div' />
                 </StyledContactInputContainer>
-            </StyledContactForm>
-        </StyledSectionComponent>
+
+                <StyledContactSubmitButton type='submit' disabled={isSubmitting}>
+                    Submit
+                </StyledContactSubmitButton>
+            </Form>
+            )}
+        </Formik>
+      </StyledFormikWrapper>
     )
 }

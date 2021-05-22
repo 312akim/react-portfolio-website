@@ -1,0 +1,27 @@
+$primaryLight: 'white';
+$secondaryLight: 'rgb(82,138,183)';
+$primaryDark: 'rgb(45,51,90)';
+$secondaryDark: 'black';
+
+// Formik Contact Form Input
+.contactInputField {
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+    height: 3vh;
+    border: 3px solid $secondaryLight;
+
+    @media screen and (min-width: 768px) {
+        width: 60%;
+        margin: 0 20%;
+    }
+
+    @media screen and (min-width: 1920px) {
+        width: 100%;
+        margin: 0 0;
+    }
+}
+
+.contactTextAreaField {
+    height: 6vh;
+}

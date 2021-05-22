@@ -1,42 +1,46 @@
 import styled from 'styled-components';
 
-export const StyledContactForm = styled.div`
-    height: 70vh;   
+export const StyledFormikWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: auto;   
     width: 80%;
-    margin: 4vh auto;
+    margin: 8vh auto;
     box-shadow: 0 0 42px ${({theme}) => theme.primaryDark};
     padding: 0 10%;
     background: ${({theme}) => theme.secondaryDark};
     color: ${({theme}) => theme.primaryLight};
-    display: flex;
-    flex-direction: column;
     border-radius: 4px;
-    
 
     @media (min-width: 480px) {
         width: 60%;
-        padding: 0 10%;
     }
 
     @media (min-width: 1200px) {
         width: 30%;
-        padding: 0 10%;
     }
 
     @media (min-width: 1200px) {
         width: 45%;
-        padding: 0 10%;
     }
-`
 
-export const StyledContactHeaderText = styled.div`
-    
+    @media (min-width: 1920px) {
+        width: 35%;
+    }
 `
 
 export const StyledContactLabel = styled.label`
     display: block;
     text-align: left;
-    margin: 0 auto 1vh auto;
+    margin: 0 auto 1vh 10%;
+
+    @media (min-width: 768px) {
+        margin: 0 auto 1vh 20%;
+    }
+
+    @media (min-width: 1920px) {
+        margin: 0 auto 1vh auto;
+    }
 `
 
 export const StyledRequiredAsterick = styled.span`
@@ -65,7 +69,7 @@ export const StyledContactSubmitButton = styled.button`
     margin: auto;
     width: 60%;
     height: 4vh;
-    margin: 5vh auto 0 auto;
+    margin: 5vh auto;
     background:${({theme}) => theme.secondaryLight};
     color: ${({theme}) => theme.primaryLight};
     border: 3px solid ${({theme}) => theme.primaryLight};
