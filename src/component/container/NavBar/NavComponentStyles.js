@@ -49,18 +49,11 @@ export const StyledCollapsibleNavContainer = styled.div`
 export const StyledToggler = styled.div`
     color: ${({theme}) => theme.secondaryLight};
     transition: transform 0.2s;
-    border: ${({borderToggle}) => borderToggle ? '2px solid white' : '3px solid black'};
     padding: 1px 3px;
-    background: ${({borderToggle}) => borderToggle ? 'black' : 'white'};
     border-radius: 4px;
-    border: 3px solid black;
 
     :hover {
         transform: rotate(5deg);
-    }
-
-    @media (min-width: 1200px) {
-        background: white;
     }
 `
 
