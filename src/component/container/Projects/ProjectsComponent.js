@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
-import projectPlaceholder from '../../../shared/images/apparel-store-mockup.png'
+import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
+import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { useSpring } from 'react-spring'
@@ -39,7 +40,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                 
                 <StyledProjectCard>
                     <StyledImageCropContainer height={'37vh'}>
-                        <StyledProjectCardImage src={projectPlaceholder}/>
+                        <StyledProjectCardImage src={tokenizeAmazonMockup}/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
@@ -62,7 +63,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
 
                 <StyledProjectCard>
                     <StyledImageCropContainer height={'37vh'}>
-                        <StyledProjectCardImage src={projectPlaceholder}/>
+                        <StyledProjectCardImage src={apparelStoreMockup}/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
@@ -92,7 +93,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
 
                     <StyledProjectCard>
                         <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={projectPlaceholder}/>
+                            <StyledProjectCardImage src={apparelStoreMockup}/>
                         </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
@@ -115,7 +116,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
 
                     <StyledProjectCard>
                         <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={projectPlaceholder}/>
+                            <StyledProjectCardImage src={apparelStoreMockup}/>
                         </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>

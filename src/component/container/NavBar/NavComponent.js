@@ -48,7 +48,7 @@ const CollapsibleNavComponent = () => {
 
 const NavBarToggler = ({setOpen, isOpen}) => {
     return (
-        <StyledToggler onClick={() => setOpen(!isOpen)} borderToggle={isOpen}>
+        <StyledToggler onClick={() => setOpen(!isOpen)}>
             <FontAwesomeIcon icon={faBars} size="2x" />
         </StyledToggler>
     )
