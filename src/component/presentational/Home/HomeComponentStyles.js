@@ -1,18 +1,29 @@
 import styled from 'styled-components';
 
     // Components
-    
-// New animation attempt
-export const StyledAnimationContainer = styled.div`
-    display: block;
-    height: 32vh;
-    width: 94%;
-    background: grey;
-    margin: 5% auto 0 auto;
+export const StyledHomeContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+`
 
-    @media (min-width: 576px) {
-        height: 33vh;
-        width: 80%;
+export const StyledHomeNavContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 343px;
+    background: rgba(191, 191, 191, 0.9);
+`
+
+export const StyledHomeHeaderContainer = styled.div`
+    margin-bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 1200px) {
+        flex-direction: row;
     }
 `
 
@@ -22,11 +33,20 @@ export const StyledHomeAnimNav = styled.div`
     background: red;
     margin: auto;
 `
-//New animation attempt end
+
+export const StyledHomeLinkContainer = styled.div`
+    width: 100%;
+`
+
+export const StyledHomeLinkIconTextContainer = styled.div`
+
+`
 
 export const StyledNameContainer = styled.div`
-    margin-top: 6vh;
-    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+    margin-bottom: 3vh;
 `
 
 export const StyledMainHeader = styled.h1`
@@ -59,18 +79,27 @@ export const StyledSubHeader = styled.h2`
     }
 `
 
-export const StyledDialButtonContainer = styled.div`
+export const StyledHomeLinkButton = styled.button`
     display: block;
-    height: 6vh;
-`
-
-export const StyledDialButton = styled.button`
-    display: inline-block;
     margin: 2%;
     color: white;
-    width: 15%;
+    width: calc(100% - 12px);
     background: black;
-    height: 80%;
+    height: 7vh;
+`
+
+export const StyledHomeFlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+`
+
+export const StyledHomeFlexPairContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: ${({margin}) => margin ? margin : '0'};
+    justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'center'};
 `
 
 export const StyledTextContainer = styled.div`
