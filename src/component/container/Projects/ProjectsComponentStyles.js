@@ -54,6 +54,7 @@ export const fadeInAnimation = keyframes`
 export const StyledSectionContainer = styled.div`
     text-align: center;
     position: relative;
+    width: 100vw;
 `
 
 export const StyledSectionIconContainer = styled.div`
