@@ -4,33 +4,13 @@ export const StyledFormikWrapper = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;   
-    width: 80%;
+    width: 343px;
     margin: 8vh auto;
     box-shadow: 0 0 42px ${({theme}) => theme.primaryDark};
     padding: 0 10%;
     background: ${({theme}) => theme.secondaryDark};
     color: ${({theme}) => theme.primaryLight};
     border-radius: 4px;
-
-    @media (min-width: 480px) {
-        width: 60%;
-    }
-
-    @media (min-width: 768px) {
-        width: 55%;
-    }
-
-    @media (min-width: 1200px) {
-        width: 30%;
-    }
-
-    @media (min-width: 1200px) {
-        width: 45%;
-    }
-
-    @media (min-width: 1920px) {
-        width: 40%;
-    }
 `
 
 export const StyledContactLabel = styled.label`

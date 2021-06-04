@@ -4,6 +4,10 @@ import { animated } from 'react-spring'
 //Animations
 
 //Styles
+export const StyledActivitySectionContainer = styled.div`
+    width: 100vw;
+`
+
 export const StyledCommitListWrapper = styled.div`
     height: 86vh;
     padding-top: 6vh;

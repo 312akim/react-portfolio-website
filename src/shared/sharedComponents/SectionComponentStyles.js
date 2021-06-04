@@ -6,14 +6,6 @@ export const StyledSectionComponent = styled.div`
     background-color: ${props => props.backgroundColor};
     text-align: center;
     width: 100%;
-    
-    @media (min-width: 1200px) {
-        padding: 0 15%;
-    }
-
-    @media (min-width: 2560px) {
-        padding: 0 25%;
-    }
 `
 
 export const StyledSectionHeader = styled.h1`

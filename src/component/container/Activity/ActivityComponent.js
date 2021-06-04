@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper, StyledActivitySectionContainer } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
 
 export const ActivityComponent = () => {
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryDark} fontColor={({theme}) => theme.primaryLight}>
-            <StyledSectionHeader>
-                Recent Activity
-            </StyledSectionHeader>
-            <StyledCommitListContainer>
-                <CommitListComponent />
-            </StyledCommitListContainer>
+            <StyledActivitySectionContainer>
+              <StyledSectionHeader>
+                  Recent Activity
+              </StyledSectionHeader>
+              <StyledCommitListContainer>
+                  <CommitListComponent />
+              </StyledCommitListContainer>
+            </StyledActivitySectionContainer>
         </StyledSectionComponent>
     )
 }
