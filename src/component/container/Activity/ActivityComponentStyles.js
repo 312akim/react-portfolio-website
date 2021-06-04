@@ -18,34 +18,30 @@ export const StyledCommitListWrapper = styled.div`
 export const StyledCommitWrapper = styled.div`
     width: 343px;
     padding-bottom: 3vh;
+
+    @media (min-width: 768px) {
+        width: 688px;
+    }
 `
 
 
 export const StyledCommitTitle = styled.h2`
     position: absolute;
     text-align: left;
-    margin-left: 2%;
+    margin-left: -1%;
     padding: 0 6px 3px 6px;
-    margin-top: -1.5vh;
+    margin-top: -15px;
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.2rem;
     background: black;
-    width: 256px;
+    width: auto;
     box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
     border-radius: 4px;
-
-    @media (min-width: 480px) {
-        font-size: 1.4rem;
-        box-shadow: 5px 4px 4px ${({theme}) => theme.secondaryLight};
-    }
 `
 
 export const StyledCommitDataWrapper = styled.div`
     overflow-y: auto;
     height: 100%;
-    @media (min-width: 480px) {
-        padding-top: 1vh;
-    }
 `
 
 export const StyledCommitDate = styled.div`
@@ -58,10 +54,6 @@ export const StyledCommitDate = styled.div`
 export const StyledCommitComment = styled.div`
     color: ${({theme}) => theme.primaryLight};
     margin: 0.1rem 5%;
-
-    @media (min-width: 1200px) {
-        margin: 0.3rem 0%;
-    }
 `
 
 export const StyledCommitGitAnchor = styled.a`
@@ -80,12 +72,6 @@ export const StyledCommitDataContainer = styled.div`
 
     @media (min-width: 768px) {
         margin-top: 3%;
-    }
-
-    @media (min-width: 1200px) {
-        margin: 1vh;
-        width: 70%;
-        margin-left: 15%;
     }
 `
 
