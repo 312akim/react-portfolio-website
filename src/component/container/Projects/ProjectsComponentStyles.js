@@ -51,7 +51,11 @@ export const fadeInAnimation = keyframes`
 `
 
 // Components
-export const StyledSectionContainer = styled.div`
+export const StyledSectionContainerWrapper = styled.div`
+    height: 100vh;
+`
+
+export const StyledSectionContainerContent = styled.div`
     text-align: center;
     position: relative;
     width: 100vw;
@@ -85,7 +89,7 @@ export const StyledAltProjectCardsContainer = styled(animated.div)`
 
 export const StyledSectionSwitcher = styled.div`
     position: absolute;
-    height: 100vh;
+    height: 100%;
     width: 15%;
     background: ${({theme}) => theme.primaryDark};
     right: ${props => props.position};

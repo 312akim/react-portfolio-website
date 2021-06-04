@@ -76,7 +76,7 @@ const CommitListComponent = () => {
 
 const CommitComponent = (props) => {
   return (
-    <StyledCommitWrapper paddingTop={''}>
+    <StyledCommitWrapper>
         <StyledCommitTitle>{props.title}</StyledCommitTitle>
         <StyledCommitDataWrapper>
           {!props.api ? <div>Failed to load github commit data</div> :

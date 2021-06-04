@@ -1,5 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-import { animated } from 'react-spring'
+import styled from 'styled-components';
 
 //Animations
 
@@ -9,13 +8,16 @@ export const StyledActivitySectionContainer = styled.div`
 `
 
 export const StyledCommitListWrapper = styled.div`
-    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-top: 6vh;
 `
 
 export const StyledCommitWrapper = styled.div`
-    width: 100%;
-    height: 43vh;
+    width: 343px;
+    padding-bottom: 3vh;
 `
 
 
@@ -28,7 +30,7 @@ export const StyledCommitTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.2rem;
     background: black;
-    width: auto;
+    width: 256px;
     box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
     border-radius: 4px;
 
@@ -36,23 +38,14 @@ export const StyledCommitTitle = styled.h2`
         font-size: 1.4rem;
         box-shadow: 5px 4px 4px ${({theme}) => theme.secondaryLight};
     }
-
-    @media (min-width: 768px) {
-        margin-top: 1vh;
-        padding-bottom: 0.3vh;
-    }
-
-    @media (min-width: 1200px) {
-        margin-top: -1vh;
-        margin-left: 12%;
-        font-size: 1.6rem;
-    }
-    
 `
 
 export const StyledCommitDataWrapper = styled.div`
     overflow-y: auto;
     height: 100%;
+    @media (min-width: 480px) {
+        padding-top: 1vh;
+    }
 `
 
 export const StyledCommitDate = styled.div`
@@ -80,6 +73,7 @@ export const StyledCommitDataContainer = styled.div`
     width: 90%;
     margin-left: 5%;
     margin-top: 2%;
+    margin-bottom: 1vh;
     padding: 1% 0;
     box-shadow: 5px 3px 4px ${({theme}) => theme.secondaryDark};
     border-radius: 4px;

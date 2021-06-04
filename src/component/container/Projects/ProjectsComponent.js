@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainer, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -245,9 +245,9 @@ const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwit
     })
 
     return (
-        <>
+        <StyledSectionContainerWrapper>
             <SectionSwitcher section={section} sectionSwitchHandler={sectionSwitchHandler}/>
-            <StyledSectionContainer>
+            <StyledSectionContainerContent>
                 <ModalDisplay showModal={showModal} projectModalSwitcher={projectModalSwitcher}/>
                 <StyledSectionHeader>
                     Projects
@@ -255,7 +255,7 @@ const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwit
                 <StyledProjectAnimatedContainer style={projectDisplayAnimation}>
                     <ProjectSection section={section} projectModalSwitcher={projectModalSwitcher} />
                 </StyledProjectAnimatedContainer>
-            </StyledSectionContainer>
-        </>
+            </StyledSectionContainerContent>
+        </StyledSectionContainerWrapper>
     )
 }
