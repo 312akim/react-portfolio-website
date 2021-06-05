@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledHomeButtonWrapper, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeHeaderContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper } from './HomeComponentStyles';
+import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer } from './HomeComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
 export const HomeComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'106vh'}>
-            <StyledHomeContentContainer>
-                <StyledHomeHeaderContainer>
-                    <HomeHero />
-                    <HomeNavButton />
-                </StyledHomeHeaderContainer>
-                <HomeText />
-            </StyledHomeContentContainer>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'auto'}>
+            <StyledHomeComponentContainer>
+                <HomeHero />
+                <StyledHomeContentContainer>
+                    <HomeText />
+                    <HomeNav />
+                </StyledHomeContentContainer>
+            </StyledHomeComponentContainer>
         </StyledSectionComponent>
     );
 }
@@ -49,7 +49,7 @@ const HomeText = () => {
     )
 }
 
-const HomeNavButton = () => {
+const HomeNav = () => {
     return (
         <StyledHomeNavWrapper>
             <StyledHomeNavContainer>

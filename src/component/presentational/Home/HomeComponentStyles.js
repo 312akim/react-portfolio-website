@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import homeBackground from '../../../shared/images/home-background.jpg'
 
     // Components
-export const StyledHomeContentContainer = styled.div`
+export const StyledHomeComponentContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 343px;
+    justify-content: center;
+    align-items: center;
 `
 
 export const StyledHomeNavWrapper = styled.div`
     perspective: 600px;
     perspective-origin: 50% 50%;
+    width: 100%;
 `
 
 export const StyledHomeNavContainer = styled.div`
@@ -28,12 +31,19 @@ export const StyledHomeNavContainer = styled.div`
     }
 `
 
-export const StyledHomeHeaderContainer = styled.div`
-    margin-bottom: 15vh;
+export const StyledHomeContentContainer = styled.div`
+    padding: 15vh 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(${homeBackground});
+    width: 100vw;
+    margin-bottom: 21vh;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
 `
 
 export const StyledHomeAnimNav = styled.div`
@@ -54,6 +64,7 @@ export const StyledHomeLinkIconTextContainer = styled.div`
 export const StyledNameContainer = styled.div`
     display: flex;
     flex-direction: column;
+    height: 18vh;
     width: 343px;
     margin-bottom: 3vh;
 `
@@ -104,8 +115,8 @@ export const StyledHomeFlexPairContainer = styled.div`
 `
 
 export const StyledTextContainer = styled.div`
-    height: 43vh;
-    text-align: left
+    text-align: left;
+    color: white;
 `
 
 export const StyledTextSection = styled.p`
