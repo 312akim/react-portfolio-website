@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledHomeButtonWrapper, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeHeaderContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer } from './HomeComponentStyles';
+import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledHomeButtonWrapper, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeHeaderContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper } from './HomeComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
@@ -51,31 +51,33 @@ const HomeText = () => {
 
 const HomeNavButton = () => {
     return (
-        <StyledHomeNavContainer>
-            <StyledHomeFlexContainer>
-                <StyledHomeLinkButton>
-                    <ReactScrollHomeLink title="Projects" id="projectsSection" faIcon={faLaptopCode}></ReactScrollHomeLink>
-                </StyledHomeLinkButton>
-            </StyledHomeFlexContainer>
+        <StyledHomeNavWrapper>
+            <StyledHomeNavContainer>
+                <StyledHomeFlexContainer>
+                    <StyledHomeLinkButton>
+                        <ReactScrollHomeLink title="Projects" id="projectsSection" faIcon={faLaptopCode}></ReactScrollHomeLink>
+                    </StyledHomeLinkButton>
+                </StyledHomeFlexContainer>
 
-            <StyledHomeFlexPairContainer justifyContent={'flex-start'} margin={'0 30px 0 0'}>
-                <StyledHomeLinkButton>
-                    <ReactScrollHomeLink title="About" id="aboutSection" faIcon={faUserAstronaut}/>
-                </StyledHomeLinkButton>
-                <StyledHomeLinkButton>
-                    <ReactScrollHomeLink title="Activity" id="activitySection" faIcon={faCodeBranch}/>
-                </StyledHomeLinkButton>
-            </StyledHomeFlexPairContainer>
+                <StyledHomeFlexPairContainer justifyContent={'flex-start'} margin={'0 30px 0 0'}>
+                    <StyledHomeLinkButton>
+                        <ReactScrollHomeLink title="About" id="aboutSection" faIcon={faUserAstronaut}/>
+                    </StyledHomeLinkButton>
+                    <StyledHomeLinkButton>
+                        <ReactScrollHomeLink title="Activity" id="activitySection" faIcon={faCodeBranch}/>
+                    </StyledHomeLinkButton>
+                </StyledHomeFlexPairContainer>
 
-            <StyledHomeFlexPairContainer justifyContent={'flex-end'} margin={'0 0 0 30px'}>
-                <StyledHomeLinkButton>
-                    <ReactScrollHomeLink title="Contact" id="contactSection" faIcon={faEnvelope}/>
-                </StyledHomeLinkButton>
-                <StyledHomeLinkButton>
-                    <a href="https://www.linkedin.com/in/alexander-kim-7441a416a/" target="_blank">LinkedIn</a>
-                </StyledHomeLinkButton>
-            </StyledHomeFlexPairContainer>
-        </StyledHomeNavContainer>
+                <StyledHomeFlexPairContainer justifyContent={'flex-end'} margin={'0 0 0 30px'}>
+                    <StyledHomeLinkButton>
+                        <ReactScrollHomeLink title="Contact" id="contactSection" faIcon={faEnvelope}/>
+                    </StyledHomeLinkButton>
+                    <StyledHomeLinkButton>
+                        <a href="https://www.linkedin.com/in/alexander-kim-7441a416a/" target="_blank">LinkedIn</a>
+                    </StyledHomeLinkButton>
+                </StyledHomeFlexPairContainer>
+            </StyledHomeNavContainer>
+        </StyledHomeNavWrapper>
     )
 }
 

@@ -7,12 +7,25 @@ export const StyledHomeContentContainer = styled.div`
     width: 343px;
 `
 
+export const StyledHomeNavWrapper = styled.div`
+    perspective: 600px;
+    perspective-origin: 50% 50%;
+`
+
 export const StyledHomeNavContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
     width: 343px;
     background: rgba(191, 191, 191, 0.9);
+    transform: rotateY(-21deg) scaleZ(2.5);
+    opacity: 0.9;
+
+    transition: transform 1s;
+
+    :hover {
+        transform: rotateY(-8deg) scaleZ(2.5);
+    }
 `
 
 export const StyledHomeHeaderContainer = styled.div`
@@ -21,10 +34,6 @@ export const StyledHomeHeaderContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    @media(min-width: 1200px) {
-        flex-direction: row;
-    }
 `
 
 export const StyledHomeAnimNav = styled.div`
@@ -61,10 +70,6 @@ export const StyledMainHeader = styled.h1`
         padding-top: 3vh;
         font-size: 64px;
     }
-
-    @media (min-width: 1200px) {
-        font-size: 96px;
-    }
 `
 
 export const StyledSubHeader = styled.h2`
@@ -73,10 +78,6 @@ export const StyledSubHeader = styled.h2`
     padding-left: 15%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-
-    @media (min-width: 1200px) {
-        font-size: 54px;
-    }
 `
 
 export const StyledHomeLinkButton = styled.button`
@@ -84,7 +85,7 @@ export const StyledHomeLinkButton = styled.button`
     margin: 2%;
     color: white;
     width: calc(100% - 12px);
-    background: black;
+    background: blue;
     height: 7vh;
 `
 
@@ -115,6 +116,6 @@ export const StyledTextSection = styled.p`
     margin-top: 0;
 
     @media (min-width: 1200px) {
-        font-size: 32px;
+        font-size: 30px;
     }
 `

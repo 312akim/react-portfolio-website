@@ -42,7 +42,7 @@ export const headingStyles = css`
 export const StyledDropdownHeader = styled.h3(headingStyles);
 
 export const StyledDropdownContent = styled.div`
-
+    overflow-y: hidden;
 `
 
 export const StyledDropdownSection = styled.div`
