@@ -169,6 +169,10 @@ export const StyledProjectInformation = styled.div`
     margin: 0 5% 1.5vh 5%;
     padding: 1%;
     color: white;
+
+    @media (min-width: 480px) {
+        margin-bottom: 2.5vh;
+    }
 `
 
 export const StyledReadMore = styled.button`
