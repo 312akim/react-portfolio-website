@@ -178,10 +178,10 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                         <StyledModalHero>
                             Test 1111
                         </StyledModalHero>
+                        <div>
+                            Freelance Project consisting of a Landing Page &amp; Full website.
+                        </div>
                         <StyledModalText>
-                            <div>
-                                Freelance Project consisting of a Landing Page &amp; Full website.
-                            </div>
                             <hr/>
                             <div>Landing Page Key Learnings:</div>
                             <ul>
