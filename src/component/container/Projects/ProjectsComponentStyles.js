@@ -114,11 +114,17 @@ export const StyledSectionSwitcher = styled.div`
 
 export const StyledProjectCard = styled.div`
     position: relative;
-    width: 70%;
+    width: 60%;
+    max-width: 768px;
     height: 37vh;
     margin: 5vh auto 4vh auto;
     background: white;
     border-radius: 4px;
+    box-shadow: 8px 8px black;
+
+    @media (min-width: 480px) {
+        box-shadow: 12px 12px black;
+    }
 
     @media (min-width: 1200px) {
         box-shadow: 16px 16px black;
@@ -128,11 +134,15 @@ export const StyledProjectCard = styled.div`
 export const StyledProjectCardImage = styled.img`
     height: 27vh;
     width: auto;
-    margin-left: -5%;
+    margin-left: -30%;
     margin-top: 5vh;
 
     @media (min-width: 480px) {
-        margin-left: 0;
+        margin-left: -15%;
+    }
+
+    @media (min-width: 500px) {
+        margin-left: 0%;
     }
 
     @media (min-width: 1200px) {
