@@ -90,7 +90,7 @@ export const StyledAltProjectCardsContainer = styled(animated.div)`
 
 export const StyledSectionSwitcher = styled.div`
     position: absolute;
-    height: 100%;
+    height: 106vh;
     width: 15%;
     background: ${({theme}) => theme.primaryDark};
     right: ${props => props.position};
@@ -153,49 +153,31 @@ export const StyledProjectCardImage = styled.img`
 
 export const StyledProjectCardTitle = styled.h2`
     display: block;
+    max-height: 8vh;
     width: 75%;
-    margin-left: 12.5%;
+    margin: 1vh 12.5%;
     color: white;
-    height: 12%;
     background: ${({theme}) => theme.secondaryLight};
 `
 
 export const StyledProjectInformation = styled.div`
-    height: 20%;
-    width: 90%;
-    margin: auto;
-    opacity: 1;
+    height: 20vh;
+    width: 75%;
+    margin: 0 12.5% 1vh 12.5%;
     color: white;
-
-    @media (min-width: 576px) {
-        width: 65%;
-    }
-
-    @media (min-width: 768px) {
-        margin-top: 10%;
-    }
+    background: red;
 `
 
 export const StyledReadMore = styled.button`
-    height: 10%;
-    margin-top: 25%;
-    margin-bottom: 3%;
+    height: 3.5vh;
+    margin-bottom: 1vh;
     color: white;
     background: ${({theme}) => theme.secondaryLight};
-
-    @media (min-width: 576px) {
-        margin-top: 18%;
-    }
-
-    @media (min-width: 768px) {
-        margin-top: 10%;
-    }
 `
 
 export const StyledGithubLink = styled.a`
     display: block;
-    height: 13%;
-    margin-bottom: 1vh;
+    height: 3.5vh;
     color: white;
 `
 
@@ -203,10 +185,10 @@ export const StyledCardHoverContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
     opacity: 0;
-    border-radius: 3.5px;
+    border-radius: 3.2px;
+    height: 40vh;
     
     :hover {
         opacity: 0.8;
