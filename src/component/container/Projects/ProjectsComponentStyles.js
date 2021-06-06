@@ -152,37 +152,44 @@ export const StyledProjectCardImage = styled.img`
 `
 
 export const StyledProjectCardTitle = styled.h2`
-    display: block;
-    max-height: 8vh;
-    width: 75%;
-    margin: 1vh 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    padding: 1% 5%;
+    margin: 1vh 5%;
     color: white;
-    background: ${({theme}) => theme.secondaryLight};
 `
 
 export const StyledProjectInformation = styled.div`
-    height: 20vh;
-    width: 75%;
-    margin: 0 12.5% 1vh 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    max-height: 20vh;
+    margin: 0 5% 1.5vh 5%;
+    padding: 1%;
     color: white;
-    background: red;
 `
 
 export const StyledReadMore = styled.button`
-    height: 3.5vh;
-    margin-bottom: 1vh;
+    height: 4vh;
+    margin-bottom: 1.5vh;
     color: white;
     background: ${({theme}) => theme.secondaryLight};
 `
 
 export const StyledGithubLink = styled.a`
     display: block;
-    height: 3.5vh;
+    height: 4vh;
     color: white;
 `
 
 export const StyledCardHoverContainer = styled.div`
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
@@ -191,7 +198,7 @@ export const StyledCardHoverContainer = styled.div`
     height: 40vh;
     
     :hover {
-        opacity: 0.8;
+        opacity: 0.9;
         background: black;
 
         ${StyledProjectCardTitle} {
