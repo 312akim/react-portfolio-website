@@ -5,6 +5,7 @@ import styled from 'styled-components';
 //Styles
 export const StyledActivitySectionContainer = styled.div`
     width: 100vw;
+    padding-bottom: 4vh;
 `
 
 export const StyledCommitListWrapper = styled.div`
@@ -41,7 +42,6 @@ export const StyledCommitTitle = styled.h2`
 
 export const StyledCommitDataWrapper = styled.div`
     overflow-y: auto;
-    height: 100%;
 `
 
 export const StyledCommitDate = styled.div`
@@ -66,13 +66,9 @@ export const StyledCommitDataContainer = styled.div`
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1vh;
-    padding: 1% 0;
+    padding: 1vh 0;
     box-shadow: 5px 3px 4px ${({theme}) => theme.secondaryDark};
     border-radius: 4px;
-
-    @media (min-width: 768px) {
-        margin-top: 3%;
-    }
 `
 
 export const StyledCommitListContainer = styled.div`

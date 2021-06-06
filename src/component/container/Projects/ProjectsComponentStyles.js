@@ -52,7 +52,8 @@ export const fadeInAnimation = keyframes`
 
 // Components
 export const StyledSectionContainerWrapper = styled.div`
-    height: 100vh;
+    height: auto;
+    padding-bottom: 4vh;
 `
 
 export const StyledSectionContainerContent = styled.div`
@@ -116,7 +117,7 @@ export const StyledProjectCard = styled.div`
     position: relative;
     width: 60%;
     max-width: 768px;
-    height: 37vh;
+    height: 40vh;
     margin: 5vh auto 4vh auto;
     background: white;
     border-radius: 4px;
@@ -132,10 +133,9 @@ export const StyledProjectCard = styled.div`
 `
 
 export const StyledProjectCardImage = styled.img`
-    height: 27vh;
+    height: 40vh;
     width: auto;
     margin-left: -30%;
-    margin-top: 5vh;
 
     @media (min-width: 480px) {
         margin-left: -15%;
@@ -146,7 +146,7 @@ export const StyledProjectCardImage = styled.img`
     }
 
     @media (min-width: 1200px) {
-        height: 37vh;
+        height: 40vh;
         margin-top: 0;
     }
 `

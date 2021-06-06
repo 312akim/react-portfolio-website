@@ -39,8 +39,8 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             <StyledProjectCardsContainer>
                 
                 <StyledProjectCard>
-                    <StyledImageCropContainer height={'37vh'}>
-                        <StyledProjectCardImage src={tokenizeAmazonMockup}/>
+                    <StyledImageCropContainer height={'40vh'}>
+                        <StyledProjectCardImage src={tokenizeAmazonMockup} alt='Images of Tokenize Amazon website on various devices'/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
@@ -62,8 +62,8 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                 </StyledProjectCard>
 
                 <StyledProjectCard>
-                    <StyledImageCropContainer height={'37vh'}>
-                        <StyledProjectCardImage src={apparelStoreMockup}/>
+                    <StyledImageCropContainer height={'40vh'}>
+                        <StyledProjectCardImage src={apparelStoreMockup} alt='Images of Apparel Store website on various devices'/>
                     </StyledImageCropContainer>
                     <StyledCardHoverContainer>
                         <StyledProjectCardTitle>
@@ -92,8 +92,8 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                 <StyledAltProjectCardsContainer>
 
                     <StyledProjectCard>
-                        <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={apparelStoreMockup}/>
+                        <StyledImageCropContainer height={'40vh'}>
+                            <StyledProjectCardImage src={apparelStoreMockup} alt=''/>
                         </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
@@ -115,8 +115,8 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                     </StyledProjectCard>
 
                     <StyledProjectCard>
-                        <StyledImageCropContainer height={'37vh'}>
-                            <StyledProjectCardImage src={apparelStoreMockup}/>
+                        <StyledImageCropContainer height={'40vh'}>
+                            <StyledProjectCardImage src={apparelStoreMockup} alt=''/>
                         </StyledImageCropContainer>
                         <StyledCardHoverContainer>
                             <StyledProjectCardTitle>
