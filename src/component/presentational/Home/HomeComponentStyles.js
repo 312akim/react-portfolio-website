@@ -12,17 +12,17 @@ export const StyledHomeComponentContainer = styled.div`
 export const StyledHomeNavWrapper = styled.div`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    width: 100%;
 `
 
 export const StyledHomeNavContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 343px;
     background: rgba(191, 191, 191, 0.9);
     transform: rotateY(-21deg) scaleZ(2.5);
     opacity: 0.9;
+    height: 360px;
+    margin-bottom: 15px;
 
     transition: transform 1s;
 
@@ -65,7 +65,7 @@ export const StyledNameContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 18vh;
-    width: 343px;
+    width: 384px;
     margin-bottom: 3vh;
 `
 
@@ -117,6 +117,12 @@ export const StyledHomeFlexPairContainer = styled.div`
 export const StyledTextContainer = styled.div`
     text-align: left;
     color: white;
+    width: 343px;
+    margin-bottom: 6vh;
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
 `
 
 export const StyledTextSection = styled.p`
