@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -32,66 +32,112 @@ export const ProjectsComponent = () => {
     )
 }
 
+
+
 // Which projects page to display
 const ProjectSection = ({section, projectModalSwitcher}) => {
+    const projectConfig = [
+        {
+            title: "Tokenize Amazon",
+            description: "Responsive Landing Page and Full website of Tokenize Amazon website.",
+            image: tokenizeAmazonMockup,
+            imageAlt: "",
+            gitLink: "https://github.com/312akim/apparel-store-mern",
+            onClick: () => projectModalSwitcher(1)
+        },
+        {
+            title: "Apparel Store",
+            description: "Responsive SPA e-commerce store with front & back-end functionality. Cart and checkout functionality achieved through integration with Snipcart.",
+            image: apparelStoreMockup,
+            imageAlt: "",
+            gitLink: "https://github.com/312akim/apparel-store-mern",
+            onClick: () => projectModalSwitcher(2)
+        },
+        {
+            title: "Portfolio Website",
+            description: "The code behind this portfolio site, featuring the Github Octokit api to load my latest updates.",
+            image: tokenizeAmazonMockup,
+            imageAlt: "",
+            gitLink: "https://github.com/312akim/apparel-store-mern",
+            onClick: () => projectModalSwitcher(3)
+        },
+        {
+            title: "Bubble Tea App",
+            description: "In-Progress. My first React-Native project.",
+            image: tokenizeAmazonMockup,
+            imageAlt: "",
+            gitLink: "https://github.com/312akim/apparel-store-mern",
+            onClick: () => projectModalSwitcher(4)
+        }
+    ];
+
     if (section) {
         return (
             <StyledProjectCardsContainer>
-                
-                <StyledProjectCard>
-                    <StyledImageCropContainer height={'40vh'}>
-                        <StyledProjectCardImage src={tokenizeAmazonMockup} alt='Images of Tokenize Amazon website on various devices'/>
-                    </StyledImageCropContainer>
-                    <StyledCardHoverContainer>
-                        <StyledProjectCardTitle>
-                            Tokenize Amazon
-                        </StyledProjectCardTitle>
-                        <StyledProjectInformation>
-                            Responsive Landing Page and Full website of Tokenize Amazon website.
-                        </StyledProjectInformation>
-                        <StyledReadMore onClick={() => projectModalSwitcher(1)}>
-                            Read More
-                        </StyledReadMore>
-                        <StyledGithubLink 
-                            href="https://github.com/312akim/apparel-store-mern"
-                            target="_blank"
-                        >
-                            Github
-                        </StyledGithubLink>
-                    </StyledCardHoverContainer>
-                </StyledProjectCard>
-
-                <StyledProjectCard>
-                    <StyledImageCropContainer height={'40vh'}>
-                        <StyledProjectCardImage src={apparelStoreMockup} alt='Images of Apparel Store website on various devices'/>
-                    </StyledImageCropContainer>
-                    <StyledCardHoverContainer>
-                        <StyledProjectCardTitle>
-                            Apparel Store
-                        </StyledProjectCardTitle>
-                        <StyledProjectInformation>
-                            Responsive SPA e-commerce apparel web store template for smaller shops. Cart and checkout functionality achieved through integration with Snipcart.
-                        </StyledProjectInformation>
-                        <StyledReadMore onClick={() => projectModalSwitcher(2)}>
-                            Read More
-                        </StyledReadMore>
-                        <StyledGithubLink 
-                            href="https://github.com/312akim/apparel-store-mern"
-                            target="_blank"
-                        >
-                            Github
-                        </StyledGithubLink>
-                    </StyledCardHoverContainer>
-                </StyledProjectCard>
-
+                {
+                   projectConfig.slice(0, 2).map((project) => {
+                        return (
+                            <StyledProjectCard>
+                                <StyledImageCropContainer height={'40vh'}>
+                                    <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
+                                </StyledImageCropContainer>
+                                <StyledCardHoverContainer>
+                                    <StyledProjectCardTitle>
+                                        {project.title}
+                                    </StyledProjectCardTitle>
+                                    <StyledProjectInformation>
+                                        {project.description}
+                                    </StyledProjectInformation>
+                                    <StyledReadMore onClick={project.onClick}>
+                                        Read More
+                                    </StyledReadMore>
+                                    <StyledGithubLink 
+                                        href={project.gitLink}
+                                        target="_blank"
+                                    >
+                                        Github
+                                    </StyledGithubLink>
+                                </StyledCardHoverContainer>
+                            </StyledProjectCard>
+                        )
+                    })
+                }
             </StyledProjectCardsContainer>
         )
     } else {
         if (!section) {
             return (
                 <StyledAltProjectCardsContainer>
+                                    {
+                   projectConfig.slice(2, 4).map((project) => {
+                        return (
+                            <StyledProjectCard>
+                                <StyledImageCropContainer height={'40vh'}>
+                                    <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
+                                </StyledImageCropContainer>
+                                <StyledCardHoverContainer>
+                                    <StyledProjectCardTitle>
+                                        {project.title}
+                                    </StyledProjectCardTitle>
+                                    <StyledProjectInformation>
+                                        {project.description}
+                                    </StyledProjectInformation>
+                                    <StyledReadMore onClick={project.onClick}>
+                                        Read More
+                                    </StyledReadMore>
+                                    <StyledGithubLink 
+                                        href={project.gitLink}
+                                        target="_blank"
+                                    >
+                                        Github
+                                    </StyledGithubLink>
+                                </StyledCardHoverContainer>
+                            </StyledProjectCard>
+                        )
+                    })
+                }
 
-                    <StyledProjectCard>
+                    {/* <StyledProjectCard>
                         <StyledImageCropContainer height={'40vh'}>
                             <StyledProjectCardImage src={apparelStoreMockup} alt=''/>
                         </StyledImageCropContainer>
@@ -135,7 +181,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                                 Github
                             </StyledGithubLink>
                         </StyledCardHoverContainer>
-                    </StyledProjectCard>
+                    </StyledProjectCard> */}
 
                 </StyledAltProjectCardsContainer>
             )
@@ -164,6 +210,63 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
     }
 }
 
+const modalConfig = {
+    proj1: {
+        title: "",
+        titleText: "",
+        modalContent: [
+            {
+                content1title: "",
+                list1: [1, 2, 3, 4]
+            },
+            {	
+                content1title: "",
+                list2: [1, 2, 3, 4]
+            },
+            {	
+                content1title: "",
+                list3: [1, 2, 3, 4]
+            },
+        ]
+    },
+    proj2: {
+        title: "",
+        titleText: "",
+        modalContent: [
+            {
+                content2title: "",
+                list1: [1, 2, 3, 4]
+            },
+            {	
+                content2title: "",
+                list2: [1, 2, 3, 4]
+            },
+            {	
+                content2title: "",
+                list3: [1, 2, 3, 4]
+            },
+        ]
+    },
+    proj3: {
+        title: "",
+        titleText: "",
+        modalContent: [
+            {
+                content3title: "",
+                list1: [1, 2, 3, 4]
+            },
+            {	
+                content3title: "",
+                list2: [1, 2, 3, 4]
+            },
+            {	
+                content3title: "",
+                list3: [1, 2, 3, 4]
+            },
+        ]
+    }
+}
+
 // Modal Display
 const ModalDisplay = ({showModal, projectModalSwitcher}) => {
     switch(showModal) {
@@ -176,20 +279,43 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                 <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
                     <StyledModalContentContainer>
                         <StyledModalHero>
-                            Test 1111
+                            Tokenize Amazon
                         </StyledModalHero>
                         <div>
-                            Freelance Project consisting of a Landing Page &amp; Full website.
+                            Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.
                         </div>
                         <StyledModalText>
-                            <hr/>
-                            <div>Landing Page Key Learnings:</div>
-                            <ul>
-                                <li>Working with UI/UX Designer</li>
-                                <li>Email Newsletter integration via MailChimp &amp; form submission</li>
-                                <li>Youtube video embed &amp; video scaling</li>
-                                <li>PDF File opening in new tab</li>
-                            </ul>
+                            <hr />
+                            
+                            <div>
+                                <h3>Tech / Integrations:</h3>
+                                <ul>
+                                    <li>Placeholder Placeholder Placeholder</li>
+                                    <li>Placeholder Placeholder Placeholder</li>
+                                    <li>Netlify Deployment</li>
+                                    <li>MailChimp newsletter signup integration</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Learnings / Difficulties:</h3>
+                                <ul>
+                                    <li>Transition Animations</li>
+                                    <li>Styled Components Global Theme &amp; Theme Provider</li>
+                                    <li>Youtube video embed &amp; video scaling</li>
+                                    <li>SVG &amp; image</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Key Takeaway:</h3>
+                                <ul>
+                                    <li>Working with UI/UX Design Team</li>
+                                    <li>Email Newsletter integration via MailChimp &amp; form submission</li>
+                                    <li>Youtube video embed &amp; video scaling</li>
+                                    <li>PDF File opening in new tab</li>
+                                </ul>
+                            </div>
                         </StyledModalText>
                     </StyledModalContentContainer>
                 </StyledModalWrapper>
@@ -199,7 +325,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                 <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
                     <StyledModalContentContainer>
                         <StyledModalHero>
-                            Test 2222
+                            Apparel Store Website
                         </StyledModalHero>
                         <StyledModalText>
                             
@@ -234,6 +360,24 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                 </StyledModalWrapper>
             )
     }
+}
+
+const ModalTabs = () => {
+    return (
+        <StyledModalNavWrapper>
+            <StyledModalNavContainer>
+                <StyledModalBubbleNav>
+                    Tech/Integrations
+                </StyledModalBubbleNav>
+                <StyledModalBubbleNav>
+                    Learnings / Difficulties
+                </StyledModalBubbleNav>
+                <StyledModalBubbleNav>
+                    Summary
+                </StyledModalBubbleNav>
+            </StyledModalNavContainer>
+        </StyledModalNavWrapper>
+    )
 }
 
 // Body

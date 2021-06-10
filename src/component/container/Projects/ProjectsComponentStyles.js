@@ -238,14 +238,15 @@ export const StyledModalWrapper = styled.div`
 
 export const StyledModalContentContainer = styled.div`
     background: orange;
-    border-radius: 4px;
-    height: 80%;
-    margin: 5% 5% 5% 5%;
+    border-radius: 50px;
+    height: 96vh;
+    margin: 5vh 5% 5vh 5%;
+    padding: 4vh 0;
 `
 
 export const StyledModalHero = styled.div`
     color: red;
-    height: 5%;
+    height: 4vh;
 `
 
 export const StyledModalHeroTitle = styled.div`
@@ -253,8 +254,14 @@ export const StyledModalHeroTitle = styled.div`
 `
 
 export const StyledModalText = styled.div`
-    height: 90%;
+    height: 70vh;
     text-align: left;
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: scroll;
 `
 
 export const StyledModalSubHeader = styled.div`
@@ -263,4 +270,20 @@ export const StyledModalSubHeader = styled.div`
 
 export const StyledModalSubText = styled.div`
 
+`
+
+// Modal Bubble Nav
+export const StyledModalNavWrapper = styled.div`
+
+`
+
+export const StyledModalNavContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`
+
+export const StyledModalBubbleNav = styled.div`
+    border-radius: 4px;
 `
