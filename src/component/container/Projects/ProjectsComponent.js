@@ -216,48 +216,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                         {modalArray[showModal].modalText}
                     </div>
                     <StyledModalText>
-                        
                         <ModalTabsComponent showModal={showModal} modalArray={modalArray}/>
-                        <hr />
-                        
-                        <div>
-                            <h3>Tech / Integrations:</h3>
-                            <ul>
-                                {
-                                    modalArray[showModal].modalTechText.map(item => {
-                                        return (
-                                            <li>{item}</li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Learnings / Difficulties:</h3>
-                            <ul>
-                                {
-                                    modalArray[showModal].modalLearningsText.map(item => {
-                                        return (
-                                            <li>{item}</li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Key Takeaway:</h3>
-                            <ul>
-                                {
-                                    modalArray[showModal].modalSummaryText.map(item => {
-                                        return (
-                                            <li>{item}</li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
                     </StyledModalText>
                 </StyledModalContentContainer>
             </StyledModalWrapper>
@@ -282,7 +241,13 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                             Tech
                         </div>
                         <div>
-                            {modalArray[showModal].modalTechText}
+                            {
+                                modalArray[showModal].modalTechText.map(item => {
+                                    return (
+                                        <li>{item}</li>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 )
@@ -294,7 +259,13 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                             Learnings
                         </div>
                         <div>
-                            {modalArray[showModal].modalLearningsText}
+                            {
+                                modalArray[showModal].modalLearningsText.map(item => {
+                                    return (
+                                        <li>{item}</li>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 )
@@ -306,7 +277,13 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                             Summary
                         </div>
                         <div>
-                            {modalArray[showModal].modalSummaryText}
+                            {
+                                modalArray[showModal].modalSummaryText.map(item => {
+                                    return (
+                                        <li>{item}</li>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 )
