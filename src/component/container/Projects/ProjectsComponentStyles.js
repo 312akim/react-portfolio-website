@@ -274,7 +274,7 @@ export const StyledModalSubText = styled.div`
 
 // Modal Bubble Nav
 export const StyledModalNavWrapper = styled.div`
-
+    max-width: 343px;
 `
 
 export const StyledModalNavContainer = styled.div`
@@ -282,8 +282,23 @@ export const StyledModalNavContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    overflow-x: scroll;
 `
 
 export const StyledModalBubbleNav = styled.div`
     border-radius: 4px;
+    border: solid black 1px;
+    width: 145px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0 20px;
+
+    :hover {
+        cursor: pointer;
+    }
+`
+
+export const StyledModalBubbleContent = styled.div`
+
 `

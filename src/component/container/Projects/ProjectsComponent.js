@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalText, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav, StyledModalBubbleContent } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -43,7 +43,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             image: tokenizeAmazonMockup,
             imageAlt: "",
             gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(1)
+            onClick: () => projectModalSwitcher(1),
         },
         {
             title: "Apparel Store",
@@ -51,7 +51,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             image: apparelStoreMockup,
             imageAlt: "",
             gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(2)
+            onClick: () => projectModalSwitcher(2),
         },
         {
             title: "Portfolio Website",
@@ -59,7 +59,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             image: tokenizeAmazonMockup,
             imageAlt: "",
             gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(3)
+            onClick: () => projectModalSwitcher(3),
         },
         {
             title: "Bubble Tea App",
@@ -67,7 +67,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             image: tokenizeAmazonMockup,
             imageAlt: "",
             gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(4)
+            onClick: () => projectModalSwitcher(4),
         }
     ];
 
@@ -108,81 +108,34 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
         if (!section) {
             return (
                 <StyledAltProjectCardsContainer>
-                                    {
-                   projectConfig.slice(2, 4).map((project) => {
-                        return (
-                            <StyledProjectCard>
-                                <StyledImageCropContainer height={'40vh'}>
-                                    <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
-                                </StyledImageCropContainer>
-                                <StyledCardHoverContainer>
-                                    <StyledProjectCardTitle>
-                                        {project.title}
-                                    </StyledProjectCardTitle>
-                                    <StyledProjectInformation>
-                                        {project.description}
-                                    </StyledProjectInformation>
-                                    <StyledReadMore onClick={project.onClick}>
-                                        Read More
-                                    </StyledReadMore>
-                                    <StyledGithubLink 
-                                        href={project.gitLink}
-                                        target="_blank"
-                                    >
-                                        Github
-                                    </StyledGithubLink>
-                                </StyledCardHoverContainer>
-                            </StyledProjectCard>
-                        )
-                    })
-                }
-
-                    {/* <StyledProjectCard>
-                        <StyledImageCropContainer height={'40vh'}>
-                            <StyledProjectCardImage src={apparelStoreMockup} alt=''/>
-                        </StyledImageCropContainer>
-                        <StyledCardHoverContainer>
-                            <StyledProjectCardTitle>
-                                Portfolio Website
-                            </StyledProjectCardTitle>
-                            <StyledProjectInformation>
-                                Overview of this website, my personal portfolio website.
-                            </StyledProjectInformation>
-                            <StyledReadMore onClick={() => projectModalSwitcher(3)}>
-                                Read More
-                            </StyledReadMore>
-                            <StyledGithubLink 
-                                href="https://github.com/312akim/react-portfolio-website"
-                                target="_blank"
-                            >
-                                Github
-                            </StyledGithubLink>
-                        </StyledCardHoverContainer>
-                    </StyledProjectCard>
-
-                    <StyledProjectCard>
-                        <StyledImageCropContainer height={'40vh'}>
-                            <StyledProjectCardImage src={apparelStoreMockup} alt=''/>
-                        </StyledImageCropContainer>
-                        <StyledCardHoverContainer>
-                            <StyledProjectCardTitle>
-                                UX Site Concepts
-                            </StyledProjectCardTitle>
-                            <StyledProjectInformation>
-                                A playground showcase website displaying various animations and user experience concepts i've attempted. Constantly a work in progress.
-                            </StyledProjectInformation>
-                            <StyledReadMore onClick={() => projectModalSwitcher(4)}>
-                                Read More
-                            </StyledReadMore>
-                            <StyledGithubLink 
-                                href="https://github.com/312akim/"
-                                target="_blank"
-                            >
-                                Github
-                            </StyledGithubLink>
-                        </StyledCardHoverContainer>
-                    </StyledProjectCard> */}
-
+                    {
+                        projectConfig.slice(2, 4).map((project) => {
+                            return (
+                                <StyledProjectCard>
+                                    <StyledImageCropContainer height={'40vh'}>
+                                        <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
+                                    </StyledImageCropContainer>
+                                    <StyledCardHoverContainer>
+                                        <StyledProjectCardTitle>
+                                            {project.title}
+                                        </StyledProjectCardTitle>
+                                        <StyledProjectInformation>
+                                            {project.description}
+                                        </StyledProjectInformation>
+                                        <StyledReadMore onClick={project.onClick}>
+                                            Read More
+                                        </StyledReadMore>
+                                        <StyledGithubLink 
+                                            href={project.gitLink}
+                                            target="_blank"
+                                        >
+                                            Github
+                                        </StyledGithubLink>
+                                    </StyledCardHoverContainer>
+                                </StyledProjectCard>
+                            )
+                        })
+                    }
                 </StyledAltProjectCardsContainer>
             )
         }
@@ -210,175 +163,180 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
     }
 }
 
-const modalConfig = {
-    proj1: {
-        title: "",
-        titleText: "",
-        modalContent: [
-            {
-                content1title: "",
-                list1: [1, 2, 3, 4]
-            },
-            {	
-                content1title: "",
-                list2: [1, 2, 3, 4]
-            },
-            {	
-                content1title: "",
-                list3: [1, 2, 3, 4]
-            },
-        ]
-    },
-    proj2: {
-        title: "",
-        titleText: "",
-        modalContent: [
-            {
-                content2title: "",
-                list1: [1, 2, 3, 4]
-            },
-            {	
-                content2title: "",
-                list2: [1, 2, 3, 4]
-            },
-            {	
-                content2title: "",
-                list3: [1, 2, 3, 4]
-            },
-        ]
-    },
-    proj3: {
-        title: "",
-        titleText: "",
-        modalContent: [
-            {
-                content3title: "",
-                list1: [1, 2, 3, 4]
-            },
-            {	
-                content3title: "",
-                list2: [1, 2, 3, 4]
-            },
-            {	
-                content3title: "",
-                list3: [1, 2, 3, 4]
-            },
-        ]
-    }
-}
-
 // Modal Display
 const ModalDisplay = ({showModal, projectModalSwitcher}) => {
-    switch(showModal) {
-        case 0:
-            return (
-                <div></div>
-            )
-        case 1:
-            return (
-                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalContentContainer>
-                        <StyledModalHero>
-                            Tokenize Amazon
-                        </StyledModalHero>
+    const modal1 = {
+        modalTitle: "Tokenize Amazon",
+        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
+        modalTechText: ["lT1", "lT2", "lT3"],
+        modalLearningsText: ["lL1", "lL2", "lL3"],
+        modalSummaryText: ["lS1", "lS2", "lS3"],
+    }
+
+    const modal2 = {
+        modalTitle: "222",
+        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
+        modalTechText: ["lT1", "lT2", "lT3"],
+        modalLearningsText: ["lL1", "lL2", "lL3"],
+        modalSummaryText: ["lS1", "lS2", "lS3"],
+    }
+    
+    const modal3 = {
+        modalTitle: "333",
+        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
+        modalTechText: ["lT1", "lT2", "lT3"],
+        modalLearningsText: ["lL1", "lL2", "lL3"],
+        modalSummaryText: ["lS1", "lS2", "lS3"],
+    }
+
+    const modal4 = {
+        modalTitle: "444",
+        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
+        modalTechText: ["lT1", "lT2", "lT3"],
+        modalLearningsText: ["lL1", "lL2", "lL3"],
+        modalSummaryText: ["lS1", "lS2", "lS3"],
+    }
+
+    const modalArray = [
+        "", modal1, modal2, modal3, modal4
+    ]
+
+    if (showModal === 0) {
+        return (
+            <div></div>
+        )
+    } else {
+        return (
+            <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
+                <StyledModalContentContainer onClick={(e) => e.stopPropagation()}>
+                    <StyledModalHero>
+                        {modalArray[showModal].modalTitle}
+                    </StyledModalHero>
+                    <div>
+                        {modalArray[showModal].modalText}
+                    </div>
+                    <StyledModalText>
+                        
+                        <ModalTabsComponent showModal={showModal} modalArray={modalArray}/>
+                        <hr />
+                        
                         <div>
-                            Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.
+                            <h3>Tech / Integrations:</h3>
+                            <ul>
+                                {
+                                    modalArray[showModal].modalTechText.map(item => {
+                                        return (
+                                            <li>{item}</li>
+                                        )
+                                    })
+                                }
+                            </ul>
                         </div>
-                        <StyledModalText>
-                            <hr />
-                            
-                            <div>
-                                <h3>Tech / Integrations:</h3>
-                                <ul>
-                                    <li>Placeholder Placeholder Placeholder</li>
-                                    <li>Placeholder Placeholder Placeholder</li>
-                                    <li>Netlify Deployment</li>
-                                    <li>MailChimp newsletter signup integration</li>
-                                </ul>
-                            </div>
 
-                            <div>
-                                <h3>Learnings / Difficulties:</h3>
-                                <ul>
-                                    <li>Transition Animations</li>
-                                    <li>Styled Components Global Theme &amp; Theme Provider</li>
-                                    <li>Youtube video embed &amp; video scaling</li>
-                                    <li>SVG &amp; image</li>
-                                </ul>
-                            </div>
+                        <div>
+                            <h3>Learnings / Difficulties:</h3>
+                            <ul>
+                                {
+                                    modalArray[showModal].modalLearningsText.map(item => {
+                                        return (
+                                            <li>{item}</li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
 
-                            <div>
-                                <h3>Key Takeaway:</h3>
-                                <ul>
-                                    <li>Working with UI/UX Design Team</li>
-                                    <li>Email Newsletter integration via MailChimp &amp; form submission</li>
-                                    <li>Youtube video embed &amp; video scaling</li>
-                                    <li>PDF File opening in new tab</li>
-                                </ul>
-                            </div>
-                        </StyledModalText>
-                    </StyledModalContentContainer>
-                </StyledModalWrapper>
-            )
-        case 2:
-            return (
-                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalContentContainer>
-                        <StyledModalHero>
-                            Apparel Store Website
-                        </StyledModalHero>
-                        <StyledModalText>
-                            
-                        </StyledModalText>
-                    </StyledModalContentContainer>
-                </StyledModalWrapper>
-            )
-        case 3:
-            return (
-                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalContentContainer>
-                        <StyledModalHero>
-                            Test 3333
-                        </StyledModalHero>
-                        <StyledModalText>
-                            
-                        </StyledModalText>
-                    </StyledModalContentContainer>
-                </StyledModalWrapper>
-            )
-        case 4:
-            return (
-                <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
-                    <StyledModalContentContainer>
-                        <StyledModalHero>
-                            Test 4444
-                        </StyledModalHero>
-                        <StyledModalText>
-                            
-                        </StyledModalText>
-                    </StyledModalContentContainer>
-                </StyledModalWrapper>
-            )
+                        <div>
+                            <h3>Key Takeaway:</h3>
+                            <ul>
+                                {
+                                    modalArray[showModal].modalSummaryText.map(item => {
+                                        return (
+                                            <li>{item}</li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </StyledModalText>
+                </StyledModalContentContainer>
+            </StyledModalWrapper>
+        )
     }
 }
 
-const ModalTabs = () => {
+const ModalTabsComponent = ({showModal, modalArray}) => {
+    const [bubbleContent, setBubbleContent] = useState(0);
+
+    const bubbleContentSetter = () => {
+        switch(bubbleContent) {
+            case 0: {
+                return (
+                    <div></div>
+                )
+            }
+            case 1: {
+                return (
+                    <div>
+                        <div>
+                            Tech
+                        </div>
+                        <div>
+                            {modalArray[showModal].modalTechText}
+                        </div>
+                    </div>
+                )
+            }
+            case 2: {
+                return (
+                    <div>
+                        <div>
+                            Learnings
+                        </div>
+                        <div>
+                            {modalArray[showModal].modalLearningsText}
+                        </div>
+                    </div>
+                )
+            }
+            case 3: {
+                return (
+                    <div>
+                        <div>
+                            Summary
+                        </div>
+                        <div>
+                            {modalArray[showModal].modalSummaryText}
+                        </div>
+                    </div>
+                )
+            }
+            
+        }
+    }
+
     return (
         <StyledModalNavWrapper>
             <StyledModalNavContainer>
-                <StyledModalBubbleNav>
-                    Tech/Integrations
+                <StyledModalBubbleNav onClick={() => setBubbleContent(1)}>
+                    Tech
                 </StyledModalBubbleNav>
-                <StyledModalBubbleNav>
-                    Learnings / Difficulties
+                <StyledModalBubbleNav onClick={() => setBubbleContent(2)}>
+                    Learnings
                 </StyledModalBubbleNav>
-                <StyledModalBubbleNav>
+                <StyledModalBubbleNav onClick={() => setBubbleContent(3)}>
                     Summary
                 </StyledModalBubbleNav>
             </StyledModalNavContainer>
+            <StyledModalBubbleContent>
+                {
+                    bubbleContentSetter()
+                }
+            </StyledModalBubbleContent>
         </StyledModalNavWrapper>
     )
 }
+
 
 // Body
 const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwitchHandler}) => {
