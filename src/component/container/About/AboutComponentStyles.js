@@ -24,7 +24,7 @@ export const StyledNavigatorCaret = styled.div`
     margin-top: 3vh;
 
     @media (min-width: 1200px) {
-      margin-top: 9vh;
+      margin-top: 1vh;
     }
 `
 
