@@ -242,6 +242,7 @@ export const StyledModalContentContainer = styled.div`
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
     padding: 4vh 0;
+    max-width: 568px;
 `
 
 export const StyledModalHero = styled.div`
