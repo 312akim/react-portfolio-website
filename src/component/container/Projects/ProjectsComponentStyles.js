@@ -237,7 +237,7 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
-    background: orange;
+    background: ${({theme}) => theme.secondaryLight};
     border-radius: 50px;
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
@@ -254,7 +254,7 @@ export const StyledModalHeroTitle = styled.div`
 
 `
 
-export const StyledModalText = styled.div`
+export const StyledModalContent = styled.div`
     height: 70vh;
     text-align: left;
     margin: 0 5%;
@@ -284,6 +284,12 @@ export const StyledModalNavContainer = styled.div`
     justify-content: center;
     align-items: center;
     overflow-x: scroll;
+    
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+    }
 `
 
 export const StyledModalBubbleNav = styled.div`
@@ -293,7 +299,7 @@ export const StyledModalBubbleNav = styled.div`
     display: flex;
     justify-content: center;
     align-self: center;
-    margin: 0 20px;
+    margin: 20px 20px;
 
     :hover {
         cursor: pointer;
@@ -301,5 +307,25 @@ export const StyledModalBubbleNav = styled.div`
 `
 
 export const StyledModalBubbleContent = styled.div`
+
+`
+
+// Modal tab content
+export const StyledModalTabContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const StyledModalTabContentHeader = styled.div`
+
+`
+
+export const StyledModalTabContentText = styled.div`
+    
+`
+
+export const StyledModalTabContentTextItem = styled.li`
 
 `
