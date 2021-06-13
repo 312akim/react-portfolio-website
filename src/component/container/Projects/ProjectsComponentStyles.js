@@ -238,11 +238,15 @@ export const StyledModalWrapper = styled.div`
 
 export const StyledModalContentContainer = styled.div`
     background: ${({theme}) => theme.secondaryLight};
-    border-radius: 50px;
+    border-radius: 20px;
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
     padding: 4vh 0;
-    max-width: 568px;
+    max-width: 800px;
+
+    @media (min-width: 768px) {
+        border-radius: 0px;
+    }
 `
 
 export const StyledModalHero = styled.div`
@@ -316,6 +320,7 @@ export const StyledModalTabContentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: ${hoverCardTopFadeAnim} 2s linear;
 `
 
 export const StyledModalTabContentHeader = styled.div`
