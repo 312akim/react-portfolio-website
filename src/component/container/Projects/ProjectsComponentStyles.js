@@ -64,13 +64,13 @@ export const StyledSectionContainerContent = styled.div`
 
 export const StyledSectionIconContainer = styled.div`
     display: inline-block;
-    color: white;
+    color: ${({theme}) => theme.primaryLight};
     height: 53vh;
     margin-top: 47vh;
     animation: ${switchIconAnim(7)} 1.2s linear infinite;
 
     @media (min-width: 768px) {
-        color: white;
+        color: ${({theme}) => theme.primaryLight};
         animation: ${switchIconAnim(15)} 1.5s linear infinite;
     }
 `
@@ -99,7 +99,7 @@ export const StyledSectionSwitcher = styled.div`
     
     :hover div {
         animation: ${switchIconAnim} 1.5s linear infinite;
-        color: white;
+        color: ${({theme}) => theme.primaryLight};
     }
 
     @media (min-width: 768px) {
@@ -108,7 +108,7 @@ export const StyledSectionSwitcher = styled.div`
         }
         :hover div {
             animation: ${switchIconAnim} 1.5s linear infinite;
-            color: white;
+            color: ${({theme}) => theme.primaryLight};
         }
     }
 `
@@ -237,7 +237,7 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
-    background: ${({theme}) => theme.secondaryLight};
+    background: ${({theme}) => theme.primaryDark};
     border-radius: 20px;
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
@@ -250,7 +250,7 @@ export const StyledModalContentContainer = styled.div`
 `
 
 export const StyledModalHero = styled.h2`
-    color: red;
+    color: white;
     height: 4vh;
 `
 
@@ -300,10 +300,11 @@ export const StyledModalNavContainer = styled.div`
 
 export const StyledModalBubbleNav = styled.h3`
     border-radius: 4px;
-    border: solid black 1px;
+    border: solid ${({theme}) => theme.primaryLight} 3px;
     width: 145px;
     margin: 0 20px;
     padding: 2px 15px;
+    background: ${({theme}) => theme.secondaryLight};
 
     :hover {
         cursor: pointer;
