@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav, StyledModalBubbleContent, StyledModalTabContentTextItem } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav, StyledModalBubbleContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -212,9 +212,9 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                     <StyledModalHero>
                         {modalArray[showModal].modalTitle}
                     </StyledModalHero>
-                    <div>
+                    <StyledModalHeroText>
                         {modalArray[showModal].modalText}
-                    </div>
+                    </StyledModalHeroText>
                     <StyledModalContent>
                         <ModalTabsComponent showModal={showModal} modalArray={modalArray}/>
                     </StyledModalContent>
@@ -237,10 +237,10 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
             case 1: {
                 return (
                     <StyledModalTabContentContainer>
-                        <div>
+                        <StyledModalTabContentTitle>
                             Tech
-                        </div>
-                        <div>
+                        </StyledModalTabContentTitle>
+                        <StyledModalTabContentText>
                             {
                                 modalArray[showModal].modalTechText.map(item => {
                                     return (
@@ -248,17 +248,17 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                                     )
                                 })
                             }
-                        </div>
+                        </StyledModalTabContentText>
                     </StyledModalTabContentContainer>
                 )
             }
             case 2: {
                 return (
                     <StyledModalTabContentContainer>
-                        <div>
+                        <StyledModalTabContentTitle>
                             Learnings
-                        </div>
-                        <div>
+                        </StyledModalTabContentTitle>
+                        <StyledModalTabContentText>
                             {
                                 modalArray[showModal].modalLearningsText.map(item => {
                                     return (
@@ -266,17 +266,17 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                                     )
                                 })
                             }
-                        </div>
+                        </StyledModalTabContentText>
                     </StyledModalTabContentContainer>
                 )
             }
             case 3: {
                 return (
                     <StyledModalTabContentContainer>
-                        <div>
+                        <StyledModalTabContentTitle>
                             Summary
-                        </div>
-                        <div>
+                        </StyledModalTabContentTitle>
+                        <StyledModalTabContentText>
                             {
                                 modalArray[showModal].modalSummaryText.map(item => {
                                     return (
@@ -284,7 +284,7 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                                     )
                                 })
                             }
-                        </div>
+                        </StyledModalTabContentText>
                     </StyledModalTabContentContainer>
                 )
             }

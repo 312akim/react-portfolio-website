@@ -249,13 +249,15 @@ export const StyledModalContentContainer = styled.div`
     }
 `
 
-export const StyledModalHero = styled.div`
+export const StyledModalHero = styled.h2`
     color: red;
     height: 4vh;
 `
 
-export const StyledModalHeroTitle = styled.div`
-
+export const StyledModalHeroText = styled.div`
+    margin: 0 7.5%;
+    text-align: left;
+    margin-bottom: 3vh;
 `
 
 export const StyledModalContent = styled.div`
@@ -296,14 +298,12 @@ export const StyledModalNavContainer = styled.div`
     }
 `
 
-export const StyledModalBubbleNav = styled.div`
+export const StyledModalBubbleNav = styled.h3`
     border-radius: 4px;
     border: solid black 1px;
     width: 145px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    margin: 20px 20px;
+    margin: 0 20px;
+    padding: 2px 15px;
 
     :hover {
         cursor: pointer;
@@ -323,14 +323,14 @@ export const StyledModalTabContentContainer = styled.div`
     animation: ${hoverCardTopFadeAnim} 2s linear;
 `
 
-export const StyledModalTabContentHeader = styled.div`
+export const StyledModalTabContentTitle = styled.h3`
 
 `
 
 export const StyledModalTabContentText = styled.div`
-    
+    width: 85%;
 `
 
 export const StyledModalTabContentTextItem = styled.li`
-
+    margin-bottom: 2vh;
 `
