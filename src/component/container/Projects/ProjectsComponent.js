@@ -230,9 +230,7 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
     const bubbleContentSetter = () => {
         switch(bubbleContent) {
             case 0: {
-                return (
-                    <div></div>
-                )
+                
             }
             case 1: {
                 return (

@@ -238,6 +238,7 @@ export const StyledModalWrapper = styled.div`
 
 export const StyledModalContentContainer = styled.div`
     background: ${({theme}) => theme.primaryDark};
+    border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
@@ -250,7 +251,7 @@ export const StyledModalContentContainer = styled.div`
 `
 
 export const StyledModalHero = styled.h2`
-    color: white;
+    color: ${({theme}) => theme.primaryLight};
     height: 4vh;
 `
 
@@ -282,12 +283,16 @@ export const StyledModalSubText = styled.div`
 // Modal Bubble Nav
 export const StyledModalNavWrapper = styled.div`
     max-width: 343px;
+
+    @media(min-width: 768px) {
+        max-width: 615px;
+    }
 `
 
 export const StyledModalNavContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-x: scroll;
     
@@ -299,15 +304,20 @@ export const StyledModalNavContainer = styled.div`
 `
 
 export const StyledModalBubbleNav = styled.h3`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
-    width: 145px;
+    min-width: 165px;
     margin: 0 20px;
     padding: 2px 15px;
     background: ${({theme}) => theme.secondaryLight};
 
     :hover {
         cursor: pointer;
+        background: ${({theme}) => theme.primaryLight};
+        color: ${({theme}) => theme.secondaryLight};
     }
 `
 
