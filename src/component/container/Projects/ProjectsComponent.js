@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalBubbleNav, StyledModalBubbleContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -168,7 +168,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
     const modal1 = {
         modalTitle: "Tokenize Amazon",
         modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1", "lT2", "lT3"],
+        modalTechText: ["lT1", "lT2", "lT3", "lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3"],
         modalLearningsText: ["lL1", "lL2", "lL3"],
         modalSummaryText: ["lS1", "lS2", "lS3"],
     }
@@ -225,65 +225,46 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
 }
 
 const ModalTabsComponent = ({showModal, modalArray}) => {
-    const [bubbleContent, setBubbleContent] = useState(0);
+    const [tabSelector, setTabSelector] = useState(0);
 
-    const bubbleContentSetter = () => {
-        switch(bubbleContent) {
+    //Returns tab title & maps text as list
+    const generateTabContent = (title, mapArray) => {
+        return (
+                <StyledModalTabContentContainer>
+                    <StyledModalTabContentTitle>
+                        {title}
+                    </StyledModalTabContentTitle>
+                    <StyledModalTabContentText>
+                        {
+                            mapArray.map(item => {
+                                return (
+                                    <StyledModalTabContentTextItem>{item}</StyledModalTabContentTextItem>
+                                    )
+                                })
+                            }
+                    </StyledModalTabContentText>
+                </StyledModalTabContentContainer>
+        )
+    }
+
+    const returnTabContent = () => {
+        switch(tabSelector) {
             case 0: {
                 
             }
             case 1: {
                 return (
-                    <StyledModalTabContentContainer>
-                        <StyledModalTabContentTitle>
-                            Tech
-                        </StyledModalTabContentTitle>
-                        <StyledModalTabContentText>
-                            {
-                                modalArray[showModal].modalTechText.map(item => {
-                                    return (
-                                        <StyledModalTabContentTextItem>{item}</StyledModalTabContentTextItem>
-                                    )
-                                })
-                            }
-                        </StyledModalTabContentText>
-                    </StyledModalTabContentContainer>
+                    generateTabContent("Tech", modalArray[showModal].modalTechText)
                 )
             }
             case 2: {
                 return (
-                    <StyledModalTabContentContainer>
-                        <StyledModalTabContentTitle>
-                            Learnings
-                        </StyledModalTabContentTitle>
-                        <StyledModalTabContentText>
-                            {
-                                modalArray[showModal].modalLearningsText.map(item => {
-                                    return (
-                                        <StyledModalTabContentTextItem>{item}</StyledModalTabContentTextItem>
-                                    )
-                                })
-                            }
-                        </StyledModalTabContentText>
-                    </StyledModalTabContentContainer>
+                    generateTabContent("Learnings", modalArray[showModal].modalLearningsText)
                 )
             }
             case 3: {
                 return (
-                    <StyledModalTabContentContainer>
-                        <StyledModalTabContentTitle>
-                            Summary
-                        </StyledModalTabContentTitle>
-                        <StyledModalTabContentText>
-                            {
-                                modalArray[showModal].modalSummaryText.map(item => {
-                                    return (
-                                        <StyledModalTabContentTextItem>{item}</StyledModalTabContentTextItem>
-                                    )
-                                })
-                            }
-                        </StyledModalTabContentText>
-                    </StyledModalTabContentContainer>
+                    generateTabContent("Summary", modalArray[showModal].modalSummaryText)
                 )
             }
             
@@ -293,21 +274,21 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
     return (
         <StyledModalNavWrapper>
             <StyledModalNavContainer>
-                <StyledModalBubbleNav onClick={() => setBubbleContent(1)}>
+                <StyledModalTabNavButton onClick={() => setTabSelector(1)}>
                     Tech
-                </StyledModalBubbleNav>
-                <StyledModalBubbleNav onClick={() => setBubbleContent(2)}>
+                </StyledModalTabNavButton>
+                <StyledModalTabNavButton onClick={() => setTabSelector(2)}>
                     Learnings
-                </StyledModalBubbleNav>
-                <StyledModalBubbleNav onClick={() => setBubbleContent(3)}>
+                </StyledModalTabNavButton>
+                <StyledModalTabNavButton onClick={() => setTabSelector(3)}>
                     Summary
-                </StyledModalBubbleNav>
+                </StyledModalTabNavButton>
             </StyledModalNavContainer>
-            <StyledModalBubbleContent>
+            <StyledModalTabContent>
                 {
-                    bubbleContentSetter()
+                    returnTabContent()
                 }
-            </StyledModalBubbleContent>
+            </StyledModalTabContent>
         </StyledModalNavWrapper>
     )
 }

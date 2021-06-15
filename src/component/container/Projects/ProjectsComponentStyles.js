@@ -242,7 +242,7 @@ export const StyledModalContentContainer = styled.div`
     border-radius: 20px;
     height: 96vh;
     margin: 5vh 5% 5vh 5%;
-    padding: 4vh 0;
+    padding: 3vh 0;
     max-width: 800px;
 
     @media (min-width: 768px) {
@@ -258,7 +258,8 @@ export const StyledModalHero = styled.h2`
 export const StyledModalHeroText = styled.div`
     margin: 0 7.5%;
     text-align: left;
-    margin-bottom: 3vh;
+    height: 10vh;
+    margin-bottom: 4vh;
 `
 
 export const StyledModalContent = styled.div`
@@ -269,7 +270,7 @@ export const StyledModalContent = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    overflow-y: scroll;
+    overflow-x: hidden;
 `
 
 export const StyledModalSubHeader = styled.div`
@@ -280,7 +281,7 @@ export const StyledModalSubText = styled.div`
 
 `
 
-// Modal Bubble Nav
+// Modal Tab Nav
 export const StyledModalNavWrapper = styled.div`
     max-width: 343px;
 
@@ -295,6 +296,7 @@ export const StyledModalNavContainer = styled.div`
     justify-content: start;
     align-items: center;
     overflow-x: scroll;
+    height: 6vh;
     
     &::-webkit-scrollbar {
         width: 0;
@@ -303,7 +305,7 @@ export const StyledModalNavContainer = styled.div`
     }
 `
 
-export const StyledModalBubbleNav = styled.h3`
+export const StyledModalTabNavButton = styled.h3`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,8 +323,8 @@ export const StyledModalBubbleNav = styled.h3`
     }
 `
 
-export const StyledModalBubbleContent = styled.div`
-
+export const StyledModalTabContent = styled.div`
+    
 `
 
 // Modal tab content
@@ -335,11 +337,19 @@ export const StyledModalTabContentContainer = styled.div`
 `
 
 export const StyledModalTabContentTitle = styled.h3`
-
+    height: 4vh;
 `
 
 export const StyledModalTabContentText = styled.div`
     width: 85%;
+    overflow-y: scroll;
+    height: 54vh;
+    
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+    }
 `
 
 export const StyledModalTabContentTextItem = styled.li`
