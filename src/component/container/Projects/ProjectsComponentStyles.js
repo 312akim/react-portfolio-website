@@ -285,10 +285,6 @@ export const StyledModalContent = styled.div`
 // Modal Tab Nav
 export const StyledModalNavWrapper = styled.div`
 
-
-    @media(max-width: 480px) {
-        max-width: 343px;
-    }
 `
 
 export const StyledModalNavContainer = styled.div`
@@ -307,7 +303,7 @@ export const StyledModalNavContainer = styled.div`
         background: transparent;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 628px) {
         border: none;
     }
 `
@@ -318,18 +314,14 @@ export const StyledModalTabNavButton = styled.h3`
     align-items: center;
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
-    min-width: 185px;
-    padding: 2px 15px;
+    min-width: 165px;
+    padding: 2px 0px;
     background: ${({theme}) => theme.secondaryLight};
 
     :hover {
         cursor: pointer;
         background: ${({theme}) => theme.primaryLight};
         color: ${({theme}) => theme.secondaryLight};
-    }
-
-    @media (min-width: 1024px) {
-        margin: 0 20px;
     }
 `
 
