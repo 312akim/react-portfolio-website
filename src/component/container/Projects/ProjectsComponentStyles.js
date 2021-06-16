@@ -237,13 +237,15 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
+
     background: ${({theme}) => theme.primaryDark};
     border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
     height: 96vh;
-    margin: 5vh 5% 5vh 5%;
-    padding: 3vh 0;
+    margin: 5vh 0 5vh 0;
+    padding: 3vh 5%;
     max-width: 800px;
+    width: 90%;
 
     @media (min-width: 768px) {
         border-radius: 0px;
@@ -252,56 +254,61 @@ export const StyledModalContentContainer = styled.div`
 
 export const StyledModalHero = styled.h2`
     color: ${({theme}) => theme.primaryLight};
-    height: 4vh;
+    height: 2vh;
+    margin-bottom: 4vh;
+
+    @media(min-width: 768px) {
+        margin-bottom: 2vh;
+    }
 `
 
 export const StyledModalHeroText = styled.div`
-    margin: 0 7.5%;
     text-align: left;
-    height: 10vh;
+    max-height: 10vh;
     margin-bottom: 4vh;
 `
 
 export const StyledModalContent = styled.div`
-    height: 70vh;
+    height: 91vh;
     text-align: left;
-    margin: 0 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: space-around;
     overflow-x: hidden;
-`
 
-export const StyledModalSubHeader = styled.div`
-
-`
-
-export const StyledModalSubText = styled.div`
-
+    @media(min-width: 768px) {
+        max-width: 645px;
+    }
 `
 
 // Modal Tab Nav
 export const StyledModalNavWrapper = styled.div`
-    max-width: 343px;
 
-    @media(min-width: 768px) {
-        max-width: 615px;
+
+    @media(max-width: 480px) {
+        max-width: 343px;
     }
 `
 
 export const StyledModalNavContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     overflow-x: scroll;
-    height: 6vh;
+    height: 10vh;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
     
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
         background: transparent;
+    }
+
+    @media (min-width: 768px) {
+        border: none;
     }
 `
 
@@ -311,8 +318,7 @@ export const StyledModalTabNavButton = styled.h3`
     align-items: center;
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
-    min-width: 165px;
-    margin: 0 20px;
+    min-width: 185px;
     padding: 2px 15px;
     background: ${({theme}) => theme.secondaryLight};
 
@@ -320,6 +326,10 @@ export const StyledModalTabNavButton = styled.h3`
         cursor: pointer;
         background: ${({theme}) => theme.primaryLight};
         color: ${({theme}) => theme.secondaryLight};
+    }
+
+    @media (min-width: 1024px) {
+        margin: 0 20px;
     }
 `
 
@@ -333,18 +343,19 @@ export const StyledModalTabContentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: ${hoverCardTopFadeAnim} 2s linear;
 `
 
 export const StyledModalTabContentTitle = styled.h3`
-    height: 4vh;
+    height: 3vh;
 `
 
 export const StyledModalTabContentText = styled.div`
-    width: 85%;
+    width: 100%;
     overflow-y: scroll;
-    height: 54vh;
-    
+    height: 50vh;
+    border-top: 1px solid ${({theme}) => theme.primaryLight};
+    border-bottom: 1px solid ${({theme}) => theme.primaryLight};
+
     &::-webkit-scrollbar {
         width: 0;
         height: 0;

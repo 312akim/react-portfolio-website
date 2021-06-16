@@ -168,7 +168,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
     const modal1 = {
         modalTitle: "Tokenize Amazon",
         modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1", "lT2", "lT3", "lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3"],
+        modalTechText: ["lT1awdawdawd", "lT2", "lT3", "lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3"],
         modalLearningsText: ["lL1", "lL2", "lL3"],
         modalSummaryText: ["lS1", "lS2", "lS3"],
     }
@@ -209,13 +209,13 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
         return (
             <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
                 <StyledModalContentContainer onClick={(e) => e.stopPropagation()}>
-                    <StyledModalHero>
-                        {modalArray[showModal].modalTitle}
-                    </StyledModalHero>
-                    <StyledModalHeroText>
-                        {modalArray[showModal].modalText}
-                    </StyledModalHeroText>
                     <StyledModalContent>
+                        <StyledModalHero>
+                            {modalArray[showModal].modalTitle}
+                        </StyledModalHero>
+                        <StyledModalHeroText>
+                            {modalArray[showModal].modalText}
+                        </StyledModalHeroText>
                         <ModalTabsComponent showModal={showModal} modalArray={modalArray}/>
                     </StyledModalContent>
                 </StyledModalContentContainer>
