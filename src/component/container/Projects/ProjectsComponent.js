@@ -4,6 +4,7 @@ import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubL
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
+import bobaMockup from '../../../shared/images/boba-app-mockup.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { useSpring } from 'react-spring'
@@ -64,7 +65,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
         {
             title: "Bubble Tea App",
             description: "In-Progress. My first React-Native project.",
-            image: tokenizeAmazonMockup,
+            image: bobaMockup,
             imageAlt: "",
             gitLink: "https://github.com/312akim/apparel-store-mern",
             onClick: () => projectModalSwitcher(4),
