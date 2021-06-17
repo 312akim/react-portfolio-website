@@ -17,6 +17,7 @@ export const StyledNavBar = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 10vh;
+    pointer-events: none;
 `
 
 export const StyledNavLogo = styled.div`
@@ -44,6 +45,7 @@ export const StyledCollapsibleNavContainer = styled.div`
     justify-content: space-around;
     margin-right: 5%;
     height: 10vh;
+    pointer-events: auto;
 `
 
 export const StyledToggler = styled.div`

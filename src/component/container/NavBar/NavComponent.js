@@ -9,7 +9,7 @@ export const NavBar = () => {
 
     const [scrolling, setScrolling] = useState(true);
 
-    const scrollTop = 0;
+    let scrollTop = 0;
     // Navbar background sets to transparent when not at top of page.
     useEffect(() => {
         const onScroll = () => {
@@ -27,7 +27,7 @@ export const NavBar = () => {
 
     return (
         <StyledNavContainer scroll={scrolling}>
-            <StyledNavBar>
+            <StyledNavBar scoll={scrolling}>
                 <StyledNavLogo>Logo Here</StyledNavLogo>
                 <CollapsibleNavComponent />
             </StyledNavBar>
