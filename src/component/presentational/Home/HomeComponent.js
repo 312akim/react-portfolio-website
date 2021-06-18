@@ -8,6 +8,7 @@ import 'intersection-observer';
 
 
 export const HomeComponent = () => {
+    // Intersect Observer *****
     const [contentVisible, setContentVisible] = useState(false);
     const homeContentRef = useRef();
 
@@ -23,7 +24,7 @@ export const HomeComponent = () => {
         let options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.9
+            threshold: 0.75
         }
 
         const observer = new IntersectionObserver(onIntersect, options);
@@ -31,6 +32,7 @@ export const HomeComponent = () => {
         //Cleanup
         return () => observer.disconnect();
     }, [])
+    // *****
 
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'auto'}>
