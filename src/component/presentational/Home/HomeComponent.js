@@ -1,19 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Link } from 'react-scroll';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer } from './HomeComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import 'intersection-observer';
 
 
 export const HomeComponent = () => {
+    const [contentVisible, setContentVisible] = useState(false);
+    const homeContentRef = useRef();
+
+    useEffect(() => {
+        const onIntersect = (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setContentVisible(true);
+              }
+            });
+        };
+
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.9
+        }
+
+        const observer = new IntersectionObserver(onIntersect, options);
+        observer.observe(homeContentRef.current);
+        //Cleanup
+        return () => observer.disconnect();
+    }, [])
+
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'auto'}>
             <StyledHomeComponentContainer>
                 <HomeHero />
-                <StyledHomeContentContainer>
-                    <HomeText />
-                    <HomeNav />
+                <StyledHomeContentContainer ref={homeContentRef}>
+                    <HomeText contentVisible={contentVisible}/>
+                    <HomeNav contentVisible={contentVisible}/>
                 </StyledHomeContentContainer>
             </StyledHomeComponentContainer>
         </StyledSectionComponent>
@@ -33,9 +58,9 @@ const HomeHero = () => {
     )
 }
 
-const HomeText = () => {
+const HomeText = ({contentVisible}) => {
     return (
-        <StyledTextContainerWrapper>
+        <StyledTextContainerWrapper contentVisible={contentVisible}>
             <StyledTextContainer>
                 <StyledTextSection>
                     Welcome to my portfolio.
@@ -51,9 +76,9 @@ const HomeText = () => {
     )
 }
 
-const HomeNav = () => {
+const HomeNav = ({contentVisible}) => {
     return (
-        <StyledHomeNavWrapper>
+        <StyledHomeNavWrapper contentVisible={contentVisible}>
             <StyledHomeNavContainer>
                 <StyledHomeFlexContainer>
                     <StyledHomeLinkButton>

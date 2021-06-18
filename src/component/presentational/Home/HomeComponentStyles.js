@@ -41,6 +41,8 @@ export const StyledHomeComponentContainer = styled.div`
 export const StyledHomeNavWrapper = styled.div`
     perspective: 600px;
     perspective-origin: 50% 50%;
+    height: 40vh;
+    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
 `
 
 export const StyledHomeNavContainer = styled.div`
@@ -48,11 +50,8 @@ export const StyledHomeNavContainer = styled.div`
     flex-direction: column;
     width: 343px;
     padding: 20px;
-    background: rgba(191, 191, 191, 0.9);
     transform: rotateX(0deg) scaleZ(2.5);
     opacity: 0.9;
-    height: 360px;
-    margin-bottom: 15px;
     background: rgba(0, 0, 0, 0.3);
     animation: ${homeContentMobileAnimation(85)} 2s linear;
 
@@ -68,6 +67,7 @@ export const StyledHomeContentContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-image: url(${homeBackground});
+    height: 90vh;
     width: 100vw;
     margin-bottom: 21vh;
 
@@ -147,6 +147,8 @@ export const StyledHomeFlexPairContainer = styled.div`
 export const StyledTextContainerWrapper = styled.div`
     perspective: 600px;
     perspective-origin: 50% 50%;
+    height: 50vh;
+    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
 `
 
 export const StyledTextContainer = styled.div`
