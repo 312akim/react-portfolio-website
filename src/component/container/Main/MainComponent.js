@@ -16,9 +16,7 @@ const MainComponent = () => {
             <NavBar />
 
             <div id="homeSection">
-                <Fade left>
                     <HomeComponent />
-                </Fade>
             </div>
 
             <div id="projectsSection">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer } from './HomeComponentStyles';
+import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer } from './HomeComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
@@ -35,17 +35,19 @@ const HomeHero = () => {
 
 const HomeText = () => {
     return (
-        <StyledTextContainer>
-            <StyledTextSection>
-                Welcome to my portfolio.
-            </StyledTextSection>
-            <StyledTextSection>
-                I'm a front end web developer with a background in business.
-            </StyledTextSection>
-            <StyledTextSection>
-                I love thinking about all aspects of a company with a particular interest in animation.
-            </StyledTextSection>
-        </StyledTextContainer>
+        <StyledTextContainerWrapper>
+            <StyledTextContainer>
+                <StyledTextSection>
+                    Welcome to my portfolio.
+                </StyledTextSection>
+                <StyledTextSection>
+                    I'm a front end web developer with a background in business.
+                </StyledTextSection>
+                <StyledTextSection>
+                    I love thinking about all aspects of a business with a particular interest in user experience.
+                </StyledTextSection>
+            </StyledTextContainer>
+        </StyledTextContainerWrapper>
     )
 }
 

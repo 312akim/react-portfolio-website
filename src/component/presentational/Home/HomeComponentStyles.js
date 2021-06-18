@@ -1,5 +1,34 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import homeBackground from '../../../shared/images/home-background.jpg'
+
+    // Animations
+const homeContentMobileAnimation = (degreesX) => keyframes`
+    0% {
+        transform: rotateX(${degreesX}deg) scaleZ(2.5);
+    }
+
+    50% {
+
+    }
+
+    100% {
+        transform: rotateX(0deg) scaleZ(2.5);
+    }
+`
+
+const homeContentAnimation = (degreesY) => keyframes`
+    0% {
+        transform: rotateY(${degreesY}deg) scaleZ(2.5);
+    }
+
+    50% {
+
+    }
+
+    100% {
+        transform: rotateY(0deg) scaleZ(2.5);
+    }
+`
 
     // Components
 export const StyledHomeComponentContainer = styled.div`
@@ -17,17 +46,18 @@ export const StyledHomeNavWrapper = styled.div`
 export const StyledHomeNavContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 343px;
     padding: 20px;
     background: rgba(191, 191, 191, 0.9);
-    transform: rotateY(-21deg) scaleZ(2.5);
+    transform: rotateX(0deg) scaleZ(2.5);
     opacity: 0.9;
     height: 360px;
     margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    animation: ${homeContentMobileAnimation(85)} 2s linear;
 
-    transition: transform 1s;
-
-    :hover {
-        transform: rotateY(-8deg) scaleZ(2.5);
+    @media (min-width: 768px) {
+        animation: ${homeContentAnimation(-85)} 2s linear;
     }
 `
 
@@ -114,14 +144,23 @@ export const StyledHomeFlexPairContainer = styled.div`
     justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'center'};
 `
 
+export const StyledTextContainerWrapper = styled.div`
+    perspective: 600px;
+    perspective-origin: 50% 50%;
+`
+
 export const StyledTextContainer = styled.div`
     text-align: left;
     color: white;
     width: 343px;
     margin-bottom: 6vh;
+    transform: rotateX(0deg) scaleZ(2.5);
+    background: rgba(0, 0, 0, 0.3);
+    animation: ${homeContentMobileAnimation(-85)} 2s linear;
 
     @media (min-width: 768px) {
         margin-bottom: 0;
+        animation: ${homeContentAnimation(85)} 2s linear;
     }
 `
 
