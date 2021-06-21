@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
-import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
-import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
-import bobaMockup from '../../../shared/images/boba-app-mockup.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import { useSpring } from 'react-spring'
+import { useSpring } from 'react-spring';
+
+// Component Cards Text config
+import { projectComponentCardTextConfig } from './ProjectComponentText';
 
 export const ProjectsComponent = () => {
 
@@ -33,50 +33,14 @@ export const ProjectsComponent = () => {
     )
 }
 
-
-
 // Which projects page to display
 const ProjectSection = ({section, projectModalSwitcher}) => {
-    const projectConfig = [
-        {
-            title: "Tokenize Amazon",
-            description: "Responsive Landing Page and Full website of Tokenize Amazon website.",
-            image: tokenizeAmazonMockup,
-            imageAlt: "",
-            gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(1),
-        },
-        {
-            title: "Apparel Store",
-            description: "Responsive SPA e-commerce store with front & back-end functionality. Cart and checkout functionality achieved through integration with Snipcart.",
-            image: apparelStoreMockup,
-            imageAlt: "",
-            gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(2),
-        },
-        {
-            title: "Portfolio Website",
-            description: "The code behind this portfolio site, featuring the Github Octokit api to load my latest updates.",
-            image: tokenizeAmazonMockup,
-            imageAlt: "",
-            gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(3),
-        },
-        {
-            title: "Bubble Tea App",
-            description: "In-Progress. My first React-Native project.",
-            image: bobaMockup,
-            imageAlt: "",
-            gitLink: "https://github.com/312akim/apparel-store-mern",
-            onClick: () => projectModalSwitcher(4),
-        }
-    ];
 
     if (section) {
         return (
             <StyledProjectCardsContainer>
                 {
-                   projectConfig.slice(0, 2).map((project) => {
+                   projectComponentCardTextConfig.slice(0, 2).map((project) => {
                         return (
                             <StyledProjectCard>
                                 <StyledImageCropContainer height={'40vh'}>
@@ -89,7 +53,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                                     <StyledProjectInformation>
                                         {project.description}
                                     </StyledProjectInformation>
-                                    <StyledReadMore onClick={project.onClick}>
+                                    <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
                                         Read More
                                     </StyledReadMore>
                                     <StyledGithubLink 
@@ -110,7 +74,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             return (
                 <StyledAltProjectCardsContainer>
                     {
-                        projectConfig.slice(2, 4).map((project) => {
+                        projectComponentCardTextConfig.slice(2, 4).map((project) => {
                             return (
                                 <StyledProjectCard>
                                     <StyledImageCropContainer height={'40vh'}>
@@ -166,41 +130,6 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
 
 // Modal Display
 const ModalDisplay = ({showModal, projectModalSwitcher}) => {
-    const modal1 = {
-        modalTitle: "Tokenize Amazon",
-        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1awdawdawd", "lT2", "lT3", "lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3","lT1", "lT2", "lT3"],
-        modalLearningsText: ["lL1", "lL2", "lL3"],
-        modalSummaryText: ["lS1", "lS2", "lS3"],
-    }
-
-    const modal2 = {
-        modalTitle: "222",
-        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1", "lT2", "lT3"],
-        modalLearningsText: ["lL1", "lL2", "lL3"],
-        modalSummaryText: ["lS1", "lS2", "lS3"],
-    }
-    
-    const modal3 = {
-        modalTitle: "333",
-        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1", "lT2", "lT3"],
-        modalLearningsText: ["lL1", "lL2", "lL3"],
-        modalSummaryText: ["lS1", "lS2", "lS3"],
-    }
-
-    const modal4 = {
-        modalTitle: "444",
-        modalText: "Freelance Project consisting of a Landing Page with the goal of introducing a startup's ideas and email newsletter signups.",
-        modalTechText: ["lT1", "lT2", "lT3"],
-        modalLearningsText: ["lL1", "lL2", "lL3"],
-        modalSummaryText: ["lS1", "lS2", "lS3"],
-    }
-
-    const modalArray = [
-        "", modal1, modal2, modal3, modal4
-    ]
 
     if (showModal === 0) {
         return (
@@ -212,12 +141,12 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                 <StyledModalContentContainer onClick={(e) => e.stopPropagation()}>
                     <StyledModalContent>
                         <StyledModalHeroTitle>
-                            {modalArray[showModal].modalTitle}
+                            {projectComponentCardTextConfig[showModal-1].modal.modalTitle}
                         </StyledModalHeroTitle>
                         <StyledModalHeroText>
-                            {modalArray[showModal].modalText}
+                            {projectComponentCardTextConfig[showModal-1].modal.modalText}
                         </StyledModalHeroText>
-                        <ModalTabsComponent showModal={showModal} modalArray={modalArray}/>
+                        <ModalTabsComponent showModal={showModal} />
                     </StyledModalContent>
                 </StyledModalContentContainer>
             </StyledModalWrapper>
@@ -225,7 +154,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
     }
 }
 
-const ModalTabsComponent = ({showModal, modalArray}) => {
+const ModalTabsComponent = ({showModal}) => {
     const [tabSelector, setTabSelector] = useState(0);
 
     //Returns tab title & maps text as list
@@ -236,13 +165,13 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
                         {title}
                     </StyledModalTabContentTitle>
                     <StyledModalTabContentText>
-                        {
+                        {   
                             mapArray.map(item => {
                                 return (
-                                    <StyledModalTabContentTextItem>{item}</StyledModalTabContentTextItem>
-                                    )
-                                })
-                            }
+                                    <StyledModalTabContentTextItem key={item}>{item}</StyledModalTabContentTextItem>
+                                )
+                            })
+                        }
                     </StyledModalTabContentText>
                 </StyledModalTabContentContainer>
         )
@@ -255,17 +184,17 @@ const ModalTabsComponent = ({showModal, modalArray}) => {
             }
             case 1: {
                 return (
-                    generateTabContent("Tech", modalArray[showModal].modalTechText)
+                    generateTabContent("Tech", projectComponentCardTextConfig[showModal-1].modal.modalTechText)
                 )
             }
             case 2: {
                 return (
-                    generateTabContent("Learnings", modalArray[showModal].modalLearningsText)
+                    generateTabContent("Learnings", projectComponentCardTextConfig[showModal-1].modal.modalLearningsText)
                 )
             }
             case 3: {
                 return (
-                    generateTabContent("Summary", modalArray[showModal].modalSummaryText)
+                    generateTabContent("Summary", projectComponentCardTextConfig[showModal-1].modal.modalSummaryText)
                 )
             }
             
