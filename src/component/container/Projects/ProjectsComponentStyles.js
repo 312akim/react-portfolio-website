@@ -155,8 +155,8 @@ export const StyledProjectCardTitle = styled.h2`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6vh;
-    padding: 1% 5%;
+    height: 5vh;
+    padding: 0 0;
     margin: 1vh 5%;
     color: white;
 `
@@ -194,12 +194,12 @@ export const StyledCardHoverContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: -1px;
+    left: -1px;
+    width: 100.7%;
     opacity: 0;
-    border-radius: 3.2px;
-    height: 40vh;
+    border-radius: 3.5px;
+    height: 40.2vh;
     
     :hover {
         opacity: 0.9;
@@ -220,6 +220,10 @@ export const StyledCardHoverContainer = styled.div`
         ${StyledGithubLink} {
             animation: ${hoverCardBotFadeAnim} 0.3s linear;
         }
+    }
+
+    @media (min-width: 768px) {
+        width: 100.4%;
     }
 `
 //Project Modals
@@ -252,13 +256,13 @@ export const StyledModalContentContainer = styled.div`
     }
 `
 
-export const StyledModalHero = styled.h2`
+export const StyledModalHeroTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     height: 2vh;
     margin-bottom: 4vh;
 
     @media(min-width: 768px) {
-        margin-bottom: 2vh;
+        margin-bottom: 3vh;
     }
 `
 

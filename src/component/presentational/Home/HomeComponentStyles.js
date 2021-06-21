@@ -56,7 +56,7 @@ export const StyledHomeContentContainer = styled.div`
 
 
 export const StyledHomeLinkContainer = styled.div`
-width: 100%;
+    width: 100%;
 `
 
 export const StyledHomeLinkIconTextContainer = styled.div`
@@ -64,56 +64,58 @@ export const StyledHomeLinkIconTextContainer = styled.div`
 `
 
 export const StyledNameContainer = styled.div`
-display: flex;
-flex-direction: column;
-height: 18vh;
-width: 384px;
-margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 384px;
+    margin: 5vh 0;
 `
 
 export const StyledMainHeader = styled.h1`
-font-size: 54px;
-font-weight: 300;
-padding-right: 15%;
-padding-top: 1vh;
-margin: 0;
-font-family: 'Noto Serif KR', serif;
+    font-size: 54px;
+    font-weight: 300;
+    padding-right: 15%;
+    padding-top: 1vh;
+    margin: 0;
+    font-family: 'Noto Serif KR', serif;
 
-@media (min-width: 768px) {
-    padding-top: 3vh;
-    font-size: 64px;
-}
+    @media (min-width: 768px) {
+        padding-top: 3vh;
+        font-size: 64px;
+    }
 `
 
 export const StyledSubHeader = styled.h2`
-font-size: 36px;
-font-weight: 700;
-padding-left: 15%;
-margin: 0;
-font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    padding-left: 15%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 `
 
 export const StyledHomeLinkButton = styled.button`
-display: block;
-margin: 2%;
-color: white;
-width: calc(100% - 12px);
-background: ${({theme}) => theme.primaryDark};
-height: 7vh;
+    display: block;
+    margin: 2%;
+    color: white;
+    width: calc(100% - 12px);
+    background: ${({theme}) => theme.primaryDark};
+    height: 8vh;
 `
 
 export const StyledHomeFlexContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
 `
 
 export const StyledHomeFlexPairContainer = styled.div`
-display: flex;
-flex-direction: row;
-margin: ${({margin}) => margin ? margin : '0'};
-justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'center'};
+    display: flex;
+    flex-direction: row;
+    margin: ${({margin}) => margin ? margin : '0'};
+    justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'center'};
 `
 
 export const StyledHomeNavWrapper = styled.div`
@@ -126,7 +128,6 @@ export const StyledHomeNavContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 343px;
-    padding: 20px;
     transform: rotateX(0deg) scaleZ(2.5);
     opacity: 0.9;
     background: rgba(0, 0, 0, 0.3);
@@ -139,19 +140,18 @@ export const StyledHomeNavContainer = styled.div`
 `
 
 export const StyledTextContainerWrapper = styled.div`
-perspective: 600px;
-perspective-origin: 50% 50%;
-max-height: 50vh;
-display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
+    perspective: 600px;
+    perspective-origin: 50% 50%;
+    max-height: 50vh;
+    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
 `
 
 export const StyledTextContainer = styled.div`
-text-align: left;
-color: white;
-width: 343px;
-margin-bottom: 6vh;
-transform: rotateX(0deg) scaleZ(2.5);
-background: rgba(0, 0, 0, 0.3);
+    text-align: left;
+    color: white;
+    width: 343px;
+    transform: rotateX(0deg) scaleZ(2.5);
+    background: rgba(0, 0, 0, 0.3);
     animation: ${homeContentMobileAnimation(-85)} 2s linear;
 
     @media (min-width: 768px) {

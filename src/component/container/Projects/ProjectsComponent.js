@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHero, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
@@ -211,9 +211,9 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
             <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
                 <StyledModalContentContainer onClick={(e) => e.stopPropagation()}>
                     <StyledModalContent>
-                        <StyledModalHero>
+                        <StyledModalHeroTitle>
                             {modalArray[showModal].modalTitle}
-                        </StyledModalHero>
+                        </StyledModalHeroTitle>
                         <StyledModalHeroText>
                             {modalArray[showModal].modalText}
                         </StyledModalHeroText>
