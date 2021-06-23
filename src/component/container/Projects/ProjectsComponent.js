@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentText, StyledModalHeroText, StyledModalTabContentTextSummary } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -167,15 +167,15 @@ const ModalTabsComponent = ({showModal}) => {
                     <StyledModalSubheader>
                         {title}
                     </StyledModalSubheader>
-                    <StyledModalTabContentText>
+                    <StyledModalTabContentList>
                         {   
                             mapArray.map(item => {
                                 return (
-                                    <StyledModalTabContentTextListItem key={item}>{item}</StyledModalTabContentTextListItem>
+                                    <StyledModalTabContentTextListItem key={title+item}>{item}</StyledModalTabContentTextListItem>
                                 )
                             })
                         }
-                    </StyledModalTabContentText>
+                    </StyledModalTabContentList>
                 </StyledModalTabContentContainer>
         )
     }
@@ -186,11 +186,15 @@ const ModalTabsComponent = ({showModal}) => {
                     <StyledModalSubheader>
                         {title}
                     </StyledModalSubheader>
-                    <StyledModalTabContentText>
-                    <StyledModalTabContentTextSummary>
-                        {mapArray[0]}
-                    </StyledModalTabContentTextSummary>
-                    </StyledModalTabContentText>
+                    <StyledModalTabContentList>
+                        {mapArray.map((item) => {
+                            return (
+                                <StyledModalTabContentTextSummary>
+                                    &emsp;&emsp;{item}
+                                </StyledModalTabContentTextSummary>
+                            )
+                        })}
+                    </StyledModalTabContentList>
                 </StyledModalTabContentContainer>
         )
     }

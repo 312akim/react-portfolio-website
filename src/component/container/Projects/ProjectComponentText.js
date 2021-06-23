@@ -32,7 +32,11 @@ export const projectComponentCardTextConfig = [
                 "Website Image Optimization",
             ],
             modalSummaryText: [
-                "My first project working with a dedicated Design team. Working and communicating with the design team gave me great insight to responsive design practices and how to communicate on a more technical level. This project brought together my previous coding/deployment experience for a great review of skills. I also made a point to utilize and master flexbox throughout the project. Site load times were a priority for me and improvements were made by converting to jpg or resizing images where possible. I considered Low Quality Placeholder and lazy loading images using cloudinary & intersect observer but decided against the implementation due to the small image sizes of the non-hero content.",
+                "My first project working with and converting a dedicated design teams mockup into a functional website. Working and communicating with the design team has given me insight on stronger responsive design practices and experience communicating in a more technical manner.", 
+
+                "The project as a whole brought together my previous projects knowledge and experiences into a clean project where I could focus on the overall structure. I also made a goal of utilizing and gaining mastery of flexbox for spacing.",
+
+                "Site load times were something I kept in mind due to the number of images on the website. Improvements were made by converting and resizing images. Low quality placeholder and lazy loading images were solutions I considered but decided against due to actual content images being relatively small."
             ]
         }
     },

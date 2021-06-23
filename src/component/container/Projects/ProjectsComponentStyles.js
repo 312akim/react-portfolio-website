@@ -345,7 +345,7 @@ export const StyledModalSubheader = styled.h3`
     align-self: start;
 `
 
-export const StyledModalTabContentText = styled.div`
+export const StyledModalTabContentList = styled.ul`
     width: 100%;
     overflow-y: scroll;
     height: 42vh;
@@ -365,5 +365,5 @@ export const StyledModalTabContentTextListItem = styled.li`
 `
 
 export const StyledModalTabContentTextSummary = styled.div`
-
+    margin-bottom: 1vh;
 `
