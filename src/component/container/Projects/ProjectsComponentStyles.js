@@ -196,9 +196,9 @@ export const StyledCardHoverContainer = styled.div`
     align-items: center;
     top: -1px;
     left: -1px;
-    width: 100.7%;
+    width: 100.6%;
     opacity: 0;
-    border-radius: 3.5px;
+    border-radius: 4px;
     height: 40.2vh;
     
     :hover {
@@ -241,7 +241,6 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
-
     background: ${({theme}) => theme.primaryDark};
     border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
@@ -259,7 +258,7 @@ export const StyledModalContentContainer = styled.div`
 export const StyledModalHeroTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     height: 2vh;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 
     @media(min-width: 768px) {
         margin-bottom: 3vh;
@@ -268,8 +267,11 @@ export const StyledModalHeroTitle = styled.h2`
 
 export const StyledModalHeroText = styled.div`
     text-align: left;
-    max-height: 10vh;
-    margin-bottom: 4vh;
+    max-height: 16vh;
+    margin-bottom: 3vh;
+    padding: 1vh 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 `
 
 export const StyledModalContent = styled.div`
@@ -341,16 +343,18 @@ export const StyledModalTabContentContainer = styled.div`
     align-items: center;
 `
 
-export const StyledModalTabContentTitle = styled.h3`
-    height: 3vh;
+export const StyledModalSubheader = styled.h3`
+    height: 2vh;
+    align-self: start;
 `
 
 export const StyledModalTabContentText = styled.div`
     width: 100%;
     overflow-y: scroll;
-    height: 50vh;
+    height: 42vh;
     border-top: 1px solid ${({theme}) => theme.primaryLight};
     border-bottom: 1px solid ${({theme}) => theme.primaryLight};
+    padding: 15px 0;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -359,6 +363,10 @@ export const StyledModalTabContentText = styled.div`
     }
 `
 
-export const StyledModalTabContentTextItem = styled.li`
+export const StyledModalTabContentTextListItem = styled.li`
     margin-bottom: 2vh;
+`
+
+export const StyledModalTabContentTextSummary = styled.div`
+
 `

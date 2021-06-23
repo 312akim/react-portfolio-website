@@ -5,7 +5,7 @@ export const StyledFormikWrapper = styled.div`
     flex-direction: column;
     height: auto;   
     width: 343px;
-    margin: 8vh auto;
+    margin: 9vh auto;
     box-shadow: 0 0 42px ${({theme}) => theme.primaryDark};
     padding: 0 10%;
     background: ${({theme}) => theme.secondaryDark};

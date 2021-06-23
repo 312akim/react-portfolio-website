@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextItem, StyledModalTabContentTitle,StyledModalTabContentText, StyledModalHeroText } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentText, StyledModalHeroText, StyledModalTabContentTextSummary } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -87,7 +87,7 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
                                         <StyledProjectInformation>
                                             {project.description}
                                         </StyledProjectInformation>
-                                        <StyledReadMore onClick={project.onClick}>
+                                        <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
                                             Read More
                                         </StyledReadMore>
                                         <StyledGithubLink 
@@ -143,8 +143,11 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                         <StyledModalHeroTitle>
                             {projectComponentCardTextConfig[showModal-1].modal.modalTitle}
                         </StyledModalHeroTitle>
+                        <StyledModalSubheader>
+                            Objective
+                        </StyledModalSubheader>
                         <StyledModalHeroText>
-                            {projectComponentCardTextConfig[showModal-1].modal.modalText}
+                            {projectComponentCardTextConfig[showModal-1].modal.modalObjective}
                         </StyledModalHeroText>
                         <ModalTabsComponent showModal={showModal} />
                     </StyledModalContent>
@@ -158,20 +161,35 @@ const ModalTabsComponent = ({showModal}) => {
     const [tabSelector, setTabSelector] = useState(0);
 
     //Returns tab title & maps text as list
-    const generateTabContent = (title, mapArray) => {
+    const returnTabContentList = (title, mapArray) => {
         return (
                 <StyledModalTabContentContainer>
-                    <StyledModalTabContentTitle>
+                    <StyledModalSubheader>
                         {title}
-                    </StyledModalTabContentTitle>
+                    </StyledModalSubheader>
                     <StyledModalTabContentText>
                         {   
                             mapArray.map(item => {
                                 return (
-                                    <StyledModalTabContentTextItem key={item}>{item}</StyledModalTabContentTextItem>
+                                    <StyledModalTabContentTextListItem key={item}>{item}</StyledModalTabContentTextListItem>
                                 )
                             })
                         }
+                    </StyledModalTabContentText>
+                </StyledModalTabContentContainer>
+        )
+    }
+
+    const returnTabContentSummary = (title, mapArray) => {
+        return (
+                <StyledModalTabContentContainer>
+                    <StyledModalSubheader>
+                        {title}
+                    </StyledModalSubheader>
+                    <StyledModalTabContentText>
+                    <StyledModalTabContentTextSummary>
+                        {mapArray[0]}
+                    </StyledModalTabContentTextSummary>
                     </StyledModalTabContentText>
                 </StyledModalTabContentContainer>
         )
@@ -184,17 +202,17 @@ const ModalTabsComponent = ({showModal}) => {
             }
             case 1: {
                 return (
-                    generateTabContent("Tech", projectComponentCardTextConfig[showModal-1].modal.modalTechText)
+                    returnTabContentList("Tech", projectComponentCardTextConfig[showModal-1].modal.modalTechText)
                 )
             }
             case 2: {
                 return (
-                    generateTabContent("Learnings", projectComponentCardTextConfig[showModal-1].modal.modalLearningsText)
+                    returnTabContentList("Learnings", projectComponentCardTextConfig[showModal-1].modal.modalLearningsText)
                 )
             }
             case 3: {
                 return (
-                    generateTabContent("Summary", projectComponentCardTextConfig[showModal-1].modal.modalSummaryText)
+                    returnTabContentSummary("Summary", projectComponentCardTextConfig[showModal-1].modal.modalSummaryText)
                 )
             }
             

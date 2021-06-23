@@ -23,7 +23,7 @@ export const StyledSectionHeader = styled.h1`
 
 export const StyledSectionSubheader = styled.h2`
     height: 4vh;
-    margin: 0;
+    margin: 3vh 0 0 0;
     font-size: 1.3rem;
 
     @media (min-width: 480px) {
