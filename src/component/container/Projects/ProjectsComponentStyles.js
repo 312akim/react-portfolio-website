@@ -245,7 +245,6 @@ export const StyledModalContentContainer = styled.div`
     border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
     height: 96vh;
-    margin: 5vh 0 5vh 0;
     padding: 3vh 5%;
     max-width: 800px;
     width: 90%;
@@ -259,10 +258,6 @@ export const StyledModalHeroTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     height: 2vh;
     margin-bottom: 3vh;
-
-    @media(min-width: 768px) {
-        margin-bottom: 3vh;
-    }
 `
 
 export const StyledModalHeroText = styled.div`
@@ -275,7 +270,7 @@ export const StyledModalHeroText = styled.div`
 `
 
 export const StyledModalContent = styled.div`
-    height: 91vh;
+    height: 100%;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -299,6 +294,7 @@ export const StyledModalNavContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow-x: scroll;
+    overflow-y: hidden;
     height: 10vh;
     border-left: 2px solid black;
     border-right: 2px solid black;
@@ -341,6 +337,7 @@ export const StyledModalTabContentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 44vh;
 `
 
 export const StyledModalSubheader = styled.h3`
@@ -352,9 +349,9 @@ export const StyledModalTabContentText = styled.div`
     width: 100%;
     overflow-y: scroll;
     height: 42vh;
+    padding: 15px 0;
     border-top: 1px solid ${({theme}) => theme.primaryLight};
     border-bottom: 1px solid ${({theme}) => theme.primaryLight};
-    padding: 15px 0;
 
     &::-webkit-scrollbar {
         width: 0;
