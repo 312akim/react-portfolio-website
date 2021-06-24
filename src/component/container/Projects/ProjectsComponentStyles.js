@@ -365,5 +365,9 @@ export const StyledModalTabContentTextListItem = styled.li`
 `
 
 export const StyledModalTabContentTextSummary = styled.div`
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
+
+    @media (min-width: 768px) {
+        margin-bottom: 3vh;
+    }
 `

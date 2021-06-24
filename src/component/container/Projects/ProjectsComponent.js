@@ -190,7 +190,7 @@ const ModalTabsComponent = ({showModal}) => {
                         {mapArray.map((item) => {
                             return (
                                 <StyledModalTabContentTextSummary>
-                                    &emsp;&emsp;{item}
+                                    {item}
                                 </StyledModalTabContentTextSummary>
                             )
                         })}
@@ -202,7 +202,7 @@ const ModalTabsComponent = ({showModal}) => {
     const returnTabContent = () => {
         switch(tabSelector) {
             case 0: {
-                
+                // if 0 return case 1
             }
             case 1: {
                 return (

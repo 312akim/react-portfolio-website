@@ -36,7 +36,7 @@ export const projectComponentCardTextConfig = [
 
                 "The project as a whole brought together my previous projects knowledge and experiences into a clean project where I could focus on the overall structure. I also made a goal of utilizing and gaining mastery of flexbox for spacing.",
 
-                "Site load times were something I kept in mind due to the number of images on the website. Improvements were made by converting and resizing images. Low quality placeholder and lazy loading images were solutions I considered but decided against due to actual content images being relatively small."
+                "Site load times were something I kept in mind due to the number of images on the website. Improvements were made by converting and resizing images. Low quality placeholder and lazy loading images were solutions I considered but decided against due to non-hero content images being relatively small."
             ]
         }
     },
@@ -69,7 +69,17 @@ export const projectComponentCardTextConfig = [
                 "Heroku Deployment",
             ],
             modalSummaryText: [
-                "My first fullstack project that covered everything from Design to Backend to Proxys. The front end is coded with React Class Components and the backend with NodeJS. One of my greatest challenges during this project was integration with Snipcart for checkout and cart functionality. The apparel website needed to send a product id to the Snipcart server which then sent a request to a specified url, expecting to receive the same price for verification. The simplest way would be for the same website and url that the product is hosted on to POST the correct price. However, since the front end was deployed on Netlify which only hosts front end code, I needed to find a different solution. The solution I chose was to create a backend response on my heroku server to POST the item ID and price for verification from the connected mongoDB database and then have the Snipcart API send a request to the heroku backend instead. I made frequent use of Postman to ensure I was receiving the expected responses from my endpoints."
+                "My first fullstack SPA that I built from the ground up.",
+
+                "I deployed the front end code on Netlify and chose Heroku for the backend functionality to serve data from a Mongo database. The front end makes a request on load to the Heroku server for products and populates the site.",
+
+                "Cart, checkout, payment, and address functionality is provided by Snipcart which is integrated into each product page on Netlify. Once a user attempts to checkout, the product cart button makes specifies where Snipcart should make a POST request to verify product id and price.",
+
+                "This is normally the same page as the product page but as Netlify only provides front end services, I added back end functionality to the Heroku server to return the requested products id and it's price for Snipcarts verification. The webstore domain and verification domain are whitelisted within the Snipcart account to prevent HTML price manipulation and false verifications.",
+
+                "As the apparel store was my largest project to date, I ran into a plethora of bugs and challenges. Postman was especially effective in overcoming back end and data base challenges I faced.",
+
+                "Overall, working on the apparel store has given me a strong overview of how a fully functioning app works from front to back and has made me a stronger developer.",
             ]
         }
     },
