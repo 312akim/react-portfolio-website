@@ -94,7 +94,6 @@ export const StyledSectionSwitcher = styled.div`
     width: 15%;
     background: ${({theme}) => theme.primaryDark};
     right: ${props => props.position};
-    animation: ${fadeInAnimation} 1s linear;
     z-index: 1;
     
     :hover div {
@@ -121,14 +120,14 @@ export const StyledProjectCard = styled.div`
     margin: 5vh auto 4vh auto;
     background: white;
     border-radius: 4px;
-    box-shadow: 8px 8px black;
+    box-shadow: 6px 6px black;
 
     @media (min-width: 480px) {
-        box-shadow: 12px 12px black;
+        box-shadow: 7px 7px black;
     }
 
     @media (min-width: 1200px) {
-        box-shadow: 16px 16px black;
+        box-shadow: 9px 9px black;
     }
 `
 
@@ -236,7 +235,7 @@ export const StyledModalWrapper = styled.div`
     align-items: center;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
-    animation: ${fadeInAnimation} 1s linear;
+    animation: ${fadeInAnimation} 0.5s linear;
     z-index: 3;
 `
 
