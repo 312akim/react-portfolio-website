@@ -349,14 +349,17 @@ export const StyledModalTabContentList = styled.ul`
     width: 100%;
     overflow-y: scroll;
     height: 42vh;
-    padding: 15px 0;
+    padding: 10px 0;
     border-top: 1px solid ${({theme}) => theme.primaryLight};
     border-bottom: 1px solid ${({theme}) => theme.primaryLight};
 
     &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-        background: transparent;
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: ${({theme}) => theme.secondaryDark};
+        border-radius: 10px;
     }
 `
 
@@ -368,6 +371,6 @@ export const StyledModalTabContentTextSummary = styled.div`
     margin-bottom: 2vh;
 
     @media (min-width: 768px) {
-        margin-bottom: 3vh;
+        margin-bottom: 1.5vh;
     }
 `

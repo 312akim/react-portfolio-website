@@ -9,7 +9,7 @@ export const projectComponentCardTextConfig = [
         description: "Responsive Landing Page and Full website of Tokenize Amazon website.",
         image: tokenizeAmazonMockup,
         imageAlt: "Tokenize Amazon device mockups",
-        gitLink: "https://github.com/312akim/apparel-store-mern",
+        gitLink: "",
         onClick: 1,
         modal: {
             modalTitle: "Tokenize Amazon",
@@ -111,7 +111,9 @@ export const projectComponentCardTextConfig = [
                 "Built entirely using functional components and first use of react hooks.",
             ],
             modalSummaryText: [
-                "Working on my portfolio website gave me a chance to work build a smoother animated user experience for visitors. The website is built with functional components and was also a great project for me to experiment and learn React Hooks on. Additional highlights include working with the Octokit API to show my latest github project commits as well as heavier practice with formik forms and integrating it with an email service to receive emails through the site. The website is frequently refactored and updated with improvements discovered from other projects."
+                "Working on my portfolio website gave me a chance to work build a smoother animated user experience for visitors. The website is built with functional components and was also a great project for me to experiment and learn React Hooks on.", 
+                
+                "Highlights include working with the Octokit API to show my latest github project commits as well as heavier practice with formik forms and integrating it with an email service API. The website is frequently refactored and updated with improvements discovered from other projects."
             ],
         }
     },
@@ -124,21 +126,25 @@ export const projectComponentCardTextConfig = [
         onClick: 4,
         modal: {
             modalTitle: "Bubble Tea App",
-            modalObjective: "Create a performant fullstack Bubble Tea application utilizing and familiarizing myself with React Native, Typescript, Software Architecture, and Amazon Web Services.",
+            modalObjective: "Create a performant fullstack Bubble Tea application utilizing and familiarizing myself with React Native, Typescript, Redux, Software Architecture, and Amazon Web Services.",
             modalTechText: [
                 "React Native",
                 "Typescript",
+                "Redux",
                 "Software Architecture",
                 "Amazon Web Services",
             ],
             modalLearningsText: [
                 "React Native", 
                 "Typescript",
+                "Redux",
                 "Software Architecture",
                 "Amazon Web Services", 
             ],
             modalSummaryText: [
-                "My intention with this project is to build a fullstack mobile application with a focus on utilizing React-Native, Typescript & Amazon Web Services. "
+                "My intention with this project is to build a fullstack mobile application with a focus on utilizing React-Native, Typescript, Redux and Amazon Web Services. I chose common and frequently used tech/tools to expand my skillset.",
+
+                "Although the scope of the project may be too small to justify using Redux, I am choosing to implement it for learning purposes."
             ],
         }
     }
