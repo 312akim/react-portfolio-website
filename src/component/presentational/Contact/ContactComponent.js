@@ -46,77 +46,78 @@ const ContactForm = () => {
                 onSubmit={onSubmit}
 
                 validate={values => {
-                const errors = {};
-                if (!values.formSubject) {
-                    errors.formSubject = 'Required';
-                }
+                    const errors = {};
+                    if (!values.formSubject) {
+                        errors.formSubject = 'Required';
+                    }
 
-                if (!values.formEmail) {
-                    errors.formEmail = 'Required';
-                } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.formEmail)
-                ) {
-                    errors.formEmail = 'Invalid email address';
-                }
+                    if (!values.formEmail) {
+                        errors.formEmail = 'Required';
+                    } else if (
+                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.formEmail)
+                    ) {
+                        errors.formEmail = 'Invalid email address';
+                    }
 
-                if (!values.formFName) {
-                    errors.formFName = 'Required';
-                }
+                    if (!values.formFName) {
+                        errors.formFName = 'Required';
+                    }
 
-                if (!values.formMessage) {
-                    errors.formMessage = 'Required';
+                    if (!values.formMessage) {
+                        errors.formMessage = 'Required';
+                    }
+                    
+                    return errors;
+                    }
                 }
-                
-                return errors;
-                }}
             >
-            {({ isSubmitting }) => (
-                <Form className='formikForm'>
-                    <StyledContactInputContainer>
-                        <StyledContactLabel for='formSubject'>
-                            Subject:
-                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                        </StyledContactLabel>
-                        <Field id='formSubject' type='text' name='formSubject' placeholder='Subject' className='contactInputField'/>
-                        <ErrorMessage name='formSubject' component='div' />
-                    </StyledContactInputContainer>
-                    <StyledContactInputContainer>
-                        <StyledContactLabel for='formEmail'>
-                            Email:
-                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                        </StyledContactLabel>
-                        <Field id='formEmail' type='email' name='formEmail' placeholder='Email' className='contactInputField'/>
-                        <ErrorMessage name='formEmail' component='div' />
-                    </StyledContactInputContainer>
-                    <StyledContactInputContainer>
-                        <StyledContactLabel for='formFName'>
-                            First Name:
-                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                        </StyledContactLabel>
-                            <Field id='formFName' type='text' name='formFName' placeholder='First Name' className='contactInputField'/>
-                            <ErrorMessage name='formFName' component='div' />
-                    </StyledContactInputContainer>
-                    <StyledContactInputContainer>
-                        <StyledContactLabel for='formLName'>
-                            Last Name:
-                        </StyledContactLabel>
-                            <Field id='formLName' type='text' name='formLName' placeholder='Last Name' className='contactInputField'/>
-                            <ErrorMessage name='formLName' component='div' />
-                    </StyledContactInputContainer>
-                    <StyledContactInputContainer>
-                        <StyledContactLabel for='formMessage'>
-                            Message:
-                            <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
-                        </StyledContactLabel>
-                            <Field id='formMessage' component='textarea' name='formMessage' placeholder='Message' className='contactInputField contactTextAreaField'/>
-                            <ErrorMessage name='formMessage' component='div' />
-                    </StyledContactInputContainer>
+                {({ isSubmitting }) => (
+                    <Form className='formikForm'>
+                        <StyledContactInputContainer>
+                            <StyledContactLabel for='formSubject'>
+                                Subject:
+                                <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                            </StyledContactLabel>
+                            <Field id='formSubject' type='text' name='formSubject' placeholder='Subject' className='contactInputField'/>
+                            <ErrorMessage name='formSubject' component='div' />
+                        </StyledContactInputContainer>
+                        <StyledContactInputContainer>
+                            <StyledContactLabel for='formEmail'>
+                                Email:
+                                <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                            </StyledContactLabel>
+                            <Field id='formEmail' type='email' name='formEmail' placeholder='Email' className='contactInputField'/>
+                            <ErrorMessage name='formEmail' component='div' />
+                        </StyledContactInputContainer>
+                        <StyledContactInputContainer>
+                            <StyledContactLabel for='formFName'>
+                                First Name:
+                                <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                            </StyledContactLabel>
+                                <Field id='formFName' type='text' name='formFName' placeholder='First Name' className='contactInputField'/>
+                                <ErrorMessage name='formFName' component='div' />
+                        </StyledContactInputContainer>
+                        <StyledContactInputContainer>
+                            <StyledContactLabel for='formLName'>
+                                Last Name:
+                            </StyledContactLabel>
+                                <Field id='formLName' type='text' name='formLName' placeholder='Last Name' className='contactInputField'/>
+                                <ErrorMessage name='formLName' component='div' />
+                        </StyledContactInputContainer>
+                        <StyledContactInputContainer>
+                            <StyledContactLabel for='formMessage'>
+                                Message:
+                                <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
+                            </StyledContactLabel>
+                                <Field id='formMessage' component='textarea' name='formMessage' placeholder='Message' className='contactInputField contactTextAreaField'/>
+                                <ErrorMessage name='formMessage' component='div' />
+                        </StyledContactInputContainer>
 
-                    <StyledContactSubmitButton type='submit' disabled={isSubmitting}>
-                        Submit
-                    </StyledContactSubmitButton>
-                </Form>
-            )}
+                        <StyledContactSubmitButton type='submit' disabled={isSubmitting}>
+                            Submit
+                        </StyledContactSubmitButton>
+                    </Form>
+                )}
             </Formik>
         </StyledFormikWrapper>
     )
