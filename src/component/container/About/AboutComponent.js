@@ -9,6 +9,7 @@ import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
 import Fade from 'react-reveal/Fade';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
+import { aboutComponentTextConfig } from './AboutComponentText';
 
 export const AboutComponent = () => {
     return (
@@ -64,12 +65,6 @@ const AnimatedNavigator = () => {
     const [activeIndices, setActiveIndices] = useState([]);
 
     const currentIndex = activeIndices[activeIndices.length -1];
-    
-    const navigatorConfig = [
-        { title: "Entrepreneur at Heart", dropdown: AchieveDropdown },
-        { title: "Why I love Coding", dropdown: CodingDropdown },
-        { title: "What I hope to Achieve", dropdown: EntrepreneurDropdown }
-    ];
 
     const navigatorSelectFunction = (i) => {
         setActiveIndices([...activeIndices, i]);
@@ -80,26 +75,54 @@ const AnimatedNavigator = () => {
         navigatorSelectFunction(i);
     };
 
+    const returnDropdownText = (textObject) => {
+        return (
+            <StyledDropdownContainer>
+                <StyledDropdownSection>
+                    <div>
+                        <StyledDropdownHeader>
+                            {textObject.title}
+                        </StyledDropdownHeader>
+                        <StyledDropdownContent>
+                            <Fade up cascade big>
+                                    {
+                                        textObject.text.map((line) => {
+                                            return (
+                                                <div>
+                                                    {line}
+                                                </div>
+                                            )
+                                        })
+                                    }
+                            </Fade>
+                        </StyledDropdownContent>
+                    </div>
+                </StyledDropdownSection>
+            </StyledDropdownContainer>
+        )
+    }
+
+    // Sets and returns dropdown Text from aboutComponentTextConfig
     const contentSetter = (index) => {
         switch(index) {
             case 0: return (
                 <StyledMainContentContainer key={0}>
                     <Fade down>
-                        <AchieveDropdown />
+                        {returnDropdownText(aboutComponentTextConfig[0])}
                     </Fade>
                 </StyledMainContentContainer>
             )
             case 1: return (
                 <StyledMainContentContainer key={1}>
                     <Fade down>
-                        <CodingDropdown />
+                        {returnDropdownText(aboutComponentTextConfig[1])}
                     </Fade>
                 </StyledMainContentContainer>
             )
             case 2: return (
                 <StyledMainContentContainer key={2}>
                     <Fade down>
-                        <EntrepreneurDropdown />
+                        {returnDropdownText(aboutComponentTextConfig[2])}
                     </Fade>
                 </StyledMainContentContainer>
             )
@@ -115,10 +138,10 @@ const AnimatedNavigator = () => {
                 About Me
             </StyledSectionHeader>
             <Navigator>
-                {navigatorConfig.map((n, index) => {
+                {aboutComponentTextConfig.map((n, index) => {
                     return (
                         <NavigatorItem
-                            title={n.title}
+                            title={n.navTitle}
                             key={index}
                             index={index}
                             onMouseEnter={onMouseEnter}
@@ -155,86 +178,3 @@ const NavigatorItem = (props) => {
         </StyledNavigatorContainer>
     );
 }
-
-//On-Hover Content
-const EntrepreneurDropdown = () => {
-    return (
-        <StyledDropdownContainer>
-            <StyledDropdownSection>
-                <div>
-                    <StyledDropdownHeader>
-                        Achieve
-                    </StyledDropdownHeader>
-                    <StyledDropdownContent>
-                        <Fade up cascade big>
-                                <div>
-                                    Sentence 1
-                                </div>
-                                <div>
-                                    Sentence 2
-                                </div>
-                                <div>
-                                    Sentence 3
-                                </div>
-                        </Fade>
-                    </StyledDropdownContent>
-                </div>
-            </StyledDropdownSection>
-        </StyledDropdownContainer>
-    )
-}
-
-const CodingDropdown = () => {
-    return (
-        <StyledDropdownContainer>
-                <StyledDropdownSection>
-                <div>
-                    <StyledDropdownHeader>
-                        Love Coding
-                    </StyledDropdownHeader>
-                    <StyledDropdownContent>
-                        <Fade up cascade big>
-                            <div>
-                                Sentence 1
-                            </div>
-                            <div>
-                                Sentence 2
-                            </div>
-                            <div>
-                                Sentence 3
-                            </div>
-                        </Fade>
-                    </StyledDropdownContent>
-                </div>
-            </StyledDropdownSection>
-        </StyledDropdownContainer>
-    );
-};
-
-const AchieveDropdown = () => {
-    return (
-        <StyledDropdownContainer>
-                <StyledDropdownSection>
-                <div>
-                    <StyledDropdownHeader>
-                        Entrepreneur
-                    </StyledDropdownHeader>
-                    <StyledDropdownContent>
-                        <Fade up cascade big>
-                                <div>
-                                    Sentence 1
-                                </div>
-                                <div>
-                                    Sentence 2
-                                </div>
-                                <div>
-                                    Sentence 3
-                                </div>
-                        </Fade>
-                    </StyledDropdownContent>
-                </div>
-            </StyledDropdownSection>
-        </StyledDropdownContainer>
-    );
-};
-//On-Hover Content End
