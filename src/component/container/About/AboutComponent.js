@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledMainHeaderContainer, 
+import {
     StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
     StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
-StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage } from './AboutComponentStyles';
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
@@ -21,15 +21,16 @@ export const AboutComponent = () => {
 
 const AboutMainComponent = () => {
     return (
-        <StyledMainHeaderContainer>
-          <StyledAppContainer>
-              <AnimatedNavigator />
-          </StyledAppContainer>
-        </StyledMainHeaderContainer>
+        <StyledAppContainer>
+            <StyledSectionHeader>
+                About Me
+            </StyledSectionHeader>
+            <AnimatedNavigator />
+        </StyledAppContainer>
     )
 }
 
-const Navigator = ({children}) => {
+const NavigatorHeaderCards = ({children}) => {
     return (
         <StyledNavigatorListContainer>
             <StyledNavigatorList>{children}</StyledNavigatorList>
@@ -79,24 +80,22 @@ const AnimatedNavigator = () => {
         return (
             <StyledDropdownContainer>
                 <StyledDropdownSection>
-                    <div>
-                        <StyledDropdownHeader>
-                            {textObject.title}
-                        </StyledDropdownHeader>
-                        <StyledDropdownContent>
-                            <Fade up cascade big>
-                                    {
-                                        textObject.text.map((line) => {
-                                            return (
-                                                <div>
+                    <StyledDropdownHeader>
+                        {textObject.title}
+                    </StyledDropdownHeader>
+                    <StyledDropdownContent>
+                        <Fade up cascade big>
+                            {
+                                textObject.text.map((line) => {
+                                    return (
+                                            <StyledDropdownTextLine>
                                                     {line}
-                                                </div>
-                                            )
-                                        })
-                                    }
-                            </Fade>
-                        </StyledDropdownContent>
-                    </div>
+                                            </StyledDropdownTextLine>
+                                    )
+                                })
+                            }
+                        </Fade>
+                    </StyledDropdownContent>
                 </StyledDropdownSection>
             </StyledDropdownContainer>
         )
@@ -133,30 +132,29 @@ const AnimatedNavigator = () => {
     }
 
     return (
-        <>
-            <StyledSectionHeader>
-                About Me
-            </StyledSectionHeader>
-            <Navigator>
+        <StyledNavigatorWrapper>
+            <NavigatorHeaderCards>
                 {aboutComponentTextConfig.map((n, index) => {
                     return (
                         <NavigatorItem
-                            title={n.navTitle}
+                        title={n.navTitle}
                             key={index}
                             index={index}
                             onMouseEnter={onMouseEnter}
-                        >
+                            >
                             {   //Logical Operator Short Circuiting, returns Component after 1st pass
                                 currentIndex === index && (
-                                <StyledNavigatorCaret />
-                                )
-                            }
+                                    <StyledNavigatorCaret />
+                                    )
+                                }
                         </NavigatorItem>
                     );
                 })}
-            </Navigator>
-            {mainContent}
-        </>
+            </NavigatorHeaderCards>
+            <StyledNavigatorContentContainer>
+                {mainContent}
+            </StyledNavigatorContentContainer>
+        </StyledNavigatorWrapper>
     );
 }
 

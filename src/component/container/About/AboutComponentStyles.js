@@ -2,13 +2,25 @@ import styled, {css} from 'styled-components';
 import { animated } from 'react-spring'
 
     // Components
-export const StyledMainHeaderContainer = styled.div`
-
-`
 
 export const StyledMainHeader = styled.div`
     display: inline-block;
     width: 30%;
+`
+
+export const StyledNavigatorWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const StyledNavigatorContentContainer = styled.div`
+  width: 80%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 export const StyledNavigatorCaret = styled.div`
@@ -45,6 +57,15 @@ export const StyledDropdownContent = styled.div`
     overflow-y: hidden;
 `
 
+export const StyledDropdownTextLine = styled.div`
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2vh;
+  word-break: normal;
+  overflow-wrap: normal;
+`
+
 export const StyledDropdownSection = styled.div`
   position: relative;
   z-index: 1;
@@ -58,11 +79,8 @@ export const StyledDropdownContainer = styled.div`
 
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
-  width: 96%;
   height: 65vh;
   margin-top: 8vh;
-  margin-left: 2%;
-  margin-right: 2%;
 
   @media (min-width: 1200px) {
     margin-top: 11vh;
