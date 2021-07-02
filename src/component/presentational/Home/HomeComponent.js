@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { Link } from 'react-scroll';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { ReactScrollHomeLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer, StyledLinkedinAnchorContainer } from './HomeComponentStyles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import 'intersection-observer';
@@ -110,20 +109,5 @@ const HomeNav = ({contentVisible}) => {
                 </StyledHomeFlexPairContainer>
             </StyledHomeNavContainer>
         </StyledHomeNavWrapper>
-    )
-}
-
-export const ReactScrollHomeLink = ({id, title, faIcon, delay = 0}) => {
-    return (
-        <StyledHomeLinkContainer>
-            <Link activeClass="active" to={id} spy={true} smooth={true} duration={400} delay={delay}>
-                <StyledHomeLinkIconTextContainer>
-                    <FontAwesomeIcon icon={faIcon} size="2x" />
-                    <div>
-                        {title}
-                    </div>
-                </StyledHomeLinkIconTextContainer>
-            </Link>
-        </StyledHomeLinkContainer>
     )
 }

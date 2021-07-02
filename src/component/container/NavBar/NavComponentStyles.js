@@ -15,13 +15,20 @@ export const StyledNavBar = styled.div`
     position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: end;
     width: 100%;
     height: 10vh;
-    pointer-events: none;
 `
 
-export const StyledNavLogo = styled.div`
+export const StyledNavLogo = styled.h2`
     display: inline-block;
+    height: 10vh;
+    margin-left: 3vw;
+    color: ${({theme}) => theme.secondaryLight};
+
+    :hover {
+        color: black;
+    }
 `
 
 export const StyledNavigationListWrapper = styled.div`

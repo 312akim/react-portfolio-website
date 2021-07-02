@@ -30,6 +30,7 @@ export const StyledReactScrollIconLinkContainer = styled.div`
 `
 
 export const StyledAnimatedUnderline = styled.div`
+    display: ${({underline}) => underline ? 'auto' : 'none'};
     position: absolute;
     width: 0;
     padding-bottom: 2px;
@@ -53,4 +54,14 @@ export const StyledReactScrollLinkWrapper = styled.div`
     &: hover ${StyledAnimatedUnderline} {
         width: 90px;
     }
+`
+
+//ReactScrollHomeLink
+export const StyledHomeLinkContainer = styled.div`
+    width: 100%;
+    cursor: pointer;
+`
+
+export const StyledHomeLinkIconTextContainer = styled.div`
+
 `

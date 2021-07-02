@@ -54,15 +54,6 @@ export const StyledHomeContentContainer = styled.div`
     }
 `
 
-export const StyledHomeLinkContainer = styled.div`
-    width: 100%;
-    cursor: pointer;
-`
-
-export const StyledHomeLinkIconTextContainer = styled.div`
-
-`
-
 export const StyledLinkedinAnchorContainer = styled.a`
     color: ${({theme}) => theme.primaryLight};
     text-decoration: none;
