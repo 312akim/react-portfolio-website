@@ -15,8 +15,10 @@ export const aboutComponentTextConfig = [
         title: "Unlimited Potential",
         text: [
             "Technology is everywhere and part of everything. I truly appreciate that programming is a vital tool that can be used across all fields. To me that means there's always something to learn, improve, and master.",
+
+            "I love problem solving and at it's core, coding is often about solving problems. I'm confident that as I gain mastery of programming tools, that i'll be able to tackle increasingly difficult tasks.",
             
-            "Coding also allows me to express my creative side that I find difficult to express in more traditional methods. By emphasizing user experience, I find my projects naturally improving in both aesthetics and design. I believe that through code I will continue to push my creative learning to new heights."
+            "Coding also allows me to express my creative side that I find difficult to express in more traditional methods. By emphasizing user experience, I find my projects naturally improving in both aesthetics and design. I believe that through code I will continue to push my creative learning to new heights.",
         ]
     },
     {

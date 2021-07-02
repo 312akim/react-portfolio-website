@@ -48,15 +48,10 @@ export const StyledCollapsibleNavContainer = styled.div`
     pointer-events: auto;
 `
 
-export const StyledToggler = styled.div`
+export const StyledToggler = styled(animated.div)`
     color: ${({theme}) => theme.secondaryLight};
-    transition: transform 0.2s;
     padding: 1px 3px;
     border-radius: 4px;
-
-    :hover {
-        transform: rotate(5deg);
-    }
 `
 
 export const StyledAnimatedContainer = styled(animated.div)`

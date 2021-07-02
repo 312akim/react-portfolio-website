@@ -47,22 +47,28 @@ const CollapsibleNavComponent = () => {
 }
 
 const NavBarToggler = ({setOpen, isOpen}) => {
+    const navBurgerAnimation = useSpring({
+        transform: isOpen 
+        ? 'rotate(90deg)' 
+        : 'rotate(0deg)'
+    })
+
     return (
-        <StyledToggler onClick={() => setOpen(!isOpen)}>
+        <StyledToggler onClick={() => setOpen(!isOpen)} style={navBurgerAnimation}>
             <FontAwesomeIcon icon={faBars} size="2x" />
         </StyledToggler>
     )
 }
 
 const CollapsibleNavLinks = ({isOpen}) => {
-    const navAnimation = useSpring({
+    const navWindowAnimation = useSpring({
         right: isOpen 
         ? '0%' 
         : '-50%'
     })
 
     return (
-        <StyledAnimatedContainer style={navAnimation}>
+        <StyledAnimatedContainer style={navWindowAnimation}>
             <StyledNavigationListWrapper>
                 <SideBarNavigationLinks />
             </StyledNavigationListWrapper>
