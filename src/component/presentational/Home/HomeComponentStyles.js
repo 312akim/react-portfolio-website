@@ -57,6 +57,8 @@ export const StyledHomeContentContainer = styled.div`
 export const StyledLinkedinAnchorContainer = styled.a`
     color: ${({theme}) => theme.primaryLight};
     text-decoration: none;
+    width: calc(100% - 12px);
+    margin: 0;
 `
 
 export const StyledNameContainer = styled.div`
@@ -93,11 +95,13 @@ export const StyledSubHeader = styled.h2`
 
 export const StyledHomeLinkButton = styled.button`
     display: block;
-    margin: 2%;
-    color: white;
     width: calc(100% - 12px);
-    background: ${({theme}) => theme.primaryDark};
     height: 8vh;
+    margin: 2%;
+    padding: 0;
+    color: white;
+    background: ${({theme}) => theme.primaryDark};
+    cursor: pointer;
 `
 
 export const StyledHomeFlexContainer = styled.div`
@@ -112,6 +116,7 @@ export const StyledHomeFlexPairContainer = styled.div`
     flex-direction: row;
     margin: ${({margin}) => margin ? margin : '0'};
     justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'center'};
+    align-items: center;
 `
 
 export const StyledHomeNavWrapper = styled.div`

@@ -4,6 +4,7 @@ import { ReactScrollHomeLink } from '../../../shared/sharedComponents/ReactScrol
 import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer, StyledHomeNavWrapper, StyledHomeComponentContainer, StyledLinkedinAnchorContainer } from './HomeComponentStyles';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'intersection-observer';
 
 
@@ -101,11 +102,12 @@ const HomeNav = ({contentVisible}) => {
                     <StyledHomeLinkButton>
                         <ReactScrollHomeLink title="Contact" id="contactSection" faIcon={faEnvelope}/>
                     </StyledHomeLinkButton>
-                    <StyledHomeLinkButton>
                     <StyledLinkedinAnchorContainer href="https://www.linkedin.com/in/alexander-kim-7441a416a/" target="_blank">
-                        <ReactScrollHomeLink title="LinkedIn" faIcon={faLinkedin}/>
+                        <StyledHomeLinkButton>
+                                <FontAwesomeIcon icon={faLinkedin} size="2x"/>
+                                <div>LinkedIn</div>
+                        </StyledHomeLinkButton>
                     </StyledLinkedinAnchorContainer>
-                    </StyledHomeLinkButton>
                 </StyledHomeFlexPairContainer>
             </StyledHomeNavContainer>
         </StyledHomeNavWrapper>
