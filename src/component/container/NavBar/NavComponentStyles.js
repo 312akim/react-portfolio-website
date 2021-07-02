@@ -63,7 +63,6 @@ export const StyledAnimatedContainer = styled(animated.div)`
     position: fixed;
     text-align: right;
     top: 0;
-    padding-right: 5%;
     height: 100vh;
     width: 40%;
     z-index: -1;
