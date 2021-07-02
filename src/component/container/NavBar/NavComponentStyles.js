@@ -18,6 +18,7 @@ export const StyledNavBar = styled.div`
     align-items: baseline;
     width: 100%;
     height: 10vh;
+    pointer-events: none;
 `
 
 export const StyledNavLogo = styled.div`
@@ -25,6 +26,7 @@ export const StyledNavLogo = styled.div`
     margin-left: 4vw;
     color: ${({theme}) => theme.secondaryLight};
     font-size: 32px;
+    pointer-events: auto;
 `
 
 export const StyledNavigationListWrapper = styled.div`

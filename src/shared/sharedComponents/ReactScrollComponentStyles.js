@@ -6,7 +6,7 @@ export const StyledReactScrollLinkContainer = styled.div`
     justify-content: space-between;
     cursor: pointer;
     font-weight: 500;
-    margin-bottom: 6vh;
+    margin-bottom: ${({marginBottom}) => marginBottom ? marginBottom : '4vh'};
     transition: padding-right 1s;
 
     :hover {

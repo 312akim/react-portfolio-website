@@ -29,7 +29,7 @@ export const NavBar = () => {
         <StyledNavContainer scroll={scrolling}>
             <StyledNavBar>
                 <StyledNavLogo>
-                    <ReactScrollLink title="AK" id="homeSection" underline={false}></ReactScrollLink>
+                    <ReactScrollLink title="AK" id="homeSection" underline={false} marginBottom={'0'}></ReactScrollLink>
                 </StyledNavLogo>
                 <CollapsibleNavComponent />
             </StyledNavBar>
