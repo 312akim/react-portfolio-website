@@ -92,7 +92,6 @@ export const StyledDropdownContainer = styled.div`
 
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
-  max-height: 65vh;
   margin-top: 8vh;
 `
 
@@ -178,5 +177,4 @@ export const StyledAppContainer = styled.div`
   align-items: center;
   background: white;
   margin-bottom: 10vh;
-  min-height: 80vh;
 `
