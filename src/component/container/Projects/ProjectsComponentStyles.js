@@ -134,18 +134,18 @@ export const StyledProjectCard = styled.div`
 export const StyledProjectCardImage = styled.img`
     height: 40vh;
     width: auto;
-    margin-left: -30%;
+    margin-left: -55%;
 
     @media (min-width: 480px) {
-        margin-left: -15%;
+        margin-left: -40%;
     }
 
     @media (min-width: 500px) {
-        margin-left: 0%;
+        margin-left: -15%;
     }
 
     @media (min-width: 1200px) {
-        height: 40vh;
+        margin-left: 0%;
         margin-top: 0;
     }
 `
