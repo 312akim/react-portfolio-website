@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import {
-    StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent,
-    StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
+import { StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
@@ -138,10 +136,10 @@ const AnimatedNavigator = () => {
                     return (
                         <NavigatorItem
                         title={n.navTitle}
-                            key={index}
-                            index={index}
-                            onMouseEnter={onMouseEnter}
-                            >
+                        key={index}
+                        index={index}
+                        onMouseEnter={onMouseEnter}
+                        >
                             {   //Logical Operator Short Circuiting, returns Component after 1st pass
                                 currentIndex === index && (
                                     <StyledNavigatorCaret />

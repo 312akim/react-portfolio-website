@@ -13,13 +13,22 @@ export const StyledNavigatorWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
 `
 
 export const StyledNavigatorContentContainer = styled.div`
   width: 80%;
 
   @media (min-width: 768px) {
-    width: 50%;
+    width: 55%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 35%;
+  }
+
+  @media (min-width: 1920px) {
+    width: 30%;
   }
 `
 
@@ -79,12 +88,8 @@ export const StyledDropdownContainer = styled.div`
 
 //Main Content
 export const StyledMainContentContainer = styled(animated.div)`
-  height: 65vh;
+  max-height: 65vh;
   margin-top: 8vh;
-
-  @media (min-width: 1200px) {
-    margin-top: 11vh;
-  }
 `
 
 //Navigator Item
@@ -164,6 +169,9 @@ export const StyledNavigatorList = styled.ul`
 
 //App Container
 export const StyledAppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: white;
   margin-bottom: 10vh;
   min-height: 80vh;
