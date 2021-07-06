@@ -13,11 +13,15 @@ export const StyledNavigatorWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
 `
 
 export const StyledNavigatorContentContainer = styled.div`
-  width: 80%;
+  width: 86%;
+
+  @media (min-width: 480px) {
+    width: 75%;
+  }
 
   @media (min-width: 768px) {
     width: 55%;
