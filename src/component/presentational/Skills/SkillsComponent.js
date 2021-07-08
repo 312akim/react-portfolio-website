@@ -6,7 +6,7 @@ import { faReact, faNodeJs, faGithubSquare } from '@fortawesome/free-brands-svg-
 
 export const SkillsComponent = () => {
     return (
-        <StyledSectionComponent minHeight={'30vh'}>
+        <StyledSectionComponent minHeight={'35vh'}>
             <SkillsMainComponent />
         </StyledSectionComponent>
     )

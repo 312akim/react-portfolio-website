@@ -3,11 +3,11 @@ import styled, {keyframes} from 'styled-components';
 //Animations
 const SkillsRingAnimation = keyframes`
     0% {
-        transform: rotateX(-100deg) rotate(0);
+        transform: rotateX(-110deg) rotate(0);
     }
 
     100% {
-        transform: rotateX(-100deg) rotate(-360deg);
+        transform: rotateX(-110deg) rotate(-360deg);
     }
 `
 
@@ -19,10 +19,10 @@ export const SkillsMainComponentContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: 17vh;
 
     @media (min-width: 768px) {
-        margin-top: 10vh;
+        margin-top: 15vh;
     }
 `
 
