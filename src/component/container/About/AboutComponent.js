@@ -11,7 +11,7 @@ import { aboutComponentTextConfig } from './AboutComponentText';
 
 export const AboutComponent = () => {
     return (
-        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight}>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} minHeight={'90vh'}>
             <AboutMainComponent />
         </StyledSectionComponent>
     )

@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { SkillsMainComponentContainer, SkillsRingList, SkillsRingListItem, SkillsRingListItemTitle, SkillsRingListItemContent } from './SkillsComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faNodeJs, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 
 export const SkillsComponent = () => {
     return (
-        <div>
+        <StyledSectionComponent minHeight={'30vh'}>
             <SkillsMainComponent />
-        </div>
+        </StyledSectionComponent>
     )
 }
 

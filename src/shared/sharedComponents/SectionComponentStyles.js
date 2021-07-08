@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSectionComponent = styled.div`
     height: ${props => props.height ? props.height : 'auto'};
-    min-height: 100vh;
+    min-height: ${props => props.minHeight ? props.minHeight : 'auto'};
     color: ${props => props.fontColor ? props.fontColor: 'black'};
     background-color: ${props => props.backgroundColor};
     text-align: center;

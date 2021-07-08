@@ -47,7 +47,6 @@ export const StyledHomeContentContainer = styled.div`
     background-image: url(${homeBackground});
     height: 100vh;
     width: 100vw;
-    margin-bottom: 21vh;
 
     @media (min-width: 768px) {
         flex-direction: row;

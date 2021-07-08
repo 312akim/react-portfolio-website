@@ -20,6 +20,12 @@ const MainComponent = () => {
                     <HomeComponent />
             </div>
 
+            <div>
+                <Fade left>
+                    <SkillsComponent />
+                </Fade>
+            </div>
+            
             <div id="projectsSection">
                 <Fade right>
                     <ProjectsComponent />
@@ -32,11 +38,7 @@ const MainComponent = () => {
                 </Fade>
             </div>
 
-            <div>
-                <Fade left>
-                    <SkillsComponent />
-                </Fade>
-            </div>
+
 
             <div id="activitySection">
                 <Fade right>

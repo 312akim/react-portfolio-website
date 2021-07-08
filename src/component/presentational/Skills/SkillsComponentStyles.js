@@ -15,8 +15,15 @@ const SkillsRingAnimation = keyframes`
 //Components
 export const SkillsMainComponentContainer = styled.div`
     color: black;
-    min-height: 30vh;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+
+    @media (min-width: 768px) {
+        margin-top: 10vh;
+    }
 `
 
 //Skills Ring
@@ -27,7 +34,7 @@ export const SkillsRingContainer = styled.div`
 export const SkillsRingList = styled.ul`
     margin: 0;
     list-style: none;
-    font-size: 4vw;
+    font-size: 2rem;
     transform-style: preserve-3d;
     animation: ${SkillsRingAnimation} 8s linear infinite;
 `
