@@ -66,7 +66,7 @@ const AnimatedNavigator = () => {
     const currentIndex = activeIndices[activeIndices.length -1];
 
     const navigatorSelectFunction = (i) => {
-        setActiveIndices([...activeIndices, i]);
+        setActiveIndices([i]);
         setMainContent(contentSetter(i));
     }
 
@@ -86,9 +86,9 @@ const AnimatedNavigator = () => {
                             {
                                 textObject.text.map((line) => {
                                     return (
-                                            <StyledDropdownTextLine>
-                                                    {line}
-                                            </StyledDropdownTextLine>
+                                        <StyledDropdownTextLine>
+                                                {line}
+                                        </StyledDropdownTextLine>
                                     )
                                 })
                             }

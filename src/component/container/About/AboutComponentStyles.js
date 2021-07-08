@@ -54,12 +54,13 @@ export const StyledNavigatorCaret = styled.div`
 `
 
 export const headingStyles = css`
+    min-height: 7vh;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.8rem;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2vh;
+    padding-top: 2vh;
+    margin-bottom: 2vh;
     color: ${({theme}) => theme.primaryDark};
     z-index: 1;
 `
@@ -67,7 +68,7 @@ export const headingStyles = css`
 export const StyledDropdownHeader = styled.h3(headingStyles);
 
 export const StyledDropdownContent = styled.div`
-    overflow-y: hidden;
+    height: 100%;
 `
 
 export const StyledDropdownTextLine = styled.div`
@@ -88,6 +89,19 @@ export const StyledDropdownSection = styled.div`
 export const StyledDropdownContainer = styled.div`
   width: 100%;
   margin-top: 3vh;
+  min-height: 90vh;
+
+  @media (min-width: 480px) {
+    min-height: 54vh;
+  }
+
+  @media (min-width: 768px) {
+    min-height: 46vh;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 46vh;
+  }
 `
 
 //Main Content
@@ -97,17 +111,17 @@ export const StyledMainContentContainer = styled(animated.div)`
 
 //Navigator Item
 export const StyledDropdownImage = styled.img`
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    min-height: 17vh;
-    overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 17vh;
+  overflow: hidden;
 
-    @media (min-width: 1200px) {
-      margin-top: -2vh;
-    }
+  @media (min-width: 1200px) {
+    margin-top: -2vh;
+  }
 `
 
 export const StyledNavigatorItemTitle = styled.div`
@@ -175,6 +189,6 @@ export const StyledAppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: white;
-  margin-bottom: 10vh;
 `
