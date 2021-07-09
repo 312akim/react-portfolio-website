@@ -17,6 +17,9 @@ export const StyledCommitListWrapper = styled.div`
 `
 
 export const StyledCommitWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 343px;
     padding-bottom: 3vh;
 
@@ -26,18 +29,20 @@ export const StyledCommitWrapper = styled.div`
 `
 
 
-export const StyledCommitTitle = styled.h2`
-    position: absolute;
-    text-align: left;
-    margin-left: -1%;
+export const StyledCommitTitle = styled.div`
+    align-self: center;
     padding: 0 6px 3px 6px;
-    margin-top: -15px;
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.2rem;
     background: black;
     width: auto;
     box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
     border-radius: 4px;
+
+    @media (min-width: 768px) {
+        align-self: start;
+        margin-left: 5%;
+    }
 `
 
 export const StyledCommitDataWrapper = styled.div`
@@ -47,7 +52,7 @@ export const StyledCommitDataWrapper = styled.div`
 export const StyledCommitDate = styled.div`
     display: inline-block;
     color: ${({theme}) => theme.primaryLight};
-    margin-top: 0.3rem;
+    margin: 0.3rem;
     font-size: 1rem;
 `
 

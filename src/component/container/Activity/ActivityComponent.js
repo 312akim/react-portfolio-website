@@ -66,7 +66,6 @@ const CommitListComponent = () => {
     return (
       <StyledCommitListWrapper>
         {commitConfig.map((n, index) => {
-          console.log("returned");
           return (
             <div key={index}>
               {CommitComponent(n)}
