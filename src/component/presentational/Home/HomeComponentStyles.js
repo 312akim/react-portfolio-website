@@ -109,6 +109,11 @@ export const StyledHomeLinkButton = styled.button`
     color: white;
     background: ${({theme}) => theme.primaryDark};
     cursor: pointer;
+
+    :hover {
+        background: ${({theme}) => theme.secondaryLight};
+        border: 1px solid white;
+    }
 `
 
 export const StyledHomeFlexContainer = styled.div`
