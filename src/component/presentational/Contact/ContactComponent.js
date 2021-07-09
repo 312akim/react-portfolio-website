@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledContactSubmitButton, StyledContactInput, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers, StyledFormikWrapper } from './ContactComponentStyles';
+import { StyledContactSubmitButton, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers, StyledFormikWrapper } from './ContactComponentStyles';
 import emailjs from 'emailjs-com';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 

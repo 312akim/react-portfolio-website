@@ -22,22 +22,12 @@ export const StyledContactLabel = styled.label`
         margin: 0 auto 1vh 5%;
     }
 
-    @media (min-width: 1920px) {
-        margin: 0 auto 1vh auto;
-    }
+
 `
 
 export const StyledRequiredAsterick = styled.span`
     color: red;
 `
-
-export const StyledContactInput = styled.input`
-    display: block;
-    width: 100%;
-    height: 3vh;
-    border: 3px solid${({theme}) => theme.secondaryLight};
-`
-
 
 export const StyledContactTextarea = styled.textarea`
     display: block;
