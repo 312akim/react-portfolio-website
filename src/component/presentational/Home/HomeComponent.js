@@ -3,7 +3,7 @@ import { StyledSectionComponent } from '../../../shared/sharedComponents/Section
 import { ReactScrollHomeLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeNavWrapper, StyledHomeComponentContainer, StyledLinkedinAnchorContainer } from './HomeComponentStyles';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'intersection-observer';
 
@@ -109,6 +109,16 @@ const HomeNav = ({contentVisible}) => {
                         </StyledHomeLinkButton>
                     </StyledLinkedinAnchorContainer>
                 </StyledHomeFlexPairContainer>
+
+                <StyledHomeFlexContainer margin={'0 20px 0 0'}>
+                    <StyledLinkedinAnchorContainer href="https://github.com/312akim" target="_blank">
+                        <StyledHomeLinkButton>
+                            <FontAwesomeIcon icon={faGithubSquare} size="2x"/>
+                            <div>Github</div>
+                        </StyledHomeLinkButton>
+                    </StyledLinkedinAnchorContainer>
+                </StyledHomeFlexContainer>
+                
             </StyledHomeNavContainer>
         </StyledHomeNavWrapper>
     )

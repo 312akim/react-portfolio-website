@@ -120,7 +120,7 @@ export const StyledHomeFlexContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 30px;
+    margin: ${({margin}) => margin ? margin : '0 0 0 30px'};
 `
 
 export const StyledHomeFlexPairContainer = styled.div`
@@ -140,36 +140,42 @@ export const StyledHomeNavWrapper = styled.div`
 export const StyledHomeNavContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 343px;
     transform: rotateX(0deg) scaleZ(2.5);
     opacity: 0.9;
     background: rgba(0, 0, 0, 0.3);
-    animation: ${homeContentMobileAnimation(85, '100%')} 2s linear;
-    max-height: 40vh;
+    animation: ${homeContentMobileAnimation(85, '100%')} 1.5s linear;
+
+    height: 40vh;
 
     @media (min-width: 768px) {
-        animation: ${homeContentAnimation(-85, '100%')} 2s linear;
+        animation: ${homeContentAnimation(-85, '100%')} 1.5s linear;
     }
 `
 
 export const StyledTextContainerWrapper = styled.div`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    max-height: 50vh;
     display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
 `
 
 export const StyledTextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
     color: white;
     width: 343px;
     transform: rotateX(0deg) scaleZ(2.5);
     background: rgba(0, 0, 0, 0.3);
-    animation: ${homeContentMobileAnimation(-85, '-100%')} 2s linear;
+    animation: ${homeContentMobileAnimation(-85, '-100%')} 1.5s linear;
+
+    height: 40vh;
 
     @media (min-width: 768px) {
         margin-bottom: 0;
-        animation: ${homeContentAnimation(85, '-100%')} 2s linear;
+        animation: ${homeContentAnimation(85, '-100%')} 1.5s linear;
     }
 `
 
