@@ -2,27 +2,35 @@ import styled, {keyframes} from 'styled-components';
 import homeBackground from '../../../shared/images/home-background.jpg'
 
     // Animations
-const homeContentMobileAnimation = (degreesX) => keyframes`
+const homeContentMobileAnimation = (degreesX, marginLeft) => keyframes`
     0% {
         transform: rotateX(${degreesX}deg) scaleZ(2.5);
+        margin-left: ${marginLeft};
+        opacity: 0;
     }
 
     50% {
-
+        transform: rotateX(${degreesX}deg) scaleZ(2.5);
+        margin-left: 0;
     }
 
     100% {
         transform: rotateX(0deg) scaleZ(2.5);
+        opacity: 1;
     }
 `
 
-const homeContentAnimation = (degreesY) => keyframes`
+const homeContentAnimation = (degreesY, marginLeft) => keyframes`
     0% {
         transform: rotateY(${degreesY}deg) scaleZ(2.5);
+        margin-left: ${marginLeft};
+        opacity: 0;
     }
 
     50% {
-
+        transform: rotateY(${degreesY}deg) scaleZ(2.5);
+        margin-left: 0;
+        opacity: 1;
     }
 
     100% {
@@ -131,11 +139,11 @@ export const StyledHomeNavContainer = styled.div`
     transform: rotateX(0deg) scaleZ(2.5);
     opacity: 0.9;
     background: rgba(0, 0, 0, 0.3);
-    animation: ${homeContentMobileAnimation(85)} 2s linear;
+    animation: ${homeContentMobileAnimation(85, '100%')} 2s linear;
     max-height: 40vh;
 
     @media (min-width: 768px) {
-        animation: ${homeContentAnimation(-85)} 2s linear;
+        animation: ${homeContentAnimation(-85, '100%')} 2s linear;
     }
 `
 
@@ -152,11 +160,11 @@ export const StyledTextContainer = styled.div`
     width: 343px;
     transform: rotateX(0deg) scaleZ(2.5);
     background: rgba(0, 0, 0, 0.3);
-    animation: ${homeContentMobileAnimation(-85)} 2s linear;
+    animation: ${homeContentMobileAnimation(-85, '-100%')} 2s linear;
 
     @media (min-width: 768px) {
         margin-bottom: 0;
-        animation: ${homeContentAnimation(85)} 2s linear;
+        animation: ${homeContentAnimation(85, '-100%')} 2s linear;
     }
 `
 
