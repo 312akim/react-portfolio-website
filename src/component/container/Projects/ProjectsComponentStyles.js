@@ -189,12 +189,12 @@ export const StyledCardHoverContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: -1px;
+    top: 0px;
     left: -1px;
     width: 100.6%;
     opacity: 0;
     border-radius: 4px;
-    height: 40.2vh;
+    height: 40.1vh;
     
     :hover {
         opacity: 0.9;
