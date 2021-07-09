@@ -2,7 +2,8 @@ import React from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { SkillsMainComponentContainer, SkillsRingList, SkillsRingListItem, SkillsRingListItemTitle, SkillsRingListItemContent } from './SkillsComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faReact, faNodeJs, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase} from '@fortawesome/free-solid-svg-icons'
+import { faReact, faNodeJs, faGithubSquare, faJs, faSass } from '@fortawesome/free-brands-svg-icons';
 
 export const SkillsComponent = () => {
     return (
@@ -16,7 +17,7 @@ const SkillsMainComponent = () => {
     return (
         <SkillsMainComponentContainer>
             <StyledSectionHeader>
-                Skills
+                My Skills
             </StyledSectionHeader>
             <SkillsRing />
         </SkillsMainComponentContainer>
@@ -31,6 +32,10 @@ const SkillsRing = () => {
             icon: faReact
         }, 
         {
+            title: 'JavaScript',
+            icon: faJs
+        },
+        {
             title: 'NodeJS',
             icon: faNodeJs
         }, 
@@ -39,9 +44,13 @@ const SkillsRing = () => {
             icon: faGithubSquare
         }, 
         {
-            title: 'Title4',
-            icon: faReact
-        }
+            title: 'SCSS',
+            icon: faSass
+        },
+        {
+            title: 'MongoDB',
+            icon: faDatabase
+        },
     ];
 
     //Determines even spacing of items in ring

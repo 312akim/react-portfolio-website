@@ -3,11 +3,11 @@ import styled, {keyframes} from 'styled-components';
 //Animations
 const SkillsRingAnimation = keyframes`
     0% {
-        transform: rotateX(-110deg) rotate(0);
+        transform: rotateX(-115deg) rotate(0);
     }
 
     100% {
-        transform: rotateX(-110deg) rotate(-360deg);
+        transform: rotateX(-115deg) rotate(-360deg);
     }
 `
 
