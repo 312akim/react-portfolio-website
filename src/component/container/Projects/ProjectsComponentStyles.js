@@ -121,6 +121,7 @@ export const StyledProjectCard = styled.div`
     background: white;
     border-radius: 4px;
     box-shadow: 6px 6px black;
+    border-left: 1px solid white;
 
     @media (min-width: 480px) {
         box-shadow: 7px 7px black;
