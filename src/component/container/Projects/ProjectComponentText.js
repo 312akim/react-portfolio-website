@@ -1,6 +1,7 @@
 import apparelStoreMockup from '../../../shared/images/apparel-store-mockup.jpg'
 import tokenizeAmazonMockup from '../../../shared/images/tokenize-amazon-mockup.jpg'
 import bobaMockup from '../../../shared/images/boba-app-mockup.jpg';
+import portfolioMockup from '../../../shared/images/portfolio-mockup.jpg';
 
 // Project Component cards content
 export const projectComponentCardTextConfig = [
@@ -88,7 +89,7 @@ export const projectComponentCardTextConfig = [
     {
         title: "Portfolio Website",
         description: "The code behind this portfolio site, featuring the Github Octokit api to load my latest updates.",
-        image: tokenizeAmazonMockup,
+        image: portfolioMockup,
         imageAlt: "Portfolio Website device mockups",
         gitLink: "",
         onClick: 3,
