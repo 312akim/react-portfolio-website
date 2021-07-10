@@ -185,8 +185,4 @@ export const StyledTextSection = styled.p`
     padding-right: 10%;
     margin-bottom: 2vh;
     margin-top: 0;
-
-    @media (min-width: 1200px) {
-        font-size: 30px;
-    }
 `
