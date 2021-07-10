@@ -10,7 +10,7 @@ export const projectComponentCardTextConfig = [
         description: "Responsive Landing Page and Full website of Tokenize Amazon website.",
         image: tokenizeAmazonMockup,
         imageAlt: "Tokenize Amazon device mockups",
-        gitLink: "",
+        gitLink: "https://github.com/312akim/tokenize-amazon-landing-public",
         onClick: 1,
         modal: {
             modalTitle: "Tokenize Amazon",
@@ -91,7 +91,7 @@ export const projectComponentCardTextConfig = [
         description: "The code behind this portfolio site, featuring the Github Octokit api to load my latest updates.",
         image: portfolioMockup,
         imageAlt: "Portfolio Website device mockups",
-        gitLink: "",
+        gitLink: "https://github.com/312akim/react-portfolio-website",
         onClick: 3,
         modal: {
             modalTitle: "Portfolio Website",
