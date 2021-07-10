@@ -119,7 +119,7 @@ export const projectComponentCardTextConfig = [
             modalSummaryText: [
                 "Working on my portfolio website gave me a chance to work build a smoother animated user experience for visitors. The website is built with functional components and was also a great project for me to experiment and learn React Hooks on.", 
                 
-                "Highlights include implementing the Octokit API to show my latest github project commits as well as heavier practice with formik forms and integrating it with an email service API.",
+                "Highlights include implementing the Octokit API to show my latest github project commits as well as heavier practice with formik forms and integrating it with an email service API to receive emails directly from the website.",
                 
                 "The website is frequently refactored and updated with improvements discovered from other projects."
             ],
@@ -134,12 +134,13 @@ export const projectComponentCardTextConfig = [
         onClick: 4,
         modal: {
             modalTitle: "Bubble Tea App",
-            modalObjective: "Create a performant fullstack Bubble Tea application utilizing and familiarizing myself with React Native, Typescript, Redux, Software Architecture, and Amazon Web Services.",
+            modalObjective: "Create a performant fullstack Bubble Tea application utilizing and familiarizing myself with React Native, Typescript, Redux, Software Architecture, Jira, and Amazon Web Services.",
             modalTechText: [
                 "React Native",
                 "Typescript",
                 "Redux",
                 "Software Architecture",
+                "Jira",
                 "Amazon Web Services",
             ],
             modalLearningsText: [
@@ -147,10 +148,11 @@ export const projectComponentCardTextConfig = [
                 "Typescript",
                 "Redux",
                 "Software Architecture",
+                "Jira",
                 "Amazon Web Services", 
             ],
             modalSummaryText: [
-                "My intention with this project is to build a fullstack mobile application with a focus on utilizing React-Native, Typescript, Redux and Amazon Web Services. I chose common and frequently used tech/tools to expand my skillset.",
+                "My intention with this project is to build a fullstack mobile application with a focus on utilizing React-Native, Typescript, Redux, and Amazon Web Services. I will also be using Jira to familiarize myself with the software for project tracking. I chose common and frequently used tech/tools to expand my skillset.",
 
                 "Although the scope of the project may be too small to justify using Redux, I am choosing to implement it for learning purposes."
             ],
