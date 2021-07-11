@@ -31,10 +31,6 @@ const CommitListComponent = () => {
     const owner = '312akim',
           repo1 = 'apparel-store-mern',
           repo2 = 'react-portfolio-website',
-          // **********
-          // Show 3 commits if smaller vertical sized screen
-          // perPage = window.document.body.offsetHeight < 4300 ? 3 : 4;
-          // **********
           perPage = 5;
     
     console.log("Height: " + window.document.body.offsetHeight);
@@ -99,38 +95,3 @@ const CommitComponent = (props) => {
     </StyledCommitWrapper>
   )
 }
-
-// const TimedCloud = () => {
-//   const [cloudState, setCloudState] = useState(<div></div>);
-
-//   const scrollTop = window.innerHeight * 3;
-//   useEffect(() => {
-//       const onScroll = () => {
-//           let currentPosition = window.pageYOffset;
-//           console.log("Current position: " + currentPosition);
-
-//           if (currentPosition > scrollTop) {
-//               setCloudState(<CloudComponent />);
-//           } else {
-//               setCloudState(<div></div>);
-//           }
-//       }
-//       window.addEventListener("scroll", onScroll);
-//       return () => window.removeEventListener("scroll", onScroll);
-//   }, []);
-
-//   return (
-//       <div>
-//           {cloudState}
-//       </div>
-//   )
-// }
-
-// const CloudComponent = () => {
-//   return (
-//     <StyledCloudWrapper>
-//       <StyledCloudImg src={cloudSvg} alt="" />
-//       <StyledCloudContainer>This section utilizes Github's Octokit API to pull my latest commits</StyledCloudContainer>
-//     </StyledCloudWrapper>
-//   )
-// }
