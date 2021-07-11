@@ -17,10 +17,11 @@ const SkillsRingAnimation = keyframes`
 export const SkillsMainComponentContainer = styled.div`
     ${flexColumnCentered};
     color: black;
-    margin-top: 17vh;
+    height: 60vh;
+    margin-bottom: 5vh;
 
     @media (min-width: 768px) {
-        margin-top: 15vh;
+        height: 60vh;
     }
 `
 
