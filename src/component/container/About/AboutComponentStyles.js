@@ -176,24 +176,74 @@ export const StyledNavigatorList = styled.ul`
 `
 
 //AboutMoreComponent
-export const StyledAboutMoreContentWrapper = styled.div`
-  text-align: left;
-  margin-left: 15%;
-  margin-bottom: 6vh;
-`
-
 export const StyledAboutMoreContainer = styled.section`
+
 `
 
+export const StyledAboutMoreContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15%;
+  margin-bottom: 6vh;
+
+  @media (min-width: 612px) {
+    margin: 0 5%;
+  }
+`
 
 export const StyledAboutMoreContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+  width: 100%;
+  border: 1px solid black;
 
+  @media (min-width: 612px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+`
+
+export const StyledAboutMoreContentImage = styled.img`
+  width: 250px;
+  height: 250px;
+
+  @media (min-width: 612px) {
+    width: 220px;
+    height: 220px;
+  }
+`
+
+export const StyledAboutMoreContentTextContainer = styled.div`
+  width: 250px;
+  padding: 5% 0;
+  text-align: left;
+  margin-left: 10%;
+
+  @media (min-width: 612px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: auto;
+    height: 220px;
+    margin-left: 5%;
+  }
 `
 
 export const StyledAboutMoreContentTitle = styled.div`
-
+  
 `
 
 export const StyledAboutMoreContentText = styled.div`
+  font-size: 1.3rem;
 
+  @media (min-width: 612px) {
+    font-size: 1.4rem;
+    margin-bottom: 10%;
+  }
 `

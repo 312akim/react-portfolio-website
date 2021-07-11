@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
-StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper } from './AboutComponentStyles';
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentImage, StyledAboutMoreContentTextContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper, StyledAboutMoreContentContainer } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
@@ -179,7 +179,7 @@ const AboutMoreComponent = () => {
     return (
         <StyledAboutMoreContainer>
             <StyledSectionSubheader>
-                What else do I do?
+                What else am I doing?
             </StyledSectionSubheader>
             <AboutMoreContentMapper config={aboutMoreContentConfig} />
         </StyledAboutMoreContainer>
@@ -193,18 +193,21 @@ const AboutMoreContentMapper = ({config}) => {
                 config.map(item => {
                     return (
                         <StyledAboutMoreContentContainer>
-                            <StyledSectionSubheader>
-                                {item.title}:
-                            </StyledSectionSubheader>
-                            {
-                                item.text.map(textLine => {
-                                    return (
-                                        <StyledAboutMoreContentText>
-                                            {textLine}
-                                        </StyledAboutMoreContentText>
-                                    )
-                                })
-                            }
+                            <StyledAboutMoreContentImage src={item.image}/>
+                            <StyledAboutMoreContentTextContainer>
+                                <StyledSectionSubheader>
+                                    {item.title}:
+                                </StyledSectionSubheader>
+                                {
+                                    item.text.map(textLine => {
+                                        return (
+                                            <StyledAboutMoreContentText>
+                                                {textLine}
+                                            </StyledAboutMoreContentText>
+                                        )
+                                    })
+                                }
+                            </StyledAboutMoreContentTextContainer>
                         </StyledAboutMoreContentContainer>
                     )
                 })

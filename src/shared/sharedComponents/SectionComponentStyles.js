@@ -22,13 +22,14 @@ export const StyledSectionHeader = styled.h1`
 `
 
 export const StyledSectionSubheader = styled.h2`
-    min-height: 7vh;
+    min-height: 5vh;
     font-weight: bold;
     text-transform: uppercase;
     margin: 2vh 0 1vh 0;
     font-size: 1.6rem;
 
     @media (min-width: 768px) {
+        margin: 1vh 0 0 0;
         min-height: 4vh;
     }
 `

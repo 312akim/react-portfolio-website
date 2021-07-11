@@ -1,3 +1,7 @@
+import bookImage from '../../../shared/images/book-image.jpg';
+import hikingImage from '../../../shared/images/hiking-image.jpg';
+import keyboardImage from '../../../shared/images/keyboard-image.jpg';
+
 // Navigator Content
 export const aboutComponentNavigatorTitleConfig = [
     { title: "Entrepreneur at Heart" },
@@ -44,15 +48,18 @@ export const aboutComponentTextConfig = [
 // AboutMore Content
 export const aboutMoreContentConfig = [
     {
+        image: bookImage,
         title: 'Reading',
-        text: ['Grokking Algorithms', 'Javascript Ninja']
+        text: ['Grokking Algorithms', 'Secrets of the JavaScript Ninja']
     },
     {
+        image: keyboardImage,
         title: 'Playing',
-        text: ['Overwatch', 'Valorant']
+        text: ['Overwatch', 'Valorant', 'Steam']
     },
     {
+        image: hikingImage,
         title: 'Tanning',
-        text: ['Hiking', 'Ultimate Frisbee']
+        text: ['Hiking', 'Swimming', 'Ultimate Frisbee']
     }
 ]
