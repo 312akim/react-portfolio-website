@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 import homeBackground from '../../../shared/images/home-background.jpg'
+import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
     // Animations
 const homeContentMobileAnimation = (degreesX, marginLeft) => keyframes`
@@ -40,10 +41,7 @@ const homeContentAnimation = (degreesY, marginLeft) => keyframes`
 
     // Components
 export const StyledHomeComponentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
 `
 
 export const StyledHomeContentContainer = styled.div`
@@ -70,10 +68,7 @@ export const StyledLinkedinAnchorContainer = styled.a`
 `
 
 export const StyledNameContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
     height: 25vh;
     width: 384px;
     margin: 5vh 0;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
 //Animations
 
@@ -9,10 +10,7 @@ export const StyledActivitySectionContainer = styled.div`
 `
 
 export const StyledCommitListWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
     padding-top: 6vh;
 `
 

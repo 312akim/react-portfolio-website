@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { animated } from 'react-spring'
+import { flexColumnCentered, flexRowCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
 // Animations
 const hoverCardTopFadeAnim = keyframes`
@@ -148,9 +149,7 @@ export const StyledProjectCardImage = styled.img`
 `
 
 export const StyledProjectCardTitle = styled.h2`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexRowCentered};
     height: 5vh;
     padding: 0 0;
     margin: 1vh 5%;
@@ -186,10 +185,7 @@ export const StyledGithubLink = styled.a`
 
 export const StyledCardHoverContainer = styled.div`
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
     top: 0px;
     left: -1px;
     width: 100.6%;
@@ -226,10 +222,7 @@ export const StyledCardHoverContainer = styled.div`
 export const StyledModalWrapper = styled.div`
     height: 106vh;
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
     animation: ${fadeInAnimation} 0.5s linear;
@@ -307,9 +300,7 @@ export const StyledModalNavContainer = styled.div`
 `
 
 export const StyledModalTabNavButton = styled.h3`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexRowCentered};
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
     min-width: 165px;
@@ -329,10 +320,7 @@ export const StyledModalTabContent = styled.div`
 
 // Modal tab content
 export const StyledModalTabContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    ${flexColumnCentered};
     height: 44vh;
 `
 

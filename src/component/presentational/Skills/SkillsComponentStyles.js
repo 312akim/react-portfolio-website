@@ -1,4 +1,5 @@
 import styled, {keyframes} from 'styled-components';
+import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
 //Animations
 const SkillsRingAnimation = keyframes`
@@ -14,11 +15,8 @@ const SkillsRingAnimation = keyframes`
 
 //Components
 export const SkillsMainComponentContainer = styled.div`
+    ${flexColumnCentered};
     color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 17vh;
 
     @media (min-width: 768px) {

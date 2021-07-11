@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
 export const StyledMainContainer = styled.div`
     background: ${({theme}) => theme.primaryLight};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    ${flexColumnCentered};
 `

@@ -1,14 +1,12 @@
 import styled, {css} from 'styled-components';
 import { animated } from 'react-spring'
+import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
     // Components
 
 //App Container
 export const StyledAppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${flexColumnCentered};
   background: white;
 `
 
@@ -18,10 +16,7 @@ export const StyledMainHeader = styled.div`
 `
 
 export const StyledNavigatorWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  ${flexColumnCentered};
     width: 100%;
 `
 
@@ -181,10 +176,7 @@ export const StyledAboutMoreContainer = styled.section`
 `
 
 export const StyledAboutMoreContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${flexColumnCentered};
   margin: 0 15%;
   margin-bottom: 6vh;
 
@@ -194,10 +186,7 @@ export const StyledAboutMoreContentWrapper = styled.div`
 `
 
 export const StyledAboutMoreContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${flexColumnCentered};
   margin-bottom: 2vh;
   width: 100%;
   border: 1px solid black;
