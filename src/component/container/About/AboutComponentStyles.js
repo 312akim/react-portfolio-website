@@ -57,7 +57,6 @@ export const headingStyles = css`
     min-height: 7vh;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.8rem;
     margin-top: 2vh;
     padding-top: 2vh;
     margin-bottom: 2vh;
@@ -65,7 +64,7 @@ export const headingStyles = css`
     z-index: 1;
 `
 
-export const StyledDropdownHeader = styled.h3(headingStyles);
+export const StyledDropdownHeader = styled.h2(headingStyles);
 
 export const StyledDropdownContent = styled.div`
     height: 100%;
@@ -89,7 +88,7 @@ export const StyledDropdownSection = styled.div`
 export const StyledDropdownContainer = styled.div`
   width: 100%;
   margin-top: 3vh;
-  min-height: 90vh;
+  min-height: 60vh;
 
   @media (min-width: 480px) {
     min-height: 54vh;

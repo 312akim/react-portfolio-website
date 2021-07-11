@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
@@ -13,6 +13,7 @@ export const AboutComponent = () => {
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} minHeight={'90vh'}>
             <AboutMainComponent />
+            <MoreAboutComponent />
         </StyledSectionComponent>
     )
 }
@@ -173,4 +174,15 @@ const NavigatorItem = (props) => {
             </StyledNavigatorItemContainer>
         </StyledNavigatorContainer>
     );
+}
+
+
+const MoreAboutComponent = () => {
+    return (
+        <div>
+            <StyledSectionSubheader>
+                What else do I do?
+            </StyledSectionSubheader>
+        </div>
+    )
 }

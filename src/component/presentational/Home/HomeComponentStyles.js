@@ -50,13 +50,14 @@ export const StyledHomeContentContainer = styled.div`
     padding: 5vh 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-image: url(${homeBackground});
     height: 100vh;
     width: 100vw;
 
     @media (min-width: 768px) {
+        justify-content: center;
         flex-direction: row;
     }
 `
@@ -146,7 +147,6 @@ export const StyledHomeNavContainer = styled.div`
     opacity: 0.9;
     background: rgba(0, 0, 0, 0.3);
     animation: ${homeContentMobileAnimation(85, '100%')} 1.5s linear;
-
     height: 40vh;
 
     @media (min-width: 768px) {
