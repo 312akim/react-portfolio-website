@@ -53,19 +53,6 @@ export const StyledNavigatorCaret = styled.div`
     }
 `
 
-export const headingStyles = css`
-    min-height: 7vh;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 2vh;
-    padding-top: 2vh;
-    margin-bottom: 2vh;
-    color: ${({theme}) => theme.primaryDark};
-    z-index: 1;
-`
-
-export const StyledDropdownHeader = styled.h2(headingStyles);
-
 export const StyledDropdownContent = styled.div`
     height: 100%;
 `
@@ -88,18 +75,14 @@ export const StyledDropdownSection = styled.div`
 export const StyledDropdownContainer = styled.div`
   width: 100%;
   margin-top: 3vh;
-  min-height: 60vh;
+  min-height: 64vh;
 
   @media (min-width: 480px) {
-    min-height: 54vh;
+    min-height: 57vh;
   }
 
   @media (min-width: 768px) {
-    min-height: 46vh;
-  }
-
-  @media (min-width: 1024px) {
-    min-height: 46vh;
+    min-height: 55vh;
   }
 `
 

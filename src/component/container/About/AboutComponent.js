@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledNavigatorCaret, StyledDropdownHeader, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
+import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
@@ -60,28 +60,13 @@ const HoverImage = (props) => {
 }
 
 const AnimatedNavigator = () => {
-    const [mainContent, setMainContent] = useState(<div></div>);
-
-    const [activeIndices, setActiveIndices] = useState([]);
-
-    const currentIndex = activeIndices[activeIndices.length -1];
-
-    const navigatorSelectFunction = (i) => {
-        setActiveIndices([i]);
-        setMainContent(contentSetter(i));
-    }
-
-    const onMouseEnter = i => {
-        navigatorSelectFunction(i);
-    };
-
     const returnDropdownText = (textObject) => {
         return (
             <StyledDropdownContainer>
                 <StyledDropdownSection>
-                    <StyledDropdownHeader>
+                    <StyledSectionSubheader>
                         {textObject.title}
-                    </StyledDropdownHeader>
+                    </StyledSectionSubheader>
                     <StyledDropdownContent>
                         <Fade up cascade big>
                             {
@@ -130,6 +115,21 @@ const AnimatedNavigator = () => {
         }
     }
 
+    const [mainContent, setMainContent] = useState(contentSetter(0));
+
+    const [activeIndices, setActiveIndices] = useState([0]);
+
+    const currentIndex = activeIndices[activeIndices.length -1];
+
+    const navigatorSelectFunction = (i) => {
+        setActiveIndices([i]);
+        setMainContent(contentSetter(i));
+    }
+
+    const onMouseEnter = i => {
+        navigatorSelectFunction(i);
+    };
+
     return (
         <StyledNavigatorWrapper>
             <NavigatorHeaderCards>
@@ -144,8 +144,8 @@ const AnimatedNavigator = () => {
                             {   //Logical Operator Short Circuiting, returns Component after 1st pass
                                 currentIndex === index && (
                                     <StyledNavigatorCaret />
-                                    )
-                                }
+                                )
+                            }
                         </NavigatorItem>
                     );
                 })}
@@ -158,7 +158,6 @@ const AnimatedNavigator = () => {
 }
 
 const NavigatorItem = (props) => {
-        
     const onMouseEnter = () => {
         props.onMouseEnter(props.index);
     };
