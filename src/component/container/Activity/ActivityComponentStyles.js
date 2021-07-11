@@ -33,7 +33,8 @@ export const StyledCommitTitle = styled.div`
     align-self: center;
     padding: 0 6px 3px 6px;
     color: ${({theme}) => theme.primaryLight};
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
     background: black;
     width: auto;
     box-shadow: 3px 2px 2px ${({theme}) => theme.secondaryLight};
