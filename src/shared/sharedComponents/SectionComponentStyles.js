@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { flexColumnCentered } from './SharedStyledComponentStyles';
 
 export const StyledSectionComponent = styled.div`
     height: ${props => props.height ? props.height : 'auto'};
@@ -7,6 +8,7 @@ export const StyledSectionComponent = styled.div`
     background-color: ${props => props.backgroundColor};
     text-align: center;
     width: 100%;
+    ${flexColumnCentered};
 `
 
 export const StyledSectionHeader = styled.h1`

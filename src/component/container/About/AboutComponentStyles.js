@@ -177,34 +177,36 @@ export const StyledAboutMoreContainer = styled.section`
 
 export const StyledAboutMoreContentWrapper = styled.div`
   ${flexColumnCentered};
-  margin: 0 15%;
   margin-bottom: 6vh;
+  width: 343px;
 
-  @media (min-width: 612px) {
-    margin: 0 5%;
+  @media (min-width: 768px) {
+    width: 688px;
   }
 `
 
 export const StyledAboutMoreContentContainer = styled.div`
   ${flexColumnCentered};
   margin-bottom: 2vh;
-  width: 100%;
   border: 1px solid black;
+  width: 90%;
 
-  @media (min-width: 612px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
   }
+
+
 `
 
 export const StyledAboutMoreContentImage = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 320px;
+  height: 320px;
 
-  @media (min-width: 612px) {
-    width: 220px;
-    height: 220px;
+  @media (min-width: 768px) {
+    width: 200px;
+    height: 200px;
   }
 `
 
@@ -212,15 +214,13 @@ export const StyledAboutMoreContentTextContainer = styled.div`
   width: 250px;
   padding: 5% 0;
   text-align: left;
-  margin-left: 10%;
+  margin-left: 5%;
 
-  @media (min-width: 612px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: auto;
-    height: 220px;
-    margin-left: 5%;
   }
 `
 
