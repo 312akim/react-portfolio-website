@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
-StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine } from './AboutComponentStyles';
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
 import Fade from 'react-reveal/Fade';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
-import { aboutComponentTextConfig } from './AboutComponentText';
+import { aboutComponentTextConfig, aboutMoreContentConfig } from './AboutComponentText';
 
 export const AboutComponent = () => {
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} minHeight={'90vh'}>
             <AboutMainComponent />
-            <MoreAboutComponent />
+            <AboutMoreComponent />
         </StyledSectionComponent>
     )
 }
@@ -175,13 +175,40 @@ const NavigatorItem = (props) => {
     );
 }
 
-
-const MoreAboutComponent = () => {
+const AboutMoreComponent = () => {
     return (
-        <div>
+        <StyledAboutMoreContainer>
             <StyledSectionSubheader>
                 What else do I do?
             </StyledSectionSubheader>
-        </div>
+            <AboutMoreContentMapper config={aboutMoreContentConfig} />
+        </StyledAboutMoreContainer>
+    )
+}
+
+const AboutMoreContentMapper = ({config}) => {
+    return (
+        <StyledAboutMoreContentWrapper>
+            {
+                config.map(item => {
+                    return (
+                        <StyledAboutMoreContentContainer>
+                            <StyledSectionSubheader>
+                                {item.title}:
+                            </StyledSectionSubheader>
+                            {
+                                item.text.map(textLine => {
+                                    return (
+                                        <StyledAboutMoreContentText>
+                                            {textLine}
+                                        </StyledAboutMoreContentText>
+                                    )
+                                })
+                            }
+                        </StyledAboutMoreContentContainer>
+                    )
+                })
+            }
+        </StyledAboutMoreContentWrapper>
     )
 }

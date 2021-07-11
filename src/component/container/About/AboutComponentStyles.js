@@ -3,6 +3,15 @@ import { animated } from 'react-spring'
 
     // Components
 
+//App Container
+export const StyledAppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+`
+
 export const StyledMainHeader = styled.div`
     display: inline-block;
     width: 30%;
@@ -166,11 +175,25 @@ export const StyledNavigatorList = styled.ul`
   margin: 0;
 `
 
-//App Container
-export const StyledAppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: white;
+//AboutMoreComponent
+export const StyledAboutMoreContentWrapper = styled.div`
+  text-align: left;
+  margin-left: 15%;
+  margin-bottom: 6vh;
+`
+
+export const StyledAboutMoreContainer = styled.section`
+`
+
+
+export const StyledAboutMoreContentContainer = styled.div`
+
+`
+
+export const StyledAboutMoreContentTitle = styled.div`
+
+`
+
+export const StyledAboutMoreContentText = styled.div`
+
 `

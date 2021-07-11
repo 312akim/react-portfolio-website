@@ -1,3 +1,10 @@
+// Navigator Content
+export const aboutComponentNavigatorTitleConfig = [
+    { title: "Entrepreneur at Heart" },
+    { title: "Why I love Coding" },
+    { title: "What I hope to Achieve" }
+]
+
 export const aboutComponentTextConfig = [
     {
         navTitle: "Entrepreneur at Heart",
@@ -34,8 +41,18 @@ export const aboutComponentTextConfig = [
     }
 ]
 
-export const aboutComponentNavigatorTitleConfig = [
-    { title: "Entrepreneur at Heart" },
-    { title: "Why I love Coding" },
-    { title: "What I hope to Achieve" }
+// AboutMore Content
+export const aboutMoreContentConfig = [
+    {
+        title: 'Reading',
+        text: ['Grokking Algorithms', 'Javascript Ninja']
+    },
+    {
+        title: 'Playing',
+        text: ['Overwatch', 'Valorant']
+    },
+    {
+        title: 'Tanning',
+        text: ['Hiking', 'Ultimate Frisbee']
+    }
 ]
