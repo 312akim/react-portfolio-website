@@ -33,7 +33,7 @@ export const StyledCommitTitleAnchor = styled.a`
 
 export const StyledCommitTitle = styled.div`
     align-self: center;
-    padding: 0 6px 3px 6px;
+    padding: 0 10px 3px 10px;
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.4rem;
     font-weight: bold;
