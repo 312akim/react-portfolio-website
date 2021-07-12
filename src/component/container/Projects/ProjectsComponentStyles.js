@@ -230,6 +230,7 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
+    ${flexColumnCentered};
     background: ${({theme}) => theme.primaryDark};
     border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
