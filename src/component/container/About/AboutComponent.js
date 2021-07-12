@@ -189,33 +189,37 @@ const AboutMoreComponent = () => {
 const AboutMoreContentMapper = ({config}) => {
     return (
         <StyledAboutMoreContentWrapper>
-            {
-                config.map(item => {
-                    return (
-                        <StyledAboutMoreContentContainer>
-                            <StyledImageCropContainer height='280px' width='auto'>
-                                <StyledAboutMoreContentImage src={item.image}/>
-                            </StyledImageCropContainer>
-                            <StyledAboutMoreContentTextContainer>
-                                <StyledAboutMoreContentTitle>
-                                    {item.title}:
-                                </StyledAboutMoreContentTitle>
-                                <StyledAboutMoreContentText>
-                                    {
-                                        item.text.map(textLine => {
-                                            return (
-                                                <StyledAboutMoreContentTextLine>
-                                                    {textLine}
-                                                </StyledAboutMoreContentTextLine>
-                                            )
-                                        })
-                                    }
-                                </StyledAboutMoreContentText>
-                            </StyledAboutMoreContentTextContainer>
-                        </StyledAboutMoreContentContainer>
-                    )
-                })
-            }
+            <Fade left>
+                {
+                    config.map(item => {
+                        return (
+                            <StyledAboutMoreContentContainer>
+                                <StyledImageCropContainer height='280px' width='auto'>
+                                    <StyledAboutMoreContentImage src={item.image}/>
+                                </StyledImageCropContainer>
+                                <StyledAboutMoreContentTextContainer>
+                                    <StyledAboutMoreContentTitle>
+                                        {item.title}:
+                                    </StyledAboutMoreContentTitle>
+                                    <StyledAboutMoreContentText>
+
+                                        {
+                                            item.text.map(textLine => {
+                                                return (
+                                                    <StyledAboutMoreContentTextLine>
+                                                        {textLine}
+                                                    </StyledAboutMoreContentTextLine>
+                                                )
+                                            })
+                                        }
+
+                                    </StyledAboutMoreContentText>
+                                </StyledAboutMoreContentTextContainer>
+                            </StyledAboutMoreContentContainer>
+                        )
+                    })
+                }
+            </Fade>
         </StyledAboutMoreContentWrapper>
     )
 }
