@@ -1,7 +1,9 @@
-$primaryLight: 'white';
-$secondaryLight: 'rgb(82,138,183)';
-$primaryDark: 'rgb(45,51,90)';
-$secondaryDark: 'black';
+$primaryLight: white;
+$secondaryLight: rgb(82,138,183);
+$primaryDark: rgb(45,51,90);
+$secondaryDark: black;
+$primaryAlert: rgb(226, 106, 106);
+$secondaryAlert: rgb(246, 71, 71);
 
 // Formik Contact Form Input
 .contactInputField {
@@ -9,7 +11,6 @@ $secondaryDark: 'black';
     width: 80%;
     margin: 0 10%;
     height: 3vh;
-    border: 3px solid $secondaryLight;
     font-size: 1.2rem;
 
     @media screen and (min-width: 768px) {
@@ -21,4 +22,9 @@ $secondaryDark: 'black';
 
 .contactTextAreaField {
     height: 8vh;
+}
+
+// Formik Form Error Message
+.contactErrorMessage {
+    color: $secondaryAlert;
 }

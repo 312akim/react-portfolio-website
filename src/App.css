@@ -3,7 +3,6 @@
   width: 80%;
   margin: 0 10%;
   height: 3vh;
-  border: 3px solid "rgb(82,138,183)";
   font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
@@ -15,6 +14,10 @@
 
 .contactTextAreaField {
   height: 8vh;
+}
+
+.contactErrorMessage {
+  color: #f64747;
 }
 
 ul {

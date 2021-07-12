@@ -79,7 +79,7 @@ const ContactForm = () => {
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
                             <Field id='formSubject' type='text' name='formSubject' placeholder='Subject' className='contactInputField'/>
-                            <ErrorMessage name='formSubject' component='div' />
+                            <ErrorMessage className='contactErrorMessage' name='formSubject' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
                             <StyledContactLabel for='formEmail'>
@@ -87,7 +87,7 @@ const ContactForm = () => {
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
                             <Field id='formEmail' type='email' name='formEmail' placeholder='Email' className='contactInputField'/>
-                            <ErrorMessage name='formEmail' component='div' />
+                            <ErrorMessage className='contactErrorMessage' name='formEmail' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
                             <StyledContactLabel for='formFName'>
@@ -95,14 +95,14 @@ const ContactForm = () => {
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
                                 <Field id='formFName' type='text' name='formFName' placeholder='First Name' className='contactInputField'/>
-                                <ErrorMessage name='formFName' component='div' />
+                                <ErrorMessage className='contactErrorMessage' name='formFName' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
                             <StyledContactLabel for='formLName'>
                                 Last Name:
                             </StyledContactLabel>
                                 <Field id='formLName' type='text' name='formLName' placeholder='Last Name' className='contactInputField'/>
-                                <ErrorMessage name='formLName' component='div' />
+                                <ErrorMessage className='contactErrorMessage' name='formLName' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
                             <StyledContactLabel for='formMessage'>
@@ -110,7 +110,7 @@ const ContactForm = () => {
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
                                 <Field id='formMessage' component='textarea' name='formMessage' placeholder='Message' className='contactInputField contactTextAreaField'/>
-                                <ErrorMessage name='formMessage' component='div' />
+                                <ErrorMessage className='contactErrorMessage' name='formMessage' component='div' />
                         </StyledContactInputContainer>
 
                         <StyledDefaultButton margin='4vh auto' type='submit' disabled={isSubmitting}>
