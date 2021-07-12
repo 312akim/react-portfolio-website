@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
-StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentImage, StyledAboutMoreContentTextContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper, StyledAboutMoreContentContainer } from './AboutComponentStyles';
+StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentImage, StyledAboutMoreContentTitle, StyledAboutMoreContentTextContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper, StyledAboutMoreContentContainer, StyledAboutMoreContentTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';
 import peopleImage from '../../../shared/images/people.jfif';
@@ -197,18 +197,20 @@ const AboutMoreContentMapper = ({config}) => {
                                 <StyledAboutMoreContentImage src={item.image}/>
                             </StyledImageCropContainer>
                             <StyledAboutMoreContentTextContainer>
-                                <StyledSectionSubheader>
+                                <StyledAboutMoreContentTitle>
                                     {item.title}:
-                                </StyledSectionSubheader>
-                                {
-                                    item.text.map(textLine => {
-                                        return (
-                                            <StyledAboutMoreContentText>
-                                                {textLine}
-                                            </StyledAboutMoreContentText>
-                                        )
-                                    })
-                                }
+                                </StyledAboutMoreContentTitle>
+                                <StyledAboutMoreContentText>
+                                    {
+                                        item.text.map(textLine => {
+                                            return (
+                                                <StyledAboutMoreContentTextLine>
+                                                    {textLine}
+                                                </StyledAboutMoreContentTextLine>
+                                            )
+                                        })
+                                    }
+                                </StyledAboutMoreContentText>
                             </StyledAboutMoreContentTextContainer>
                         </StyledAboutMoreContentContainer>
                     )

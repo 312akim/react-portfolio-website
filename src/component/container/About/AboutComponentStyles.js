@@ -189,7 +189,9 @@ export const StyledAboutMoreContentContainer = styled.div`
   ${flexColumnCentered};
   margin-bottom: 2vh;
   border: 1px solid black;
+  border-radius: 4px;
   width: 90%;
+  background: ${({theme}) => theme.primaryDark};
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -214,25 +216,33 @@ export const StyledAboutMoreContentTextContainer = styled.div`
   width: 250px;
   padding: 5% 0;
   text-align: left;
-  margin-left: 5%;
 
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
     width: auto;
   }
 `
 
 export const StyledAboutMoreContentTitle = styled.div`
-  
+  border-bottom: 2px solid ${({theme}) => theme.primaryLight};
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+  width: 130px;
+  color: ${({theme}) => theme.primaryLight};
 `
 
 export const StyledAboutMoreContentText = styled.div`
+
+`
+
+export const StyledAboutMoreContentTextLine = styled.div`
   font-size: 1.3rem;
+  margin: 5% 0;
+  padding-left: 5%;
+  background: ${({theme}) => theme.primaryLight};
 
   @media (min-width: 612px) {
     font-size: 1.4rem;
-    margin-bottom: 10%;
   }
 `
