@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledImageCropContainer = styled.div`
-    width: ${props => props.width ? props.width : '100%'};
-    height: ${props => props.height ? props.height : 'auto%'};
-    position: ${props => props.position? props.position : 'relative'};
+    width: ${({width}) => width ? width : '100%'};
+    height: ${({height}) => height ? height : 'auto%'};
+    position: ${({position}) => position? position : 'relative'};
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: ${({borderRadius}) => borderRadius ? borderRadius : '4px'};
 
     @media (min-width: 768px) {
-        width: ${props => props.largeWidth};
-        height: ${props => props.largeHeight};
+        width: ${({largeWidth}) => largeWidth};
+        height: ${({largeHeight}) => largeHeight};
+        border-radius: ${({largeBorderRadius}) => largeBorderRadius ? largeBorderRadius : '4px'};
     }
 `
