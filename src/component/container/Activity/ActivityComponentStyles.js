@@ -9,6 +9,10 @@ export const StyledActivitySectionContainer = styled.div`
     padding-bottom: 4vh;
 `
 
+export const StyledCommitListContainer = styled.div`
+    
+`
+
 export const StyledCommitListWrapper = styled.div`
     ${flexColumnCentered};
     padding-top: 6vh;
@@ -44,6 +48,7 @@ export const StyledCommitTitle = styled.div`
 
     @media (min-width: 768px) {
         align-self: start;
+        margin: 0 2%;
     }
 `
 
@@ -69,14 +74,8 @@ export const StyledCommitGitAnchor = styled.a`
 
 export const StyledCommitDataContainer = styled.div`
     border: 1px ${({theme}) => theme.secondaryLight} solid;
-    
-    margin-top: 2%;
-    margin-bottom: 1vh;
+    margin: 1vh 2%;
     padding: 1vh 0;
     box-shadow: 5px 3px 4px ${({theme}) => theme.secondaryDark};
     border-radius: 4px;
-`
-
-export const StyledCommitListContainer = styled.div`
-
 `
