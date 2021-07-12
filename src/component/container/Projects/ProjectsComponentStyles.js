@@ -230,29 +230,33 @@ export const StyledModalWrapper = styled.div`
 `
 
 export const StyledModalContentContainer = styled.div`
-    ${flexColumnCentered};
     background: ${({theme}) => theme.primaryDark};
     border: 1px solid ${({theme}) => theme.primaryLight};
     border-radius: 20px;
-    height: 96vh;
-    padding: 3vh 5%;
+    height: 102vh;
+    padding: 2vh 5%;
     max-width: 800px;
     width: 90%;
 
     @media (min-width: 768px) {
         border-radius: 0px;
+        height: 96vh;
     }
 `
 
 export const StyledModalHeroTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     height: 2vh;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
+
+    @media (min-width: 480px) {
+        margin-bottom: 4vh;
+    }
 `
 
 export const StyledModalHeroText = styled.div`
     text-align: left;
-    max-height: 16vh;
+    max-height: 18vh;
     margin-bottom: 3vh;
     padding: 1vh 0;
     border-top: 1px solid white;
@@ -305,7 +309,6 @@ export const StyledModalNavContainer = styled.div`
 
 export const StyledModalExitButton = styled(StyledDefaultButton)`
     background: ${({theme}) => theme.primaryAlert};
-    margin-top: 4vh;
 
     :hover {
         background: ${({theme}) => theme.secondaryAlert};
@@ -321,6 +324,11 @@ export const StyledModalTabContent = styled.div`
 export const StyledModalTabContentContainer = styled.div`
     ${flexColumnCentered};
     height: 44vh;
+    margin-bottom: 2vh;
+
+    @media (min-width: 480px) {
+        margin-bottom: 4vh;
+    }
 `
 
 export const StyledModalSubheader = styled.h3`
