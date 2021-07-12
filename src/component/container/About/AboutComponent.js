@@ -193,7 +193,7 @@ const AboutMoreContentMapper = ({config}) => {
                 config.map(item => {
                     return (
                         <StyledAboutMoreContentContainer>
-                            <StyledImageCropContainer height='280px'>
+                            <StyledImageCropContainer height='280px' width='auto'>
                                 <StyledAboutMoreContentImage src={item.image}/>
                             </StyledImageCropContainer>
                             <StyledAboutMoreContentTextContainer>

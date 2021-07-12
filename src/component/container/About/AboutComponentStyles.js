@@ -178,7 +178,7 @@ export const StyledAboutMoreContainer = styled.section`
 export const StyledAboutMoreContentWrapper = styled.div`
   ${flexColumnCentered};
   margin-bottom: 6vh;
-  width: 343px;
+  width: 320px;
 
   @media (min-width: 768px) {
     width: 688px;
@@ -188,15 +188,17 @@ export const StyledAboutMoreContentWrapper = styled.div`
 export const StyledAboutMoreContentContainer = styled.div`
   ${flexColumnCentered};
   margin-bottom: 2vh;
-  border: 1px solid black;
   border-radius: 4px;
-  width: 90%;
+  width: 320px;
   background: ${({theme}) => theme.primaryDark};
+  box-shadow: 4px 4px 4px black;
 
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    height: 280px;
+    width: 688px;
   }
 
 
@@ -207,8 +209,8 @@ export const StyledAboutMoreContentImage = styled.img`
   height: 320px;
 
   @media (min-width: 768px) {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
   }
 `
 
@@ -218,8 +220,9 @@ export const StyledAboutMoreContentTextContainer = styled.div`
   text-align: left;
 
   @media (min-width: 768px) {
-
-    width: auto;
+    width: 340px;
+    margin: 0 5%;
+    padding: 2% 0;
   }
 `
 
@@ -239,7 +242,7 @@ export const StyledAboutMoreContentText = styled.div`
 export const StyledAboutMoreContentTextLine = styled.div`
   font-size: 1.3rem;
   margin: 5% 0;
-  padding-left: 5%;
+  padding: 3% 0 3% 5%;
   background: ${({theme}) => theme.primaryLight};
 
   @media (min-width: 612px) {
