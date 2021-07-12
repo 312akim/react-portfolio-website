@@ -192,30 +192,37 @@ export const StyledCardHoverContainer = styled.div`
     opacity: 0;
     border-radius: 4px;
     height: 40.1vh;
-    
-    :hover {
-        opacity: 0.9;
-        background: black;
-
-        ${StyledProjectCardTitle} {
-            animation: ${hoverCardTopFadeAnim} 0.3s linear;
-        }
-
-        ${StyledProjectInformation} {
-            animation: ${hoverCardTopFadeAnim} 0.3s linear;
-        }
-
-        ${StyledReadMore} {
-            animation: ${hoverCardBotFadeAnim} 0.3s linear;
-        }
-
-        ${StyledGithubLink} {
-            animation: ${hoverCardBotFadeAnim} 0.3s linear;
-        }
-    }
+    opacity: 0.9;
+    background: black;
 
     @media (min-width: 768px) {
         width: 100.4%;
+    }
+    
+    @media (min-width: 1025px) {
+        opacity: 0;
+        background: transparent;
+
+        :hover {
+            opacity: 0.9;
+            background: black;
+            
+            ${StyledProjectCardTitle} {
+                animation: ${hoverCardTopFadeAnim} 0.3s linear;
+            }
+            
+            ${StyledProjectInformation} {
+                animation: ${hoverCardTopFadeAnim} 0.3s linear;
+            }
+            
+            ${StyledReadMore} {
+                animation: ${hoverCardBotFadeAnim} 0.3s linear;
+            }
+            
+            ${StyledGithubLink} {
+                animation: ${hoverCardBotFadeAnim} 0.3s linear;
+            }
+        }
     }
 `
 //Project Modals
