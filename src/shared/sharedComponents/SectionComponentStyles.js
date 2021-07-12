@@ -31,7 +31,7 @@ export const StyledSectionSubheader = styled.h2`
     font-size: 1.6rem;
 
     @media (min-width: 768px) {
-        margin: 1vh 0 0 0;
+        margin: 1vh 0 2vh 0;
         min-height: 4vh;
     }
 `
