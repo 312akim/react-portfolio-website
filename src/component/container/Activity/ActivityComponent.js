@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper, StyledActivitySectionContainer } from './ActivityComponentStyles';
+import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitGitLink, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper, StyledActivitySectionContainer, StyledCommitTitleAnchor } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
 
 export const ActivityComponent = () => {
@@ -33,30 +33,29 @@ const CommitListComponent = () => {
           repo2 = 'react-portfolio-website',
           perPage = 5;
     
-    console.log("Height: " + window.document.body.offsetHeight);
     const fetchApparelStoreData = async () => {
-        const fourMostRecentApparelCommits = await octokit.request(
+        const mostRecentApparelCommits = await octokit.request(
             `GET /repos/{owner}/{repo1}/commits`, { owner, repo1, per_page: perPage }
         );
 
-        setApparelStoreCommits(fourMostRecentApparelCommits);
+        setApparelStoreCommits(mostRecentApparelCommits);
     }
 
     const fetchPortfolioCommits = async () => {
-        const fourMostRecentPortfolioCommits = await octokit.request(
+        const mostRecentPortfolioCommits = await octokit.request(
             `GET /repos/{owner}/{repo2}/commits`, { owner, repo2, per_page: perPage }
         );
 
-        setPortfolioCommits(fourMostRecentPortfolioCommits);
+        setPortfolioCommits(mostRecentPortfolioCommits);
     }
 
     fetchApparelStoreData();
     fetchPortfolioCommits();
-    }, [])
+  }, [])
 
     const commitConfig = [
-      { title: "Apparel Store Commits", api: apparelStoreCommits },
-      { title: "Portfolio Site Commits", api: portfolioCommits }
+      { title: "Apparel Store Commits", api: apparelStoreCommits, link: 'https://github.com/312akim/apparel-store-mern' },
+      { title: "Portfolio Site Commits", api: portfolioCommits, link: 'https://github.com/312akim/react-portfolio-website' }
     ];
 
     return (
@@ -75,11 +74,15 @@ const CommitListComponent = () => {
 const CommitComponent = (props) => {
   return (
     <StyledCommitWrapper>
-        <StyledCommitTitle>{props.title}</StyledCommitTitle>
+        <StyledCommitTitle>
+          <StyledCommitTitleAnchor href={props.link} target='_blank'>
+            {props.title}
+          </StyledCommitTitleAnchor>
+        </StyledCommitTitle>
         <StyledCommitDataWrapper>
           {!props.api ? <div>Failed to load github commit data</div> :
             props.api.data.map(commit => (
-              <StyledCommitDataContainer key={commit.id}>
+              <StyledCommitDataContainer key={commit.node_id}>
                 <StyledCommitDate>
                   Date: {new Date(commit.commit.author.date).toLocaleDateString()}&nbsp;
                 </StyledCommitDate>

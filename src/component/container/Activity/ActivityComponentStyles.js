@@ -26,12 +26,16 @@ export const StyledCommitWrapper = styled.div`
     }
 `
 
+export const StyledCommitTitleAnchor = styled.a`
+    text-decoration: none;
+    color: white;
+`
 
 export const StyledCommitTitle = styled.div`
     align-self: center;
     padding: 0 6px 3px 6px;
     color: ${({theme}) => theme.primaryLight};
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: bold;
     background: black;
     width: auto;
@@ -40,7 +44,6 @@ export const StyledCommitTitle = styled.div`
 
     @media (min-width: 768px) {
         align-self: start;
-        margin-left: 5%;
     }
 `
 
@@ -66,8 +69,7 @@ export const StyledCommitGitAnchor = styled.a`
 
 export const StyledCommitDataContainer = styled.div`
     border: 1px ${({theme}) => theme.secondaryLight} solid;
-    width: 90%;
-    margin-left: 5%;
+    
     margin-top: 2%;
     margin-bottom: 1vh;
     padding: 1vh 0;
