@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import { flexColumnCentered, flexRowCentered } from './SharedStyledComponentStyles';
 
 export const StyledSectionComponent = styled.div`
+    ${flexColumnCentered};
     height: ${props => props.height ? props.height : 'auto'};
     min-height: ${props => props.minHeight ? props.minHeight : 'auto'};
     color: ${props => props.fontColor ? props.fontColor: 'black'};
     background-color: ${props => props.backgroundColor};
     text-align: center;
     width: 100%;
-    ${flexColumnCentered};
 `
 
 export const StyledSectionHeader = styled.h1`
     height: 8vh;
-    margin: 0;
+    margin: 0 0 2vh 0;
     padding-top: 4vh;
     text-transform: uppercase;
     font-size: 1.8rem;

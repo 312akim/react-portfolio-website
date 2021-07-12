@@ -16,8 +16,14 @@ export const StyledMainHeader = styled.div`
 `
 
 export const StyledNavigatorWrapper = styled.div`
-  ${flexColumnCentered};
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 343px;
+
+    @media (min-width: 768px) {
+      width: 688px;
+    }
 `
 
 export const StyledNavigatorContentContainer = styled.div`
@@ -34,10 +40,10 @@ export const StyledNavigatorCaret = styled.div`
     border-color: transparent transparent ${({theme}) => theme.secondaryLight};
     left: calc(50% - 10px);
     z-index: 1;
-    margin-top: 3vh;
+    margin-top: 50px;
 
-    @media (min-width: 1200px) {
-      margin-top: 1vh;
+    @media (min-width: 768px) {
+      margin-top: 100px;
     }
 `
 
@@ -94,44 +100,50 @@ export const StyledDropdownImage = styled.img`
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: auto;
-  min-height: 17vh;
+  height: 100px;
+  width: 100px;
   overflow: hidden;
 
-  @media (min-width: 1200px) {
-    margin-top: -2vh;
+  @media (min-width: 768px) {
+    height: 200px;
+    width: 200px;
   }
 `
 
 export const StyledNavigatorItemTitle = styled.div`
   background: transparent;
-  height: 14vh;
-  width: 80%;
+  height: 100px;
+  width: 100px;
   overflow-wrap: break-word;
-  margin-left: 10%;
   margin-bottom: 0;
   margin-right: 0;
   border: 0;
   font-weight: bold;
   font-size: 18px;
-  padding-top: 3vh;
+  padding: 15px 10px 0 10px;
   text-align: center;
   color: ${({theme}) => theme.primaryLight};
   font-family: inherit;
   cursor: pointer;
   position: relative;
   z-index: 3;
+
+  @media (min-width: 768px) {
+    padding: 60px 30px 0 30px;
+    height: 200px;
+    width: 200px;
+  }
 `
 
     //Ensures onMouseLeave triggers for NavigatorItemContainer
 export const StyledNavigatorContainer = styled.div`
   margin-left: 0rem;
   width: 70%;
-  margin-top: 5vh;
+  margin-top: 2vh;
 `
 
 export const StyledNavigatorItemContainer = styled.li`
+  ${flexColumnCentered};
   position: relative;
   margin-left: 5%;
   margin-right: 5%;
@@ -152,16 +164,11 @@ export const StyledDropdownSlot = styled.div`
 `
 
 //Navigator
-export const StyledNavigatorListContainer = styled.nav`
-  margin: 0 auto;
-`
-
 export const StyledNavigatorList = styled.ul`
   display: flex;
   padding: 0;
-  justify-content: center;
-  list-style: none;
   margin: 0;
+  list-style: none;
 `
 
 //AboutMoreComponent

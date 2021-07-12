@@ -31,28 +31,26 @@ const AboutMainComponent = () => {
 
 const NavigatorHeaderCards = ({children}) => {
     return (
-        <StyledNavigatorListContainer>
-            <StyledNavigatorList>{children}</StyledNavigatorList>
-        </StyledNavigatorListContainer>
+        <StyledNavigatorList>{children}</StyledNavigatorList>
     )
 }
 
 const HoverImage = (props) => {
     switch (props.image) {
         case 0: return (
-            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer largeHeight='200px' largeWidth='200px' height='100px' width='100px' position={'absolute'}>
                 <StyledDropdownImage src={businessImage} />
             </StyledImageCropContainer>
         )
 
         case 1: return (
-            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer largeHeight='200px' largeWidth='200px' height='100px' width='100px' position={'absolute'}>
                 <StyledDropdownImage src={creativeImage} />
             </StyledImageCropContainer>
         )
 
         case 2: return (
-            <StyledImageCropContainer desktopHeight={'23vh'} height={'17vh'} position={'absolute'}>
+            <StyledImageCropContainer largeHeight='200px' largeWidth='200px' height='100px' width='100px' position={'absolute'}>
                 <StyledDropdownImage src={peopleImage} />
             </StyledImageCropContainer>
         )
