@@ -119,7 +119,7 @@ export const StyledProjectCard = styled.div`
     width: 60%;
     max-width: 768px;
     height: 40vh;
-    margin: 5vh auto 4vh auto;
+    margin: 6vh auto 5vh auto;
     background: white;
     border-radius: 4px;
     box-shadow: 6px 6px black;
@@ -220,7 +220,7 @@ export const StyledCardHoverContainer = styled.div`
 `
 //Project Modals
 export const StyledModalWrapper = styled.div`
-    height: 106vh;
+    height: 109vh;
     position: absolute;
     ${flexColumnCentered};
     width: 100%;
