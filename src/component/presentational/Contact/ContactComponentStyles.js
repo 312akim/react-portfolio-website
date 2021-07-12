@@ -26,7 +26,7 @@ export const StyledContactLabel = styled.label`
 `
 
 export const StyledRequiredAsterick = styled.span`
-    color: red;
+    color: ${({theme}) => theme.secondaryAlert};
 `
 
 export const StyledContactTextarea = styled.textarea`
