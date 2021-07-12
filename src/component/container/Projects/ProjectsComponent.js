@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary, StyledModalExitButton } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -28,7 +28,7 @@ export const ProjectsComponent = () => {
     // Main
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryDark} fontColor={({theme}) => theme.primaryLight}>
-            <SectionContainer section={section} projectModalSwitcher={projectModalSwitcher} sectionSwitchHandler={sectionSwitchHandler} showModal={showModal}/>
+            <SectionContainer section={section} projectModalSwitcher={projectModalSwitcher} sectionSwitchHandler={sectionSwitchHandler} showModal={showModal} setShowModal={setShowModal}/>
         </StyledSectionComponent>
     )
 }
@@ -129,7 +129,7 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
 }
 
 // Modal Display
-const ModalDisplay = ({showModal, projectModalSwitcher}) => {
+const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}) => {
 
     if (showModal === 0) {
         return (
@@ -149,7 +149,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
                         <StyledModalHeroText>
                             {projectComponentCardTextConfig[showModal-1].modal.modalObjective}
                         </StyledModalHeroText>
-                        <ModalTabsComponent showModal={showModal} />
+                        <ModalTabsComponent showModal={showModal} setShowModal={setShowModal} />
                     </StyledModalContent>
                 </StyledModalContentContainer>
             </StyledModalWrapper>
@@ -157,7 +157,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher}) => {
     }
 }
 
-const ModalTabsComponent = ({showModal}) => {
+const ModalTabsComponent = ({showModal, setShowModal}) => {
     const [tabSelector, setTabSelector] = useState(0);
 
     //Returns tab title & maps text as list
@@ -241,13 +241,16 @@ const ModalTabsComponent = ({showModal}) => {
                     returnTabContent()
                 }
             </StyledModalTabContent>
+            <StyledModalExitButton onClick={() => setShowModal(0)}>
+                Close
+            </StyledModalExitButton>
         </StyledModalNavWrapper>
     )
 }
 
 
 // Body
-const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwitchHandler}) => {
+const SectionContainer = ({section, projectModalSwitcher, showModal, setShowModal, sectionSwitchHandler}) => {
     const projectDisplayAnimation = useSpring({
         transform: section 
         ? 'rotateY(0deg)' 
@@ -258,7 +261,7 @@ const SectionContainer = ({section, projectModalSwitcher, showModal, sectionSwit
         <StyledSectionContainerWrapper>
             <SectionSwitcher section={section} sectionSwitchHandler={sectionSwitchHandler}/>
             <StyledSectionContainerContent>
-                <ModalDisplay showModal={showModal} projectModalSwitcher={projectModalSwitcher}/>
+                <ModalDisplay showModal={showModal} projectModalSwitcher={projectModalSwitcher} setShowModal={setShowModal}/>
                 <StyledSectionHeader>
                     Projects
                 </StyledSectionHeader>

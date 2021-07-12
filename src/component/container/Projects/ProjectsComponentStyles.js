@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { animated } from 'react-spring'
 import { flexColumnCentered, flexRowCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
@@ -264,7 +264,6 @@ export const StyledModalContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: space-around;
     overflow-x: hidden;
 
     @media(min-width: 768px) {
@@ -272,9 +271,13 @@ export const StyledModalContent = styled.div`
     }
 `
 
+
 // Modal Tab Nav
 export const StyledModalNavWrapper = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
 `
 
 export const StyledModalNavContainer = styled.div`
@@ -299,18 +302,33 @@ export const StyledModalNavContainer = styled.div`
     }
 `
 
-export const StyledModalTabNavButton = styled.h3`
+export const StyledModalTabNavButton = styled.button`
     ${flexRowCentered};
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
     min-width: 165px;
-    padding: 2px 0px;
+    padding: 5px 0px;
     background: ${({theme}) => theme.secondaryLight};
+    color: ${({theme}) => theme.primaryLight};
+    font-size: 1.1rem;
+    font-weight: bold;
 
     :hover {
         cursor: pointer;
         background: ${({theme}) => theme.primaryLight};
         color: ${({theme}) => theme.secondaryLight};
+    }
+`
+
+export const StyledModalExitButton = styled(StyledModalTabNavButton)`
+    background: ${({theme}) => theme.primaryAlert};
+    align-self: center;
+    justify-self: center;
+    margin-top: 4vh;
+
+    :hover {
+        background: ${({theme}) => theme.secondaryAlert};
+        color: white;
     }
 `
 
