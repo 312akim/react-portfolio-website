@@ -21,23 +21,7 @@ export const StyledNavigatorWrapper = styled.div`
 `
 
 export const StyledNavigatorContentContainer = styled.div`
-  width: 86%;
 
-  @media (min-width: 480px) {
-    width: 75%;
-  }
-
-  @media (min-width: 768px) {
-    width: 55%;
-  }
-
-  @media (min-width: 1200px) {
-    width: 35%;
-  }
-
-  @media (min-width: 1920px) {
-    width: 30%;
-  }
 `
 
 export const StyledNavigatorCaret = styled.div`
@@ -71,22 +55,32 @@ export const StyledDropdownTextLine = styled.div`
 `
 
 export const StyledDropdownSection = styled.div`
-  position: relative;
+
   z-index: 1;
+  display: ${flexColumnCentered};
 `
 
 // Dropdown Content Container
 export const StyledDropdownContainer = styled.div`
-  width: 100%;
+  width: 343px;
+  padding: 0 5%;
   margin-top: 3vh;
   min-height: 64vh;
 
-  @media (min-width: 480px) {
-    min-height: 57vh;
-  }
-
   @media (min-width: 768px) {
     min-height: 55vh;
+    width: 688px;
+    padding: 5% 15%;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 45vh;
+    padding: 5% 15%;
+  }
+
+  @media (min-width: 1200px) {
+    min-height: 60vh;
+    padding: 5% 15%;
   }
 `
 
