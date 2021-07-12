@@ -171,11 +171,10 @@ export const StyledProjectInformation = styled.div`
     }
 `
 
-export const StyledReadMore = styled.button`
+export const StyledReadMore = styled(StyledDefaultButton)`
     height: 4vh;
-    margin-bottom: 1.5vh;
-    color: white;
-    background: ${({theme}) => theme.secondaryLight};
+    margin: 0 0 1.5vh 0;
+    border-radius: 0px;
 `
 
 export const StyledGithubLink = styled.a`
