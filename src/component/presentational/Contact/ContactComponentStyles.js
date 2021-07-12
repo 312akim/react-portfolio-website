@@ -38,23 +38,6 @@ export const StyledContactTextarea = styled.textarea`
     border: 3px solid${({theme}) => theme.secondaryLight};
 `
 
-export const StyledContactSubmitButton = styled.button`
-    display: block;
-    margin: auto;
-    width: 60%;
-    height: 4vh;
-    margin: 5vh auto;
-    background:${({theme}) => theme.secondaryLight};
-    color: ${({theme}) => theme.primaryLight};
-    border: 3px solid ${({theme}) => theme.primaryLight};
-
-    :hover {
-        background: ${({theme}) => theme.primaryLight};
-        color:${({theme}) => theme.secondaryLight};
-        border: 3px solid${({theme}) => theme.secondaryLight};
-    }
-`
-
 export const StyledContactInputContainer = styled.div`
     display: block;
     padding-top: 2vh;

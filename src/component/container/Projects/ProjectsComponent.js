@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledDefaultButton, StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary, StyledModalExitButton } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -226,15 +226,15 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
     return (
         <StyledModalNavWrapper>
             <StyledModalNavContainer>
-                <StyledModalTabNavButton onClick={() => setTabSelector(1)}>
+                <StyledDefaultButton onClick={() => setTabSelector(1)}>
                     Tech
-                </StyledModalTabNavButton>
-                <StyledModalTabNavButton onClick={() => setTabSelector(2)}>
+                </StyledDefaultButton>
+                <StyledDefaultButton onClick={() => setTabSelector(2)}>
                     Learnings
-                </StyledModalTabNavButton>
-                <StyledModalTabNavButton onClick={() => setTabSelector(3)}>
+                </StyledDefaultButton>
+                <StyledDefaultButton onClick={() => setTabSelector(3)}>
                     Summary
-                </StyledModalTabNavButton>
+                </StyledDefaultButton>
             </StyledModalNavContainer>
             <StyledModalTabContent>
                 {

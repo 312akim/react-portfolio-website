@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flexColumnCentered } from './SharedStyledComponentStyles';
+import { flexColumnCentered, flexRowCentered } from './SharedStyledComponentStyles';
 
 export const StyledSectionComponent = styled.div`
     height: ${props => props.height ? props.height : 'auto'};
@@ -42,4 +42,23 @@ export const StyledSectionText = styled.p`
     margin-top: 1vh;
     margin-left: 15%;
     text-align: left;
+`
+
+export const StyledDefaultButton = styled.button`
+    ${flexRowCentered};
+    border-radius: 4px;
+    border: solid ${({theme}) => theme.primaryLight} 3px;
+    min-width: 165px;
+    padding: 5px 0px;
+    background: ${({theme}) => theme.secondaryLight};
+    color: ${({theme}) => theme.primaryLight};
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: ${({margin}) => margin ? margin : 'auto'};
+
+    :hover {
+        cursor: pointer;
+        background: ${({theme}) => theme.primaryLight};
+        color: ${({theme}) => theme.secondaryLight};
+    }
 `

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
+import { StyledDefaultButton, StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledContactSubmitButton, StyledContactInputContainer, StyledContactLabel, StyledContactTextarea, StyledContactFNameContainer, StyledContactLNameContainer, StyledRequiredAsterick, StyledNameInputContainers, StyledFormikWrapper } from './ContactComponentStyles';
 import emailjs from 'emailjs-com';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -113,9 +113,9 @@ const ContactForm = () => {
                                 <ErrorMessage name='formMessage' component='div' />
                         </StyledContactInputContainer>
 
-                        <StyledContactSubmitButton type='submit' disabled={isSubmitting}>
+                        <StyledDefaultButton margin='4vh auto' type='submit' disabled={isSubmitting}>
                             Submit
-                        </StyledContactSubmitButton>
+                        </StyledDefaultButton>
                     </Form>
                 )}
             </Formik>

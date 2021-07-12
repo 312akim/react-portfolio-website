@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 import { animated } from 'react-spring'
 import { flexColumnCentered, flexRowCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
+import { StyledDefaultButton } from '../../../shared/sharedComponents/SectionComponentStyles';
 
 // Animations
 const hoverCardTopFadeAnim = keyframes`
@@ -302,28 +303,8 @@ export const StyledModalNavContainer = styled.div`
     }
 `
 
-export const StyledModalTabNavButton = styled.button`
-    ${flexRowCentered};
-    border-radius: 4px;
-    border: solid ${({theme}) => theme.primaryLight} 3px;
-    min-width: 165px;
-    padding: 5px 0px;
-    background: ${({theme}) => theme.secondaryLight};
-    color: ${({theme}) => theme.primaryLight};
-    font-size: 1.1rem;
-    font-weight: bold;
-
-    :hover {
-        cursor: pointer;
-        background: ${({theme}) => theme.primaryLight};
-        color: ${({theme}) => theme.secondaryLight};
-    }
-`
-
-export const StyledModalExitButton = styled(StyledModalTabNavButton)`
+export const StyledModalExitButton = styled(StyledDefaultButton)`
     background: ${({theme}) => theme.primaryAlert};
-    align-self: center;
-    justify-self: center;
     margin-top: 4vh;
 
     :hover {
