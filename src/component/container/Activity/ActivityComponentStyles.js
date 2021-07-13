@@ -70,6 +70,11 @@ export const StyledCommitComment = styled.div`
 
 export const StyledCommitGitAnchor = styled.a`
     color: ${({theme}) => theme.primaryLight};
+    text-decoration: underline;
+
+    :hover {
+        color: ${({theme}) => theme.secondaryLight};
+    }
 `
 
 export const StyledCommitDataContainer = styled.div`
