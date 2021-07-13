@@ -4,11 +4,11 @@ import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyle
 //Animations
 const SkillsRingAnimation = keyframes`
     0% {
-        transform: rotateX(-115deg) rotate(0);
+        transform: rotateX(-120deg) rotate(0);
     }
 
     100% {
-        transform: rotateX(-115deg) rotate(-360deg);
+        transform: rotateX(-120deg) rotate(-360deg);
     }
 `
 
