@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledDefaultButton, StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalTabNavButton, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary, StyledModalExitButton } from './ProjectsComponentStyles';
+import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalHeaderContainer, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary, StyledModalExitButton } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -140,9 +140,21 @@ const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}) => {
             <StyledModalWrapper onClick={() => projectModalSwitcher(0)}>
                 <StyledModalContentContainer onClick={(e) => e.stopPropagation()}>
                     <StyledModalContent>
-                        <StyledModalHeroTitle>
-                            {projectComponentCardTextConfig[showModal-1].modal.modalTitle}
-                        </StyledModalHeroTitle>
+                        <StyledModalHeaderContainer>
+                            <StyledModalHeroTitle>
+                                {projectComponentCardTextConfig[showModal-1].modal.modalTitle}
+                            </StyledModalHeroTitle>
+                            {   // If websiteLink exists, return visit button
+                                projectComponentCardTextConfig[showModal-1].websiteLink ?
+                                <a href={`${projectComponentCardTextConfig[showModal-1].websiteLink}`} target='_blank'>
+                                    <StyledDefaultButton margin='0' >
+                                        Visit Website
+                                    </StyledDefaultButton>
+                                </a>
+                                :
+                                <div></div>
+                            }
+                        </StyledModalHeaderContainer>
                         <StyledModalSubheader>
                             Objective
                         </StyledModalSubheader>

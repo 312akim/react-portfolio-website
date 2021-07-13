@@ -48,13 +48,13 @@ export const StyledDefaultButton = styled.button`
     ${flexRowCentered};
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;
-    min-width: 165px;
+    width: 165px;
     padding: 5px 0px;
     background: ${({theme}) => theme.secondaryLight};
     color: ${({theme}) => theme.primaryLight};
     font-size: 1.1rem;
     font-weight: bold;
-    margin: ${({margin}) => margin ? margin : 'auto'};
+    margin: ${({margin}) => margin ? margin : '0'};
 
     :hover {
         cursor: pointer;

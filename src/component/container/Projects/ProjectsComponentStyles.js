@@ -92,7 +92,7 @@ export const StyledAltProjectCardsContainer = styled(animated.div)`
 
 export const StyledSectionSwitcher = styled.div`
     position: absolute;
-    height: 106vh;
+    height: 109vh;
     width: 15%;
     background: ${({theme}) => theme.primaryDark};
     right: ${props => props.position};
@@ -316,6 +316,7 @@ export const StyledModalNavContainer = styled.div`
 
 export const StyledModalExitButton = styled(StyledDefaultButton)`
     background: ${({theme}) => theme.primaryAlert};
+    align-self: center;
 
     :hover {
         background: ${({theme}) => theme.secondaryAlert};
@@ -336,6 +337,12 @@ export const StyledModalTabContentContainer = styled.div`
     @media (min-width: 480px) {
         margin-bottom: 4vh;
     }
+`
+
+export const StyledModalHeaderContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
 export const StyledModalSubheader = styled.h3`

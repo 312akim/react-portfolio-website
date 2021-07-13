@@ -11,6 +11,7 @@ export const projectComponentCardTextConfig = [
         image: tokenizeAmazonMockup,
         imageAlt: "Tokenize Amazon device mockups",
         gitLink: "https://github.com/312akim/tokenize-amazon-landing-public",
+        websiteLink: "https://www.rainforesttoken.io/",
         onClick: 1,
         modal: {
             modalTitle: "Tokenize Amazon",
@@ -46,6 +47,7 @@ export const projectComponentCardTextConfig = [
         image: apparelStoreMockup,
         imageAlt: "Apparel Store Website device mockups",
         gitLink: "https://github.com/312akim/apparel-store-mern",
+        websiteLink: "https://apparel-store-mern.netlify.app/",
         onClick: 2,
         modal: {
             modalTitle: "Apparel Store",
@@ -92,6 +94,7 @@ export const projectComponentCardTextConfig = [
         image: portfolioMockup,
         imageAlt: "Portfolio Website device mockups",
         gitLink: "https://github.com/312akim/react-portfolio-website",
+        websiteLink: false,
         onClick: 3,
         modal: {
             modalTitle: "Portfolio Website",
@@ -131,6 +134,7 @@ export const projectComponentCardTextConfig = [
         image: bobaMockup,
         imageAlt: "Bubble Tea App device mockups",
         gitLink: "",
+        websiteLink: false,
         onClick: 4,
         modal: {
             modalTitle: "Bubble Tea App",
