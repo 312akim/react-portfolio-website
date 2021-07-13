@@ -178,9 +178,17 @@ export const StyledReadMore = styled(StyledDefaultButton)`
 `
 
 export const StyledGithubLink = styled.a`
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
     height: 4vh;
     color: white;
+
+    :hover {
+        color: ${({theme}) => theme.secondaryLight};
+    }
 `
 
 export const StyledCardHoverContainer = styled.div`

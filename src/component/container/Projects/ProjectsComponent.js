@@ -3,6 +3,7 @@ import { StyledDefaultButton, StyledSectionComponent, StyledSectionHeader } from
 import { StyledCardHoverContainer, StyledModalTabContentContainer, StyledGithubLink, StyledModalContentContainer, StyledProjectCard, StyledProjectCardImage, StyledProjectCardsContainer, StyledProjectCardTitle, StyledProjectInformation, StyledReadMore, StyledSectionContainerContent, StyledSectionIconContainer, StyledSectionSwitcher, StyledAltProjectCardsContainer, StyledModalHeroTitle, StyledModalContent, StyledModalWrapper, StyledProjectAnimatedContainer, StyledSectionContainerWrapper, StyledModalNavWrapper, StyledModalNavContainer, StyledModalHeaderContainer, StyledModalTabContent, StyledModalTabContentTextListItem, StyledModalSubheader,StyledModalTabContentList, StyledModalHeroText, StyledModalTabContentTextSummary, StyledModalExitButton } from './ProjectsComponentStyles';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { useSpring } from 'react-spring';
 
@@ -35,76 +36,57 @@ export const ProjectsComponent = () => {
 
 // Which projects page to display
 const ProjectSection = ({section, projectModalSwitcher}) => {
-
     if (section) {
         return (
             <StyledProjectCardsContainer>
-                {
-                   projectComponentCardTextConfig.slice(0, 2).map((project) => {
-                        return (
-                            <StyledProjectCard>
-                                <StyledImageCropContainer height={'40vh'}>
-                                    <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
-                                </StyledImageCropContainer>
-                                <StyledCardHoverContainer>
-                                    <StyledProjectCardTitle>
-                                        {project.title}
-                                    </StyledProjectCardTitle>
-                                    <StyledProjectInformation>
-                                        {project.description}
-                                    </StyledProjectInformation>
-                                    <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
-                                        Read More
-                                    </StyledReadMore>
-                                    <StyledGithubLink 
-                                        href={project.gitLink}
-                                        target="_blank"
-                                    >
-                                        Github
-                                    </StyledGithubLink>
-                                </StyledCardHoverContainer>
-                            </StyledProjectCard>
-                        )
-                    })
-                }
+                <ProjectSectionContent sliceStart={0} sliceEnd={2} projectModalSwitcher={projectModalSwitcher} />
             </StyledProjectCardsContainer>
         )
     } else {
         if (!section) {
             return (
                 <StyledAltProjectCardsContainer>
-                    {
-                        projectComponentCardTextConfig.slice(2, 4).map((project) => {
-                            return (
-                                <StyledProjectCard>
-                                    <StyledImageCropContainer height={'40vh'}>
-                                        <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
-                                    </StyledImageCropContainer>
-                                    <StyledCardHoverContainer>
-                                        <StyledProjectCardTitle>
-                                            {project.title}
-                                        </StyledProjectCardTitle>
-                                        <StyledProjectInformation>
-                                            {project.description}
-                                        </StyledProjectInformation>
-                                        <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
-                                            Read More
-                                        </StyledReadMore>
-                                        <StyledGithubLink 
-                                            href={project.gitLink}
-                                            target="_blank"
-                                        >
-                                            Github
-                                        </StyledGithubLink>
-                                    </StyledCardHoverContainer>
-                                </StyledProjectCard>
-                            )
-                        })
-                    }
+                    <ProjectSectionContent sliceStart={2} sliceEnd={4} projectModalSwitcher={projectModalSwitcher} />
                 </StyledAltProjectCardsContainer>
             )
         }
     }
+}
+
+const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => {
+    return (
+        <>
+            {
+                projectComponentCardTextConfig.slice(sliceStart, sliceEnd).map((project) => {
+                    return (
+                        <StyledProjectCard>
+                            <StyledImageCropContainer height={'40vh'}>
+                                <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
+                            </StyledImageCropContainer>
+                            <StyledCardHoverContainer>
+                                <StyledProjectCardTitle>
+                                    {project.title}
+                                </StyledProjectCardTitle>
+                                <StyledProjectInformation>
+                                    {project.description}
+                                </StyledProjectInformation>
+                                <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
+                                    Read More
+                                </StyledReadMore>
+                                <StyledGithubLink 
+                                    href={project.gitLink}
+                                    target="_blank"
+                                >
+                                    <FontAwesomeIcon icon={faGithub} size='2x'/>
+                                    Github
+                                </StyledGithubLink>
+                            </StyledCardHoverContainer>
+                        </StyledProjectCard>
+                    )
+                })
+            }
+        </>
+    )
 }
 
 // Project Section Display Switcher & arrow icon
