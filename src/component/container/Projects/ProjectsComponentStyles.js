@@ -254,10 +254,8 @@ export const StyledModalContentContainer = styled.div`
 export const StyledModalHeroTitle = styled.h2`
     color: ${({theme}) => theme.primaryLight};
     height: 2vh;
-    margin-bottom: 2vh;
 
     @media (min-width: 480px) {
-        margin-bottom: 4vh;
     }
 `
 
@@ -331,18 +329,21 @@ export const StyledModalTabContent = styled.div`
 // Modal tab content
 export const StyledModalTabContentContainer = styled.div`
     ${flexColumnCentered};
-    height: 44vh;
+    height: 36vh;
     margin-bottom: 2vh;
 
     @media (min-width: 480px) {
-        margin-bottom: 4vh;
+        height: 44vh;
+        margin-bottom: 3vh;
     }
 `
 
 export const StyledModalHeaderContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 15vh;
 `
 
 export const StyledModalSubheader = styled.h3`
