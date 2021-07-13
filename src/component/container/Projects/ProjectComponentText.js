@@ -76,7 +76,7 @@ export const projectComponentCardTextConfig = [
             modalSummaryText: [
                 "My first fullstack SPA that I built from the ground up.",
 
-                "I deployed the front end code on Netlify and chose Heroku for the backend functionality to serve data from a Mongo database. The front end makes a request on load to the Heroku server for products and populates the site.",
+                "I deployed the front end code on Netlify and chose Heroku for the backend functionality to serve product data from a Mongo database. The front end makes a request on-load to the Heroku server for products and populates the site.",
 
                 "Cart, checkout, payment, and address functionality is provided by Snipcart which is integrated into each product page on Netlify. Once a user attempts to checkout, the product cart button makes specifies where Snipcart should make a POST request to verify product id and price.",
 
