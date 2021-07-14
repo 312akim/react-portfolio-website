@@ -61,7 +61,7 @@ const SkillsRing = () => {
             {
                 skillsConfig.map((skill, index) => {
                     return (
-                        <SkillsRingListItem>
+                        <SkillsRingListItem key={skill.title + index}>
                             <SkillsRingListItemContent index={index} degree={ringDegree}>
                                 <FontAwesomeIcon icon={skill.icon} size="3x"/>
                                 <SkillsRingListItemTitle>

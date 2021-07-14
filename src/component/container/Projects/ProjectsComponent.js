@@ -57,9 +57,9 @@ const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => 
     return (
         <>
             {
-                projectComponentCardTextConfig.slice(sliceStart, sliceEnd).map((project) => {
+                projectComponentCardTextConfig.slice(sliceStart, sliceEnd).map((project, index) => {
                     return (
-                        <StyledProjectCard>
+                        <StyledProjectCard key={'ProjectCard' + index}>
                             <StyledImageCropContainer height={'40vh'}>
                                 <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
                             </StyledImageCropContainer>
