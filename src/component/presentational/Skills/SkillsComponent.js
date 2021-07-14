@@ -4,6 +4,7 @@ import { SkillsMainComponentContainer, SkillsRingList, SkillsRingListItem, Skill
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDatabase} from '@fortawesome/free-solid-svg-icons'
 import { faReact, faNodeJs, faGithubSquare, faJs, faSass } from '@fortawesome/free-brands-svg-icons';
+import { uuidv4 } from '../../../shared/sharedComponents/HelperUtil';
 
 export const SkillsComponent = () => {
     return (
@@ -61,7 +62,7 @@ const SkillsRing = () => {
             {
                 skillsConfig.map((skill, index) => {
                     return (
-                        <SkillsRingListItem key={skill.title + index}>
+                        <SkillsRingListItem key={uuidv4()}>
                             <SkillsRingListItemContent index={index} degree={ringDegree}>
                                 <FontAwesomeIcon icon={skill.icon} size="3x"/>
                                 <SkillsRingListItemTitle>

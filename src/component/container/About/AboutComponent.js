@@ -8,6 +8,7 @@ import peopleImage from '../../../shared/images/people.jfif';
 import Fade from 'react-reveal/Fade';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { aboutComponentTextConfig, aboutMoreContentConfig } from './AboutComponentText';
+import { uuidv4 } from '../../../shared/sharedComponents/HelperUtil';
 
 export const AboutComponent = () => {
     return (
@@ -70,7 +71,7 @@ const AnimatedNavigator = () => {
                             {
                                 textObject.text.map((line) => {
                                     return (
-                                        <StyledDropdownTextLine>
+                                        <StyledDropdownTextLine key={uuidv4()}>
                                                 {line}
                                         </StyledDropdownTextLine>
                                     )
@@ -135,7 +136,7 @@ const AnimatedNavigator = () => {
                     return (
                         <NavigatorItem
                         title={n.navTitle}
-                        key={index}
+                        key={uuidv4()}
                         index={index}
                         onMouseEnter={onMouseEnter}
                         >
@@ -189,9 +190,9 @@ const AboutMoreContentMapper = ({config}) => {
         <StyledAboutMoreContentWrapper>
             <Fade left>
                 {
-                    config.map(item => {
+                    config.map((item, index) => {
                         return (
-                            <StyledAboutMoreContentContainer>
+                            <StyledAboutMoreContentContainer key={uuidv4()}>
                                 <StyledImageCropContainer height='280px' width='auto' borderRadius='4px 4px 0 0' largeBorderRadius='4px 0 0 4px'>
                                     <StyledAboutMoreContentImage src={item.image}/>
                                 </StyledImageCropContainer>
@@ -204,7 +205,7 @@ const AboutMoreContentMapper = ({config}) => {
                                         {
                                             item.text.map(textLine => {
                                                 return (
-                                                    <StyledAboutMoreContentTextLine>
+                                                    <StyledAboutMoreContentTextLine key={uuidv4()}>
                                                         {textLine}
                                                     </StyledAboutMoreContentTextLine>
                                                 )

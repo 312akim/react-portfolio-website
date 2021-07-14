@@ -9,6 +9,7 @@ import { useSpring } from 'react-spring';
 
 // Component Cards Text config
 import { projectComponentCardTextConfig } from './ProjectComponentText';
+import { uuidv4 } from '../../../shared/sharedComponents/HelperUtil';
 
 export const ProjectsComponent = () => {
 
@@ -57,9 +58,9 @@ const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => 
     return (
         <>
             {
-                projectComponentCardTextConfig.slice(sliceStart, sliceEnd).map((project, index) => {
+                projectComponentCardTextConfig.slice(sliceStart, sliceEnd).map(project => {
                     return (
-                        <StyledProjectCard key={'ProjectCard' + index}>
+                        <StyledProjectCard key={uuidv4()}>
                             <StyledImageCropContainer height={'40vh'}>
                                 <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
                             </StyledImageCropContainer>
@@ -165,7 +166,7 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
                         {   
                             mapArray.map(item => {
                                 return (
-                                    <StyledModalTabContentTextListItem key={title+item}>{item}</StyledModalTabContentTextListItem>
+                                    <StyledModalTabContentTextListItem key={uuidv4()}>{item}</StyledModalTabContentTextListItem>
                                 )
                             })
                         }
@@ -183,7 +184,7 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
                     <StyledModalTabContentList>
                         {mapArray.map((item) => {
                             return (
-                                <StyledModalTabContentTextSummary>
+                                <StyledModalTabContentTextSummary key={uuidv4()}>
                                     {item}
                                 </StyledModalTabContentTextSummary>
                             )

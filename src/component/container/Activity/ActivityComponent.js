@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { StyledCommitWrapper, StyledCommitTitle, StyledCommitDataWrapper, StyledCommitListContainer, StyledCommitDate, StyledCommitDataContainer, StyledCommitComment, StyledCommitGitAnchor, StyledCommitListWrapper, StyledActivitySectionContainer, StyledCommitTitleAnchor } from './ActivityComponentStyles';
 import { Octokit } from "@octokit/core";
+import { uuidv4 } from '../../../shared/sharedComponents/HelperUtil';
 
 export const ActivityComponent = () => {
     return (
@@ -60,9 +61,9 @@ const CommitListComponent = () => {
 
     return (
       <StyledCommitListWrapper>
-        {commitConfig.map((n, index) => {
+        {commitConfig.map(n => {
           return (
-            <div key={index}>
+            <div key={uuidv4()}>
               {CommitComponent(n)}
             </div>
             )
@@ -82,7 +83,7 @@ const CommitComponent = (props) => {
         <StyledCommitDataWrapper>
           {!props.api ? <div>Failed to load github commit data</div> :
             props.api.data.map(commit => (
-              <StyledCommitDataContainer key={commit.node_id}>
+              <StyledCommitDataContainer key={uuidv4()}>
                 <StyledCommitDate>
                   Date: {new Date(commit.commit.author.date).toLocaleDateString()}&nbsp;
                 </StyledCommitDate>
