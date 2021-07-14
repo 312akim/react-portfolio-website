@@ -128,7 +128,7 @@ const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}) => {
                             </StyledModalHeroTitle>
                             {   // If websiteLink exists, return visit button
                                 projectComponentCardTextConfig[showModal-1].websiteLink ?
-                                <a href={`${projectComponentCardTextConfig[showModal-1].websiteLink}`} target='_blank'>
+                                <a href={`${projectComponentCardTextConfig[showModal-1].websiteLink}`} target='_blank' rel="noreferrer">
                                     <StyledDefaultButton margin='0' >
                                         Visit Website
                                     </StyledDefaultButton>
