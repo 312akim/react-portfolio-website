@@ -74,7 +74,7 @@ const ContactForm = () => {
                 {({ isSubmitting }) => (
                     <Form className='formikForm'>
                         <StyledContactInputContainer>
-                            <StyledContactLabel for='formSubject'>
+                            <StyledContactLabel htmlFor='formSubject'>
                                 Subject:
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
@@ -82,7 +82,7 @@ const ContactForm = () => {
                             <ErrorMessage className='contactErrorMessage' name='formSubject' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
-                            <StyledContactLabel for='formEmail'>
+                            <StyledContactLabel htmlFor='formEmail'>
                                 Email:
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
@@ -90,7 +90,7 @@ const ContactForm = () => {
                             <ErrorMessage className='contactErrorMessage' name='formEmail' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
-                            <StyledContactLabel for='formFName'>
+                            <StyledContactLabel htmlFor='formFName'>
                                 First Name:
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
@@ -98,14 +98,14 @@ const ContactForm = () => {
                                 <ErrorMessage className='contactErrorMessage' name='formFName' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
-                            <StyledContactLabel for='formLName'>
+                            <StyledContactLabel htmlFor='formLName'>
                                 Last Name:
                             </StyledContactLabel>
                                 <Field id='formLName' type='text' name='formLName' placeholder='Last Name' className='contactInputField'/>
                                 <ErrorMessage className='contactErrorMessage' name='formLName' component='div' />
                         </StyledContactInputContainer>
                         <StyledContactInputContainer>
-                            <StyledContactLabel for='formMessage'>
+                            <StyledContactLabel htmlFor='formMessage'>
                                 Message:
                                 <StyledRequiredAsterick>&nbsp;*</StyledRequiredAsterick>
                             </StyledContactLabel>
