@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } from '../../../shared/sharedComponents/SectionComponentStyles';
-import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot, StyledNavigatorListContainer,
+import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentImage, StyledAboutMoreContentTitle, StyledAboutMoreContentTextContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper, StyledAboutMoreContentContainer, StyledAboutMoreContentTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
 import creativeImage from '../../../shared/images/creativity.jfif';

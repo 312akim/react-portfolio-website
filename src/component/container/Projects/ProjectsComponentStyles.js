@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { animated } from 'react-spring'
 import { flexColumnCentered, flexRowCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 import { StyledDefaultButton } from '../../../shared/sharedComponents/SectionComponentStyles';

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
