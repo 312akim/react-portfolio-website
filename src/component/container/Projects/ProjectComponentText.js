@@ -120,7 +120,7 @@ export const projectComponentCardTextConfig = [
                 "Interacting with the github octokit and emailJS API's was a new experience for me. Integrating a complete Formik form and all it entailed to send data to emailJS was a great learning experience.",
             ],
             modalSummaryText: [
-                "Working on my portfolio website gave me a chance to work build a smoother animated user experience for visitors. The website is built with functional components and was also a great project for me to experiment and learn React Hooks on.", 
+                "Working on my portfolio website gave me a chance to work build a smoother animated user experience for visitors. The website is built with ES6 arrow function components and was also a great project for me to experiment and learn React Hooks on.", 
                 
                 "Highlights include implementing the Octokit API to show my latest github project commits as well as heavier practice with formik forms and integrating it with an email service API to receive emails directly from the website.",
                 
