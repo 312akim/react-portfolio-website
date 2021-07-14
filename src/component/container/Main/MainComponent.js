@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
-import { HomeComponent } from '../../presentational/Home/HomeComponent'
+import { HomeComponent } from '../../container/Home/HomeComponent'
 import { ProjectsComponent } from '..//Projects/ProjectsComponent';
 import { ActivityComponent } from '../../container/Activity/ActivityComponent';
 import { SkillsComponent } from '../../presentational/Skills/SkillsComponent';
