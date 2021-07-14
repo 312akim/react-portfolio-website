@@ -6,17 +6,15 @@ export const ReactScrollLink = ({id, title, faIcon, delay = 0, underline = true,
     return (
         <StyledReactScrollLinkWrapper>
             <StyledReactScrollLinkContainer marginBottom={marginBottom}>
-                <a>
-                    <Link activeClass="active" to={id} spy={true} smooth={true} duration={400} delay={delay}>
-                        <StyledIconTextWrapper>
-                            <FontAwesomeIcon icon={faIcon} size="2x" />
-                            <div>
-                                {title}
-                                <StyledAnimatedUnderline underline={underline}/>
-                            </div>
-                        </StyledIconTextWrapper>
-                    </Link>
-                </a>
+                <Link activeClass="active" to={id} spy={true} smooth={true} duration={400} delay={delay}>
+                    <StyledIconTextWrapper>
+                        <FontAwesomeIcon icon={faIcon} size="2x" />
+                        <div>
+                            {title}
+                            <StyledAnimatedUnderline underline={underline}/>
+                        </div>
+                    </StyledIconTextWrapper>
+                </Link>
             </StyledReactScrollLinkContainer>
         </StyledReactScrollLinkWrapper>
     )
