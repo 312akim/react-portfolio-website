@@ -196,14 +196,14 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
 
     const returnTabContent = () => {
         switch(tabSelector) {
-            case 0: {
-                // if 0 return case 1
-            }
-            case 1: {
+            // if 0  or not other cases, return case 1
+            default:
+            case 0: 
+            case 1: 
                 return (
                     returnTabContentList("Tech", projectComponentCardTextConfig[showModal-1].modal.modalTechText)
                 )
-            }
+            
             case 2: {
                 return (
                     returnTabContentList("Learnings", projectComponentCardTextConfig[showModal-1].modal.modalLearningsText)

@@ -55,6 +55,10 @@ const HoverImage = (props) => {
                 <StyledDropdownImage src={peopleImage} />
             </StyledImageCropContainer>
         )
+
+        default: return (
+            <div></div>
+        )
     }
 }
 
