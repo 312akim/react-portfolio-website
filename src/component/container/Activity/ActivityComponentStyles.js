@@ -31,8 +31,11 @@ export const StyledCommitWrapper = styled.div`
 `
 
 export const StyledCommitTitleAnchor = styled.a`
-    text-decoration: none;
     color: white;
+
+    :hover {
+        color: ${({theme}) => theme.secondaryLight};
+    }
 `
 
 export const StyledCommitTitle = styled.div`
