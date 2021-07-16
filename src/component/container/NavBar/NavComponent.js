@@ -9,9 +9,9 @@ export const NavBar = () => {
 
     const [scrolling, setScrolling] = useState(true);
 
-    let scrollTop = 0;
     // Navbar background sets to transparent when not at top of page.
     useEffect(() => {
+        const scrollTop = 0;
         const onScroll = () => {
             let currentPosition = window.pageYOffset;
 

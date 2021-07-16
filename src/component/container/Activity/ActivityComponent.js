@@ -24,11 +24,12 @@ const CommitListComponent = () => {
   const [apparelStoreCommits, setApparelStoreCommits] = useState(false);
   const [portfolioCommits, setPortfolioCommits] = useState(false);
 
-  const octokit = new Octokit({ 
-    auth: process.env.GIT_TOKEN 
-  });
-
+  
   useEffect(() => {
+    const octokit = new Octokit({ 
+      auth: process.env.GIT_TOKEN 
+    });
+    
     const owner = '312akim',
           repo1 = 'apparel-store-mern',
           repo2 = 'react-portfolio-website',

@@ -203,8 +203,6 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
                 return (
                     returnTabContentList("Tech", projectComponentCardTextConfig[showModal-1].modal.modalTechText)
                 )
-                break;
-            
             case 2: {
                 return (
                     returnTabContentList("Learnings", projectComponentCardTextConfig[showModal-1].modal.modalLearningsText)
