@@ -2,7 +2,17 @@ import { Link } from 'react-scroll';
 import { StyledAnimatedUnderline, StyledReactScrollLinkContainer, StyledReactScrollLinkWrapper, StyledIconTextWrapper, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer } from './ReactScrollComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const ReactScrollLink = ({id, title, faIcon, delay = 0, underline = true, marginBottom = '4vh'}) => {
+
+interface ReactScrollLinkProps {
+    id: string,
+    title: string,
+    faIcon?: any,
+    delay?: number,
+    underline?: boolean,
+    marginBottom?: string
+}
+
+export const ReactScrollLink = ({id, title, faIcon, delay = 0, underline = true, marginBottom = '4vh'}: ReactScrollLinkProps) => {
     return (
         <StyledReactScrollLinkWrapper>
             <StyledReactScrollLinkContainer marginBottom={marginBottom}>
@@ -20,7 +30,14 @@ export const ReactScrollLink = ({id, title, faIcon, delay = 0, underline = true,
     )
 };
 
-export const ReactScrollHomeLink = ({id, title, faIcon, delay = 0}) => {
+interface ReactScrollHomeLinkProps {
+    id: string,
+    title: string,
+    faIcon: any,
+    delay?: number
+}
+
+export const ReactScrollHomeLink = ({id, title, faIcon, delay = 0}: ReactScrollHomeLinkProps) => {
     return (
         <StyledHomeLinkContainer>
             <Link activeClass="active" to={id} spy={true} smooth={true} duration={400} delay={delay}>
