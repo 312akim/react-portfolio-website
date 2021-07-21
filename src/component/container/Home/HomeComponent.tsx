@@ -10,7 +10,7 @@ import 'intersection-observer';
 
 export const HomeComponent = () => {
     // Intersect Observer *****
-    const [contentVisible, setContentVisible] = useState(false);
+    const [contentVisible, setContentVisible] = useState<boolean>(false);
     const homeContentRef = useRef();
 
     useEffect(() => {
@@ -34,7 +34,7 @@ export const HomeComponent = () => {
         return () => observer.disconnect();
     }, [])
     // *****
-
+    
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'auto'}>
             <StyledHomeComponentContainer>
@@ -61,7 +61,11 @@ const HomeHero = () => {
     )
 }
 
-const HomeText = ({contentVisible}) => {
+interface DisplayContent {
+    contentVisible: boolean
+}
+
+const HomeText = ({contentVisible}: DisplayContent) => {
     return (
         <StyledTextContainerWrapper contentVisible={contentVisible}>
             <StyledTextContainer>
@@ -79,7 +83,7 @@ const HomeText = ({contentVisible}) => {
     )
 }
 
-const HomeNav = ({contentVisible}) => {
+const HomeNav = ({contentVisible}: DisplayContent) => {
     return (
         <StyledHomeNavWrapper contentVisible={contentVisible}>
             <StyledHomeNavContainer>

@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 import { flexColumnCentered, flexRowCentered } from './SharedStyledComponentStyles';
 
-export const StyledSectionComponent = styled.div`
+interface SectionComponentInterface {
+    height?: string,
+    minHeight?: string,
+    fontColor?: string,
+    backgroundColor: (string) => string
+}
+
+export const StyledSectionComponent = styled.div<SectionComponentInterface>`
     ${flexColumnCentered};
-    height: ${props => props.height ? props.height : 'auto'};
-    min-height: ${props => props.minHeight ? props.minHeight : 'auto'};
-    color: ${props => props.fontColor ? props.fontColor: 'black'};
-    background-color: ${props => props.backgroundColor};
+    height: ${({height}) => height ? height : 'auto'};
+    min-height: ${({minHeight}) => minHeight ? minHeight : 'auto'};
+    color: ${({fontColor}) => fontColor ? fontColor: 'black'};
+    background-color: ${({backgroundColor}) => backgroundColor};
     text-align: center;
     width: 100%;
 `
@@ -44,7 +51,11 @@ export const StyledSectionText = styled.p`
     text-align: left;
 `
 
-export const StyledDefaultButton = styled.button`
+interface DefaultButtonOptions {
+    margin?: string
+}
+
+export const StyledDefaultButton = styled.button<DefaultButtonOptions>`
     ${flexRowCentered};
     border-radius: 4px;
     border: solid ${({theme}) => theme.primaryLight} 3px;

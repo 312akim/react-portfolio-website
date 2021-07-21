@@ -2,7 +2,6 @@ import { Link } from 'react-scroll';
 import { StyledAnimatedUnderline, StyledReactScrollLinkContainer, StyledReactScrollLinkWrapper, StyledIconTextWrapper, StyledHomeLinkContainer, StyledHomeLinkIconTextContainer } from './ReactScrollComponentStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 interface ReactScrollLinkProps {
     id: string,
     title: string,

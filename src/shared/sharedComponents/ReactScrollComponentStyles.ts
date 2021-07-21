@@ -37,8 +37,6 @@ interface AnimatedUnderlineProps {
     underline?: boolean
 }
 
-
-
 export const StyledAnimatedUnderline = styled.div<AnimatedUnderlineProps>`
     display: ${({underline}) => underline ? 'auto' : 'none'};
     position: absolute;
