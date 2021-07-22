@@ -21,7 +21,12 @@ export const ContactComponent = () => {
 const ContactForm = () => {
 
     //EmailJs
-    const sendEmail = (object) => {
+    const sendEmail = (object: {
+        formSubject: string,
+        formEmail: string,
+        formFName: string,
+        formMessage: string
+    }) => {
         emailjs.send("service_e968q22", "template_4k3a6so", object, "user_751xNiHC7Q8RBo3dQib5W")
         .then((result) => {
             console.log(result.text)
@@ -30,23 +35,26 @@ const ContactForm = () => {
         })
     }
 
-    const onSubmit = (values, actions) => {
-        setTimeout(() => {
-            sendEmail(values)
-            actions.setSubmitting(false)
-          }, 1000)
-        
-        actions.resetForm();
-    };
-
     return (
         <StyledFormikWrapper>
             <Formik
                 initialValues={{ formSubject: '', formEmail: '', formFName: '', formLName: '', formMessage: '' }}
-                onSubmit={onSubmit}
+                onSubmit={(values, actions) => {
+                    setTimeout(() => {
+                        sendEmail(values)
+                        actions.setSubmitting(false)
+                      }, 1000)
+                    
+                    actions.resetForm();
+                }}
 
                 validate={values => {
-                    const errors = {};
+                    const errors: {
+                        formSubject?: string,
+                        formEmail?: string,
+                        formFName?: string,
+                        formMessage?: string
+                    } = {};
                     if (!values.formSubject) {
                         errors.formSubject = 'Required';
                     }
