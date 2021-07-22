@@ -54,10 +54,10 @@ const CommitListComponent = () => {
     fetchApparelStoreData();
     fetchPortfolioCommits();
   }, [])
-
+    
     const commitConfig = [
+      { title: "Portfolio Site Commits", api: portfolioCommits, link: 'https://github.com/312akim/react-portfolio-website' },
       { title: "Apparel Store Commits", api: apparelStoreCommits, link: 'https://github.com/312akim/apparel-store-mern' },
-      { title: "Portfolio Site Commits", api: portfolioCommits, link: 'https://github.com/312akim/react-portfolio-website' }
     ];
 
     return (
