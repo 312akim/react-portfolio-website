@@ -1,46 +1,27 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React from 'react';
 import { StyledSectionComponent } from '../../../shared/sharedComponents/SectionComponentStyles';
 import { ReactScrollHomeLink } from '../../../shared/sharedComponents/ReactScrollComponent';
 import { StyledHomeNavContainer, StyledNameContainer, StyledMainHeader, StyledSubHeader, StyledTextContainerWrapper, StyledTextContainer, StyledTextSection, StyledHomeLinkButton, StyledHomeFlexContainer, StyledHomeFlexPairContainer, StyledHomeContentContainer, StyledHomeNavWrapper, StyledHomeComponentContainer, StyledLinkedinAnchorContainer } from './HomeComponentStyles';
 import { faLaptopCode, faUserAstronaut, faCodeBranch, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useInView } from 'react-intersection-observer'
 
 export const HomeComponent = () => {
     // Intersect Observer *****
-    const [contentVisible, setContentVisible] = useState(false);
-    const homeContentRef = useRef();
-
-    useEffect(() => {
-        const onIntersect = (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                setContentVisible(true);
-              }
-            });
-        };
-
-        let options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.75
-        }
-
-        const observer = new IntersectionObserver(onIntersect, options);
-        observer.observe(homeContentRef.current);
-        //Cleanup
-        return () => observer.disconnect();
-    }, [])
-    // *****
-
+    const [homeAnimatedRef, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.75,
+    })
+    // ************************
+    
     return (
         <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} height={'auto'}>
             <StyledHomeComponentContainer>
                 <HomeHero />
-                <StyledHomeContentContainer ref={homeContentRef}>
-                    <HomeText contentVisible={contentVisible}/>
-                    <HomeNav contentVisible={contentVisible}/>
+                <StyledHomeContentContainer ref={homeAnimatedRef}>
+                    <HomeText inView={inView}/>
+                    <HomeNav inView={inView}/>
                 </StyledHomeContentContainer>
             </StyledHomeComponentContainer>
         </StyledSectionComponent>
@@ -60,9 +41,13 @@ const HomeHero = () => {
     )
 }
 
-const HomeText = ({contentVisible}) => {
+interface DisplayContent {
+    inView: boolean
+}
+
+const HomeText = ({inView}: DisplayContent) => {
     return (
-        <StyledTextContainerWrapper contentVisible={contentVisible}>
+        <StyledTextContainerWrapper inView={inView}>
             <StyledTextContainer>
                 <StyledTextSection>
                     Welcome to my portfolio.
@@ -78,9 +63,9 @@ const HomeText = ({contentVisible}) => {
     )
 }
 
-const HomeNav = ({contentVisible}) => {
+const HomeNav = ({inView}: DisplayContent) => {
     return (
-        <StyledHomeNavWrapper contentVisible={contentVisible}>
+        <StyledHomeNavWrapper inView={inView}>
             <StyledHomeNavContainer>
                 <StyledHomeFlexContainer>
                     <StyledHomeLinkButton>

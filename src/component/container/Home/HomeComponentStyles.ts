@@ -3,7 +3,7 @@ import homeBackground from '../../../shared/images/home-background.jpg'
 import { flexColumnCentered } from '../../../shared/sharedComponents/SharedStyledComponentStyles';
 
     // Animations
-const homeContentMobileAnimation = (degreesX, marginLeft) => keyframes`
+const homeContentMobileAnimation = (degreesX: number, marginLeft: string) => keyframes`
     0% {
         transform: rotateX(${degreesX}deg) scaleZ(2.5);
         margin-left: ${marginLeft};
@@ -21,7 +21,7 @@ const homeContentMobileAnimation = (degreesX, marginLeft) => keyframes`
     }
 `
 
-const homeContentAnimation = (degreesY, marginLeft) => keyframes`
+const homeContentAnimation = (degreesY: number, marginLeft: string) => keyframes`
     0% {
         transform: rotateY(${degreesY}deg) scaleZ(2.5);
         margin-left: ${marginLeft};
@@ -38,6 +38,11 @@ const homeContentAnimation = (degreesY, marginLeft) => keyframes`
         transform: rotateY(0deg) scaleZ(2.5);
     }
 `
+    // Reuseable Interfaces
+interface DisplayContent {
+    inView?: boolean
+}
+
 
     // Components
 export const StyledHomeComponentContainer = styled.div`
@@ -112,14 +117,23 @@ export const StyledHomeLinkButton = styled.button`
     }
 `
 
-export const StyledHomeFlexContainer = styled.div`
+interface HomeFlexContainer {
+    margin?: string
+}
+
+export const StyledHomeFlexContainer = styled.div<HomeFlexContainer>`
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: ${({margin}) => margin ? margin : '0 0 0 30px'};
 `
 
-export const StyledHomeFlexPairContainer = styled.div`
+interface HomeFlexPairContainer {
+    margin?: string,
+    justifyContent?: string
+}
+
+export const StyledHomeFlexPairContainer = styled.div<HomeFlexPairContainer>`
     display: flex;
     flex-direction: row;
     margin: ${({margin}) => margin ? margin : '0'};
@@ -127,10 +141,10 @@ export const StyledHomeFlexPairContainer = styled.div`
     align-items: center;
 `
 
-export const StyledHomeNavWrapper = styled.div`
+export const StyledHomeNavWrapper = styled.div<DisplayContent>`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
+    display: ${({inView}) => inView ? 'block' : 'none'};
 `
 
 export const StyledHomeNavContainer = styled.div`
@@ -150,10 +164,10 @@ export const StyledHomeNavContainer = styled.div`
     }
 `
 
-export const StyledTextContainerWrapper = styled.div`
+export const StyledTextContainerWrapper = styled.div <DisplayContent>`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
+    display: ${({inView}) => inView ? 'block' : 'none'};
 `
 
 export const StyledTextContainer = styled.div`

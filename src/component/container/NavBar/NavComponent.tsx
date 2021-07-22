@@ -7,13 +7,13 @@ import { useSpring } from 'react-spring'
 
 export const NavBar = () => {
 
-    const [scrolling, setScrolling] = useState(true);
+    const [scrolling, setScrolling] = useState<boolean>(true);
 
-    let scrollTop = 0;
     // Navbar background sets to transparent when not at top of page.
     useEffect(() => {
+        const scrollTop: number = 0;
         const onScroll = () => {
-            let currentPosition = window.pageYOffset;
+            let currentPosition: number = window.pageYOffset;
 
             if (currentPosition > scrollTop) {
                 setScrolling(false);
@@ -37,18 +37,23 @@ export const NavBar = () => {
     );
 }
 
+interface OpenStateHook {
+    isOpen: boolean,
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+}
+
 const CollapsibleNavComponent = () => {
-    const [isOpen, setOpen] = useState(false);
+    const [isOpen, setOpen] = useState<boolean>(false);
 
     return (
         <StyledCollapsibleNavContainer>
             <NavBarToggler isOpen={isOpen} setOpen={setOpen} />
-            <CollapsibleNavLinks isOpen={isOpen}/>
+            <CollapsibleNavLinks isOpen={isOpen} setOpen={setOpen}/>
         </StyledCollapsibleNavContainer>
     )
 }
 
-const NavBarToggler = ({setOpen, isOpen}) => {
+const NavBarToggler = ({setOpen, isOpen}: OpenStateHook) => {
     const navBurgerAnimation = useSpring({
         transform: isOpen 
         ? 'rotate(90deg)' 
@@ -62,7 +67,9 @@ const NavBarToggler = ({setOpen, isOpen}) => {
     )
 }
 
-const CollapsibleNavLinks = ({isOpen}) => {
+
+
+const CollapsibleNavLinks = ({isOpen, setOpen}: OpenStateHook) => {
     const navWindowAnimation = useSpring({
         right: isOpen 
         ? '0%' 
@@ -79,6 +86,7 @@ const CollapsibleNavLinks = ({isOpen}) => {
 }
 
 const SideBarNavigationLinks = () => {
+    console.log("FA HOME IS" + typeof(faHome));
     return (
         <StyledNavigationList>
             <ReactScrollLink title="Home" id="homeSection" faIcon={faHome}/>

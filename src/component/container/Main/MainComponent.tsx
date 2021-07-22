@@ -2,9 +2,9 @@ import React from 'react';
 import { StyledMainContainer } from './MainComponentStyles';
 import { AboutComponent } from '../About/AboutComponent'
 import { ContactComponent } from '../../presentational/Contact/ContactComponent';
-import { HomeComponent } from '../../container/Home/HomeComponent'
-import { ProjectsComponent } from '..//Projects/ProjectsComponent';
-import { ActivityComponent } from '../../container/Activity/ActivityComponent';
+import { HomeComponent } from '../Home/HomeComponent'
+import { ProjectsComponent } from '../Projects/ProjectsComponent';
+import { ActivityComponent } from '../Activity/ActivityComponent';
 import { SkillsComponent } from '../../presentational/Skills/SkillsComponent';
 import { NavBar } from '../NavBar/NavComponent';
 import Fade from 'react-reveal/Fade';

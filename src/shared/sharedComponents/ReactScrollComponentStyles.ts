@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledReactScrollLinkContainer = styled.div`
+interface ReactScrollLinkContainerProps {
+    marginBottom?: string
+}
+
+export const StyledReactScrollLinkContainer = styled.div<ReactScrollLinkContainerProps>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,7 +33,11 @@ export const StyledReactScrollIconLinkContainer = styled.div`
     }
 `
 
-export const StyledAnimatedUnderline = styled.div`
+interface AnimatedUnderlineProps {
+    underline?: boolean
+}
+
+export const StyledAnimatedUnderline = styled.div<AnimatedUnderlineProps>`
     display: ${({underline}) => underline ? 'auto' : 'none'};
     position: absolute;
     width: 0;

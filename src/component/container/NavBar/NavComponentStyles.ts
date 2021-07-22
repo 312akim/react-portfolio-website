@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { animated } from 'react-spring'
 
-export const StyledNavContainer = styled.div`
+interface NavContainerBackground {
+    scroll: boolean
+}
+
+export const StyledNavContainer = styled.div<NavContainerBackground>`
     height: 10vh;
     background: ${({theme, scroll}) => scroll ? theme.primaryDark : 'transparent'};
     position: relative;
@@ -29,14 +33,18 @@ export const StyledNavLogo = styled.div`
     pointer-events: auto;
 `
 
-export const StyledNavigationListWrapper = styled.div`
+interface NavigationListWrapperWidth {
+    width?: string
+}
+
+export const StyledNavigationListWrapper = styled.div<NavigationListWrapperWidth>`
     display: flex;
     flex-direction: column;
     background: transparent;
     justify-content: space-around;
     color: ${({theme}) => theme.secondaryLight};
     font-size: 20px;
-    width: ${props => props.width ? props.width : '100%'};
+    width: ${({width}) => width ? width : '100%'};
     height: 100%;
 `
 

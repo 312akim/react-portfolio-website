@@ -1,4 +1,13 @@
-export const theme = {
+interface Theme {
+    primaryLight: string,
+    secondaryLight: string,
+    primaryDark: string,
+    secondaryDark: string,
+    primaryAlert: string,
+    secondaryAlert: string
+}
+
+export const theme: Theme = {
     primaryLight: 'white',
     secondaryLight: 'rgb(82,138,183)',
     primaryDark: 'rgb(45,51,90)',
