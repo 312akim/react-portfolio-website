@@ -40,7 +40,7 @@ const homeContentAnimation = (degreesY: number, marginLeft: string) => keyframes
 `
     // Reuseable Interfaces
 interface DisplayContent {
-    contentVisible?: boolean
+    inView?: boolean
 }
 
 
@@ -144,7 +144,7 @@ export const StyledHomeFlexPairContainer = styled.div<HomeFlexPairContainer>`
 export const StyledHomeNavWrapper = styled.div<DisplayContent>`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
+    display: ${({inView}) => inView ? 'block' : 'none'};
 `
 
 export const StyledHomeNavContainer = styled.div`
@@ -166,7 +166,7 @@ export const StyledHomeNavContainer = styled.div`
 export const StyledTextContainerWrapper = styled.div <DisplayContent>`
     perspective: 600px;
     perspective-origin: 50% 50%;
-    display: ${({contentVisible}) => contentVisible ? 'block' : 'none'};
+    display: ${({inView}) => inView ? 'block' : 'none'};
 `
 
 export const StyledTextContainer = styled.div`

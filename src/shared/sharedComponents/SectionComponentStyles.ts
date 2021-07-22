@@ -5,7 +5,7 @@ interface SectionComponentInterface {
     height?: string,
     minHeight?: string,
     fontColor?: string,
-    backgroundColor: (string) => string
+    backgroundColor: (string: any) => string
 }
 
 export const StyledSectionComponent = styled.div<SectionComponentInterface>`
