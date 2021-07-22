@@ -182,7 +182,7 @@ export const StyledGithubLink = styled.a`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1vh;
+    margin-top: 2vh;
     height: 4vh;
     color: white;
 
@@ -255,7 +255,7 @@ export const StyledModalContentContainer = styled.div`
 
     @media (min-width: 768px) {
         border-radius: 0px;
-        height: 96vh;
+        height: 100vh;
     }
 `
 

@@ -142,9 +142,10 @@ export const StyledHomeNavContainer = styled.div`
     opacity: 0.9;
     background: rgba(0, 0, 0, 0.3);
     animation: ${homeContentMobileAnimation(85, '100%')} 1.5s linear;
-    height: 40vh;
+    height: 45vh;
 
     @media (min-width: 768px) {
+        height: 50vh;
         animation: ${homeContentAnimation(-85, '100%')} 1.5s linear;
     }
 `
@@ -165,10 +166,10 @@ export const StyledTextContainer = styled.div`
     transform: rotateX(0deg) scaleZ(2.5);
     background: rgba(0, 0, 0, 0.3);
     animation: ${homeContentMobileAnimation(-85, '-100%')} 1.5s linear;
-
-    height: 40vh;
+    height: 45vh;
 
     @media (min-width: 768px) {
+        height: 50vh;
         margin-bottom: 0;
         animation: ${homeContentAnimation(85, '-100%')} 1.5s linear;
     }
