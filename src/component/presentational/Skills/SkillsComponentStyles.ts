@@ -44,7 +44,12 @@ export const SkillsRingListItem = styled.li`
     left: 50%;
 `
 
-export const SkillsRingListItemContent = styled.div`
+interface SkillsRingListItemContentInterface {
+    index: number,
+    degree: number,
+}
+
+export const SkillsRingListItemContent = styled.div<SkillsRingListItemContentInterface>`
     display: flex;
     flex-direction: column;
     align-items: center;
