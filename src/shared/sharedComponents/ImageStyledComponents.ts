@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 
-export const StyledImageCropContainer = styled.div`
+interface ImageCropContainerInterface {
+    width?: string,
+    height?: string,
+    position?: string,
+    borderRadius?: string,
+    largeWidth?: string,
+    largeHeight?: string,
+    largeBorderRadius?: string,
+}
+
+export const StyledImageCropContainer = styled.div<ImageCropContainerInterface>`
     width: ${({width}) => width ? width : '100%'};
     height: ${({height}) => height ? height : 'auto%'};
     position: ${({position}) => position? position : 'relative'};

@@ -3,8 +3,8 @@ import { StyledSectionComponent, StyledSectionHeader, StyledSectionSubheader } f
 import { StyledNavigatorCaret, StyledDropdownContent, StyledDropdownSection, StyledDropdownContainer, StyledNavigatorItemTitle, StyledNavigatorItemContainer, StyledDropdownSlot,
 StyledNavigatorList, StyledAppContainer, StyledMainContentContainer, StyledNavigatorContainer, StyledDropdownImage, StyledNavigatorContentContainer, StyledNavigatorWrapper, StyledDropdownTextLine, StyledAboutMoreContainer, StyledAboutMoreContentImage, StyledAboutMoreContentTitle, StyledAboutMoreContentTextContainer, StyledAboutMoreContentText, StyledAboutMoreContentWrapper, StyledAboutMoreContentContainer, StyledAboutMoreContentTextLine } from './AboutComponentStyles';
 import businessImage from '../../../shared/images/business.jpg';
-import creativeImage from '../../../shared/images/creativity.jfif';
-import peopleImage from '../../../shared/images/people.jfif';
+import creativeImage from '../../../shared/images/creativity.jpg';
+import peopleImage from '../../../shared/images/people.jpg';
 import Fade from 'react-reveal/Fade';
 import { StyledImageCropContainer } from '../../../shared/sharedComponents/ImageStyledComponents';
 import { aboutComponentTextConfig, aboutMoreContentConfig } from './AboutComponentText';
@@ -30,13 +30,7 @@ const AboutMainComponent = () => {
     )
 }
 
-const NavigatorHeaderCards = ({children}) => {
-    return (
-        <StyledNavigatorList>{children}</StyledNavigatorList>
-    )
-}
-
-const HoverImage = (props) => {
+const HoverImage = (props: {image: number}) => {
     switch (props.image) {
         case 0: return (
             <StyledImageCropContainer largeHeight='200px' largeWidth='200px' height='100px' width='100px' position={'absolute'}>
@@ -62,8 +56,13 @@ const HoverImage = (props) => {
     }
 }
 
+interface DropDownTextType {
+    title: string,
+    text: string[]
+}
+
 const AnimatedNavigator = () => {
-    const returnDropdownText = (textObject) => {
+    const returnDropdownText = (textObject: DropDownTextType) => {
         return (
             <StyledDropdownContainer>
                 <StyledDropdownSection>
@@ -73,7 +72,7 @@ const AnimatedNavigator = () => {
                     <StyledDropdownContent>
                         <Fade up cascade big>
                             {
-                                textObject.text.map((line) => {
+                                textObject.text.map((line: string) => {
                                     return (
                                         <StyledDropdownTextLine key={uuidv4()}>
                                                 {line}
@@ -89,7 +88,7 @@ const AnimatedNavigator = () => {
     }
 
     // Sets and returns dropdown Text from aboutComponentTextConfig
-    const contentSetter = (index) => {
+    const contentSetter = (index: number) => {
         switch(index) {
             case 0: return (
                 <StyledMainContentContainer key={0}>
@@ -124,18 +123,18 @@ const AnimatedNavigator = () => {
 
     const currentIndex = activeIndices[activeIndices.length -1];
 
-    const navigatorSelectFunction = (i) => {
+    const navigatorSelectFunction = (i: number) => {
         setActiveIndices([i]);
         setMainContent(contentSetter(i));
     }
 
-    const onMouseEnter = i => {
+    const onMouseEnter = (i: number) => {
         navigatorSelectFunction(i);
     };
 
     return (
         <StyledNavigatorWrapper>
-            <NavigatorHeaderCards>
+            <StyledNavigatorList>
                 {aboutComponentTextConfig.map((n, index) => {
                     return (
                         <NavigatorItem
@@ -152,7 +151,7 @@ const AnimatedNavigator = () => {
                         </NavigatorItem>
                     );
                 })}
-            </NavigatorHeaderCards>
+            </StyledNavigatorList>
             <StyledNavigatorContentContainer>
                 {mainContent}
             </StyledNavigatorContentContainer>
@@ -160,7 +159,15 @@ const AnimatedNavigator = () => {
     );
 }
 
-const NavigatorItem = (props) => {
+interface NavigatorItemProps {
+    title: string,
+    key: string,
+    index: number,
+    onMouseEnter: (i: number) => void;
+    children: React.ReactNode,
+}
+
+const NavigatorItem = (props: NavigatorItemProps) => {
     const onMouseEnter = () => {
         props.onMouseEnter(props.index);
     };
@@ -189,7 +196,16 @@ const AboutMoreComponent = () => {
     )
 }
 
-const AboutMoreContentMapper = ({config}) => {
+//type AboutMoreContentInterface = {image: string, title: string, text: string[]}[];
+type AboutMoreContentInterface = {
+    config: {
+        image: string,
+        title: string,
+        text: string[]
+    }[]
+}
+
+const AboutMoreContentMapper = ({config}: AboutMoreContentInterface) => {
     return (
         <StyledAboutMoreContentWrapper>
             <Fade left>
@@ -207,7 +223,7 @@ const AboutMoreContentMapper = ({config}) => {
                                     <StyledAboutMoreContentText>
 
                                         {
-                                            item.text.map(textLine => {
+                                            item.text.map((textLine: string) => {
                                                 return (
                                                     <StyledAboutMoreContentTextLine key={uuidv4()}>
                                                         {textLine}

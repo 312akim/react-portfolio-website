@@ -8,7 +8,7 @@ import { uuidv4 } from '../../../shared/sharedComponents/HelperUtil';
 
 export const SkillsComponent = () => {
     return (
-        <StyledSectionComponent minHeight={'35vh'}>
+        <StyledSectionComponent backgroundColor={({theme}) => theme.primaryLight} minHeight={'35vh'}>
             <SkillsMainComponent />
         </StyledSectionComponent>
     )
