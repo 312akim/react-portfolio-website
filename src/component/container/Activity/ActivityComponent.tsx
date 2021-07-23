@@ -88,7 +88,7 @@ const CommitComponent = (props: CommitConfigInterface) => {
           </StyledCommitTitleAnchor>
         </StyledCommitTitle>
         <StyledCommitDataWrapper>
-          {!props.api ? <div>Failed to load github commit data</div> :
+          {!props.api.data ? <div>Failed to load github commit data</div> :
             props.api.data.map((commit: any) => (
               <StyledCommitDataContainer key={uuidv4()}>
                 <StyledCommitDate>
@@ -101,7 +101,7 @@ const CommitComponent = (props: CommitConfigInterface) => {
                   Comment: {commit.commit.message}
                 </StyledCommitComment>
               </StyledCommitDataContainer>
-          ))}
+          )!)}
         </StyledCommitDataWrapper>
     </StyledCommitWrapper>
   )
