@@ -5,8 +5,8 @@ interface ImageCropContainerInterface {
     height?: string,
     position?: string,
     borderRadius?: string,
-    largeWidth: string,
-    largeHeight: string,
+    largeWidth?: string,
+    largeHeight?: string,
     largeBorderRadius?: string,
 }
 
