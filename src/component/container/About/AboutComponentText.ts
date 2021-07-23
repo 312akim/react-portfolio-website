@@ -3,12 +3,6 @@ import hikingImage from '../../../shared/images/hiking-image.jpg';
 import keyboardImage from '../../../shared/images/keyboard-image.jpg';
 
 // Navigator Content
-export const aboutComponentNavigatorTitleConfig = [
-    { title: "Entrepreneur at Heart" },
-    { title: "Why I love Coding" },
-    { title: "What I hope to Achieve" }
-]
-
 export const aboutComponentTextConfig = [
     {
         navTitle: "Entrepreneur at Heart",
