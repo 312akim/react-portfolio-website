@@ -4,7 +4,7 @@ import { flexColumnCentered, flexRowCentered } from './SharedStyledComponentStyl
 interface SectionComponentInterface {
     height?: string,
     minHeight?: string,
-    fontColor?: string,
+    fontColor?: (string: any) => string,
     backgroundColor: (string: any) => string
 }
 

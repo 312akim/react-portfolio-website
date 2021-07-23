@@ -21,8 +21,8 @@ export const ActivityComponent = () => {
 
 //Github API Latest 5 commits to a repo
 const CommitListComponent = () => {
-  const [apparelStoreCommits, setApparelStoreCommits] = useState(false);
-  const [portfolioCommits, setPortfolioCommits] = useState(false);
+  const [apparelStoreCommits, setApparelStoreCommits] = useState({});
+  const [portfolioCommits, setPortfolioCommits] = useState({});
 
   
   useEffect(() => {
@@ -73,7 +73,13 @@ const CommitListComponent = () => {
     );
 }
 
-const CommitComponent = (props) => {
+interface CommitConfigInterface {
+  title: string,
+  api: any,
+  link: string
+}
+
+const CommitComponent = (props: CommitConfigInterface) => {
   return (
     <StyledCommitWrapper>
         <StyledCommitTitle>
@@ -83,7 +89,7 @@ const CommitComponent = (props) => {
         </StyledCommitTitle>
         <StyledCommitDataWrapper>
           {!props.api ? <div>Failed to load github commit data</div> :
-            props.api.data.map(commit => (
+            props.api.data.map((commit: any) => (
               <StyledCommitDataContainer key={uuidv4()}>
                 <StyledCommitDate>
                   Date: {new Date(commit.commit.author.date).toLocaleDateString()}&nbsp;

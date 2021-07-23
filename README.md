@@ -50,7 +50,7 @@ Theme colors are passed by Styled Components - Theme Provider to allow all child
 
 StyledImageCropContainer was created to help size and position passed images for responsive design.
 
-Random id's were generatued using the uuid library specifically for mapped components id properties.
+Random id's were generated using the uuid library specifically for mapped components id properties.
 
 SASS/SCSS was utilized for styling Formik elements.
 
