@@ -12,6 +12,8 @@ EmailJS integration to take Form inputs and receive a direct email from form val
 
 # Section Breakdown
 
+Section by section breakdown below.
+
 ## Nav Component
 
 The Nav background is set to transparent once the viewports pageYOffset passes 0. Page logo and burger are fixed to always allow easy navigation. Each section navigation component is linked to an associated id through react-scroll which allows smooth scrolling navigation. Hover animations transition component underlines from width 'none' to '90px' and the same with container margins for a clear and intuitive experience. The actual Nav appears from the right with a react-spring animation.
