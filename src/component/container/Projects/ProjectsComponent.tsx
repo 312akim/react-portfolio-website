@@ -19,12 +19,12 @@ export const ProjectsComponent = () => {
     //State to represent which project modal to show.
     const [showModal, setShowModal] = useState(0);
 
-    const sectionSwitchHandler = (e) => {
+    const sectionSwitchHandler = () => {
         setSection(!section);
     }
 
-    const projectModalSwitcher = (state) => {
-        setShowModal(state);
+    const projectModalSwitcher = (modalIndex: number) => {
+        setShowModal(modalIndex);
     }
 
     // Main
@@ -35,8 +35,13 @@ export const ProjectsComponent = () => {
     )
 }
 
+interface ProjectSectionInterface {
+    section: boolean,
+    projectModalSwitcher: (modalIndex: number) => void,
+}
+
 // Which projects page to display
-const ProjectSection = ({section, projectModalSwitcher}) => {
+const ProjectSection = ({section, projectModalSwitcher}: ProjectSectionInterface) => {
     if (section) {
         return (
             <StyledProjectCardsContainer>
@@ -44,17 +49,21 @@ const ProjectSection = ({section, projectModalSwitcher}) => {
             </StyledProjectCardsContainer>
         )
     } else {
-        if (!section) {
-            return (
-                <StyledAltProjectCardsContainer>
-                    <ProjectSectionContent sliceStart={2} sliceEnd={4} projectModalSwitcher={projectModalSwitcher} />
-                </StyledAltProjectCardsContainer>
-            )
-        }
+        return (
+            <StyledAltProjectCardsContainer>
+                <ProjectSectionContent sliceStart={2} sliceEnd={4} projectModalSwitcher={projectModalSwitcher} />
+            </StyledAltProjectCardsContainer>
+        )
     }
 }
 
-const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => {
+interface ProjectSectionContentInterface {
+    sliceStart: number,
+    sliceEnd: number,
+    projectModalSwitcher: (modalIndex: number) => void,
+}
+
+const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}: ProjectSectionContentInterface) => {
     return (
         <>
             {
@@ -62,7 +71,7 @@ const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => 
                     return (
                         <StyledProjectCard key={uuidv4()}>
                             <StyledImageCropContainer height={'40vh'}>
-                                <StyledProjectCardImage src={project.image} alt={project.image.alt}/>
+                                <StyledProjectCardImage src={project.image} alt={project.imageAlt}/>
                             </StyledImageCropContainer>
                             <StyledCardHoverContainer>
                                 <StyledProjectCardTitle>
@@ -71,7 +80,7 @@ const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => 
                                 <StyledProjectInformation>
                                     {project.description}
                                 </StyledProjectInformation>
-                                <StyledReadMore onClick={() => projectModalSwitcher(project.onClick)}>
+                                <StyledReadMore onClick={() => projectModalSwitcher(project.modalIndex)}>
                                     Read More
                                 </StyledReadMore>
                                 <StyledGithubLink 
@@ -90,11 +99,16 @@ const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}) => 
     )
 }
 
+interface SectionSwitcherInterface {
+    section: boolean,
+    sectionSwitchHandler: () => void,
+}
+
 // Project Section Display Switcher & arrow icon
-const SectionSwitcher = ({section, sectionSwitchHandler}) => {
+const SectionSwitcher = ({section, sectionSwitchHandler}: SectionSwitcherInterface) => {
     if (section) {
         return (
-            <StyledSectionSwitcher position={'0%'} onClick={() => sectionSwitchHandler()}>
+            <StyledSectionSwitcher right={'0%'} onClick={() => sectionSwitchHandler()}>
                 <StyledSectionIconContainer>
                     <FontAwesomeIcon icon={faAngleRight} size="4x" />
                 </StyledSectionIconContainer>
@@ -102,7 +116,7 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
         )
     } else {
         return (
-            <StyledSectionSwitcher position={'85%'} onClick={() => sectionSwitchHandler()}>
+            <StyledSectionSwitcher right={'85%'} onClick={() => sectionSwitchHandler()}>
                 <StyledSectionIconContainer>
                     <FontAwesomeIcon icon={faAngleLeft} size="4x" />
                 </StyledSectionIconContainer>
@@ -111,8 +125,14 @@ const SectionSwitcher = ({section, sectionSwitchHandler}) => {
     }
 }
 
+interface ModalDisplayInterface {
+    showModal: number,
+    projectModalSwitcher: (modalIndex: number) => void,
+    setShowModal: (modalIndex: number) => void,
+}
+
 // Modal Display
-const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}) => {
+const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}: ModalDisplayInterface) => {
 
     if (showModal === 0) {
         return (
@@ -152,11 +172,16 @@ const ModalDisplay = ({showModal, projectModalSwitcher, setShowModal}) => {
     }
 }
 
-const ModalTabsComponent = ({showModal, setShowModal}) => {
+interface ModalTabsComponentInterface {
+    showModal: number,
+    setShowModal: (modalIndex: number) => void,
+}
+
+const ModalTabsComponent = ({showModal, setShowModal}: ModalTabsComponentInterface) => {
     const [tabSelector, setTabSelector] = useState(0);
 
     //Returns tab title & maps text as list
-    const returnTabContentList = (title, mapArray) => {
+    const returnTabContentList = (title: string, mapArray: string[]) => {
         return (
                 <StyledModalTabContentContainer>
                     <StyledModalSubheader>
@@ -175,7 +200,7 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
         )
     }
 
-    const returnTabContentSummary = (title, mapArray) => {
+    const returnTabContentSummary = (title: string, mapArray: string[]) => {
         return (
                 <StyledModalTabContentContainer>
                     <StyledModalSubheader>
@@ -242,9 +267,16 @@ const ModalTabsComponent = ({showModal, setShowModal}) => {
     )
 }
 
+interface SectionContainerInterface {
+    section: boolean,
+    projectModalSwitcher: (modalIndex: number) => void,
+    showModal: number,
+    setShowModal: (modalIndex: number) => void,
+    sectionSwitchHandler: () => void,
+}
 
 // Body
-const SectionContainer = ({section, projectModalSwitcher, showModal, setShowModal, sectionSwitchHandler}) => {
+const SectionContainer = ({section, projectModalSwitcher, showModal, setShowModal, sectionSwitchHandler}: SectionContainerInterface) => {
     const projectDisplayAnimation = useSpring({
         transform: section 
         ? 'rotateY(0deg)' 

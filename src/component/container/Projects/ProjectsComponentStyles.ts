@@ -28,7 +28,7 @@ const hoverCardBotFadeAnim = keyframes`
     }
 `
 
-export const switchIconAnim = (x) => keyframes`
+export const switchIconAnim = (x: number) => keyframes`
     0% {
         transform: translateX(0px);
     }
@@ -90,16 +90,20 @@ export const StyledAltProjectCardsContainer = styled(animated.div)`
     transform: rotateY(180deg);
 `
 
-export const StyledSectionSwitcher = styled.div`
+interface SectionSwitcherInterface {
+    right: string
+}
+
+export const StyledSectionSwitcher = styled.div<SectionSwitcherInterface>`
     position: absolute;
     height: 109vh;
     width: 15%;
     background: ${({theme}) => theme.primaryDark};
-    right: ${props => props.position};
+    right: ${({right}) => right};
     z-index: 1;
     
     :hover div {
-        animation: ${switchIconAnim} 1.5s linear infinite;
+        animation: ${switchIconAnim(0)} 1.5s linear infinite;
         color: ${({theme}) => theme.primaryLight};
     }
 
@@ -108,7 +112,7 @@ export const StyledSectionSwitcher = styled.div`
             background: black;
         }
         :hover div {
-            animation: ${switchIconAnim} 1.5s linear infinite;
+            animation: ${switchIconAnim(0)} 1.5s linear infinite;
             color: ${({theme}) => theme.primaryLight};
         }
     }

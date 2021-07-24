@@ -12,7 +12,7 @@ export const projectComponentCardTextConfig = [
         imageAlt: "Tokenize Amazon device mockups",
         gitLink: "https://github.com/312akim/tokenize-amazon-landing-public",
         websiteLink: "https://www.rainforesttoken.io/",
-        onClick: 1,
+        modalIndex: 1,
         modal: {
             modalTitle: "Tokenize Amazon",
             modalObjective: "Create a performant landing page from the design teams mockup to showcase startup ideas and newsletter email acquisition integration through email chimp.",
@@ -48,7 +48,7 @@ export const projectComponentCardTextConfig = [
         imageAlt: "Apparel Store Website device mockups",
         gitLink: "https://github.com/312akim/apparel-store-mern",
         websiteLink: "https://apparel-store-mern.netlify.app/",
-        onClick: 2,
+        modalIndex: 2,
         modal: {
             modalTitle: "Apparel Store",
             modalObjective: "Build a fully functioning fullstack SPA e-commerce website to be used as a template for future web-stores.",
@@ -95,7 +95,7 @@ export const projectComponentCardTextConfig = [
         imageAlt: "Portfolio Website device mockups",
         gitLink: "https://github.com/312akim/react-portfolio-website",
         websiteLink: false,
-        onClick: 3,
+        modalIndex: 3,
         modal: {
             modalTitle: "Portfolio Website",
             modalObjective: "Create a performant user experience portfolio website to present my projects, knowledge, and future objectives.",
@@ -135,7 +135,7 @@ export const projectComponentCardTextConfig = [
         imageAlt: "Bubble Tea App device mockups",
         gitLink: "",
         websiteLink: false,
-        onClick: 4,
+        modalIndex: 4,
         modal: {
             modalTitle: "Bubble Tea App",
             modalObjective: "Create a performant fullstack Bubble Tea application utilizing and familiarizing myself with React Native, Typescript, Redux, Software Architecture, Jira, and Amazon Web Services.",
