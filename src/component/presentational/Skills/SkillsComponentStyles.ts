@@ -42,6 +42,7 @@ export const SkillsRingListItem = styled.li`
     position: absolute;
     top: 50%;
     left: 50%;
+    transform-style: preserve-3d;
 `
 
 interface SkillsRingListItemContentInterface {
