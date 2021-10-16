@@ -53,7 +53,7 @@ const HomeText = ({inView}: DisplayContent) => {
                     Welcome to my portfolio.
                 </StyledTextSection>
                 <StyledTextSection>
-                    I'm a front end web developer with a background in business.
+                    I'm a web developer with a background in business.
                 </StyledTextSection>
                 <StyledTextSection>
                     I love thinking about all aspects of a business with a particular interest in user experience.

@@ -43,17 +43,17 @@ export const aboutComponentTextConfig = [
 export const aboutMoreContentConfig = [
     {
         image: bookImage,
-        title: 'Reading',
-        text: ['Grokking Algorithms', 'Secrets of the JavaScript Ninja']
+        title: 'Learning',
+        text: ['VueJS']
     },
     {
         image: keyboardImage,
         title: 'Playing',
-        text: ['Overwatch', 'Valorant', 'Steam']
+        text: ['Overwatch', 'Back 4 Blood']
     },
     {
         image: hikingImage,
-        title: 'Tanning',
-        text: ['Hiking', 'Swimming', 'Ultimate Frisbee']
+        title: 'Outdoors',
+        text: ['Hiking', 'Swimming']
     }
 ]
