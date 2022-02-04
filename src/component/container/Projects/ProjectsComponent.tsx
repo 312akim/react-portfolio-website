@@ -57,13 +57,13 @@ const ProjectSection = ({section, projectModalSwitcher}: ProjectSectionInterface
     }
 }
 
-interface ProjectSectionContentInterface {
+interface ProjectSectionContentParams {
     sliceStart: number,
     sliceEnd: number,
     projectModalSwitcher: (modalIndex: number) => void,
 }
 
-const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}: ProjectSectionContentInterface) => {
+const ProjectSectionContent = ({sliceStart, sliceEnd, projectModalSwitcher}: ProjectSectionContentParams): JSX.Element => {
     return (
         <>
             {
