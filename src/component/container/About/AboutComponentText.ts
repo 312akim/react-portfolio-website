@@ -44,7 +44,7 @@ export const aboutMoreContentConfig = [
     {
         image: bookImage,
         title: 'Learning',
-        text: ['Shopify CLI', 'Jest']
+        text: ['Storybook', 'Jest']
     },
     {
         image: keyboardImage,
