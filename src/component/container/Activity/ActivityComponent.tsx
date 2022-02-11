@@ -91,7 +91,7 @@ const CommitComponent = (props: CommitConfigInterface) => {
                   Github
                   </StyledCommitGitAnchor>
                 <StyledCommitComment>
-                  Comment: {commit.commit.message}
+                  Commit| {commit.commit.message}
                 </StyledCommitComment>
               </StyledCommitDataContainer>
           )!)}
