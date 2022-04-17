@@ -27,8 +27,8 @@ const CommitListComponent = () => {
   const perPage = 5;
 
   const commitConfig = [
-    { githubTitle: '312akim/react-portfolio-website', title: "Portfolio Site Commits", api: projectCommits[0], link: 'https://github.com/312akim/react-portfolio-website' },
-    { githubTitle: '312akim/ecommerce-react-component-lib', title: "Ecommerce React Component Library", api: projectCommits[1], link: 'https://github.com/312akim/ecommerce-react-component-lib' },
+    { githubTitle: '312akim/focal-tiles', title: "Focal Tiles Web App", api: projectCommits[0], link: 'https://github.com/312akim/focal-tiles' },
+    { githubTitle: '312akim/react-portfolio-website', title: "Portfolio Site Commits", api: projectCommits[1], link: 'https://github.com/312akim/react-portfolio-website' },
   ];
   
   useEffect(() => {
@@ -39,16 +39,16 @@ const CommitListComponent = () => {
     const fetchCommits = async (repo: string) => {
       const commits = await octokit.request(
         `GET /repos/${repo}/commits`, { repo, per_page: perPage }
-      )
-      return commits;
-    }
-
-    const commitsArray = commitConfig.map(obj => {
-      return fetchCommits(obj.githubTitle)
-    })
-
-    Promise.all(commitsArray)
-    .then(array => setProjectCommits(array));
+        )
+        return commits;
+      }
+      
+      const commitsArray = commitConfig.map(obj => {
+        return fetchCommits(obj.githubTitle)
+      })
+      
+      Promise.all(commitsArray)
+      .then(array => setProjectCommits(array));
 
   }, [])
 
@@ -91,7 +91,7 @@ const CommitComponent = (props: CommitConfigInterface) => {
                   Github
                   </StyledCommitGitAnchor>
                 <StyledCommitComment>
-                  Commit| {commit.commit.message}
+                  Commit - {commit.commit.message}
                 </StyledCommitComment>
               </StyledCommitDataContainer>
           )!)}

@@ -56,6 +56,7 @@ export const fadeInAnimation = keyframes`
 export const StyledSectionContainerWrapper = styled.div`
     height: auto;
     padding-bottom: 4vh;
+    background: ${(props) => props.theme.primaryDark}
 `
 
 export const StyledSectionContainerContent = styled.div`
